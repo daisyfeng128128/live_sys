@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<link data-fixed="true" href="/templates/index.css" rel="stylesheet">
+<link rel="stylesheet" href="css/photo.css"/>
+</head>
+
+<body>
+<div class="head-outer btline">
+    <div class="header wrapper clearFix">
+        <a class="hd_bg fl" href="/"></a>
+        <p class="text fl">一群制造欢乐的豆豆</p>
+        <ul class="nav fl">
+            <li class="fl {if $current_page=='index'}cu{/if}"><a href="/">首页</a></li>
+            <li class="fl {if $current_page=='square'}cu{/if}"><a href="/square.php">广场</a> </li>
+            <li class="fl {if $current_page=='active'}cu{/if}"><a href="/square.php">活动</a> </li>
+            <li class="fl {if $current_page=='mall'}cu{/if}"><a href="/mall.php">商城</a> </li>
+            <li class="fl {if $current_page=='order'}cu{/if}"><a href="/orders.php">排行榜</a> </li>
+
+        </ul>
+        <div class="input fl">
+            <input type="text" placeholder="输入房间号/频道号/ID" />
+            <span class="search"></span>
+        </div>
+        <div class="user clearFix">
+            <div class="fl">
+                <a class="username fl" href="centeros.php">袅袅娜娜</a>
+                <a class="user_msg fl" href="javascript:;"></a>
+            </div>
+            <a class="email fl" href="javascript:;"></a>
+        </div>
+    </div>
+</div>
+
+<form action="check.html">
+	<div class="details">
+	<div class="wrapper">
+    	<div class="progress clearFix">
+            <span class="fl pro">基本资料</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro">财务信息</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro" style="background:#ffb900; color:#fff; ">认证照片</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro">提交审核</span>
+        </div>
+    	<div class="data_content ">
+            <p class="apply">入驻申请</p>
+            <div class="photo">
+    	<h3>认证照片(<i>3</i>/3)</h3>
+        <div class="clearFix">
+        	<div class="pho_l fl">
+            	<div class="l_content">
+                	<div class="clearFix">
+                	<div class="pho_chose fl">
+                	选择文件
+                    <input type="file" />
+                </div>
+                <span class="fl support">支持JPG，PNG图片大小建议不要超过2M</span>
+                </div>
+                	<div class="clearFix">
+                    	<div class="big_pho fl"></div>
+                    	<span class="big_support fl">800*600像素以上，大小不超过2M</span>
+                    </div>
+                    <p class="pho_tip">此图片用在首页展示大图显示</p>
+                    <div class="clearFix">
+                    	<div class="portrait fl"></div>
+                    	<span class="use fl" >头像使用(自动裁剪)</span>
+                    </div>
+                    <div class="step">
+                    	<input type="submit" value="上一步" />
+                    	<input class="next" type="submit" value="下一步" />
+                    </div>
+                </div>
+                
+            </div>
+       		<div class="pho_r fr">
+            	<div class="r_content">
+                	<h4>照片审核要求</h4>	
+                	<ul class="pho_list clearFix">
+                    	<li class="fl"><img src="img/demo1.png"/></li>
+                    	<li class="fl"><img src="img/demo2.png"/></li>
+                    	<li class="fl"><img src="img/demo3.png"/></li>
+                    	<li class="fl"><img src="img/demo4.png"/></li>
+                    </ul>
+                    <div class="require">
+                    	<p><span>1</span>必须使用本人照片800*600(宽/高)</p>
+                    	<p><span>2</span>照片人物至少半身二分之一以上入镜</p>
+                    	<p><span>3</span>背景尽量使用艺术照，突出人物表情，艺术照片最佳</p>
+                    	<p><span>4</span>图片不许拼接，不许露点</p>
+                    	<p><span>5</span>尽量使用化妆上镜照，注意远近景适中</p>
+                    	<p><span>6</span>上传拖欠要填满上传框，四边不允许出现白边和黑边</p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+           
+         
+        </div>
+    </div>
+
+</div>
+
+</form>
+
+<div class="footer">
+    <div class="container">
+        <p class="copyright"><span></span>青蛙直播-Copyright©2016 沪ICP备14054721号 关于我们版权声明</p>
+        <p>青蛙用户服务协议|青蛙客服电话：021-63156389|商务合作邮箱：mt@mutiantech.com</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		function onFrameLoad(){
+			changeBlank();
+		}
+		function changeBlank(){
+			var anchors = $("#kedo").contents().find("a");
+			var anchor;
+			var index;
+			for(index = 0; index < anchors.length; index ++){
+				anchor = anchors[index];
+				anchor.target="";
+			}
+        }
+
+	</script>
+	<iframe name="kedo" id="kedo" width="100%" height="100%" src="http://10.1.1.17" frameborder="0" border="0" marginwidth="0" marginheight="0" onload="onFrameLoad()">
+    </iframe>
+	<body style="overflow:hidden" width="1920" height="1080" ></body>
+</html>

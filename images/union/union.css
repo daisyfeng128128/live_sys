@@ -1,0 +1,513 @@
+
+* {
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px;
+	PADDING-LEFT: 0px;
+	MARGIN: 0px;
+	PADDING-RIGHT: 0px
+}
+
+LI {
+	LIST-STYLE-TYPE: none
+}
+
+EM {
+	FONT-STYLE: normal
+}
+
+I {
+	FONT-STYLE: normal
+}
+
+A {
+	TEXT-DECORATION: none
+}
+
+.red {
+	COLOR: #f2528b
+}
+
+.red:hover {
+	TEXT-DECORATION: underline
+}
+
+.showPerBg DIV {
+	HEIGHT: 104px
+}
+
+.showPerBg .showBg0 {
+	BACKGROUND: url(img/spread1.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg1 {
+	BACKGROUND: url(img/spread2.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg2 {
+	BACKGROUND: url(img/spread3.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg3 {
+	BACKGROUND: url(img/spread4.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg4 {
+	BACKGROUND: url(img/spread5.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg5 {
+	BACKGROUND: url(img/spread6.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg6 {
+	BACKGROUND: url(img/spread7.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg7 {
+	BACKGROUND: url(img/spread8.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg8 {
+	BACKGROUND: url(img/spread9.jpg) no-repeat
+		center 0px
+}
+
+.showPerBg .showBg9 {
+	BACKGROUND: url(img/spread10.jpg) no-repeat
+		center 0px
+}
+
+.wrap {
+	HEIGHT: 764px;
+	WIDTH: 980px;
+	POSITION: absolute;
+	LEFT: 50%;
+	MARGIN: 0px auto 0px -513px;
+	TOP: 0px
+}
+
+.showView {
+	BORDER-TOP: #e66484 1px solid;
+	HEIGHT: 237px;
+	BORDER-RIGHT: #e66484 1px solid;
+	WIDTH: 316px;
+	BORDER-BOTTOM: #e66484 1px solid;
+	POSITION: relative;
+	MARGIN: 272px 0px 0px 150px;
+	BORDER-LEFT: #e66484 1px solid
+}
+
+.startShowTime {
+	POSITION: absolute;
+	LEFT: 7px;
+	Z-INDEX: 10;
+	TOP: 7px
+}
+
+.fullShowScreen {
+	CURSOR: pointer;
+	POSITION: absolute;
+	LEFT: 0px;
+	Z-INDEX: 10;
+	BOTTOM: 0px
+}
+
+.sepC {
+	CURSOR: pointer;
+	POSITION: absolute;
+	LEFT: 243px;
+	TOP: 517px
+}
+
+.showWords {
+	OVERFLOW: hidden;
+	HEIGHT: 407px;
+	WIDTH: 440px;
+	RIGHT: 0px;
+	POSITION: absolute;
+	TOP: 301px
+}
+
+.mouseOverShow {
+	HEIGHT: 122px;
+	WIDTH: 164px;
+	BACKGROUND: url(img/showMarki2.png) no-repeat
+		0px 0px;
+	DISPLAY: block;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/showMarki2.png')
+}
+
+.mouseOverShow:hover {
+	BACKGROUND: url(img/showMarki.png) no-repeat
+		0px 0px;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/showMarki.png')
+}
+
+.mouseOverShow2 {
+	HEIGHT: 22px;
+	WIDTH: 77px;
+	DISPLAY: block
+}
+
+.heartS {
+	HEIGHT: 72px;
+	WIDTH: 87px;
+	POSITION: absolute;
+	LEFT: 248px;
+	TOP: 8px
+}
+
+.inputFocusS {
+	HEIGHT: 20px;
+	WIDTH: 20px;
+	POSITION: absolute;
+	LEFT: 690px;
+	DISPLAY: block;
+	BOTTOM: 13px
+}
+
+#markShow {
+	HEIGHT: 100%;
+	WIDTH: 100%;
+	POSITION: absolute;
+	LEFT: 0px;
+	DISPLAY: none;
+	TOP: 0px
+}
+
+.showPopMark {
+	HEIGHT: 1040px;
+	WIDTH: 100%;
+	BACKGROUND: #000;
+	POSITION: absolute;
+	LEFT: 0px;
+	FILTER: alpha(opacity = 90);
+	Z-INDEX: 899;
+	TOP: 0px;
+	opacity: 0.9
+}
+
+.showPopMark3 {
+	HEIGHT: 544px;
+	WIDTH: 469px;
+	BACKGROUND: url(img/markBgs2.png?ys4.png)
+		no-repeat 0px 0px;
+	POSITION: absolute;
+	MARGIN-LEFT: -233px;
+	LEFT: 50%;
+	Z-INDEX: 999;
+	TOP: 190px;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/markBgs2.png?ys4.png')
+}
+
+FORM .span {
+	FONT-SIZE: 14px;
+	WIDTH: 82px;
+	VERTICAL-ALIGN: middle;
+	COLOR: #d54568;
+	TEXT-ALIGN: right;
+	LINE-HEIGHT: 30px;
+	PADDING-RIGHT: 10px
+}
+
+IMG {
+	BORDER-TOP-STYLE: none;
+	VERTICAL-ALIGN: top;
+	BORDER-BOTTOM-STYLE: none;
+	BORDER-RIGHT-STYLE: none;
+	BORDER-LEFT-STYLE: none
+}
+
+#showdiv2013 {
+	HEIGHT: 100%;
+	WIDTH: 100%;
+	POSITION: absolute;
+	LEFT: 0px;
+	Z-INDEX: 10;
+	TOP: 0px;
+	_height: 650px
+}
+
+#showdiv2013 A {
+	HEIGHT: 100%;
+	WIDTH: 100%;
+	FILTER: alpha(opacity = 0);
+	DISPLAY: block;
+	BACKGROUND-COLOR: #000;
+	opacity: 0
+}
+
+#showdiv2013 A.alpha {
+	FILTER: alpha(opacity = 50);
+	opacity: 0.5
+}
+
+.rightTop {
+	HEIGHT: 148px;
+	WIDTH: 223px;
+	BACKGROUND: url(img/spreadTop.png) no-repeat
+		0px 0px;
+	RIGHT: 0px;
+	POSITION: absolute;
+	TOP: 0px;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( sizingMethod=crop,
+		src='img/spreadTop.png')
+}
+
+#markShow {
+	HEIGHT: 100%;
+	WIDTH: 100%;
+	POSITION: absolute;
+	LEFT: 0px;
+	TOP: 0px
+}
+
+#markShow .showPopMark {
+	HEIGHT: 1040px;
+	WIDTH: 100%;
+	BACKGROUND: #000;
+	POSITION: absolute;
+	LEFT: 0px;
+	FILTER: alpha(opacity = 70);
+	TOP: 0px;
+	opacity: 0.70
+}
+
+.showPopMark1 {
+	HEIGHT: 548px;
+	WIDTH: 574px;
+	BACKGROUND: #000;
+	POSITION: absolute;
+	LEFT: 0px;
+	FILTER: alpha(opacity = 70);
+	Z-INDEX: 998;
+	TOP: 0px;
+	opacity: 0.70
+}
+
+.showPopMark2 {
+	HEIGHT: 329px;
+	WIDTH: 413px;
+	BACKGROUND: url(img/bgmarks3.png?ys5.png)
+		no-repeat 0px 0px;
+	POSITION: absolute;
+	MARGIN-LEFT: -206px;
+	LEFT: 50%;
+	Z-INDEX: 999;
+	TOP: 10%;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bgmarks3.png?ys5.png')
+}
+
+.showPopMark4 {
+	OVERFLOW: visible;
+	WIDTH: 439px;
+	BACKGROUND: #37302c;
+	POSITION: absolute;
+	PADDING-BOTTOM: 14px;
+	PADDING-TOP: 10px;
+	PADDING-LEFT: 16px;
+	MARGIN-LEFT: -232px;
+	LEFT: 50%;
+	MIN-HEIGHT: 398px;
+	Z-INDEX: 999;
+	MARGIN-TOP: -211px;
+	TOP: 50%;
+	PADDING-RIGHT: 14px;
+	_height: 398px
+}
+
+.inside {
+	OVERFLOW: visible;
+	BACKGROUND: url(img/markBgs.png) no-repeat 0px
+		0px;
+	PADDING-BOTTOM: 20px;
+	PADDING-TOP: 232px;
+	PADDING-LEFT: 0px;
+	MIN-HEIGHT: 146px;
+	PADDING-RIGHT: 0px;
+	_height: 146px
+}
+
+.close {
+	CURSOR: pointer;
+	HEIGHT: 45px;
+	WIDTH: 45px;
+	BACKGROUND: url(img/close0619.png) no-repeat
+		0px 0px;
+	RIGHT: -14px;
+	POSITION: absolute;
+	TOP: -10px;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( sizingMethod=crop,
+		src='img/close0619.png')
+}
+
+.close:hover {
+	BACKGROUND: url(img/close061902.png) no-repeat
+		0px 0px;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( sizingMethod=crop,
+		src='img/close061902.png')
+}
+
+.showPopF {
+	WIDTH: 433px
+}
+
+FORM .span {
+	FONT-SIZE: 14px;
+	WIDTH: 82px;
+	VERTICAL-ALIGN: middle;
+	COLOR: #d54568;
+	TEXT-ALIGN: right;
+	LINE-HEIGHT: 30px;
+	PADDING-RIGHT: 5px
+}
+
+.showPopF .subregister {
+	HEIGHT: 42px
+}
+
+.showPopF .popShowSub {
+	BORDER-TOP-STYLE: none;
+	CURSOR: pointer;
+	HEIGHT: 42px;
+	WIDTH: 148px;
+	VERTICAL-ALIGN: middle;
+	BACKGROUND: url(img/showBtnBg.gif) no-repeat
+		0px 0px;
+	BORDER-BOTTOM-STYLE: none;
+	BORDER-RIGHT-STYLE: none;
+	MARGIN-LEFT: 93px;
+	BORDER-LEFT-STYLE: none
+}
+
+.forQQ {
+	HEIGHT: 56px;
+	WIDTH: 67px;
+	VERTICAL-ALIGN: middle;
+	BACKGROUND: url(img/qqBg.png) no-repeat 0px
+		0px;
+	DISPLAY: inline-block
+}
+
+.forWB {
+	HEIGHT: 56px;
+	WIDTH: 67px;
+	VERTICAL-ALIGN: middle;
+	BACKGROUND: url(img/wbBg.png) no-repeat 0px
+		0px;
+	DISPLAY: inline-block
+}
+
+#markShow {
+	HEIGHT: 100%;
+	WIDTH: 100%;
+	POSITION: absolute;
+	LEFT: 0px;
+	DISPLAY: none;
+	TOP: 0px
+}
+
+FORM INPUT {
+	BORDER-TOP: #c0c0c0 1px solid;
+	HEIGHT: 28px;
+	BORDER-RIGHT: #c0c0c0 1px solid;
+	WIDTH: 190px;
+	VERTICAL-ALIGN: middle;
+	BORDER-BOTTOM: #c0c0c0 1px solid;
+	BORDER-LEFT: #c0c0c0 1px solid;
+	DISPLAY: inline-block;
+	LINE-HEIGHT: 30px;
+	MARGIN-RIGHT: 9px
+}
+
+FORM INPUT:focus {
+	BORDER-TOP: #f2528b 1px solid;
+	BORDER-RIGHT: #f2528b 1px solid;
+	BORDER-BOTTOM: #f2528b 1px solid;
+	OUTLINE-STYLE: none;
+	BORDER-LEFT: #f2528b 1px solid
+}
+
+FORM .onFocus {
+	BORDER-TOP: #f2528b 1px solid;
+	BORDER-RIGHT: #f2528b 1px solid;
+	BORDER-BOTTOM: #f2528b 1px solid;
+	BORDER-LEFT: #f2528b 1px solid
+}
+
+FORM SPAN.wrong {
+	BACKGROUND: url(img/formWrong.gif) no-repeat
+		195px 0px
+}
+
+FORM SPAN {
+	FONT-SIZE: 12px;
+	VERTICAL-ALIGN: middle;
+	COLOR: #a1a1a1;
+	PADDING-LEFT: 15px;
+	MIN-HEIGHT: 15px;
+	DISPLAY: inline-block;
+	LINE-HEIGHT: 15px;
+	text-align: right;
+}
+
+FORM .marginB {
+	MARGIN-BOTTOM: 10px;
+	position:relative;
+	
+}
+
+FORM .marginB2 INPUT {
+	WIDTH: 67px
+}
+
+#test {
+	MARGIN-RIGHT: 1px
+}
+
+#testL {
+	MARGIN-RIGHT: 1px
+}
+
+FORM .marginB2 EM IMG {
+	BORDER-TOP: #c0c0c0 1px solid;
+	HEIGHT: 28px;
+	BORDER-RIGHT: #c0c0c0 1px solid;
+	WIDTH: 67px;
+	VERTICAL-ALIGN: top;
+	BORDER-BOTTOM: #c0c0c0 1px solid;
+	MARGIN: 0px 5px 0px 4px;
+	BORDER-LEFT: #c0c0c0 1px solid;
+	DISPLAY: inline-block
+}
+
+FORM .marginB2 I {
+	FONT-SIZE: 12px
+}
+
+FORM .marginB2 I .red {
+	FONT-SIZE: 12px
+}
+
+.error{
+
+	position:absolute;padding:0; top:7px;
+	
+
+
+}

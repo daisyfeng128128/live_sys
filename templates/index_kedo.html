@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <!--create 2016-10-26 19.27-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>蝌蚪直播-最好玩的直播平台</title>
+    <link href="/css/kedo/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/kedo/style.css?vsn={$vsn}" rel="stylesheet">
+    <link href="/css/kedo/homeBg.css?vsn={$vsn}" rel="stylesheet">
+    <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
+    
+      <script>
+          var cdn_domain="{$cdn_domain}";
+          var img_domain="{$images_domain}";
+          var inf_domain="{$inf_domain}";
+          var site_skin="{$site_skin}";
+          var currentUserId="{$user.userId}";
+      </script>
+  </head>
+  <body style="padding-top:60px;">  
+	<!--导航-->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo_head" href="/index_qqgame.php"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav hdNavL">
+                <li class="{if $current_page=='index'}active{/if}"><a href="/index_qqgame.php">首页</a></li>
+                <li class="{if $current_page=='square'}active{/if}"><a href="/square">广场</a> </li>
+                <li class="{if $current_page=='mall'}active{/if}"><a href="/mall">商城</a> </li>
+                <li class="{if $current_page=='order'}active{/if}"><a href="/orders">排行榜</a> </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                 <!--<div class="form-group">
+                    <input type="text" class="form-control" placeholder="搜索">
+                    <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+                 </div>-->
+              	<div class="input-group search">
+                  <input type="text" class="form-control searchN" placeholder="输入房间号/频道号/ID">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default searchBtn" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+                </div>
+                 
+              </form>
+            {if !$user}
+                <ul class="nav navbar-nav navbar-right  hidden-sm hdNavR reg_log">
+                </ul>
+            {else}
+                <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
+                    <li><a href="/centeros">{$user.nickname}</a></li>
+                    <li class="hidden-xs"><a href="">|</a></li>
+                    <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
+                </ul>
+
+            {/if}
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+    
+    <!--主体-->
+    <div class="container main">
+    	<div class="row">
+        	<div class="col-lg-9 col-sm-9 col-xs-12 mainLeft" role="main">
+            	<div id="carousel-example-captions" class="carousel slide" data-ride="carousel" style="margin-bottom:30px;">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                    </ol>
+					<div class="carousel-inner" role="listbox">
+                    </div>
+      					<a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                              <span class="icon-prev glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                    </a>
+					<a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                        <span class="icon-next glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <div class="thumb-bar"></div>
+    			</div>
+    			
+                <!--热门主播-->
+                <div class="hotCon" id="hotList">
+                	<div class="page-header clearfix">
+                        <h4 class="pull-left">
+                        	<span class="glyphicon icon-hot"></span>
+                        	<span>热门主播</span>
+                        </h4>
+                        <h4 class="pull-right hotR">
+                          <a href="http://www.kedo.tv/skin/desert/css/live.css"><small>更多</small></a>
+                        </h4>
+                    </div>
+
+                    <div class="row hotLiCon"  num="1+12">
+                    </div>
+                    
+                </div>
+                
+                <!--游戏专区-->
+                <div class="recomm">
+                	 <div class="page-header clearfix">
+                        <h4 class="pull-left"><span class="glyphicon icon-fire"></span><span>游戏专区</span> </h4>
+                        <h4 class="pull-right recommR">
+                          <a href="javascript:;"><small>话题</small></a>
+                          <a href="javascript:;"><small>游戏</small></a>
+                          <a href="javascript:;"><small>户外</small></a>
+                          <a href="javascript:;"><small>lol</small></a>
+                          <a href="javascript:;"><small>更多</small></a>
+                        </h4>
+                        
+                    </div>
+                    <div class="row" id="gameAnchors">
+
+                    </div>
+                </div>
+                
+                <!--最新入驻-->
+                <div class="hotCon" id="newList">
+                	<div class="page-header clearfix">
+                        <h4 class="pull-left">
+                        	<span class="glyphicon icon-new"></span>
+                        	<span>最新入驻</span>
+                            
+                        </h4>
+                        <h4 class="pull-right recommR">
+                          <a href="javascript:;"><small>话题</small></a>
+                          <a href="javascript:;"><small>游戏</small></a>
+                          <a href="javascript:;"><small>户外</small></a>
+                          <a href="javascript:;"><small>lol</small></a>
+                          <a href="javascript:;"><small>更多</small></a>
+                        </h4>
+                    </div>
+                    <div class="row newLiCon">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-sm-3 hidden-xs pull-right mainRight" role="complementary">
+				<!--登录注册-->
+                <div class="thumbnail regLog text-center">
+                     {if !$user}
+                    {else}
+                    <div class="caption AfterLog">
+                        <div class="row">
+                            <div class="pull-left imgR img-circle colorPin">
+                                 <img class="img-circle"  src="{$images_domain}/{$user.avatar}" style="width: 52px;height: 52px;" alt="{$user.nickname}" />
+                            </div>
+                            <div class="pull-left">
+                                <div class="name">{$user.nickname}</div>
+                                <div class="money">
+                                    <span class="glyphicon glyphicon-bold img-circle"></span>
+                                    <span class="moneyNum">{$user.coins}</span>
+                                </div>
+
+                                <a class="charge btn btn-warning" href="/pay">充值</a>
+                            </div>
+                        </div>
+
+                        <!--<div class="progress row">
+                            <div class="progress-bar bgPin" role="progressbar" aria-valuenow="60"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                                <span class="sr-only">40% 完成</span>
+                            </div>
+                        </div>-->
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-danger" role="progressbar"
+                                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                 style="width: {$user.nextSpender}%;">
+                                <span class="sr-only">{$user.nextSpender}% 完成（危险）</span>
+                            </div>
+                        </div>
+                        <div>还差{$user.differ}经验值升级到下一级</div>
+
+
+                        <p class="row showOw clearfix">
+                            {if $user.roomNumber}
+                            <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
+                            {/if}
+                            {if $user.socType==1}
+                            <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="btn btn-md btn-default colorBlue pull-right">OW</a>
+                            {/if}
+                        </p>
+
+
+                        <!--<div class="clearfix">
+                            <span class="pull-left">获得成就</span>
+                        </div>
+                        <hr/>
+                        <div class="clearfix achieve">
+                            <span class="achieve1 pull-left"></span>
+                            <span class="achieve2 pull-left"></span>
+                            <span class="achieve3 pull-left"></span>
+                            <span class="achieve4 pull-left"></span>
+                            <a href="" class="pull-right">更多</a>
+                        </div>
+-->
+                    </div>
+                    {/if}
+                </div>
+            	
+                <!--我的关注-->
+               <div class="thumbnail follow text-left">
+               	<div class="caption">
+                    <div class="row foTit">
+                        <h4 class="pull-left titH">我的关注</h4>
+                        <div class="pull-right titD">
+                            <a href="javascript:;" class="glyphicon shh glyphicon-menu-up-hover"></a>
+                            <a href="javascript:;" class="glyphicon xii glyphicon-menu-down-hover"></a><!---->
+                        </div>
+                    </div>
+                    <div class="followList">
+                      <div class="boxx">
+                          <div class="row foLi">
+                          </div>
+                      </div>
+                    </div>
+
+               	</div>
+               </div>
+                <!--申请入驻-->
+                <a href="javascript:;" class="thumbnail apply">
+                    <img src="images/kedo/banner_zhaoping.png"/>
+                </a>
+                
+                <!--主播排行榜-->
+               <div class="thumbnail text-left rank">
+               	<div class="caption">
+                        <div class="row foTit">
+                        	<h4 class="pull-left titH hidden-sm">主播排行榜</h4>
+                            <h4 class="pull-left titH visible-sm-block">主播榜</h4>
+                            <div class="pull-right captitle titD">
+                            	<a href="javascript:;" class="colorPin active">周</a>
+                            	<a href="javascript:;" class="colorPin">月</a>
+                              <a href="javascript:;" class="colorPin">年</a>
+                            </div>
+                        </div>
+
+                    <div class="cons">
+                        <div class="row foLi"   id="dayList">
+
+                        </div>
+                        <div class="row foLi"   id="weekList" style="display: none">
+
+                        </div>
+                        <div class="row foLi"   id="monthList" style="display: none">
+
+                        </div>
+                    </div>
+                </div>
+               </div>
+
+                <!--土豪榜-->
+                <div class="thumbnail rich text-left">
+                         <div class="caption">
+                         	<div class="row foTit">
+                        		<h4 class="pull-left titH">土豪榜</h4>
+                                <div class="pull-right captitle titD">
+                                    <a href="javascript:;" class="colorPin active">周</a>
+                                    <a href="javascript:;" class="colorPin">月</a>
+                                    <a href="javascript:;" class="colorPin">年</a>
+                                </div>
+                        	</div>
+                             <div class="cons">
+                                 <div class="row foLi" id="th_week">
+
+                                 </div>
+                                 <div class="row foLi"  id="th_month"  style="display: none">
+
+                                 </div>
+                                 <div class="row foLi"  id="th_year" style="display: none">
+
+                                 </div>
+                             </div>
+                         </div>
+                 </div>
+                <div style="clear: both"></div>
+                <!--粉丝活跃榜-->
+                <div class="fans thumbnail text-left">
+                         <div class="caption">
+                         	<div class="row foTit">
+                        		<h4 class="pull-left titH hidden-sm">粉丝活跃榜</h4>
+                                <h4 class="pull-left titH visible-sm-block">粉丝榜</h4>
+                                <div class="pull-right titD captitle">
+                                    <a href="javascript:;" class="colorPin active">周</a>
+                                    <a href="javascript:;" class="colorPin">月</a>
+                                    <a href="javascript:;" class="colorPin">年</a>
+                                </div>
+                        	</div>
+
+                             <div class="cons">
+                                 <div class="row foLi" id="hy_week">
+
+                                 </div>
+                                 <div class="row foLi"  id="hy_month"  style="display: none">
+
+                                 </div>
+                                 <div class="row foLi"  id="hy_year" style="display: none">
+
+                                 </div>
+                             </div>
+                         </div>
+                   </div>
+        	</div>
+        </div>    
+    </div>
+    
+    <!--底部-->
+	<div class="bs-docs-footer navbar-inverse" role="contentinfo">
+		<div class="container">
+			<p>
+      	<a href="javascript:;" class="firBL">关于蝌蚪 </a>|
+      	<a href="/assist/serviceArgument" class="firBL">服务协议 </a>|
+          <a href="/assist/help" class="firBL">客服帮助 </a>|
+          <a href="javascript:;" class="firBL">关于我们 </a>|            
+          <a href="javascript:;" class="firBL">版权声明</a>
+      </p>
+      <p>
+      	<img src="images/kedo/logo_foot.png"/>
+          <span> -Copyright©2016 沪ICP备14054721号</span>
+      </p>
+      <p>蝌蚪客服电话：021-63156389 | 商务合作邮箱：
+      	<a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
+      </p>
+		</div>
+	</div>
+    <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
+    <script src="js/jquery-1.12.2.min.js"></script>
+    <!-- 3 加载bootstrap的核心ＪＳ库 -->
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/js/bootstrap/boot.js"></script>
+    <script src="/js/json2.js"></script>
+    <script src="/js/index_kedo.js?vsn={$vsn}"></script>
+
+
+    <script src="/js/bootstrap/html5shiv.min.js"></script>
+    <script src="/js/bootstrap/respond.min.js"></script>
+
+        <script src="http://qqgameplatcdn.qq.com/social_hall/js/jquery.js"></script>
+        <script src="http://qqgameplatcdn.qq.com/social_hall/js/jquery.pm.js"></script>
+        <script src="http://qqgameplatcdn.qq.com/social_hall/app_frame/qqgamelib.js"></script>
+
+        <script type="text/javascript">
+          $(function(){
+            if(GameAPI.SNSBrowser.IsQQGame()){
+                GameAPI.SNSBrowser.SetTitle('newgame246', '蝌蚪直播');
+                GameAPI.Aux.chk_origin = null;
+                GameAPI.SNSBrowser.SetSize(900, 1600);
+                GameAPI.SNSBrowser.SetOK();
+            }
+        });
+          </script>
+  </body>
+</html>

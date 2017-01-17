@@ -1,0 +1,290 @@
+@charset "utf-8";
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dd,
+dt,
+span,
+a,
+b,
+em,
+i,
+strong.img {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+textarea {
+  resize: none;
+}
+input,
+select,
+textarea {
+  outline: none;
+}
+img,
+input,
+select,
+textarea {
+  vertical-align: top;
+  border: none;
+}
+.clearFix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+body {
+  font-size: 12px;
+  font-family: 微软雅黑;
+  color: #333;
+  background-color: #f4f4f4;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.border {
+  border: 1px solid #ddd;
+}
+.borderB {
+  border-bottom: 1px solid #ddd;
+}
+.radius2 {
+  border-radius: 2px;
+}
+.radius4 {
+  border-radius: 4px;
+}
+.f14 {
+  font-size: 14px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f24 {
+  font-size: 24px;
+}
+.help {
+  width: 1102px;
+  margin: 100px auto;
+}
+.serviLeft {
+  width: 244px;
+  background-color: #fff;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right:6px; 
+}
+.help .tit {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+.serviLeft a {
+  color: #333;
+}
+.serviLeft a:hover{
+	color:#999; 
+}
+.serviLeft li {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+.serviLeft li.active{
+	background-color:#ff3f7a; 
+}
+.serviLeft li.active a{
+	color:#fff; 
+}
+.seRight {
+  width: 764px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 24px;
+  background-color: #fff;
+  padding-bottom:44px; 
+}
+.seRight h4 {
+  font-size: 18px;
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.seRight h5 {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.seRight .qqInfo {
+  margin-bottom: 10px;
+}
+.seRight .qqInfo .qqBg {
+  background: url(../img/qqBg.png) no-repeat;
+  width: 92px;
+  height: 22px;
+  margin-right: 14px;
+}
+.seRight .qqInfo .qqNu {
+  margin-top: 6px;
+}
+.serCenter{
+	padding-bottom:200px;
+}
+.serCenter .tip,
+.titRank .tip {
+  color: #999;
+  margin-bottom: 28px;
+}
+.titRank .sprite{margin-top: 4px; }
+.titRank .tip{
+	margin-top:22px;
+	margin-bottom:10px; 
+}
+.contaInfo {
+  width: 356px;
+  border-top: 1px dashed #ddd;
+  padding-top: 12px;
+  margin-top: 56px;
+}
+.contaInfo li {
+  margin-bottom: 24px;
+}
+.contaInfo .contaBg {
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+  margin-top:4px;
+  background:url(../img/icon_bangzhu_qqun.png) no-repeat;
+}
+.contaInfo .emailBg {
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+  margin-top:4px;
+  background:url(../img/icon_bangzhu_youxiang.png) no-repeat;
+}
+.contaInfo .wechatBg {
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+  margin-top:4px;
+  background:url(../img/icon_bangzhu_weixin.png) no-repeat;
+}
+.contaInfo .coopBg {
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+  margin-top:4px;
+  background:url(../img/icon_bangzhu_hezuo.png) no-repeat;
+}
+.seRight > li {
+  display: none;
+}
+.seRight .cur {
+  display: block;
+}
+.tbTit{
+	border:1px solid #ddd;
+	border-collapse:collapse;
+	margin-bottom:42px; 
+}
+.tbTit th{
+	background-color:#eaeaea; 
+}
+.tbTit th,.tbTit td{
+	border:1px solid #ddd; 
+	height:30px; 
+	text-align:center; 
+}
+.tbTit .tAlign{
+	text-align:left; 
+	padding-left:10px; 
+}
+.tbTit .tAlign p{
+	line-height:22px; 
+}
+.tbTit .tAlign .cPink{
+	color:#ff3f7a; 
+}
+
+.titRank .rulTip{
+	margin-bottom:12px;
+}
+.seRight .bTip{
+	line-height:22px;
+	color:#999; 
+}
+.actDegree .tip,.intimDegree .tip{
+	color:#999;
+}
+.actDegree .rulTip,.intimDegree .tbTip{
+	margin-top:36px; 
+	margin-bottom:12px; 
+}
+.maRegular h2{
+	margin-bottom:16px; 
+	margin-top:16px; 
+	font-size:15px; 
+}
+.howShow h4{
+	margin-bottom:38px; 
+}
+.howShow p{
+	color:#ff3f7a; 
+}
+.howShow .c9{
+	color:#999; 
+	margin-bottom:10px; 
+}
+.regLogin{
+	margin-top:14px; 
+	margin-bottom:76px; 
+}
+.ckLive{
+	margin-top:10px; 
+	margin-bottom:64px; 
+}
+.entStart{
+	margin-top:10px; 
+	margin-bottom:22px; 
+}
+.opCame{
+	margin-bottom:24px; 
+}
+.preLo{
+	margin-bottom:26px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

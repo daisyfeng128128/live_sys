@@ -1,0 +1,921 @@
+
+html, body {
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+    position: relative;
+    font-family: "微软雅黑", "宋体", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #666666;
+    background: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: none;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #9e9e9e;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #9e9e9e;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #9e9e9e;
+}
+
+.header {
+    background: #2D2942;
+    height: 80px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 10px;
+}
+
+.title-main {
+    width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 88px;
+    font-size: 16px;
+    color: #3e3e3e;
+    font-weight: bold;
+    background: url("/skin/ym/images/cloud.png") right top no-repeat;
+}
+
+.logo {
+    width: 143px;
+    height: 37px;
+    margin-top: 24px;
+    display: inline-block;
+    float: left;
+    background: url("/skin/ym/images/logo.png") no-repeat;
+}
+
+.hnav {
+    float: left;
+    margin-left: 21px;
+}
+
+.hnav ul li {
+    float: left;
+    width: 83px;
+    height: 80px;
+    text-align: center;
+}
+
+.hnav ul li .hov {
+    background: #35BCE9;
+}
+
+.hnav ul li a {
+    color: #fff;
+    width: 83px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.nav ul li a:hover {
+    background: #35BCE9;
+}
+
+.search-area {
+    float: left;
+    margin: 24px 0 0 45px;
+    width: 248px;
+    height: 28px;
+}
+
+.search-area #kw {
+    width: 204px;
+    height: 28px;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 5px;
+    font-size: 14px;
+    float: left;
+}
+
+.search-area .s_btn {
+    float: left;
+    border: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 44px;
+    height: 28px;
+    background: url("/skin/ym/images/search.png") no-repeat;
+    cursor: pointer;
+
+}
+
+.login-area {
+    float: right;
+    margin: 20px 0 0 45px;
+    width: 248px;
+    height: 28px;
+    color: #FAFAFA;
+    font-size: 14px;
+    position: relative;
+}
+
+.login-area span {
+    margin: 8px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.login-area .svs {
+    color: #F6C53A;
+}
+
+.myinfos span {
+    float: left;
+}
+
+.login-area .myname {
+    margin-left: 5px;
+    background: url("../images/headersan.png") bottom right no-repeat;
+    display: inline-block;
+    padding-right: 12px;
+    font-size: 15px;
+}
+
+.login-area .myname:hover {
+    text-decoration: underline;
+}
+
+.login-area .mess {
+    margin-left: 15px;
+    width: 25px;
+    height: 18px;
+    background: url("../images/xiaoxi.png") bottom no-repeat;
+    display: inline-block;
+
+}
+
+.index-main {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.index-left {
+    float: left;
+    width: 930px;
+}
+
+.index-left .seaction1 {
+    width: 930px;
+    height: 342px;
+}
+
+.index-left .seaction1 .seleft {
+    float: left;
+    width: 345px;
+}
+
+.index-left .seaction1 .seleft .bigImg {
+    width: 345px;
+    height: 254px;
+    overflow: hidden
+}
+
+.index-left .seaction1 .seleft .seloop {
+    width: 345px;
+    height: 78px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.index-left .seaction1 .seleft .seloop .banner {
+    position: absolute;
+    height: 79px;
+    left: 0;
+}
+
+.index-left .seaction1 .seleft .flip-img {
+    width: 345px;
+    float: left;
+}
+
+.index-left .seaction1 .seleft .seloop img {
+    width: 345px;
+    float: left;
+}
+
+.index-left .seaction1 .seleft .opt {
+    width: 33px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.opt span.uper {
+    margin-right: 1px;
+    background-position: -240px -120px;
+}
+
+.opt span.downer {
+    background-position: -280px -120px;
+}
+
+.opt span {
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: url(http://static.youku.com/ddshow/img/home/video_bg_v2.png) no-repeat;
+}
+
+.index-main .index-left .seaction1 .seright {
+    width: 575px;
+    float: left;
+    margin-left: 10px;
+}
+
+.index-main .index-left .seaction1 .seright ul li {
+    width: 107px;
+    height: 78px;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.index-main .index-left .seaction1 .seright ul li img {
+    width: 107px;
+    height: 78px;
+}
+
+.index-main .index-left .section2 {
+    margin-top: 18px;
+    width: 930px;
+    height: 188px;
+    overflow: hidden;
+}
+
+.index-main .index-left .section3 {
+    margin: 0px 0px 50px 0px;
+    width: 930px;
+    height: auto;
+}
+
+.index-main .index-left .section3 .s3title {
+    margin-bottom: 10px;
+}
+
+.index-main .index-left .section3 span {
+    font-size: 22px;
+    color: #575757;
+}
+
+.index-main .index-left .s3more {
+    float: right;
+    font-size: 14px;
+    line-height: 38px;
+}
+
+.index-main .index-left .section3 .grey {
+    color: #A0A0A0;
+}
+
+.index-main .index-left .section3 .s3main {
+    width: 930px;
+    margin-bottom: 28px;
+}
+
+.index-main .index-left .section3 .s3main .s3img {
+    float: left;
+    width: 225px;
+    height: auto;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.index-main .index-left .section3 .s3main .s3img img {
+    width: 225px;
+    height: 165px;
+    display: block;
+    margin-bottom: 19px;
+}
+
+.index-main .index-left .section3 .s3main .s3img span {
+    color: #535353;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+    line-height: 14px;
+    height: 14px;
+}
+
+.index-main .index-left .section3 .s3main .s3img p {
+    color: #B4B4B4;
+    font-size: 12px;
+    display: block;
+}
+
+.index-main .index-left .section3 .s3poster {
+    margin-top: 28px;
+    width: 930px;
+    height: 135px;
+}
+
+.section4 {
+
+}
+
+.section4 h5 {
+    float: left;
+    color: #333;
+    font-size: 22px;
+    display: inline-block;
+}
+
+.section4 .s4img {
+    width: 930px;
+    height: 165px;
+    margin-bottom: 50px;
+}
+
+.section4 .s4img .s4bigImg {
+    width: 225px;
+    height: 165px;
+    float: left;
+    margin-right: 13px;
+}
+
+.section4 .s4img .s4bigImg img {
+    width: 225px;
+    height: 165px;
+}
+
+.section4 .s4img .s4imglist {
+    float: left;
+    width: 692px;
+    height: 165px;
+    overflow: hidden;
+}
+
+.section4 .s4img .s4imglist a, .section4 .s4img .s4imglist a img {
+    float: left;
+    width: 107px;
+    height: 79px;
+    margin-right: 10px;
+    margin-bottom: 7px;
+}
+
+.section5 .s5title {
+    padding-bottom: 32px;
+}
+
+.section5 .s5title h5 {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+.section5 .s5title ul {
+    float: left;
+}
+
+.section5 .s5title ul li {
+    float: left;
+    font-size: 14px;
+    color: #999;
+    margin-right: 28px;
+    cursor: pointer;
+    line-height: 22px;
+}
+
+.section5 .s5title ul .curr {
+    color: #F6C73B;
+    border-bottom: 2px solid #289cd5;
+}
+
+.section5 .s5big {
+    position: relative;
+    width: 225px;
+    height: 222px;
+    float: left;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.section5 .s5big .s5bigimg, .section5 .s5big .s5bigimg img, .section5 .s5big .s5bigimg a {
+    width: 225px;
+    height: 165px;
+}
+
+.section5 .s5big .big-title {
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+    top: 5px;
+}
+
+.section5 .s5big .big-title span {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    padding-left: 15px;
+    background: url("/skin/ym/images/position.png") no-repeat left center;
+}
+
+.section5 .s5big .big-else {
+    position: relative;
+    top: 15px;
+    font-size: 10px;
+}
+
+.section5 .speople {
+    padding-left: 15px;
+    background: url("/skin/ym/images/peoples.png") no-repeat left center;
+}
+
+.section5 .s5big .big-else .stime {
+    position: absolute;
+    right: 0px;
+}
+
+.section5 .s5small {
+    position: relative;
+    width: 107px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.section5 .s5small .s5simg {
+    width: 107px;
+    height: 79px;
+
+}
+
+.section5 .s5small .s5simg img {
+    width: 107px;
+    height: 79px;
+
+}
+
+.section5 .s5small .speople {
+    position: absolute;
+    right: 0;
+}
+
+.section5 .s5small .s5small-else {
+    font-size: 13px;
+    position: relative;
+    top: 5px;
+    height: 20px;
+}
+
+.section5 .s5small .s5small-else .s5name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 50px;
+}
+
+.section6 h5 {
+    color: #5C5C5C;
+    font-size: 20px;
+    margin: 20px 0 20px 0;
+}
+
+.section6 .s6list ul li, .section6 .s6list ul li a, .section6 .s6list ul li img {
+    width: 105px;
+    height: 78px;
+    float: left;
+    margin-right: 10px;
+}
+
+.index-right {
+    float: left;
+    width: 328px;
+    border: 1px #E5E1E2 solid;
+    background: #fff;
+    margin-left: 22px;
+}
+
+.index-right .logins {
+    position: relative;
+}
+
+.index-right .logins .showlogin {
+    margin: 14px 14px 10px 12px;
+    width: 300px;
+    height: 54px;
+    background: #F4FCFE;
+    border: #34BDE9 1px solid;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.index-right .logins .qqlogin, .index-right .logins .sinalogin {
+    float: left;
+    width: 107px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.index-right .logins .qqlogin {
+    background: #F5C63C;
+    position: relative;
+    left: 12px;
+    cursor: pointer;
+}
+
+.index-right .logins .qqlogin span {
+    background: url("/skin/ym/images/qq.png") no-repeat;
+    padding-left: 24px;
+}
+
+.index-right .logins .sinalogin {
+    background: #35BCE9;
+    position: relative;
+    right: -98px;
+    cursor: pointer;
+}
+
+.index-right .logins .sinalogin span {
+    background: url("/skin/ym/images/weibo.png") no-repeat;
+    padding-left: 24px;
+}
+
+.index-right .haslogin .myphoto {
+    float: left;
+}
+
+.index-right .haslogin {
+    padding: 10px;
+}
+
+.index-right .haslogin .myphoto img {
+    float: left;
+    width: 90px;
+    height: 90px;
+}
+
+.index-right .haslogin .mychaju {
+    color: #929292;
+    font-size: 14px;
+}
+
+.index-right .haslogin .myinfo {
+    float: right;
+    margin-right: 12px;
+    width: 190px;
+}
+
+.index-right .haslogin .myinfo .mylevel {
+    height: 20px;
+}
+
+.index-right .haslogin .myinfo .myname {
+    padding-top: 15px;
+}
+
+.index-right .haslogin .myinfo .myname .names {
+    float: left;
+}
+
+.index-right .haslogin .myinfo .myname .edit-myname {
+    float: right;
+    width: 15px;
+    height: 15px;
+    background: url("../images/bianji.png") no-repeat;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.index-right .myaccount {
+    width: 300px;
+    margin-top: 30px;
+
+}
+
+.myyou {
+    margin-left: 10px;
+    color: #A3A3A3;
+}
+
+.index-right .myaccount i {
+    font-style: normal;
+    color: #F5CB55;
+}
+
+.index-right .mychongzhi {
+    width: 302px;
+    height: 48px;
+    border-radius: 3px;
+    background: #0E6AB3;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 15px;
+    line-height: 48px;
+}
+
+.index-right .mychongzhi a {
+    width: 302px;
+    height: 48px;
+    display: inline-block;
+}
+
+.index-right .no-account {
+    color: #A9A9A9;
+    line-height: 30px;
+    height: 30px;
+    margin-left: 12px;
+    font-size: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px #ccc solid;
+}
+
+.index-right .no-account a {
+    color: #0E69B0;
+}
+
+.index-right .dangqi h5 {
+    font-size: 24px;
+    margin: 40px 0 0 12px;
+    color: #58585A;
+    height: 24px;
+    line-height: 24px;
+    font-weight: 500;
+
+}
+
+.index-right .dangqi .d1 {
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+    padding: 15px;
+    color: #5C5857;
+}
+
+.index-right .dangqi .d1 .guanzhu {
+    width: 45px;
+    height: 20px;
+    border-radius: 3px;
+    background: #F5C63C;
+    color: #fff;
+    margin-left: 22px;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    margin-right: -4px;
+}
+
+.index-right .dangqi .d1-main {
+    margin-top: 10px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.index-right .dangqi .d1-main .dspan {
+    width: 70px;
+    height: 70px;
+    background: #0E6AB3;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    float: left;
+}
+
+.index-right .dangqi .d1-main .stoday {
+    display: block;
+    margin-top: 18px;
+}
+
+.index-right .dangqi .d1-main .stime {
+    font-size: 16px;
+    display: block;
+}
+
+.index-right .dangqi .dimg, .dimg .index-right .dangqi .d1-main img {
+    float: left;
+    width: 224px;
+    height: 70px;
+    margin-left: 12px;
+}
+
+.list-Schedule {
+    display: block;
+    margin-top: 10px;
+}
+
+.list-Schedule .hasimg {
+    height: 120px;
+    padding-bottom: 10px;
+    width: 310px;
+    color: #A0A0A0;
+    border-top: 1px #c2bfbd solid;
+    margin-left: 12px;
+    font-size: 10px;
+}
+
+.weixianshi {
+    height: 120px;
+}
+
+.list-Schedule .noimg {
+    cursor: pointer;
+    line-height: 32px;
+    width: 310px;
+    color: #A0A0A0;
+    border-top: 1px #c2bfbd solid;
+    margin-left: 12px;
+    font-size: 10px;
+}
+
+.list-Schedule li .sctime {
+    margin-left: 5px;
+}
+
+.list-Schedule li .sctitle {
+    margin-left: 50px;
+    width: 150px;
+    display: inline-block;
+}
+
+.list-Schedule li .scright {
+    margin-left: 15px;
+    width: 20px;
+    padding-top: 10px;
+    display: inline-block;
+    background: url("/skin/ym/images/arrow.png") no-repeat;
+}
+
+.index-right .mxb {
+    margin-top: 30px;
+}
+
+.index-right .mxb .mxtitle {
+    width: 326px;
+    height: 56px;
+    background: #F5C63C;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.index-right .mxb .mxtitle .mxname {
+    font-size: 20px;
+    margin-left: 12px;
+    margin-top: 18px;
+    float: left;
+}
+
+.index-right .mxb .mxtitle .mxselect {
+    margin-left: 52px;
+    margin-top: 18px;
+    float: left;
+    padding-top: 5px;
+}
+
+.index-right .mxb .mxtitle .mxselect .active {
+    color: #F65151;
+}
+
+.index-right .mxb .mxtitle .mxselect a {
+    display: inline-block;
+    width: 30px;
+}
+
+.index-right .mxlist li {
+    height: 50px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.index-right .mxlist li span {
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+
+.index-right .mxlist li .mxlevel {
+    display: inline-block;
+    padding-top: 12px;
+    margin-left: 7px;
+}
+
+.index-right .mxlist li .mxphoto {
+    display: inline-block;
+    margin-left: 8px;
+    width: 44px;
+    height: 44px;
+    padding-top: 3px;
+}
+
+.index-right .mxlist li .mxphoto img {
+
+    width: 44px;
+    height: 44px;
+}
+
+.index-right .mxlist li .mxname {
+    display: inline-block;
+    color: #666;
+    margin-left: 15px;
+}
+
+.index-right .mxlist li .mxpeople {
+    float: right;
+    margin-right: 12px;
+    background: url("/skin/ym/images/peoples.png") no-repeat left center;
+    padding-left: 15px;
+    display: inline-block;
+}
+
+
+
+/* @card*/
+
+.user-card{width:288px;height: 150px; border:1px #92BBDB solid; background: url(../images/white.png);  position: relative; left: -188px;  top: 33px;}
+.card-top{position: absolute;top: 12px;left: 12px;}
+.card-photo{width: 46px;height: 46px;float: left;margin-right:10px;}
+.card-photo img{width:46px;height: 46px;  -webkit-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%;  border-radius: 50%;}
+.card-info{float: left;}
+.card-info .card-info-title{color: #48455A}
+.card-level-bar{display: block;  height: 15px; width: 150px;   border-radius: 10px;  background-color:#001A21;position: relative;font-size: 8px;font-weight: 100}
+.card-in-level{display: block; height: 13px;  border-radius: 10px;  background-color: #DF3461;    position: absolute;  top: 1px; left: 1px;}
+.card-level-num{position: absolute;z-index: 9999;color: #fff;left: 35%}
+.card-info-message{color:#919191;font-size:10px;font-weight: 100}
+.card-middle{position: absolute;top:60px;}
+.card-middle .honor-title{color: #464358;padding-left: 15px;font-weight: 100}
+.card-middle ul li{float: left;margin-right: 2px;}
+.honor-list ul{margin-left: 15px;}
+.card-bottom{position: absolute;bottom: 0;border-top:1px solid #0E6AB3;height:25px;line-height: 25px;width: 100%; }
+.card-bottom div{float: left;cursor: pointer}
+.card-bottom .enter-center{color: #3779B6;font-weight: 100;margin-left: 15px;width:120px; float: left}
+.card-bottom .logout-botton{color: #333;font-weight: 100;margin-left: 15px; float: right;margin-right: 10px;}
+
+
+
+/*个人中心*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+.header{background:#fefefe; border-bottom:1px solid #dfa803; padding-bottom:8px; }
+.header .hd_bg{background:url(../img/spirate.png) no-repeat -386px -116px; width:164px; height:26px; margin-left:12px; margin-top:20px; }
+.header .text{margin-top:32px; color:#5c5c5c; margin-left:5px; }
+.header .nav{margin-left:74px; margin-top:22px; }
+.header .nav li{margin-right:70px; font-size:18px;  cursor:pointer; }
+.header .nav li a{color:#ffb671;}
+
+.header .input{ margin-top:20px; height:26px; width:210px; border:1px solid #e3983b; border-radius:20px; text-indent:1em;  position:relative; }
+.header .input input{border:0px; line-height:24px; }
+.header .input .search{background:url(../img/spirate.png) -127px -86px no-repeat; width:14px; height:16px; position:absolute; right:8px; top:6px; cursor:pointer; }
+
+.user{margin-top:30px; margin-left:150px; }
+.user .username{width:71px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#4c4c4c; }
+.user .user_msg{background:url(../img/spirate.png) no-repeat -269px -94px; width:14px; height:7px;margin-top:6px; margin-left:4px;}
+.user .email{background:url(../img/spirate.png) no-repeat -289px -90px; width:20px; height:17px; margin-left:8px; }
+
+/*content*/
+.content .user_info{margin-top:32px; border:1px solid #dddddd; background:#fefefe; padding-bottom:28px; }
+.content .user_info .pic{margin-left:62px; margin-top:28px; width:82px; height:82px; border-radius:50%; border:1px solid #f6cb4d; }
+
+.content .user_info .name_con{margin-left:20px; margin-top:28px; margin-right:144px; }
+.user_info .name_con input{border:1px solid #59db28; width:196px; height:32px; text-indent:1em; }
+
+.user_info .name_con .con{margin-top:22px; }
+.user_info .name_con .con a{width:66px; height:30px; line-height:30px;  text-align:center; } 
+.content .user_info .conform{margin-right:18px;color:#fdfdfd;background:#fbbc00;  }
+.content .user_info .cancel{background:#ddd;  }
+.content .user_info .peerage{margin-top:44px; }
+.user_info .peerage h4{font-size:13px; }
+.user_info .peerage .scale{margin-top:20px; margin-bottom:10px; width:300px; height:12px; background:#e8e8e8; border-radius:20px; position:relative; }
+.user_info .peerage .scale .now{ position:absolute; left:0; top:0; width:50%; height:100%; background:#fbbc00; border-radius:20px; }
+.user_info .peerage .update{color:#999999; }
+.user_info .assets{margin-top:44px; margin-left:72px; }
+.user_info .assets h4{font-size:13px; }
+.user_info .assets .ass_con{margin-top:36px; color:#999; }
+.assets .ass_con .s1{margin-right:50px; }
+.assets .ass_con .s2{margin-right:32px; }
+.assets .ass_con .recharge{width:54px; height:20px; line-height:20px; text-align:center; background:#fbbc00; color:#fefefe; border-radius:20px; }
+
+/*展开收缩子菜单*/
+.nav_deta{margin-top:17px; }
+.nav_set{background:#fefefe; width:298px; border:1px solid #e5e1e2;  margin-right:24px; border-bottom:none; }
+.nav_set li{line-height:60px; border-bottom:1px solid #c9c9c9; }
+.nav_set li span{margin-top:20px; margin-left:58px; margin-right:8px; }
+.nav_set li h4{font-size:14px; font-weight:normal; }
+.nav_set li i{margin-left:122px; font-style:normal; margin-top:29px; }
+
+.nav_set li ul{width:298px; border-bottom:none; background:#f3f3f3; }
+.nav_set li ul li{width:210px; margin-left:88px; line-height:40px; }
+.nav_set .active{background:#fbbc00; }
+.nav_set .active h4{color:#fffaf2; }
+
+.nav_set .caifu_xiala{display:none; }
+.nav_set .last{border-bottom:none; }
+.nav_set .hover a{color:#59db28; }
+.nav_set li ul li a{color:#666; }
+
+.details{width:1114px; border:1px solid #e5e1e2; background:#fefefe; padding-bottom:86px; }
+
+/*绑定手机*/
+/*.bind_phone{display:none; }*/
+.details h4{margin-left:40px; line-height:53px; font-size:20px; font-weight:normal; color:#6d6d6d; }
+.details .underline{width:992px; border:1px solid #d5d5d5; }
+
+
+/*.hot_bg{background:url(../img/tubiao.png) -115px -122px no-repeat; width:26px; height:14px; margin-top:14px; margin-right:6px; }
+*/
+
+form{margin-left:72px; }
+form .mobile{margin-top:56px; }
+form .mobile .tip{color:#b4b3b3; margin-left:68px; margin-bottom:7px; }
+form .mobile input{width:196px; height:30px; text-indent:1em; }
+form .mobile .phone_num{font-size:14px; }
+form .conform{font-size:14px; margin-left:15px; margin-top:18px; }
+
+form .conform input{width:102px; height:30px; margin-right:9px; text-indent:1em; }
+form .conform span{line-height:32px; border:1px solid #d7d7d7; text-align:center; display:inline-block; width:78px; height:32px; }
+form .bind{margin-top:30px; width:114px; height:34px; line-height:30px; text-align:center; color:#fafafa; background:#fbbc00; margin-left:68px; font-size:14px; }
+form .done{color:#59db28; font-size:14px; margin-left:98px; margin-top:6px; display:none; }
+
+.divide{width:992px; border:1px solid #d5d5d5; margin-top:105px; }
+.help{margin-top:30px; margin-left:40px; }
+.help span{width:6px; height:6px; border-radius:50%; background:#c9c9c9; margin-right:8px; display:inline-block; }
+.help p{margin-bottom:14px;}
+
+.footer{height:100px; background:#010101; color:#fff; padding-top:74px;margin-top:56px; }
+.footer .container{margin-top:-18px; }
+.footer p{text-align:center; margin-bottom:20px; }
+.footer .copyright span{background:url(../img/spirate.png) no-repeat -188px -115px; width:76px; height:28px; display:inline-block; margin-top:0px; }
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>守护 {$site_name} 触屏版</title>
+<link rel="stylesheet" href="css/bootstrap.min.css?20150828">
+<link rel="stylesheet" href="css/font-awesome.min.css?20150828">
+<link rel="stylesheet" href="css/ectouch.css?20150828">
+<link rel="stylesheet" href="css/user.css?20150828">
+<link rel="stylesheet" href="css/photoswipe.css?20150828">
+<link rel="stylesheet" href="/css/level.css?20150828">
+<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css?20150828">
+<script src="js/jquerymobile/jquery.min.js?20150828"></script>
+<script src="js/jquerymobile/jquery.mobile-1.4.5.min.js?20150828"></script>
+<script src="js/ucenter.js?20150828"></script>
+<script src="js/StageWebViewBridge.php?20150828"></script>
+<script>
+var cdn_domain="{$cdn_domain}";
+var money_name="{$money_name}";
+var money_name2="{$money_name2}";
+var site_skin="{$site_skin}";
+var IS_SINGLE_MONEY="{$IS_SINGLE_MONEY}";
+var currentUserNumber="{$user.usernumber}";
+var thisPage="ucenter";
+var RMB_XNB={$RMB_XNB};
+</script>
+<style>
+#page_guard {
+  padding: 0 0.5em 3.5em 0.5em;
+}
+#guard_list li img.carimg {
+	float: left;
+	height:3.5em;
+	border-radius: 0.5em;
+}
+#guard_list li .info2 {
+	float: left;
+	padding-left: 0.5em;
+	line-height:3.5em;
+}
+#guard_list li .info2 .f_name {
+	color:#666;
+	font-size: 0.9em;
+	padding-left: 0.5em;
+}
+</style>
+</head>
+<body class="ucenter">
+<div class="con ui-page ui-page-theme-a ui-page-active" data-role="page" id="page_guard" data-url="buy_car" tabindex="0">
+<section class="user-tab ect-margin-tb ect-margin-bottom0"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list">
+		<ul id="guard_list">
+{foreach from=$guardList item=show}
+		<li>
+			<img class="carimg" src="/apis/avatar.php?uid={$show.userid}">
+			<div class="info2"><em class="level lv{$show.richlevel}"></em><span class="f_name">{$show.nickname}</span></div>
+		</li>
+{/foreach}
+		</ul>
+		
+
+    </div>
+  </div>
+</section>
+<section class="container-fluid bottom-nav">
+  <ul class="">
+    <li class="col-sm-12 col-xs-12">
+	<ul><li style="text-align:center;"><a class="tbbuybtn_red buybtn ui-link" style="float: none !important;width: 95%;background:#a8cc14!important;" onclick="window.location.href='/iumobile/ucenter.php?roomnumber={$roomnumber}#buy_guard';" href="#buy_car"><span>立即开通守护</span></a></li></ul>
+	</li>
+  </ul>
+</section>
+</div>
+</body>
+</html>

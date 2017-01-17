@@ -1,0 +1,20 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:b5a0611891f97bf48f8931f5a413940a:0e29e52ee2bf33a70ab9995bf87e0dbd:71c767ed10801ddfbcb9937a6e11688d$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(biankuang_small.png);}
+
+.biankuang_black_s {width:146px; height:214px; background-position: -742px -2px}
+.biankuang_blue_s {width:146px; height:214px; background-position: -594px -2px}
+.biankuang_orange_s {width:146px; height:214px; background-position: -446px -2px}
+.biankuang_size_s {width:146px; height:214px; background-position: -298px -2px}
+.biankuang_white_s {width:146px; height:214px; background-position: -150px -2px}
+.biankuang_yellow_s {width:146px; height:214px; background-position: -2px -2px}

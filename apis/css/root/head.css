@@ -1,0 +1,53 @@
+	body {
+	font-family:Verdana;FONT-SIZE: 12px;MARGIN: 0;color: #000000;
+	background: #F7F7F7;overflow-x:hidden;width:98%;
+	}
+	
+	table { BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 2px;}
+	a { TEXT-DECORATION: none; color:#000000}
+	a:hover{ text-decoration: underline;}
+	
+	td { BORDER-RIGHT: 1px; BORDER-TOP: 0px; FONT-SIZE: 12px; COLOR: #000000;}
+	.b{background:#FFF;}
+	.b1{backgroud:#DCFF51}
+	.head { 
+		color: #154BA0;background: #0378ae;font-weight:bold;	
+		background-image:url('../../images/root/header_bg.gif');height:24px;
+	}
+	
+	.head td{color: #ffffff;}
+	.head a{color: #ffffff;}
+	.head_1{background-color:#FFFFD9;border-bottom: 1px solid #DEDEB8;color:#92A05A}
+	.head_2 {background: #0378ae;}
+	.head_2 td{color: #000000;}
+	.left_padding{background:#F7F7F7;}
+	.hr  {border-top: 1px solid #739ACE; border-bottom: 0; border-left: 0; border-right: 0; }
+	.bold {font-weight:bold;}
+	.smalltxt {font-family: Tahoma, Verdana; font-size: 12px;color: #000000;}
+	.i_table{border: 1px solid #86B9D6;background:#E1F5FF;padding:4px;}
+	.head_n{border-left: 1px solid #E9EAF1;border-bottom: 1px solid #E9EAF1;border-right: 1px solid #E9EAF1;background-color:#B4C0C1;background-image: url('../../images/root/01_bgrd_right.gif');}
+	.input{font-size:12px;border: 1px solid #4A95C9;background-color:#F1F1F1;background-image:url('../../images/root/sb_vist.png');height:20px;line-height:19px;width:50px;color:#00156E}
+	.input_k{font-size:12px;border: 1px solid #4A95C9;background-color:#F1F1F1;background-image:url('../../images/root/sb_vist.png');height:20px;line-height:19px;color:#00156E}
+	.sort_input_k{font-size:12px;border: 1px solid #4A95C9;background-color:#F1F1F1;background-image:url('../../images/root/sb_vist.png');height:18px;line-height:18px;width:12px;color:#00156E}
+	button{font-size:12px;border: 1px solid #4A95C9;background-color:#F1F1F1;background-image:url('../../images/root/sb_vist.png');height:20px;line-height:19px;color:#00156E}
+	input{font-size:12px;border: 1px solid #4B7C9F;}
+	select,textarea,object{font-size:12px;border: 1px solid #4B7C9F;}
+	.help{height:16px;width:16px;background-image:url('../../images/root/help.gif')}
+	.war{height:16px;width:16px;background-image:url('../../images/root/warning.gif')}
+	.info{height:16px;width:16px;background-image:url('../../images/root/info.gif')}
+	
+	/* 表单验证的相关样式 */
+	form .field_notice { color:#9C9C9C; margin-left:5px; padding-left:18px; background:transparent url(../../images/root/notice.gif) no-repeat;}
+	form label.error { color:red; font-style:normal; margin-left:5px; padding-left:12px; background:transparent url(../../images/root/wrong.gif) no-repeat; }
+	form input.error { border:red 1px dotted; }
+	form label.checking { padding-left:18px; background:transparent url(../../images/root/checking.gif) no-repeat; margin-left:5px; font-style:italic; color:#9C9C9C; display:none; }
+	form label.right { padding-left:12px; background:transparent url(../../images/root/right.gif) no-repeat; margin-left:5px; font-style:italic; color:green; float:none; }
+	
+	/* tinybox模态框 */
+	#tinybox{position:absolute; display:none; padding:10px; background:#ffffff url(../../images/pleasewait.gif) no-repeat 50% 50%; border:10px solid #e3e3e3; z-index:2000}
+	#tinymask{position:absolute; display:none; top:0; left:0; height:100%; width:100%; background:#000000; z-index:1500;}
+	#tinycontent{background:#ffffff; font-size:1.2em;}
+	
+	li {float:left; list-style-type:none;}
+	.lishow{float:left;margin_left:0px;display:block;visibility:visible;}
+	.lihide{float:left;margin_left:0px;display:none;visibility:hidden;}

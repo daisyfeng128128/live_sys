@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>美女主播、视频交友、美女视频、在线K歌</title>
+<link href="/css/global.css" type="text/css" rel="stylesheet" />
+<link href="/css/help.css" type="text/css" rel="stylesheet" />
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+<script src="/js/login.js"></script>
+<div id="main">
+<div id="container">
+<!--head-->
+<?php 
+$current_page="";
+include($app_path.'tpl_header.php');
+?>
+<!--head-->
+<div style="margin-top:15px"></div>
+<div class="mainbody">
+<div class="sqzb">
+<p class="helptitle">加盟成为签约主播</p>
+<div class="sqzbcont">
+<iframe name="ipost" width="0" height="0" style="display:none"></iframe>
+<form onsubmit="return cansubmit()" action="/ajax/applysigning.php" method="post" target="ipost">
+<ul class="sqzbinfo">
+<li>所属代理：<select id="agentid" name="agentid"><option value="">请选择...</option></select>选择所属代理的视频号，没有代理请留空</li>
+<li>真实姓名：<input type="text" name="truename" class="sqzbinfoputin putinwidth"/></li>
+<li>性&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="radio" checked="checked" name="gender" style="border:none" value="1" class="radiobtn"/>男<input type="radio" value="0" name="gender" style="border:none"/>女</li>
+<li>身份证号码：<input type="text" name="idcard" class="putinwidth"/></li>
+<li>联系电话：<input type="text" name="phone"  class="sqzbinfoputin putinwidth"/></li>
+<li>常用&nbsp;&nbsp;QQ：<input type="text" name="qq"  class="sqzbinfoputin putinwidth"/></li>
+</ul>
+<div class="cutline"></div>
+<ul class="sqzbinfo">
+<li>开户银行：<select name="banktype">
+<?php foreach(getAllBankInfo() as $k=>$v):?>
+<option value="<?php echo $k?>"><?php echo $v?></option>
+<?php endforeach;?>
+</select></li>
+<li>输入账号：<input type="text" name="banknumber" class="sqzbinfoputin putinwidth"/></li>
+<li>开户姓名：<input type="text" name="bankname"  class="putinwidth sqzbinfoputin"/></li>
+
+</ul>
+<div class="cutline"></div>
+<ul class="sqzbinfo">
+<li><input type="submit" id="applysigning" class="searchsure btnloction" value="" /></li>
+</ul>
+</form>
+</div>
+</div>
+<div class="bcsm">
+<p class="helptitle">补充说明</p>
+<div class="bcsmcont">
+<p>欢迎亲滴们！</p>
+<p>如果您爱好唱歌聊天或有其他才艺，并且有电容麦、声卡、红外视频等设备,您都可以来到<?php echo $page_var['site_name']?>展示您的才华，签约我们<?php echo $page_var['site_name']?>的主播，会有您意想不到的惊喜哦！赶快行动吧！</p>
+<p class="fbold"><br />申请签约主播注意事项:</p>
+<ul>
+<li><span class="bcsmcontdot"></span>请您填写真实的个人信息，以方便官方推出的活动可以及时联系到您</li>
+<li><span class="bcsmcontdot"></span>在填写银行信息时务必要慎重填写您的支行名称、银行账号、开户人姓名，信息错误会直接导致您的款项丢失（注：由于您信息提供的错误，而导致支付失败，公司不承担任何责任）</li>
+<li><span class="bcsmcontdot"></span>填写完信息请您上传一张您本人的真实照片，以便官方给您做宣传时用到</li>
+</ul>
+<p><br />注：您的资料属公司内部机密，官方不会对外泄露。</p>
+<div class="cutline"></div>
+<p class="fbold">客服人员：<em>
+<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo $page_var['site_info_qq']?>&amp;site=qq&amp;menu=yes" target="_blank"><img border="0" title="客服" alt="客服" src="http://wpa.qq.com/pa?p=2:<?php echo $page_var['site_info_qq']?>:41"></a></em></p>
+<p class="fbold">客服电话：<?php echo $page_var['site_info_phone']?></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--foot-->
+<div class="clear"></div>
+<?php 
+include($app_path.'tpl_footer.php');
+?>
+<!--footend-->
+<script>
+refreshIndexLogin();
+function cansubmit(){
+	try{
+		if(!currentUserNumber){
+			login.show();
+			return false;
+		}
+	}
+	catch(err){
+		login.show();
+		return false;
+	}
+	return true;
+}
+$.get("/ajax/get_all_agent.php",function(obj){
+	var list=obj.content;
+	for(var i=0;i<list.length;i++)
+	{
+		$("#agentid").append("<option value='"+list[i].userid+"'>"+list[i].nickname+"("+list[i].usernumber+")</option>");
+	}
+},'json');
+</script>
+<style>
+input {
+    border: 1px solid #ccc;
+}
+</style>
+</body>
+</html>

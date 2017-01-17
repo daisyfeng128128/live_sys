@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>蝌蚪直播</title>
+    <meta property="qc:admins" content="105415766763547646" />
+    <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+    <link href="static_data/images_css/anchor-level.css" rel="stylesheet">
+    <script src="{$cdn_domain}/skin/desert/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{$cdn_domain}/js/login.js?20150908"></script>
+    {literal}
+    <style>
+        .middles{min-height: 300px;overflow: hidden}
+        .mian_blank{
+            text-align: center;
+            margin:100px auto;
+            height: 500px;;
+        }
+        .mblank1{font-size:28px;}
+        .mblank2{font-size:14px;color: #F77594;line-height: 20px;margin-top: 20px;}
+        .mblank3 a{font-size:12px;color: #fff;background-color: #666;border-radius: 3px;display: inline-block;padding: 5px;margin-top: 20px;}
+    </style>
+    <script>
+        $(function(){
+            var tomm = function (){
+                 var hei=$(document.body).height()-$(".footer").height() - $(".head-outer").height()-35;
+                 $('.middles').height(hei);
+             }();
+            $(window).resize(function() {
+                tomm;
+            });
+
+        });
+    </script>
+    {/literal}
+</head>
+<body>
+{include file="header.html"}
+<div class="middles">
+    <div class="mian_blank">
+        <div class="mblank1">提示信息</div>
+        <div class="mblank2">抱歉您访问的房间不存在</div>
+        <div class="mblank3"><a href="/">返回首页</a></div>
+    </div>
+</div>
+{include file="footer.html"}
+</body>
+</html>

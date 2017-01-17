@@ -1,0 +1,169 @@
+@keyframes bg{/*img*/
+	
+	0% {
+		transform :translate(500px,0)
+	}
+	50%{
+		transform :translate(-500px,0)
+	}
+	100% {
+		transform :translate(0,0)
+	}
+		
+}
+@-webkit-keyframes bg{
+	
+	0% {
+		transform :translate(500px,0)
+	}
+	50%{
+		transform :translate(-500px,0)
+	}
+	100% {
+		transform :translate(0,0)
+	}
+		
+}
+@-ms-keyframes bg{
+	
+	0% {
+		transform :translate(500px,0)
+	}
+	50%{
+		transform :translate(-500px,0)
+	}
+	100% {
+		transform :translate(0,0)
+	}
+		
+}
+@keyframes bg1{/*word*/
+	
+	0% {
+		transform :translate(-300px,0)
+	}
+	50%{
+		transform :translate(300px,0)
+	}
+	100% {
+		transform :translate(0,0)
+	}
+		
+}
+@-webkit-keyframes bg1{
+	
+	0% {
+		transform :translate(-300px,0)
+	}
+	50%{
+		transform :translate(300px,0)
+	}
+	100% {
+		transform :translate(0,0)
+	}
+		
+}
+@-ms-keyframes bg1{
+	
+	0% {
+		transform :translate(-300px,0)
+	}
+	50%{
+		transform :translate(300px,0)
+	}
+	100% {
+		transform :translate(0,0)
+	}
+		
+}
+/*雪花*/
+@-webkit-keyframes falling {
+    0% { 
+        -webkit-transform: translate3d(0,0,0) rotate(0deg);
+    }
+    100% { 
+        -webkit-transform: translate3d(0,600px,0) rotate(360deg);
+    }	
+}
+@-ms-keyframes falling {
+    0% { 
+        -ms-transform: translate3d(0,0,0) rotate(0deg);
+    }
+    100% { 
+        -ms-transform: translate(0,600px) rotate(360deg);
+    }	
+}
+@keyframes falling {
+    0% { 
+        transform: translate3d(0,0,0) rotate(0deg);
+    }
+    100% { 
+        transform: translate(0,600px) rotate(360deg);
+    }	
+}
+/*联系我*/
+@-webkit-keyframes aboutme{
+    0% { 
+        transform: scale(1,-1);
+    }
+    50% { 
+        transform: scale(1,-1);
+    }
+    100% { 
+        transform: scale(1,1);
+    }	
+}
+@-ms-keyframes aboutme{
+    0% { 
+        transform: scale(1,-1);
+    }
+    50% { 
+        transform: scale(1,-1);
+    }
+    100% { 
+        transform: scale(1,1);
+    }	
+}
+@keyframes aboutme{
+    0% { 
+        transform: scale(1,-1);
+    }
+    50% { 
+        transform: scale(1,-1);
+    }
+    100% { 
+        transform: scale(1,1);
+    }	
+}
+/*旋转抽奖*/
+@-webkit-keyframes rot{
+	0%{
+		transform:translateX(-1000px) scale(-1,1);
+	}
+	50%{
+		transform:translateX(1000px) scale(1,-1);
+	}
+	100%{
+		transform:translateX(0) scale(-1,1);
+	}
+}
+@-ms-keyframes rot{
+	0%{
+		transform:translateX(-1000px) scale(-1,1);
+	}
+	50%{
+		transform:translateX(1000px) scale(1,-1);
+	}
+	100%{
+		transform:translateX(0) scale(-1,1);
+}
+@keyframes rot{
+	0%{
+		transform:translateX(-1000px) scale(-1,1);
+	}
+	50%{
+		transform:translateX(1000px) scale(1,-1);
+	}
+	100%{
+		transform:translateX(0) scale(-1,1);
+}

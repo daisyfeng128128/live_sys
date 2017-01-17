@@ -1,0 +1,82 @@
+
+<div class="header">
+    <div class="title-main">
+        <a class="logo" href="/"></a>
+        <div class="hnav">
+            <ul>
+                <li><a href="/" class="{if $current_page=='index'}hov{/if}">首页</a></li>
+                <li><a href="/square.php" class="{if $current_page=='square'}hov{/if}">广场</a></li>
+                <li><a href="/orders.php"  href="/orders.php"  class="{if $current_page=='order'}hov{/if}">排行榜</a></li>
+                <li><a href="/mall.php"  href="/market.php" class="{if $current_page=='mall'}hov{/if}">商城</a></li>
+                <li><a href="/ucenter.php?ptype=pay#tab=0" class="{if $current_page=='pay'}hov{/if}" href="/ucenter.php?ptype=pay">充值</a></li>
+                <li><a href="#"  href="/download.php">APP</a></li>
+            </ul>
+        </div>
+        <div class="search-area">
+            <input type="text" id="kw" class="s_txt" maxlength="18" placeholder="昵称/公会/房间号" x-webkit-speech="">
+            <input type="button" class="s_btn" onclick="head_search_box();">
+        </div>
+        {if !$user}
+        <div class="login-area">
+            <span class="log">登录</span> |
+            <span class="reg">注册</span> |
+            <span class="svs">服务</span>
+        </div>
+        {else}
+        <div class="login-area myinfos">
+            <span class="myname">{$user.nickname}</span>
+            <span class="mess svs"></span>
+            <span><a title="我要开播" class="kaibo" target="_blank" href="/go.php?action=toshow" onclick="return islogin();">开播</a></span>
+            {literal}
+            <style>
+
+            </style>
+            {/literal}
+            <div class="user-card" style="display: none">
+                <div class="card-top">
+                    <div class="card-photo">
+                        <img src="/apis/avatar.php?uid={$user['userid']}" alt="头像"/>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-info-title">花开花落</div>
+                        <div class="card-info-level">
+                            <div class="card-level-bar">
+                                <div class="card-in-level" style="width: 50%"></div>
+                               <div class="card-level-num">3333/9999</div>
+                            </div>
+                            <div><img src=""/></div>
+                        </div>
+                        <div class="card-info-message">你距离下一级还差3549金币</div>
+                    </div>
+                </div>
+                <div class="card-middle">
+                    <div class="honor-title">获得荣誉</div>
+                    <div class="honor-list">
+                        <ul>
+                            <li><img src="/skin/ym/images/3508.png"/></li>
+                            <li><img src="/skin/ym/images/3508.png"/></li>
+                            <li><img src="/skin/ym/images/3508.png"/></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="enter-center"><a href="centeros.php">进入个人中心</a></div>
+                    <div class="logout-botton"><a href="/login.php?action=logout&type=html">退出</a></div>
+                </div>
+
+            </div>
+        </div>
+        {/if}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>广场-蝌蚪直播</title>
+   
+    <meta property="qc:admins" content="105415766763547646" />
+    <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+    <link href="<{$cdn}>/public/orders/css/anchor-level.css" rel="stylesheet">
+    <link href="<{$cdn}>/public/orders/css/square.css" data-fixed="true"  rel="stylesheet">
+    <link href="<{$cdn}>/public/orders/css/icons.css" rel="stylesheet">
+    
+</head>
+<body style="padding-top:60px;">
+
+<{include file="../public/header.html"}>
+
+<div class="main-order">
+<div class="order-list">
+<div class="order-box-outer charmList">
+<div class="order-title">
+    <div class="order-title-h1">主播魅力榜  <div class="order-title-bg"></div>  </div>
+</div>
+<ul id="orderTit">
+    <li class="active">总榜</li>
+    <li>月榜</li>
+    <li>日榜</li>
+</ul>
+
+<div class="order-box-bg" id="orderBody">
+    <div class="order-box-content">
+        <div class="orderItem cur">
+            <div class="order-box-top">
+
+                <{foreach from=$rank_super_star item=show key=key}>
+                <{if $key==2}>
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img">
+                        <img class="rank_pho" src="<{$show.image}>" alt="<{$show.nickName|urldecode}>"/>
+                        <span class="secondCrown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+                <{/if}>
+                <{/foreach}>
+
+                <{foreach from=$rank_super_star item=show key=key}>
+                <{if $key==1}><{break}><{/if}>
+                <a href="javascript:;"   class="order-box-first">
+                    <div class="order-first-img">
+                        <img class="rank_pho" src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="crown"></span>
+                        <span class="crown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_24"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+                <{/foreach}>
+
+                <{foreach from=$rank_super_star item=show key=key}>
+                <{if $key==3}>
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img">
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="thirdCrown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec sprite liverlevel-pic_liverlevel_22"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+                <{/if}>
+                <{/foreach}>
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul>
+                    <{foreach from=$rank_super_star item=show key=key}>
+                    <{if $key>3}>
+                    <li>
+                        <a href="javascript:;"  >
+                            <span class="number"><{$key}>.</span>
+                            <span class="diamond sprite <{$show.levelImg}>"></span>
+                            <span class="order-second-name"><{$show.nickName|urldecode}></span>
+                        </a>
+                    </li>
+                    <{/if}>
+                    <{/foreach}>
+
+                </ul>
+            </div>
+        </div>
+        <div class="orderItem">
+            <div class="order-box-top">
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="secondCrown"></span></div>
+                    <div class="order-second-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-first">
+                    <div class="order-first-img"><img src="/skin/ym/images/fff1.png" />
+                        <span class="crown"></span></div>
+                    <div class="order-first-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="thirdCrown"></span></div>
+                    <div class="order-third-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">4.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">5.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">6.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">7.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">8.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">9.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">10.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">11.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">12.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">13.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">14.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">15.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="orderItem">
+            <div class="order-box-top">
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="secondCrown"></span></div>
+                    <div class="order-second-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-first">
+                    <div class="order-first-img"><img src="/skin/ym/images/fff1.png" />
+                        <span class="crown"></span></div>
+                    <div class="order-first-name">梁订单胖胖跳脱衣舞</div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="thirdCrown"></span></div>
+                    <div class="order-third-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">4.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">5.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">6.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">7.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">8.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">9.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">10.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">11.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">12.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">13.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">14.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">15.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="order-box-outer">
+<div class="order-title"><div class="order-title-h1">爵位榜<div class="order-title-bg"></div></div></div>
+
+<ul id="orderTit">
+    <li class="active">总榜</li>
+    <li>月榜</li>
+    <li>日榜</li>
+</ul>
+
+<div class="order-box-bg" id="orderBody">
+    <div class="order-box-content">
+        <div class="orderItem cur">
+            <div class="order-box-top">
+
+                <{foreach from=$rank_super_rich item=show key=key}>
+                <{if $key==2}>
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img">
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="secondCrown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+                <{/if}>
+                <{/foreach}>
+
+                <{foreach from=$rank_super_rich item=show key=key}>
+                <{if $key==1}><{break}><{/if}>
+                <a href="javascript:;"class="order-box-first">
+                    <div class="order-first-img">
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="crown"></span>
+                        <span class="crown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+                <{/foreach}>
+
+                <{foreach from=$rank_super_rich item=show key=key}>
+                <{if $key==3}>
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img">
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="thirdCrown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+                <{/if}>
+                <{/foreach}>
+
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+
+                    <{foreach from=$rank_super_rich item=show key=key}>
+                    <{if $key>3}>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number"><{$key}>.</span>
+                            <span class="diamond sprite <{$show.levelImg}>"></span>
+                            <span class="order-second-name"><{$show.nickName|urldecode}></span>
+                        </a>
+                    </li>
+                    <{/if}>
+                    <{/foreach}>
+
+                </ul>
+            </div>
+        </div>
+        <div class="orderItem">
+            <div class="order-box-top">
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="secondCrown"></span></div>
+                    <div class="order-second-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-first">
+                    <div class="order-first-img"><img src="/skin/ym/images/fff1.png" />
+                        <span class="crown"></span></div>
+                    <div class="order-first-name">梁胖问问胖跳脱衣舞</div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="thirdCrown"></span></div>
+                    <div class="order-third-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">4.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">5.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">6.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">7.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">8.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">9.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">10.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">11.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">12.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">13.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">14.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">15.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="orderItem">
+            <div class="order-box-top">
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="secondCrown"></span></div>
+                    <div class="order-second-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-first">
+                    <div class="order-first-img"><img src="/skin/ym/images/fff1.png" />
+                        <span class="crown"></span></div>
+                    <div class="order-first-name">梁胖胖跳脱11衣舞</div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="thirdCrown"></span></div>
+                    <div class="order-third-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">4.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">5.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">6.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">7.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">8.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">9.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">10.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">11.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">12.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">13.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">14.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">15.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="order-box-outer">
+<div class="order-title">
+    <div class="order-title-h1">粉丝活跃榜  <div class="order-title-bg">   </div>  </div>
+</div>
+
+<ul id="orderTit">
+    <li class="active">总榜</li>
+    <li>月榜</li>
+    <li>日榜</li>
+</ul>
+
+<div class="order-box-bg" id="orderBody">
+    <div class="order-box-content">
+        <div class="orderItem cur">
+            <div class="order-box-top">
+
+                <{foreach from=$rank_fans_list item=show key=key}>
+                <{if $key==2}>
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img">
+
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="secondCrown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+                <{/if}>
+                <{/foreach}>
+
+                <{foreach from=$rank_fans_list item=show key=key}>
+                <{if $key==1}><{break}><{/if}>
+                <a href="javascript:;"class="order-box-first">
+                    <div class="order-first-img">
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="crown"></span>
+                        <span class="crown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+                <{/foreach}>
+
+                <{foreach from=$rank_fans_list item=show key=key}>
+                <{if $key==3}>
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img">
+                        <img class="rank_pho"  src="<{$show.image}>"  alt="<{$show.nickName|urldecode}>"/>
+                        <span class="thirdCrown"></span>
+                    </div>
+                    <div class="order-first-name"> <span class="sec <{$show.levelImg}>"></span><{$show.nickName|urldecode}></div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+                <{/if}>
+                <{/foreach}>
+
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+
+                    <{foreach from=$rank_fans_list item=show key=key}>
+                    <{if $key>3}>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number"><{$key}>.</span>
+                            <span class="diamond sprite <{$show.levelImg}>"></span>
+                            <span class="order-second-name"><{$show.nickName|urldecode}></span>
+                        </a>
+                    </li>
+                    <{/if}>
+                    <{/foreach}>　
+
+                </ul>
+            </div>
+        </div>
+        <div class="orderItem">
+            <div class="order-box-top">
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="secondCrown"></span></div>
+                    <div class="order-second-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-first">
+                    <div class="order-first-img"><img src="/skin/ym/images/fff1.png" />
+                        <span class="crown"></span></div>
+                    <div class="order-first-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="thirdCrown"></span></div>
+                    <div class="order-third-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">4.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">5.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">6.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">7.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">8.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">9.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">10.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">11.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">12.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">13.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">14.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">15.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="orderItem">
+            <div class="order-box-top">
+                <a href="javascript:;" class="order-box-second">
+                    <div class="order-second-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="secondCrown"></span></div>
+                    <div class="order-second-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-second-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-first">
+                    <div class="order-first-img"><img src="/skin/ym/images/fff1.png" />
+                        <span class="crown"></span></div>
+                    <div class="order-first-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-first-level"><span></span></div>
+                </a>
+
+                <a href="javascript:;" class="order-box-third">
+                    <div class="order-third-img"><img src="/skin/ym/images/fff3.png" />
+                        <span class="thirdCrown"></span></div>
+                    <div class="order-third-name">梁胖胖跳脱衣舞</div>
+                    <div class="order-third-level"><span></span></div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="order-box-bottom">
+                <ul >
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">4.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">5.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">6.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">7.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">8.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">9.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">10.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">11.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">12.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">13.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">14.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="number">15.</span>
+                            <span class="order-second-name">坐看梁胖胖吃香</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+<{include file="../public/footer.html"}>
+
+    <script src="<{$cdn}>/public/orders/js/orders.js"></script>
+
+
+</body>
+</html>

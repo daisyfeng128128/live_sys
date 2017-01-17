@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0; 
+}
+.color99{
+	color:#999;
+}
+.color33{
+	color:#333;
+}
+.color00{
+	color:#000;
+}
+.colorR{
+	color:#f03a4b;
+}
+.colorBlue{
+	color:#3e63d8;
+}
+.colorY{
+	color:#fd7500;
+}
+.bgff{
+	background-color:#fff;
+}
+.body{
+	background-color:#ddd; 
+	font-size: 10px;
+}
+.header{
+	background-color:#f2f2f2; 
+	width:100%; 
+}
+.f3_4{
+	font-size: 3.4rem !important;
+}
+.f3{
+	font-size: 3rem !important;
+}
+.f2_8{
+	font-size: 2.8rem !important;
+}
+header{
+	padding:3rem; 
+}
+.firAnch.col-xs-2{
+	padding-left:0;
+	border-radius: 5rem;
+}
+.anchImg{
+	position:relative;
+}
+.anchImg .degree{
+	position:absolute; 
+	border-radius:50%;
+	padding:1rem;
+	right:0;
+	bottom:0;
+	font-size:1rem;
+	border: 1px solid #ddd;
+}
+.firAnch .firAnchR{
+	margin-top: 3rem;
+}
+.anchLive img{border-radius:50%; }
+.banner{
+	padding-left:3rem;
+	padding-right:3rem;
+	width:100%;
+}
+.banner video{
+	width:100%;
+}
+.glyphicon-fire{
+	background-color:#f03a4b;
+	color:#fff; 
+	padding:4px 14px;
+	border-radius:6px;
+}
+.recommend{
+	background-color:#f2f2f2;
+	padding:0 3rem; 
+	margin-top:2rem;
+}
+.recommend img{
+	width:100%;
+}
+.recommend .thumbnail{
+	background:none;
+	border:none; 
+}
+
+

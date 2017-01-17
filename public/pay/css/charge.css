@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,dt,span,a,b,em,i,strong.img{ padding:0; margin:0;}
+li{ list-style:none;}
+a{ text-decoration:none;color:inherit}
+textarea{ resize:none; }
+input,select,textarea{ outline:none; }
+.clearFix:after{ content:''; display:block; clear:both; }
+body{font-size:12px;font-family:微软雅黑;}
+.wrapper{ width:1440px; margin:0 auto; }
+.wrapper .header{overflow:hidden; }
+.l{width:1128px; }
+.r{width:278px; }
+.fl{ float:left;}
+.fr{ float:right;}
+img{border:none; }
+/*header*/
+.head-outer{width: 100%; background-color: #fff;height: 58px;}
+.btline{border-bottom: 2px solid #f77599; }
+.header{width: 1440px; margin: 0 auto; background: #fefefe; height: 48px;}
+.header .hd_bg{background:url(/img/logo_qiantai.png) no-repeat;width:164px; height:50px; margin-left:12px; margin-top:8px;}
+.header .nav{margin-left:74px; margin-top:22px; }
+.nav .cu{border-bottom: 2px solid #3e63d8; padding-bottom:2px; }
+.header .nav li{margin-right:70px; font-size:18px; color:#343434; cursor:pointer; }
+.header .input{ margin-top:19px; height:27px; width:210px; border:1px solid #f77599; border-radius:20px; text-indent:1em;  position:relative; }
+.header .input input{  padding-top: 2px;border:0px; line-height:24px; }
+.header .input .search{background:url(/img/tubiao.png) -127px -86px no-repeat; width:14px; height:16px; position:absolute; right:8px; top:6px; cursor:pointer; }
+
+/*r*/
+/*user*/
+.user{margin-top:30px; float: right;width: 160px;height: 30px; position:relative; }
+.user .hd_hov{position:absolute; right:40px; }
+.user .username{width:71px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#4c4c4c; }
+.user .expand{background:url(../img/icon_geren_xiala.png); width:12px; height:7px; margin-top:6px; }
+.user .expand_hov{background:url(../img/icon_geren_shangla_hover.png); width:12px; height:7px; margin-top:6px; }
+
+.user .email{background:url(../img/icon_messages_hover.png); width:20px; height:17px; right:8px; position:absolute; }
+
+.recharge{background:#f7f7f7; }
+.recharge .char_tit{  border-bottom:1px solid #ddd;padding-top:26px; padding-bottom:8px; position:relative; }
+.recharge .char_tit .rest{margin-right: 20%; }
+.recharge .char_tit .rest i{font-style:normal; color:#333; }
+.char_tit .rest i strong{font-weight:normal; color:#e34052; }
+
+.icon-hot {
+    background: url(../img/icon_hot.png) no-repeat;
+    width: 40px;
+    height: 20px;
+}
+.char_tit .charK{
+	margin-top: 0; 
+	font-size:22px; margin-bottom:12px;  display: block;
+	margin-left: 0.5%; 
+}
+
+.recharge .char_tit p{font-size:12px; color:#989898; }
+.char_tit p i{color:#333; font-style:normal; margin-left:10px; } 
+.char_tit p b{color:#72d739; font-weight:normal; margin-left:3px; cursor:pointer;}
+
+.recharge .char_details{height:730px;}
+.recharge .char_details h3{ font-weight:normal; color:#333; }
+.amount{height:310px; padding-top:10px; }
+.amount ul{width:1070px; margin-left:16px; }
+.amount ul li{width:182px; height:52px;margin-right:32px; margin-bottom:26px; border:1px solid #ddd; text-align:center; background:#fff; cursor:pointer;border-radius: 1px; }
+.amount ul li p{margin-top:14px; font-size:17px; }
+.amount ul li span{color:#333;  line-height: 50px;}
+
+/*充值点击*/
+.amount .clickBg{background:url(../img/mianzhi_border_hover.png) #fff; }
+
+.wayBank{height:334px; width:1050px; margin-left:16px; }
+.wayBank .ways{height:50px; border-bottom:1px solid #ddd; }
+.wayBank .ways li{width:112px; height:40px; border:2px solid #F2F2F2; margin-right:24px; cursor:pointer; }
+.wayBank li.cli,.wayBank .banks li.cli{  border: 2px solid #3e63d8;  border-radius: 1px;}
+.wayBank .banks{margin-top:10px; margin-right: -20px;display: none;}
+.wayBank .banks li{float:left;border:2px solid #F2F2F2; margin-right:20px; margin-bottom:17px; cursor:pointer;}
+
+.wayBank p{font-size:15px; margin:20px auto; }
+.wayBank p i{color:#e34052; font-style:normal; font-size:17px; }
+.wayBank .imChar,.qqgameWay .imChar{width:166px; height:50px; background:#e34052; color:#fff; font-size:20px; border:none; cursor:pointer; border-radius: 4px;}
+.wayBank .imChar:hover,.qqgameWay .imChar:hover{background:#DC3144; }
+
+.char_explain{width:232px; height:416px; border:1px solid #ddd; margin-top:10px; padding-top:25px; padding-right:34px; padding-left:22px; background:#fff; }
+.char_explain .expl{font-size:16px; color:#333; }
+.char_explain .exp{margin-top:13px;  margin-bottom:12px; }
+.char_explain p{color:#999;}
+.char_explain .teNum{margin-top:4px; }
+.char_explain .teNum .tel_bg{background:url(../img/tel_bg.png); width:14px; height:12px; margin-right:6px; margin-top:3px; }
+
+.char_explain .act{margin-bottom:12px; font-size:14px; }
+.char_explain ul li{margin-bottom:6px; }
+.char_explain ul li span{width:8px;color: #e34052; height:8px; background:#e34052; border-radius:50%; margin-top:5px; margin-right:5px; }
+.char_explain .customService{margin-top:36px;height:116px; border-bottom:1px solid #ddd; margin-bottom:8px; }
+.char_explain .customService h3{margin-bottom:8px;font-size:14px; }
+.char_explain .customService .custom_bg{background:url(../img/icon_qqtalk.png); width:94px; height:23px; margin-bottom:4px; }
+  
+.wk{width:150px;height:150px;margin-top: 15px;}
+.wxximage{display:none;position: absolute;width:350px;height: 320px;background-color:rgba(251, 251, 251, 0.53);border-radius: 3px;left: 0;top: 0;bottom: 0;right: 0;background: #fff;z-index: 9999;margin:auto;overflow: hidden}
+.wximage{text-align:center; width:100%;height: 100%;border-radius: 3px}
+.mks{display: none; width: 100%;height: 100%; position: fixed; top: 0px;left: 0px; z-index: 9998;opacity: 0.4; background: rgb(0, 0, 0);}
+.wximage .x{color: #999999;  position: absolute; right: 15px; top: 10px; cursor: pointer; background: url("../img/gaunbi.png") no-repeat; width: 14px;  height: 14px;}
+.wximage .x:hover{background: url("../img/gaunbi_hover.png") no-repeat;}
+.wximage .ifo{height: 45px;line-height:45px;background-color: #F77599;width:100%;color: #fefefe;font-size: 18px;}
+.mn-box{width: 230px;height: 180px;background:url('../img/pic_chongzhi_bg.png') no-repeat;margin: 15px auto}
+.kca{color: #FA1220;font-size: 16px;}
+.mn-info div{line-height: 24px;}
+
+.sprite_pay {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/kd_pay.png);}
+
+.bank_101 {width:154px; height:33px; background-position: -626px -72px}
+.bank_1101 {width:154px; height:33px; background-position: -470px -72px}
+.bank_1201 {width:154px; height:33px; background-position: -314px -72px}
+.bank_13 {width:154px; height:33px; background-position: -158px -72px}
+.bank_17 {width:114px; height:36px; background-position: -1130px -72px}
+.bank_18 {width:114px; height:36px; background-position: -1014px -72px}
+.bank_19 {width:114px; height:36px; background-position: -898px -72px}
+.bank_1901 {width:154px; height:33px; background-position: -2px -72px}
+.bank_1902 {width:154px; height:33px; background-position: -1094px -37px}
+.bank_1903 {width:154px; height:33px; background-position: -938px -37px}
+.bank_1904 {width:154px; height:33px; background-position: -782px -37px}
+.bank_1905 {width:154px; height:33px; background-position: -626px -37px}
+.bank_1906 {width:154px; height:33px; background-position: -470px -37px}
+.bank_1907 {width:154px; height:33px; background-position: -314px -37px}
+.bank_1908 {width:154px; height:33px; background-position: -158px -37px}
+.bank_1909 {width:154px; height:33px; background-position: -2px -37px}
+.bank_1910 {width:154px; height:33px; background-position: -1094px -2px}
+.bank_20 {width:114px; height:36px; background-position: -782px -72px}
+.bank_201 {width:154px; height:33px; background-position: -938px -2px}
+.bank_301 {width:154px; height:33px; background-position: -782px -2px}
+.bank_401 {width:154px; height:33px; background-position: -626px -2px}
+.bank_501 {width:154px; height:33px; background-position: -470px -2px}
+.bank_601 {width:154px; height:33px; background-position: -314px -2px}
+.bank_701 {width:154px; height:33px; background-position: -158px -2px}
+.bank_801 {width:154px; height:33px; background-position: -2px -2px}
+

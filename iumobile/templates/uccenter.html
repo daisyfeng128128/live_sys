@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>个人中心 {$site_name} 触屏版</title>
+<link rel="stylesheet" href="css/bootstrap.min.css?20151020b">
+<link rel="stylesheet" href="css/font-awesome.min.css?20151020b">
+<link rel="stylesheet" href="css/ectouch.css?20151020b">
+<link rel="stylesheet" href="css/user.css?20151020b">
+<link rel="stylesheet" href="css/photoswipe.css?20151020b">
+<link rel="stylesheet" href="/css/level.css?20151020b">
+<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css?20151020b">
+<script src="js/jquerymobile/jquery.min.js?20151020b"></script>
+<script src="js/jquerymobile/jquery.mobile-1.4.5.min.js?20151020b"></script>
+<script src="js/ucenter.js?20151020b"></script>
+<script src="js/StageWebViewBridge.php?20151020b"></script>
+<script>
+var cdn_domain="{$cdn_domain}";
+var money_name="{$money_name}";
+var money_name2="{$money_name2}";
+var site_skin="{$site_skin}";
+var IS_SINGLE_MONEY="{$IS_SINGLE_MONEY}";
+var currentUserNumber="{$user.usernumber}";
+var thisPage="ucenter";
+var RMB_XNB={$RMB_XNB};
+</script>
+</head>
+<body class="ucenter">
+<div class="con" data-role="page" id="ss">
+<section class="container-fluid user-nav">
+  <ul class="row ect-row-nav text-center ucenter_top">
+	<a href="{{if $android=='1'}}#{{else}}#pay{{/if}}" data-transition="slide" onClick="StageWebViewBridge.call('fnCalledFromJS', null, 'topay');">
+    <li class="col-sm-4 col-xs-4"><i><img src="/iumobile/images/icon_balance.png"></i>
+      <p class="text-center">余额</p>
+      <p class="text-center balance">{$user.balance}</p>
+    </li>
+    </a>
+	<a href="#bill_gift" data-transition="slide">
+    <li class="col-sm-4 col-xs-4"><i><img src="/iumobile/images/icon_level.png"></i>
+      <p class="text-center">等级</p>
+	  <p class="text-center balance"><em class="level lv{$user.richlevel}"></em></p>
+    </li>
+	</a>
+	<a href="#buy_vip" data-transition="slide">
+    <li class="col-sm-4 col-xs-4"><i><img src="/iumobile/images/icon_vip{$user.viplevel}.png"></i>
+      <p class="text-center">VIP</p>
+	  <p class="text-center vip">{$user.viptext}</p>
+    </li>
+    </a>
+  </ul>
+</section>
+<section class="user-tab ect-margin-tb ect-margin-bottom0 ucenter_nav">
+  <div class="tab-content">
+    <div class="active ect-pro-list">
+            <a class="nav_a" href="#bill_pay" data-transition="slide"><p class="ect-margin-tb ect-padding-tb">充值记录</p></a>
+			<hr/>
+            <a class="nav_a" href="#bill_gift" data-transition="slide"><p class="ect-margin-tb ect-padding-tb">消费记录</p></a>
+			<hr/>
+			{{if $car}}
+				<a href="#my_car" class="buy_car">坐驾<span style="float:right;font-size:0.8em;text-align: right;margin-top:-8px;">{$car.giftname}<br/>有效期：{$car.vailddate|date_format:"%Y/%m/%d"}</span></a>
+			{{else}}
+				<a href="#buy_car" class="buy_car">坐驾<span style="float:right;font-size:0.8em;text-align: right;margin-top:-8px;">您尚未购买座驾<br/>马上购买</span></a>
+			{{/if}}
+			<hr/>
+			<a href='javascript:location.href="{$clan_url}";' class="buy_car" data-role='none'>我的家族
+			<span style="float:right;" class="clan_medalname">{$clan_medalname}</span>
+			</a>
+    </div>
+  </div>
+</section>
+<section class="container-fluid bottom-nav">
+  <ul class="">
+    <li class="col-sm-12 col-xs-12"><a class="btn2" href="javascript:location.href='ucenter_edit.php#edit';" class="ui-link" data-role='none'>账号设置</a></li>
+	<li class="col-sm-12 col-xs-12"><a class="btn2 exit" href="javascript:;" onClick="StageWebViewBridge.call('fnCalledFromJS', null, 'exit')" class="ui-link">退出</a></li>
+  </ul>
+</section>
+</div>
+<div class="con" data-role="page" id="bill_gift" >
+<section class="user-tab ect-margin-tb ect-margin-bottom0"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list"> 
+		<ul id="datalist_bill_gift"></ul>
+		<div style="display: block;text-align:center;color:red;" id="wfLoading_bill_gift" class="joke_wf_loadingArea"></div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="con" data-role="page" id="bill_pay" >
+<section class="user-tab ect-margin-tb ect-margin-bottom0"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list"> 
+		<ul id="datalist_bill_pay"></ul>
+		<div style="display: block;text-align:center;color:red;" id="wfLoading_bill_pay" class="joke_wf_loadingArea"></div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="con" data-role="page" id="buy_vip">
+<section class="container-fluid user-nav">
+  <ul class="row ect-row-nav text-center buy_vip_tab">
+    <li class="col-sm-4 col-xs-4 on" rel="one_buy_vip"><p class="text-center">黑色VIP</p></li>
+    <li class="col-sm-4 col-xs-4" rel="two_buy_vip"><p class="text-center">紫色VIP</p></li>
+    <li class="col-sm-4 col-xs-4" rel="three_buy_vip"><p class="text-center">黄色VIP</p></li>
+  </ul>
+</section>			
+<section class="user-tab ect-margin-tb ect-margin-bottom0 section_buy_vip" style="margin-top:0;">
+  <div class="tab-content" id="content_buy_vip">
+    <div class="active ect-pro-list buy_vip" id="one_buy_vip"> 
+		<ul class="time">
+{{foreach from=$vipType item=item}}{{if $item.giftid==403 || $item.giftid==411 || $item.giftid==412 || $item.giftid==413}}
+<li><span class="month">{$item.giftflash}个月</span><span class="f_r">{$item.giftprice}</span><span class="balance">{$money_name}</span><a class="tbbuybtn_red buybtn" href="javascript:buy_vip('{$item.giftid}','{$item.giftname}','{$item.giftprice}','{$item.giftflash}')">购买</a></li>
+{{/if}}{{/foreach}}
+		</ul>
+		<hr/><p class="tequan">VIP特权:</p>
+		<ul class="">
+<li>名称前加“黑色VIP”标识</li>
+<li>除房主以外，防止被其他管理员踢出</li>
+<li>除房主以外，防止被其他管理员禁言</li>
+<li>可隐身进入房间，观众列表不显示昵称</li>
+<li>10富及以上级别可以购买</li>
+		</ul>
+    </div>
+    <div class="active ect-pro-list buy_vip" id="two_buy_vip" style="display:none"> 
+		<ul class="time">
+{{foreach from=$vipType item=item}}{{if $item.giftid==402 || $item.giftid==408 || $item.giftid==409 || $item.giftid==410}}
+<li><span class="month">{$item.giftflash}个月</span><span class="f_r">{$item.giftprice}</span><span class="balance">{$money_name}</span><a class="tbbuybtn_red buybtn" href="javascript:buy_vip('{$item.giftid}','{$item.giftname}','{$item.giftprice}','{$item.giftflash}')">购买</a></li>
+{{/if}}{{/foreach}}
+		</ul>
+		<hr/><p class="tequan">VIP特权:</p>
+		<ul class="">
+<li>名称前加“紫色VIP”标识</li>
+<li>除房主和黑色vip以外，防止被其他管理员踢出</li>
+<li>除房主和黑色vip以外，防止被其他管理员禁言</li>
+		</ul>
+    </div>
+    <div class="active ect-pro-list buy_vip" id="three_buy_vip" style="display:none"> 
+		<ul class="time">
+{{foreach from=$vipType item=item}}{{if $item.giftid==401 || $item.giftid==405 || $item.giftid==406 || $item.giftid==407}}
+<li><span class="month">{$item.giftflash}个月</span><span class="f_r">{$item.giftprice}</span><span class="balance">{$money_name}</span><a class="tbbuybtn_red buybtn" href="javascript:buy_vip('{$item.giftid}','{$item.giftname}','{$item.giftprice}','{$item.giftflash}')">购买</a></li>
+{{/if}}{{/foreach}}
+		</ul>
+		<hr/><p class="tequan">VIP特权:</p>
+		<ul class="">
+<li>名称前加“黄色VIP”标识</li>
+<li>除房主、黑色vip和紫色vip以外,防止被其他管理员踢出</li>
+<li>除房主、黑色vip和紫色vip以外防止被其他管理员禁言</li>
+		</ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="con" data-role="page" id="buy_guard">
+<section class="container-fluid user-nav">
+  <ul class="row ect-row-nav text-center buy_guard_tab">
+    <li class="col-sm-12 col-xs-12 on" rel="one_buy_guard"><p class="text-center">购买守护</p></li>
+  </ul>
+</section>			
+<section class="user-tab ect-margin-tb ect-margin-bottom0 section_buy_guard" style="margin-top:0;">
+  <div class="tab-content" id="content_buy_guard">
+    <div class="active ect-pro-list buy_guard" id="one_buy_guard"> 
+		<ul>
+			<li>守护对象:{$guardShowinfo.nickname}({$guardShowinfo.usernumber})</li>
+		</ul>
+		<ul class="time">
+{{foreach from=$guardType item=item}}
+<li><span class="month">{$item.txt}</span><span class="f_r">{$item.price}</span><span class="balance">{$money_name}</span><a class="tbbuybtn_red buybtn" href="javascript:buy_guard('{$item.type}','{$item.txt}','{$item.price}','{$guardShowinfo.nickname}','{$guardShowinfo.usernumber}','{$guardShowinfo.userid}')">购买</a></li>
+{{/foreach}}
+		</ul>
+		<hr/><p class="tequan">守护特权:</p>
+		<ul class="">
+<li>1.进入房间自动落座专属坐席</li>
+<li>2.进入房间醒目提示，伴有豪华座驾（保时捷）</li>
+		</ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="con" data-role="page" id="pay">
+<section class=""> 
+  <div class="tab-content">
+    <p class="p1">请选择充值金额</p>
+	<ul class="pay_top">
+    <li class="col-sm-4 col-xs-4"><a href="javascript:select_pay('10')" rel="10" class="pay_link pay_link_on">10元</a></li>
+    <li class="col-sm-4 col-xs-4"><a href="javascript:select_pay('50')" rel="50" class="pay_link">50元</a></li>
+    <li class="col-sm-4 col-xs-4"><a href="javascript:select_pay('100')" rel="100" class="pay_link">100元</a></li>
+	</ul>
+	<ul class="pay_top">
+    <li class="col-sm-4 col-xs-4"><a href="javascript:select_pay('500')" rel="500" class="pay_link">500元</a></li>
+    <li class="col-sm-4 col-xs-4"><a href="javascript:select_pay('1000')" rel="1000" class="pay_link">1000元</a></li>
+    <li class="col-sm-4 col-xs-4"><a href="javascript:select_pay('')" rel="other" class="pay_link">其它金额</a></li>
+	</ul>
+	<div class="info_input1"><input data-role='none' type="text" value="10" id="p3_Amt" onChange="change_money();" class="input_style"/></div>
+	<div id="pay_txt">可获得{$RMB_XNB*10}{$money_name}</div>
+	<div class="gouwu_button"><a href="javascript:pay_go()" href="javascript:;">支付宝支付</a></div>
+  </div>
+</section>
+</div>
+<div class="con" data-role="page" id="buy_car" >
+<section class="user-tab ect-margin-tb ect-margin-bottom0"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list">
+		<ul id="datalist_buy_car"></ul>
+		<div style="display: block;text-align:center;color:red;" id="wfLoading_buy_car" class="joke_wf_loadingArea"></div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="con" data-role="page" id="my_car" >
+<section class="user-tab ect-margin-tb ect-margin-bottom0"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list">
+		<ul id="datalist_my_car"></ul>
+		<ul><li style="text-align:center;"><a class="tbbuybtn_red buybtn ui-link" style="float: none !important;width: 95%;background:#a8cc14!important;" href="#buy_car"><span>马上购买座驾</span></a></li></ul>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>

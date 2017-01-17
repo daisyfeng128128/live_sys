@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title></title>
+
+	<style>
+		a {margin-right:5px;}
+
+		body {
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #333;
+			background-color: #f8f8f8;
+		}
+        body,html{margin:0;padding:0;}
+		#wrapper {
+			width: 100%;
+		}
+
+		#page-wrapper {
+			padding: 0 15px;
+			min-height: 568px;
+			background-color: #fff;
+		}
+
+		@media(min-width:768px) {
+			#page-wrapper {
+				position: inherit;
+				padding: 0 30px;
+				border-left: 1px solid #e7e7e7;
+			}
+		}
+		.row {
+            padding:15px;
+		}
+		div {
+			display: block;
+		}
+
+		.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+			display: table;
+			content: " ";
+		}
+		.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+			position: relative;
+			min-height: 1px;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+		h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+			font-family: inherit;
+			font-weight: 500;
+			line-height: 1.1;
+			color: inherit;
+		}
+		h5, .h5 {
+			font-size: 14px;
+		}
+		mark {
+			color: #000;
+			background: #ff0;
+		}
+		mark, .mark {
+			padding: .2em;
+			background-color: #fcf8e3;
+		}
+	</style>
+    
+    <script type="text/javascript" src="http://ossweb-img.qq.com/images/js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://minigame.qq.com/plat/social_hall/js/jquery.pm.js"></script>
+    <script type="text/javascript" src="http://minigame.qq.com/plat/social_hall/app_frame/qqgamelib.js?rev=8581"></script>
+	
+</head>
+<body>
+	<div id="wrapper">
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">游戏Demo</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<h4>这个demo包含以下功能</h4>
+				</div>
+				<div class="col-lg-12">
+					<ul>
+						<li>验证登录</li>
+						<li>购买道具支付</li>
+                        <li>邀请好友</li>
+                        <li>开通蓝钻</li>
+                        <li>开通蓝钻送礼包</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row" style="display:;" id="gameArea">
+                <div class="col-lg-12">
+                    <h5>用户身份信息</h5>
+                    <ul>
+						<li><span>openid:   </span><span id="openid"></span></li>
+						<li><span>openkey:   </span><span id="openkey"></span></li>
+                        <li><span>pf:   </span><span id="pf"></span></li>
+					</ul>
+                </div>
+				<div class="col-lg-12">
+					<h5><mark>购买钻石*2</mark><span><button class="btn" id="buyTool">购买</button></span></h5>
+                </div>
+                <div class="col-lg-12">
+					<h5><mark>邀请好友</mark><span><button class="btn" id="inviteFriends">邀请</button></span></h5>
+                </div>
+                <div class="col-lg-12">
+					<h5><mark>开通蓝钻</mark><span><button class="btn" id="openVip">开通</button></span></h5>
+                </div>
+                <div class="col-lg-12">
+					<h5><mark>活动：开通蓝钻送道具</mark><span><button class="btn" id="openVipAction">开通</button></span></h5>
+                </div>
+            </div>
+            
+        </div>
+			
+		</div> 
+	</div>
+</body>
+
+<script type="text/javascript">
+function GetJson(cgi, succ_func, fail_func, param, cache, timeout) {
+		var new_cgi = cgi;
+
+		$.ajax({
+			url: new_cgi,
+			type: "get",
+			data: param || {},
+			dataType: "jsonp",
+			callbackParameter: "callback",
+			cache: typeof(cache)=='undefined' ? true : cache,
+			timeout: timeout || 0,
+			success: function(data) {
+				succ_func && succ_func(data);
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				fail_func && fail_func(XMLHttpRequest, textStatus, errorThrown);
+			}
+		});
+	};
+
+$(function()
+{
+    var appid = 1105729630;
+    var openid = GameAPI.Aux.get_http_param('openid');
+    var openkey = GameAPI.Aux.get_http_param('openkey');
+    var pf = GameAPI.Aux.get_http_param('pf');
+    var pfkey = GameAPI.Aux.get_http_param('pfkey');
+
+    $("#openid").text(openid);
+    $("#openkey").text(openkey);
+    $("#pf").text(pf);
+	
+	$("#buyTool").click(function(){
+		
+        var url = "http://actp.minigame.qq.com/open_demo/buy_goods_web.php?openid="+openid+"&openkey="+openkey+"&pf="+pf+"&pfkey="+pfkey+"&goodsNum=2";
+        
+        GetJson(url,
+            function(data){
+                if (data.ret == 0){
+                   GameAPI.BuyBox.show(appid,data.url_params,1,"购买道具",function(){alert('close')},function(){alert('succ')});
+                }	
+            },null,
+            null,
+            false);
+	});
+        
+    $("#inviteFriends").click(function(){
+        var opt = {'title':'here is title', 'intro': 'here is your instroducton', 
+            'tabid':0, 'gamepara':'hellogame','tips_id':1};
+        GameAPI.InviteBox.show(appid,opt,function(){alert('close')},function(){alert('invite')});
+	});
+    
+    $("#openVip").click(function(){
+        var opt = {'title':'here is title', 'intro': 'here is your instroducton', 
+            'tabid':0, 'gamepara':'hellogame','tips_id':1};
+        GameAPI.NewOpenGameVIPService.show(appid,
+                                                                                function(){alert('close')},  
+                                                                                'myaid',  //统计ID
+                                                                                3,  //开通那种蓝钻
+                                                                                5   //开通时长
+                                                                                );
+	});
+    
+    $("#openVipAction").click(function(){
+        GameAPI.NewGameVIPAction.show(appid,
+                                                                    1000000,   //营销活动id
+                                                                    '39DBE00A043F8DB011391759A3A8A25',  // token
+                                                                    "0",                                    // zoneid
+                                                                    openid,
+                                                                    'v3',
+                                                                    function(){alert('close')},  
+                                                                    1,  //开通那种蓝钻
+                                                                    5   //开通时长
+                                                                    );
+	});
+    
+});  
+</script>
+

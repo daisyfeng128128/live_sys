@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>视频播放</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="public/min/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="public/livemb/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/livemb/css/livemb.css">
+    <script src="public/min/jquery-1.12.2.min.js"></script>
+    
+</head>
+
+<body class="body">
+    <div class="header">
+    	<section class="jumbotron banner row">
+      <div class="col-xs-12" style="">
+          <video src="http://hls.181show.com/mutian-ucloud/m<{$rmb}>/playlist.m3u8" id="player"
+		  x5-video-player-type="h5" x5-video-player-fullscreen="true"
+                   x-webkit-airplay="true" webkit-playsinline="true" playsinline="true" controls poster="<{$zhuboinfo['image']}>?p=0&w=640&h=360"></video>
+
+            <!--<img src="img/live_girl.png" width="100%" height="100%" alt="" />-->
+            <div><a href="<{$zhuboinfo['uploadAdd']}>"><button class="downgame">下载游戏</button></a></div>
+            <div class="txt clearfix">
+                <div class="txtL pull-left" style="margin-top: 30px;">
+                    <p class="tit colorR f3_4"><{$zhuboinfo['nickName']|urldecode}></p>
+                    <p class="color99 f2_8">
+                      <span class="glyphicon glyphicon-eye-open f3_3"></span>
+                        <span style="color:#999;"><{$zhuboinfo['personNum']}></span></p>
+                </div>
+                <div class="txtR pull-right f3" style="margin-top: 30px;clear: both;margin-top: -6.5%;margin-right: 40%;color:#999;">
+                    关注她
+                    <span class="glyphicon glyphicon-heart colorR"></span>
+                </div>
+            </div>
+      </div>
+    </section>
+	</div>
+	<section class="recommend">   
+       <div class="page-header clearfix">
+            <h4 class="pull-left f3_4">
+              <span class="glyphicon glyphicon-fire" style="margin-top: 30px;"></span>
+                精彩推荐
+            </h4>     
+        </div>
+       <div class="row">
+        <{if <{$hotNum}>>0}>
+             <{foreach from=$hotAnchors item=show key=key}>
+                    <{if $key==0}>
+                <div class="col-xs-6" ng-repeat="reply in replies">
+                <a href="<{$show['roomNumber']}>" class="thumbnail">
+                  <div class="recommImg thumbnail">
+                    <img src="<{$show['image']}><{$imgsize}>" alt=""/>
+                    <div class="thumb-bar"></div>
+                  </div>
+                  <div class="recommB">
+                    <div class="clearfix">
+                      <span class="color00 pull-left ellipsis msty f3"><{$show['title']}></span>
+                      <div class="color99 pull-right f2_8">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span><{$show['numbers']}></span>
+                      </div>
+                    </div>
+                    <p class="color99 ellipsis msty f3"><{$show['descri']}></p>
+                  </div>
+
+                </a>
+              </div>
+               <{/if}>
+              <{/foreach}>
+             
+             <{foreach from=$hotAnchors item=show key=key}>
+                    <{if $key>0 and $key<<{$hotNum}> }>  
+             <div class="col-xs-6">
+            <a href="<{$show['roomNumber']}>" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="<{$show['image']}><{$imgsize}>" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color00 pull-left ellipsis msty f3"><{$show['title']}></span>
+                  <div class="color99 pull-right f2_8">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span><{$show['numbers']}></span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis msty f3"><{$show['descri']}></p>
+              </div>
+
+            </a>
+          </div>
+             <{/if}>
+         <{/foreach}>  
+         
+         <{foreach from=$hotAnchors item=show key=key}>
+                    <{if $key==<{$hotNum}>}>  
+             <div class="col-xs-6">
+            <a href="<{$show['roomNumber']}>" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="<{$show['image']}><{$imgsize}>" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color00 pull-left ellipsis msty f3"><{$show['title']}></span>
+                  <div class="color99 pull-right f2_8">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span><{$show['numbers']}></span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis msty f3"><{$show['descri']}></p>
+              </div>
+
+            </a>
+          </div>
+             <{/if}>
+         <{/foreach}>  
+      <{/if}>
+          <!-- <div class="col-xs-6" ng-repeat="reply in replies">
+                <a href="#" class="thumbnail">
+                  <div class="recommImg thumbnail">
+                    <img src="/templates/livePhone/img/pic_01.png" alt=""/>
+                    <div class="thumb-bar"></div>
+                  </div>
+                  <div class="recommB">
+                    <div class="clearfix">
+                     
+                      <div class="color99 pull-right f2_8">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span>2143324</span>
+                      </div>
+                    </div>
+                    <p class="color99 ellipsis f3">谢霆锋百科知识 舒淇变迷妹点赞</p>
+                  </div>
+
+                </a>
+              </div> -->
+          <!-- <div class="col-xs-6">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="/templates/livePhone/img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color00 pull-left f3">女人如歌节目</span>
+                  <div class="color99 pull-right f2_8">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis f3">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="/templates/livePhone/img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color00 pull-left f3">女人如歌节目</span>
+                  <div class="color99 pull-right f2_8">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis f3">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="/templates/livePhone/img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color00 pull-left f3">女人如歌节目</span>
+                  <div class="color99 pull-right f2_8">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis f3">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="/templates/livePhone/img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color00 pull-left f3">女人如歌节目</span>
+                  <div class="color99 pull-right f2_8">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis f3">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div>
+          <div class="col-xs-6">
+            <a href="#" class="thumbnail">
+              <div class="recommImg thumbnail">
+                <img src="/templates/livePhone/img/pic_01.png" alt=""/>
+                <div class="thumb-bar"></div>
+              </div>
+              <div class="recommB">
+                <div class="clearfix">
+                  <span class="color00 pull-left f3">女人如歌节目</span>
+                  <div class="color99 pull-right f2_8">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span>2143324</span>
+                  </div>
+                </div>
+                <p class="color99 ellipsis f3">谢霆锋百科知识 舒淇变迷妹点赞</p>
+              </div>
+
+            </a>
+          </div> -->
+       </div>
+    </section>
+
+</body>
+</html>
+
+

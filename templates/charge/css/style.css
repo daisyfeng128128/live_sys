@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,dt,span,a,b,em,i,strong.img{ padding:0; margin:0;}
+li{ list-style:none;}
+a{ text-decoration:none;color:inherit}
+textarea{ resize:none; }
+input,select,textarea{ outline:none; }
+.clearFix:after{ content:''; display:block; clear:both; }
+body{font-size:12px;font-family:微软雅黑;}
+.wrapper{ width:1440px; margin:0 auto; }
+.wrapper .header{overflow:hidden; }
+.l{width:1128px; }
+.r{width:278px; }
+.fl{ float:left;}
+.fr{ float:right;}
+img{border:none; }
+/*header*/
+.head-outer{width: 100%; background-color: #fefefe;height: 58px;}
+.btline{border-bottom: 1px solid  #dfa803}
+.header{width: 1440px;margin: 0 auto; background: #fefefe;height: 48px;}
+.header .hd_bg{background:url(../img/tubiao.png) no-repeat -386px -116px; width:164px; height:26px; margin-left:12px; margin-top:20px; }
+.header .text{margin-top:32px; color:#5c5c5c; margin-left:5px; }
+.header .nav{margin-left:74px; margin-top:22px; }
+.nav .cu{border-bottom: 2px solid #59db2e; padding-bottom:2px; }
+.header .nav li{margin-right:70px; font-size:18px; color:#ffb671; cursor:pointer; }
+.header .input{ margin-top:20px; height:26px; width:210px; border:1px solid #e3983b; border-radius:20px; text-indent:1em;  position:relative; }
+.header .input input{border:0px; line-height:22px; }
+.header .input .search{background:url(../img/tubiao.png) -127px -86px no-repeat; width:14px; height:16px; position:absolute; right:8px; top:6px; cursor:pointer; }
+
+/*r*/
+/*user*/
+.user{margin-top:30px; float: right;width: 160px;height: 30px; position:relative; }
+.user .hd_hov{position:absolute; right:40px; }
+.user .username{width:71px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#4c4c4c; }
+.user .expand{background:url(../img/icon_geren_xiala.png); width:12px; height:7px; margin-top:6px; }
+.user .expand_hov{background:url(../img/icon_geren_shangla_hover.png); width:12px; height:7px; margin-top:6px; }
+
+.user .email{background:url(../img/icon_messages_hover.png); width:20px; height:17px; right:8px; position:absolute; }
+
+.recharge{background:#f7f7f7; }
+.recharge .char_tit{  border-bottom:1px solid #ddd;padding-top:26px; padding-bottom:8px; position:relative; }
+.recharge .char_tit .rest{position:absolute; right:330px; bottom:6px;  }
+.recharge .char_tit .rest i{font-style:normal; color:#333; }
+.char_tit .rest i strong{font-weight:normal; color:#fcb400; }
+
+.recharge .char_tit h3{font-size:22px; margin-bottom:12px; }
+.recharge .char_tit p{font-size:12px; color:#989898; }
+.char_tit p i{color:#333; font-style:normal; margin-left:10px; } 
+.char_tit p b{color:#72d739; font-weight:normal; margin-left:3px; cursor:pointer;}
+
+.recharge .char_details{height:788px;  }
+.recharge .char_details h3{ font-weight:normal; color:#333; }
+.amount{height:310px; padding-top:10px; }
+.amount ul{width:1070px; margin-left:16px; }
+.amount ul li{width:180px; height:69px;margin-right:32px; margin-bottom:26px; border:1px solid #ddd; text-align:center; background:#fff; cursor:pointer; }
+.amount ul li p{margin-top:14px; font-size:17px; }
+.amount ul li span{color:#989898; }
+
+/*充值点击*/
+.amount .clickBg{background:url(../img/mianzhi_border_hover.png) #fff; }
+
+
+
+.wayBank{height:334px; width:1050px; margin-left:16px; }
+.wayBank .ways{height:50px; border-bottom:1px solid #ddd; }
+.wayBank .ways li{width:112px; height:34px; border:1px solid #ddd; margin-right:24px; cursor:pointer; }
+.wayBank li.cli{border-color:#57da28; }
+.wayBank .banks{margin-top:10px; }
+.wayBank .banks li{width:112px; height:36px; border:1px solid #ddd; margin-right:24px; margin-bottom:17px; cursor:pointer;}
+.wayBank .banks li.cli{border-color:#57da28; }
+
+.wayBank p{font-size:15px; margin-bottom:20px; }
+.wayBank p i{color:#fec000; font-style:normal; font-size:17px; }
+.wayBank .imChar{width:166px; height:50px; background:#fec000; color:#fff; font-size:20px; border:none; cursor:pointer; }
+.wayBank .imChar:hover{background:#f9bb14; }
+
+.char_explain{width:232px; height:416px; border:1px solid #ddd; margin-top:10px; padding-top:25px; padding-right:34px; padding-left:22px; background:#fff; }
+.char_explain .expl{font-size:16px; color:#333; }
+.char_explain .exp{margin-top:13px;  margin-bottom:12px; }
+.char_explain p{color:#999;}
+.char_explain .teNum{margin-top:4px; }
+.char_explain .teNum .tel_bg{background:url(../img/tel_bg.png); width:14px; height:12px; margin-right:6px; margin-top:3px; }
+
+.char_explain .act{margin-bottom:12px; font-size:14px; }
+.char_explain ul li{margin-bottom:6px; }
+.char_explain ul li span{width:8px; height:8px; background:#ffb009; border-radius:50%; margin-top:5px; margin-right:5px; }
+.char_explain .customService{margin-top:10px;height:92px; border-bottom:1px solid #ddd; margin-bottom:8px; }
+.char_explain .customService h3{margin-bottom:8px;font-size:14px; }
+.char_explain .customService .custom_bg{background:url(../img/icon_qqtalk.png); width:94px; height:23px; margin-bottom:4px; }
+
+.footer{height:100px; background:#010101; color:#fff; padding-top:74px;-margin-top:22px; }
+.footer .container{margin-top:-18px; }
+.footer p{text-align:center; margin-bottom:20px; }
+.footer .copyright span{background:url(../img/tubiao.png) no-repeat -188px -115px; width:76px; height:28px; display:inline-block; margin-top:0px; }
+
+
+

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>个人中心 {$site_name} 触屏版</title>
+<link rel="stylesheet" href="css/bootstrap.min.css?20151020a">
+<link rel="stylesheet" href="css/font-awesome.min.css?20151020a">
+<link rel="stylesheet" href="css/ectouch.css?20151020a">
+<link rel="stylesheet" href="css/user.css?20151020a">
+<link rel="stylesheet" href="css/photoswipe.css?20151020a">
+<link rel="stylesheet" href="/css/level.css?20151020a">
+<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css?20151020a">
+<script src="js/jquerymobile/jquery.min.js?20151020a"></script>
+<script src="js/jquerymobile/jquery.mobile-1.4.5.min.js?20151020a"></script>
+<script src="js/ucenter_edit.js?20151020a"></script>
+<script src="js/StageWebViewBridge.php?20151020a"></script>
+<script src="/js/PCASClass.js?20151020a"></script>
+<script>
+var cdn_domain="{$cdn_domain}";
+var money_name="{$money_name}";
+var money_name2="{$money_name2}";
+var site_skin="{$site_skin}";
+var IS_SINGLE_MONEY="{$IS_SINGLE_MONEY}";
+var currentUserNumber="{$user.usernumber}";
+var thisPage="ucenter_edit";
+var userid='{$user.userid}';
+</script>
+</head>
+<body class="ucenter">
+<div class="con" data-role="page" id="edit">
+<section class="user-tab ect-margin-tb ect-margin-bottom0 ucenter_edit ucenter_nav">
+  <div class="tab-content">
+    <div class="active ect-pro-list edit" id="ucenter_edit">
+		<a href="javascript:;" onClick="ShowInfo('avatar_page',this);" class="avatar">头像
+		<span class="rig"><img id="avatarimg" src="/apis/avatar.php?uid={$user.userid}&_t={$time}"/></span>
+		</a><hr/>
+		<a href="#nickname_page" class="avatar" data-transition="slide">昵称
+		<span class="rig" id="show_nickname">{$user.nickname}</span>
+		</a><hr/>
+		<a href="javascript:;" onClick="ShowInfo('gender_page',this);">性别
+		<span class="rig" id="show_gender">{{if $user.gender=="0"}}女{{else}}男{{/if}}</span>
+		</a><hr/>
+		<a href="javascript:;" onClick="ShowInfo('city_page',this);">城市
+		<span class="rig" id="show_city">{$user.province},{$user.city}</span>
+		</a><hr/>
+		<a href="javascript:;" onClick="ShowInfo('birthday_page',this);">出生日期
+		<span class="rig" id="show_birthday">{$user.birthday}</span>
+		</a><hr/>
+    </div>
+  </div>
+</section>
+</div>
+<div class="con" data-role="page" id="nickname_page">
+<section class=""> 
+  <div class="tab-content">
+	<div class="info_input1" style="display:block;"><input data-role='none' type="text" value="{$user.nickname}" id="editnickname" class="input_style"/></div>
+	<div class="pay_txt">好昵称可以让主播更容易住你</div>
+	<div class="gouwu_button"><a href="javascript:editNickName()">保存</a></div>
+  </div>
+</section>
+</div>
+<div style="display:none;" class="toggleBox ShowInfo" id="avatar_page">
+	<a href="javascript:;" class="show_title">选择照片</a><span class="show_title_close"></span><hr/>
+	<a href="javascript:StageWebViewBridge.call('fnCalledFromJS', null, 'avatargraph');">拍照</a><hr/>
+	<a href="javascript:StageWebViewBridge.call('fnCalledFromJS', null, 'avatarselect');">从相册选择</a>
+	<div class="clear"></div>
+</div>
+<div style="display:none;" class="toggleBox ShowInfo" id="gender_page">
+	<a href="javascript:;" class="show_title">性别</a><span class="show_title_close"></span><hr/>
+	<a href="javascript:edit_gender(1,'男');">男</a><hr/>
+	<a href="javascript:edit_gender(0,'女');">女</a>
+	<div class="clear"></div>
+</div>
+<div style="display:none;" class="toggleBox ShowInfo" id="city_page">
+	<a href="javascript:;" class="show_title">城市</a><span class="show_title_close"></span><hr/>
+	<div class="text-center padding2"><select name="province" id="province"></select><select name="city" id="city"></select></div>
+<hr/>
+<div class="btn2"><a href="javascript:edit_city()">确定</a></div>
+	<div class="clear"></div>
+</div>
+<div style="display:none;" class="toggleBox ShowInfo" id="birthday_page">
+	<a href="javascript:;" class="show_title">出生日期</a><span class="show_title_close"></span><hr/>
+	<div class="text-center padding2">
+	<select name="year" id="year">
+	<option value="">年</option>
+<optgroup label="00后">
+	<option>2000</option>
+	<option>2001</option>
+	<option>2002</option>
+	<option>2003</option>
+	<option>2004</option>
+	<option>2005</option>
+	<option>2006</option>
+	<option>2007</option>
+	<option>2008</option>
+	<option>2009</option>
+</optgroup>
+<optgroup label="90后">
+	<option>1990</option>
+	<option>1991</option>
+	<option>1992</option>
+	<option>1993</option>
+	<option>1994</option>
+	<option>1995</option>
+	<option>1996</option>
+	<option>1997</option>
+	<option>1998</option>
+	<option>1999</option>
+</optgroup>
+<optgroup label="80后">
+	<option>1980</option>
+	<option>1981</option>
+	<option>1982</option>
+	<option>1983</option>
+	<option>1984</option>
+	<option>1985</option>
+	<option>1986</option>
+	<option>1987</option>
+	<option>1988</option>
+	<option>1989</option>
+</optgroup>
+<optgroup label="70后">
+	<option>1970</option>
+	<option>1971</option>
+	<option>1972</option>
+	<option>1973</option>
+	<option>1974</option>
+	<option>1975</option>
+	<option>1976</option>
+	<option>1977</option>
+	<option>1978</option>
+	<option>1979</option>
+</optgroup>
+<optgroup label="60后">
+	<option>1965</option>
+	<option>1966</option>
+	<option>1967</option>
+	<option>1968</option>
+	<option>1969</option>
+</optgroup>
+
+</select>
+<select name="month" id="month">
+	<option value="">月</option>
+	<option>01</option>
+	<option>02</option>
+	<option>03</option>
+	<option>04</option>
+	<option>05</option>
+	<option>06</option>
+	<option>07</option>
+	<option>08</option>
+	<option>09</option>
+	<option>10</option>
+	<option>11</option>
+	<option>12</option>
+</select>
+<select name="day" id="day">
+	<option value="">日</option>
+	<option>01</option>
+	<option>02</option>
+	<option>03</option>
+	<option>04</option>
+	<option>05</option>
+	<option>06</option>
+	<option>07</option>
+	<option>08</option>
+	<option>09</option>
+	<option>10</option>
+	<option>11</option>
+	<option>12</option>
+	<option>13</option>
+	<option>14</option>
+	<option>15</option>
+	<option>16</option>
+	<option>17</option>
+	<option>18</option>
+	<option>19</option>
+	<option>20</option>
+	<option>21</option>
+	<option>22</option>
+	<option>23</option>
+	<option>24</option>
+	<option>25</option>
+	<option>26</option>
+	<option>27</option>
+	<option>28</option>
+	<option>29</option>
+	<option>30</option>
+	<option>31</option>
+</select></div>
+<hr/>
+<div class="btn2"><a href="javascript:edit_birthday()">确定</a></div>
+	<div class="clear"></div>
+</div>
+<a href="javascript:;" onClick="ShowInfo('alert_page',this);" id="linkalert_page" style="display:none;"></a>
+<div style="display:none;" class="toggleBox ShowInfo" id="alert_page">
+	<a href="javascript:;" class="show_title">提示</a><span class="show_title_close"></span><hr/>
+	<div class="text-center padding2" id="alert_page_content"></div>
+<hr/>
+<div class="btn2"><a href="javascript:closeShow()">确定</a></div>
+	<div class="clear"></div>
+</div>
+<div style="display:none;" class="ShowInfo" id="info_alert">
+	<a href="javascript:;" class="show_title"></a>
+</div>
+<div id="tinymask" style="height: 100%; opacity: 0.5; display: none; width: 100%;"></div>
+<div id="tinymasknoclick" class="bgmask" style="height: 100%; opacity: 0.5; display: none; width: 100%;"></div>
+<script>
+birthday_selected({$birthday_year},{$birthday_month},{$birthday_day});
+new PCAS("province","city","{$user.province}","{$user.city}");
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
+<meta charset="utf-8">
+<title>纯HLS(m3u8)跨平台技术(跨平台多终端测试)HLSPlayer,m3u8Player</title>
+<meta name="keywords" content="HLSPlayer,m3u8Player,支持PC终端,Android安卓终端,iOS苹果终端,WindowsPhone终端" />
+<meta name="description" content="支持PC终端,Android安卓终端,iOS苹果终端,WindowsPhone终端,纯HLS(m3u8)跨平台技术(跨平台多终端测试)" />
+<link rel="stylesheet" type="text/css" href="images/common.css"/>
+</head>
+
+<body>
+<!--header/begin-->
+<div id="header">
+<div class="logo"><a href="http://www.cuplayer.com/CrossPlatform"><img src="images/CuLogo.jpg" ></a></div>
+<div class="info"><a href="#"><img src="images/search.jpg" ></a></div>
+<div class="other"><a href="#">我要登录</a></div>
+</div>
+<!--header/end-->
+
+<!--content/begin-->
+<div id="content" >
+
+<!--HLSPlayer代码开始-->
+<div class="video" id="HLSPlayer" >
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+/*
+* HLSPlayer参数应用=========================<br>
+* @Contact QQ:261532593 
+* @param {Object} vID        ID
+* @param {Object} vWidth     播放器宽度设置
+* @param {Object} vHeight    播放器宽度设置
+* @param {Object} vPlayer    播放器文件
+* @param {Object} vHLSset    HLS配置
+* @param {Object} vPic       视频缩略图
+* @param {Object} vCssurl    移动端CSS应用文件
+* @param {Object} vHLSurl    HLS(m3u8)地址
+* ==========================================
+*/
+var vID        = ""; 
+var vWidth     = "100%";                //播放器宽度设置
+var vHeight    = 400;                   //播放器宽度设置
+var vPlayer    = "HLSPlayer.swf?v=1.5"; //播放器文件
+var vHLSset    = "HLS.swf";             //HLS配置
+var vPic       = "images/start.jpg";    //视频缩略图
+var vCssurl    = "images/mini.css";     //移动端CSS应用文件
+
+//HLS(m3u8)地址,适配PC,安卓,iOS,WP
+var vHLSurl    = "http://hls.181show.com/mutian-ucloud/m1077/playlist.m3u8";
+
+//-->
+</SCRIPT> 
+<script type="text/javascript" src="js/hls.min.js?rand=20141217"></script>
+</div>
+<!--HLSPlayer代码结束-->
+
+<div class="clear"></div>
+<h3><span>相关视频</span></h3>
+<div class="piclist">
+<dl>
+<dt><a href="demoX11.html" class="p145x100"><img src="pic/pic01.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">中国品牌手机厂商崛起三星业绩下滑</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX12.html" class="p145x100"><img src="pic/pic02.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">中国联通双4G领先计划产业链高端峰会</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX11.html" class="p145x100"><img src="pic/pic03.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">电动汽车“跑太快”，汽车配套设施称烫手山芋</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX12.html" class="p145x100"><img src="pic/pic04.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">腾讯：开放平台将连接智能硬件和线下服务再造互联网</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX11.html" class="p145x100"><img src="pic/pic05.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">微软再裁员3000，1.8万大裁员计划完成</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX12.html" class="p145x100"><img src="pic/pic06.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">阿里巴巴双十一商标杀伤力到底有多大？</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX11.html" class="p145x100"><img src="pic/pic07.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">腾讯下一个重点：硬件自身的未来也正进入多元化发展</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX12.html" class="p145x100"><img src="pic/pic08.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">从好玩到好用启辰晨风如何领航纯电动汽车</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX11.html" class="p145x100"><img src="pic/pic09.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">诺基亚：智能手机实用性价值的回归？</a></dd>
+</dl>
+<dl>
+<dt><a href="demoX12.html" class="p145x100"><img src="pic/pic10.jpg"  /></a></dt>
+<dd class="tit"><a href="demoHLS.html" title="" target="_blank">纽交所遭遇技术障，交易混乱持续约一小时</a></dd>
+</dl>
+</div>
+
+
+
+<div class="clear"></div>
+<h3><span>使用说明</span></h3>
+<!-- help/Bgein -->
+<div class="help">
+ <p>
+        <strong>播放器使用环境及注意事项：</strong><br />
+        *  请用户在IIS下或其它网站环境下使用；<br />
+        *  请确认您的环境是否支持支持flv,mp4等视频文件的mime类型，<a href="http://www.cuplayer.com/CuSunPlayer/help/Help71.html" target="_blank" class="cOrange">详细参见&gt;&gt;</a>；<br />
+        *  播放器在使用过程中，支持加载XML(asp,php,jsp,aspx)等格式配置文件；<br />
+        * 请确认播放器相关的文件地址是否正确。
+        <br />
+        <strong>遇到问题如何获得帮助：</strong>        <br />
+        * 官方应用文档：<a href="http://www.cuplayer.com/cusunplayer/help/index.html" target="_blank" class="cOrange"><br>
+        http://www.CuPlayer.com/CuSunPlayer/help</a> <br />
+        * 官方客服：QQ / <strong class="cRed2">261532593 </strong> (验证请注明&ldquo;酷播&rdquo;字样)  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=176797520&site=qq&menu=yes"><img src="http://wpa.qq.com/pa?p=2:176797520:41 &r=0.7833309615211892" alt="极酷FlvPlayer在线客服" border="0" align="absmiddle" title="点击这里给我发消息"></a><br />
+        <strong>如何正确的向客服提问？</strong> <br />
+    A:请将您的测试页上传到您的某个网站目录下，然后把测试页地址发给客服<br />
+    （如果您无法提供测试页地址，很多问题，无法协助您找出更准确的原因）； <br />
+  B:请尽可能的把问题，表述清楚。 <br />
+  <strong>极酷阳光播放器官方网站：</strong> <a href="http://www.cuplayer.com/CuSunPlayer/index.html" target="_blank" class="cOrange">http://www.cuplayer.com/CuSunPlayer/</a></p>
+</div>
+<!-- help/End -->
+
+<div class="clear"></div>
+<h3><span>扫描二维码访问</span></h3>
+<div class="help">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+var myURL = document.location.href; 
+document.writeln("<p id=\"jiathis_webchat\"><img alt=\"二维码加载中...\" style=\"margin-top: 15px;\" src=\"http://s.jiathis.com/qrcode.php?url=" + myURL + "\" height=\"220\" width=\"220\"><p class=\"open\">扫一扫 直接打开本页面</p></p>");
+//-->
+</SCRIPT> 
+</div>
+
+
+</div>
+<!--content/end-->
+
+
+
+<div class="clear"></div>
+<!--footer/begin-->  
+<div id="footer">
+	<div class="left-part">
+		<a href="http://www.cuplayer.com/" class="logo02"><img src="images/logo2.jpg"></a><em>|</em><a href="http://www.cuplayer.com/CrossPlatform">返回首页>></a>
+	</div>
+	<div class="right-part">
+     <a href="http://www.cuplayer.com/CuSunPlayer/download.html">实例下载</a>
+	</div>       
+</div>
+<!--footer/end-->
+
+</body>
+</html>

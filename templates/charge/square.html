@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="static_data/images_css/anchor-level.css" rel="stylesheet">
+    <title>广场-蝌蚪直播</title>
+    <meta property="qc:admins" content="105415766763547646" />
+    <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+    <link data-fixed="true" href="/templates/square.css" rel="stylesheet">
+    <link href="{$cdn_domain}/static_data/images_css/icons.css" rel="stylesheet">
+    <script src="{$cdn_domain}/skin/desert/js/move.js"></script>
+    <script src="{$cdn_domain}/skin/desert/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{$cdn_domain}/js/login.js?20150908"></script>
+</head>
+{include file="header.html"}
+<div class="main-square">
+    <div class="square-top">
+        <span class="cur-suqare-title">全部</span>
+    </div>
+    <div class="square-order">
+        <span class="square-order-title">显示排序: </span>
+        <span class="square-order-li square-order-choose">智能排序</span>
+    </div>
+    <ul class="squ_li clearFix">
+
+        {foreach from=$sqAnchorList item=show key=key}
+            {if $key==1}{break}{/if}
+            <li class="fl squ_first">
+                <a href="/{$show.roomNumber}.html" target="_blank">
+                    <em class="sprite_big_box biankuang-{toColor level=$show.totalpoint}"></em>
+                    <img src="{$show.image}" alt="{$show.nickName}">
+                    <span class="sprite_l pic_liverlevel_L_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>
+                    <i>当前人数：{$show.numbers}</i>
+                    <div>
+                        <p>清新脱俗的呆星</p>
+                        <p>{toTime st=$show.onlineTime}分钟前开播</p>
+                        <b class="b1"></b>
+                        <b class="b2">{$show.city}</b>
+                    </div>
+                </a>
+            </li>
+        {/foreach}
+
+
+        {foreach from=$sqAnchorList item=show key=key}
+            {if $key==0}{continue}{/if}
+            <li class="fl ">
+                <a href="/{$show.roomNumber}.html" target="_blank">
+                <em class="sprite_small_box biankuang_{toColor level=$show.totalpoint}_little "></em>
+                <img src="{$show.image}" alt="{$show.nickName}">
+                <span class="sprite_s pic_liverlevel_S_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>
+                <i>当前人数：{$show.numbers}</i>
+                <div>
+                    <p>{$show.nickName}</p>
+                    <p>{toTime st=$show.onlineTime}分钟前开播</p>
+                </div>
+                </a>
+            </li>
+        {/foreach}
+    </ul>
+</div>
+{include file="footer.html"}
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>美女主播、视频交友、美女视频、在线K歌</title>
+<link href="/css/global.css" type="text/css" rel="stylesheet" />
+<link href="/css/help.css" type="text/css" rel="stylesheet" />
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+<script src="/js/login.js"></script>
+<div id="main">
+<div id="container">
+<!--head-->
+<div class="header">
+    <div class="title-main">
+        <a class="logo" href="/"></a>
+        <div class="hnav">
+            <ul>
+                <li><a href="/" class="">首页</a></li>
+                <li><a href="/square.php" class="">广场</a></li>
+                <li><a href="/orders.php"  href="/orders.php"  class="">排行榜</a></li>
+                <li><a href="/mall.php"  href="/market.php" class="">商城</a></li>
+                <li><a href="/ucenter.php?ptype=pay#tab=0" class="" href="/ucenter.php?ptype=pay">充值</a></li>
+                <li><a href="#"  href="/download.php">APP</a></li>
+            </ul>
+        </div>
+        <div class="search-area">
+            <input type="text" id="kw" class="s_txt" maxlength="18" placeholder="昵称/公会/房间号" x-webkit-speech="">
+            <input type="button" class="s_btn" onclick="head_search_box();">
+        </div>
+                <div class="login-area">
+            <span class="log">登录</span> |
+            <span class="reg">注册</span> |
+            <span class="svs">服务</span>
+        </div>
+            </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div style="margin-top:15px"></div>
+<div class="mainbody">
+<div class="help">
+<p class="helptitle">意见反馈</p>
+<div class="forgetpass"> 
+<ul>
+<li><label for="email">您的邮箱：</label><input type="text" class="forgetinput" id="email"/></li>
+<li><label for="tel">联系电话：</label><input type="text" class="forgetinput" id="tel"/></li>
+<li><label for="email">您的意见：</label><textarea name="textarea" class="ykyjarea"></textarea></li>
+<li>
+  <input type="submit" value="提交" class="forgetbtn" id="forgetbtn"/>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--foot-->
+<div class="clear"></div>
+<div class="footer">
+    <p>沪ICP备 06050721号 -8> Copyright &copy;1988 -2015 KeDou .AllRights Reserved</p>
+    <p>蝌蚪网用户使用协议 | 蝌蚪客服电话 40888886666</p>
+    <p>商务合作 Z:dou@kedou.com</p>
+</div>
+</body>
+</html>
+<!--footend-->
+</div>
+<script>
+$(function(){
+	$("#forgetbtn").click(function(){
+		if($("#email").val()==""){
+			alert("请填写您的邮箱");
+			return;
+		}
+		if($("#tel").val()==""){
+			alert("请填写联系电话");
+			return;
+		}
+		if($("textarea[name=textarea]").val()==""){
+			alert("请填写您的意见");
+			return;
+		}
+		//$("#forgetbtn").attr('disabled',true);
+		$.get("/ajax/feedback.php?action=save", 
+			{
+				email:$("#email").val(),
+				tel:$("#tel").val(),
+				textarea:$("textarea[name=textarea]").val()
+			},
+		  function(r){
+			alert(r);
+		  });
+	});
+});
+refreshIndexLogin();
+</script>
+</body>
+</html>

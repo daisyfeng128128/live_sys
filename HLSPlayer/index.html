@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>纯HLS(m3u8)跨平台技术(HLSPlayer,m3u8Player跨平台多终端)</title>
+<meta name="keywords" content="HLSPlayer,m3u8Player,支持PC终端,Android安卓终端,iOS苹果终端,WindowsPhone终端" />
+<meta name="description" content="纯HLS(m3u8)跨平台技术,支持PC终端,Android安卓终端,iOS苹果终端,WindowsPhone终端,纯HLS(m3u8)跨平台技术(跨平台多终端测试)" />
+<link rel="shortcut icon" href="/favicon.ico" >
+<link rel="stylesheet" type="text/css" href="http://www.52player.com/Demos/Images/common.css">
+<link rel="stylesheet" type="text/css" href="http://www.52player.com/Demos/Images/style.css">
+</head>
+<body>
+<!--header/begin-->
+<div id="header">
+<div class="subnav">
+<p class="sublogo"><a href="http://www.52player.com/" target="_blank"><img src="http://www.52player.com/Demos/Images/Culogo.gif" alt="进入我爱播放器官方网站www.52player.com" width="160" height="40" border="0" /></a></p>
+<p class="sublink"><a href="http://www.52player.com/Top/" target="_blank" >下载排行榜</a> <a href="http://www.52player.com/WebPlayer/">网页播放器</a> <a href="http://www.52player.com/MusicPlayer/">音乐播放器</a> <a href="http://www.52player.com/VideoPlayer/">视频播放器</a></p>
+</div>
+</div>
+<!--header/end-->
+
+<!--maincontent/begin-->
+<div class="maincontent">
+<div class="cuplayer" style="margin-top:50px;">
+<fieldset>
+<legend>
+<h4>播放器演示(请在IIS下或其它网站环境下测试)</h4></legend>
+
+<!--HLSPlayer代码开始-->
+<div class="video" id="HLSPlayer" >
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+/*
+* HLSPlayer参数应用=======================
+* @param {Object} vID        ID
+* @param {Object} vWidth     播放器宽度设置
+* @param {Object} vHeight    播放器宽度设置
+* @param {Object} vPlayer    播放器文件
+* @param {Object} vHLSset    HLS配置
+* @param {Object} vPic       视频缩略图
+* @param {Object} vCssurl    移动端CSS应用文件
+* HLSPlayer参数应用=======================
+* 提示1：本实例请在IIS/Apache等网站环境下测试
+* 提示2：本实例仅支持hls(m3u8)/不支持flv,mp4,f4v
+*/
+var vID        = ""; 
+var vWidth     = "100%";                //播放器宽度设置
+var vHeight    = 400;                   //播放器宽度设置
+var vPlayer    = "HLSplayer.swf?v=1.5"; //播放器文件
+var vHLSset    = "HLS.swf";             //HLS配置
+var vPic       = "images/start.jpg";    //视频缩略图
+var vCssurl    = "images/mini.css";     //移动端CSS应用文件
+
+//HLS(m3u8)地址,适配PC,安卓,iOS,WP
+var vHLSurl    = "http://alipush.kedo.tv/SDkedoGame/10021.m3u8?auth_key=1482412196-0-0-c47832a14ae7bfc36214c53aaedf176c";
+//-->
+</SCRIPT> 
+<script type="text/javascript" src="js/hls.min.js?rand=3396fsa778"></script>
+</div>
+<!--HLSPlayer代码结束-->
+<h1>纯HLS(m3u8)跨平台技术(HLSPlayer,m3u8Player跨平台多终端)</h1>
+
+<ul class="downurllist">
+<li class="demo"><a href="http://www.52player.com/Demos/HLSPlayer/demoHLS.html" target="_blank">本地演示</a></li>
+<li><a href="http://www.52player.com/plus/download.php?open=2&id=51&uhash=2819d31f6730bab110a60b14" target="_blank">本地下载</a></li>
+</ul>
+</fieldset>
+</div>
+
+<!--line-->
+<div style="margin-top:50px;">
+<fieldset>
+<legend><h4>播放器介绍</h4></legend>
+  <p> 播放器功能(<span class="cRed2">提示：请在IIS下或其它网站环境下测试</span>)：<br />
+    <strong>纯HLS(m3u8)跨平台技术(HLSPlayer,m3u8Player跨平台多终端)</strong><br />
+    1. 这是一款支持m3u8地址在PC电脑端和移动端(安卓Android,苹果IOS等)播放视频的播放器。<br />
+    2. 
+    注意：本实例<strong>仅支持hls(m3u8)地址</strong>，不支持flv,mp4,mov,f4v,3gp格式，这点请特别注意！<br />
+    3. 本实例做了跨平台的适配，
+    支持PC终端,Android安卓终端,iOS苹果终端,WP终端的正常播放。<br />
+* 提示1：本实例请在IIS/Apache等网站环境下测试;<br />
+* 提示2：本实例仅支持m3u8/不支持flv,mp4,f4v;<br />
+* 提示3：本实例要求用户自身有获取到了m3u8地址。<br />
+<br />
+    使用示例请看下载文件的说明文档 </p>
+  <p><a href="HLSPlayerB.jpg" target="_blank"><img src="HLSPlayerB.jpg" alt="纯HLS(m3u8)跨平台技术(HLSPlayer,m3u8Player跨平台多终端)"  /></a></p>
+  <p>PC效果：</p>
+  <p><a href="HLSPlayerB.jpg" target="_blank"><img src="pic/PC_630_01.jpg" alt="纯HLS(m3u8)跨平台技术(HLSPlayer,m3u8Player跨平台多终端)"  /></a></p>
+  <p>安卓效果：</p>
+  <p><a href="HLSPlayerB.jpg" target="_blank"><img src="pic/Android_630_02.jpg" alt="纯HLS(m3u8)跨平台技术(HLSPlayer,m3u8Player跨平台多终端)"  /></a></p>
+
+</fieldset>
+</div>
+<!--line-->
+<div style="margin-top:50px;">
+  <fieldset>
+    <h4>使用示例1：(强力推荐)</h4>
+    <p class="code">&lt;!--HLSPlayer代码开始--&gt;<br />
+      &lt;div class=&quot;video&quot; id=&quot;HLSPlayer&quot; &gt;<br />
+      &lt;SCRIPT LANGUAGE=JavaScript&gt;<br />
+      &lt;!--<br />
+      /*<br />
+      * HLSPlayer参数应用=======================<br />
+      * @Contact QQ:261532593      <br />
+      * @param {Object} vID        ID<br />
+      * @param {Object} vWidth     播放器宽度设置<br />
+      * @param {Object} vHeight    播放器宽度设置<br />
+      * @param {Object} vPlayer    播放器文件<br />
+      * @param {Object} vHLSset    HLS配置<br />
+      * @param {Object} vPic       视频缩略图<br />
+      * @param {Object} vCssurl    移动端CSS应用文件<br />
+      * HLSPlayer参数应用=======================<br />
+      */<br />
+      var vID        = &quot;&quot;; <br />
+      var vWidth     = &quot;100%&quot;;                <br />
+      var vHeight    = 400;                   <br />
+      var vPlayer    = &quot;HLSplayer.swf?v=1.5&quot;; <br />
+      var vHLSset    = &quot;HLS.swf&quot;;<br />
+      var vPic       = &quot;images/start.jpg&quot;;    <br />
+      var vCssurl    = &quot;images/mini.css&quot;;     <br />
+//HLS(m3u8)地址,适配PC,安卓,iOS,WP<br />
+      var vHLSurl    = &quot;<strong class="cRed2">http://demo.cuplayer.com:8011/hls2-vod/test.mp4.m3u8</strong>&quot;;<br />
+      //--&gt;<br />
+      &lt;/SCRIPT&gt; <br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;js/hls.min.js?rand=3396fsa778&quot;&gt;&lt;/script&gt;<br />
+      &lt;/div&gt;<br />
+      &lt;!--HLSPlayer代码结束--&gt;</p>
+  </fieldset>
+</div>
+
+<div style="margin-top:50px;">
+  <fieldset>
+<legend><h4>播放器下载</h4></legend>
+<p><ul class="downurllist">
+<li class="demo"><a href="http://www.52player.com/Demos/HLSPlayer/demoHLS.html" target="_blank">本地演示</a></li>
+<li><a href="http://www.52player.com/plus/download.php?open=2&id=51&uhash=2819d31f6730bab110a60b14" target="_blank">本地下载</a></li>
+</ul>
+</p>
+</fieldset>
+</div>
+
+
+
+
+
+</div>
+<!--maincontent/end-->
+
+
+
+
+<div id="footer" class="clearfix">
+
+<div class="copyright">2010-2013(C) <strong><a href="http://www.52player.com/" target="_blank" title="我爱播放器" class="cRed">www.52player.com</a></strong> 我爱播放器 Powered by <strong>iWebPlayer</strong> Center  </div>
+<div style="display:none;">
+			<script src="http://s20.cnzz.com/stat.php?id=3992412&web_id=3992412&show=pic" 
+			language="JavaScript"></script>
+  </div>
+  </div>
+</div>
+</body>
+</html>

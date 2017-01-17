@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style/common.css">
+    <link rel="stylesheet" type="text/css" href="style/mallBg.css"/>
+    <link rel="stylesheet" type="text/css" href="style/main.css"/>
+    <script src="js/jquery-1.12.4.min.js"></script>
+	<script src="js/move.js"></script>   
+    <script src="js/popplayer.js"></script>
+
+</head>
+<body style="padding-top:60px;">
+	<div class="box">
+		<header class="clearFix">
+			<nav class="fl">
+				<span class="logo">logo</span>
+				<a class="home" href="javascript:;">首页</a>
+				<a class="squ" href="javascript:;">广场</a>
+				<a class="mall" href="javascript:;">商城</a>
+				<a class="ranking" href="javascript:;">排行榜</a>
+				<a href="javascript:;">帮助</a>
+
+			</nav>	
+
+			<div class="fl seaching">
+				<input class="seach" type="text" placeholder="ID/主播昵称" name="">
+				<span class="searchBtn"></span>
+			</div>	
+
+			<div class="fr hdInfo">
+				<a href="javascript:;" class="name">
+                	aaaa
+                    <span class="writeBg" id="writeBg"></span>
+                </a>
+				<a href="javascript:;" class="charge">充值
+                	<span class="chargeBg"></span>
+                </a>
+				<a href="javascript:;" class="personalCenter">个人中心
+                	<span class="pcBg"></span>
+                </a>
+				<a href="javascript:;" >退出</a>
+
+			</div>
+            
+            <div class="modify" id="modify">
+                <p class="modInfo">修改资料</p>
+                <input type="text" id="name"/>
+                <input type="button" id="modBtn" value="确定"/>
+            </div>
+            
+            <div class="qkCharge">
+            	<div class="hd">
+                	<h4>快速充值<span>充值越多奖励越丰厚</span></h4>
+                	<a href="javascript:;" class="close" id="close"></a>
+                </div>
+                <ul class="info">
+                	<li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">1000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>10</i> 元 <strong>（100Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">5000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>50</i> 元 <strong>（500Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">20000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>200</i> 元 <strong>（2000Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">50000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>500</i> 元 <strong>（5000Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">100000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>1000</i> 元 <strong>（10000Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" checked="checked" style="background:#3a60df" name="amount" />
+                        <span class="others">其他金额
+                        	<input class="num" value="232" type="text" /> 元
+                        </span>
+                        
+                        <span class="get">将获得
+                        	<i>232000</i>
+                        	<strong>蝌蚪币</strong>
+                        </span>
+                    </li>
+                    <div class="ckCharge">立即充值</div>
+                </ul>
+                
+            </div>
+            
+		</header>
+        <div class="cont clearFix">             
+			<section class="mallDetail">
+				<div class="tit">
+                    <a href="javascript:;"  class="guard active">守护</a>
+                    <a href="javascript:;"  class="prop">道具</a>
+                    <a href="javascript:;"  class="car">座驾</a>
+				</div>
+				<!--<div class="guard_content">
+      				<div class="sprite_mall pic_shouhu_banner gdBanner"></div>
+                    <div class="privilege">
+                    	<h4 class="sprite_mall pic_shangcheng_title">
+                        	<span>守护特权说明</span>
+                        </h4>
+                        <div class="prInfo">
+                        	<ul class="gd_list clearFix">
+                                <li class="fl bgBigLi firstBig">
+                                    <div class="guardType">守护类型</div>
+                                    <ul class="gd_detail">
+                                        <li class="clearFix">
+                                            <span class="sprite_mall icon_huizhang fl"></span>
+                                            <span class="fl">专属勋章</span>
+                                        </li>
+                                        <li>
+                                            <span class="sprite_mall icon_zuoyi fl"></span>
+                                            <span class="fl">专属座位</span>
+                                        </li>
+                                        <li class="jinchang">
+                                            <span class="sprite_mall cion_jinchang fl"></span>
+                                            <span class="fl">进场特效</span>
+                                        </li>
+                                        <li>
+                                            <span class="sprite_mall icon_messages fl"></span>
+                                            <span class="fl">聊天特权</span>	
+                                        </li>
+                                        <li class="last">
+                                            <span class="sprite_mall icon_tichu fl"></span>
+                                            <span class="fl">房间特权</span>	
+                                        </li>
+                                    </ul>
+                                </li>
+        
+                                <li class="fl bgBigLi">
+                                    <div class="sprite_mall pic_shuoming_qingtong"></div>
+                                    <div class="guardType">
+                                        青铜级
+                                        <p>LV1-LV5</p>
+                                    </div>
+                                    <ul class="gd_detail">
+                                        <li class="firstDetail">
+                                            <span class="sprite_mall pic_guardlevel_qingtong"></span>
+                                            <span class="sprite_mall pic_shangcheng_qingtong"></span>
+                                            <span class="sprite_mall pic_jinchang_01"></span>
+                                        </li>
+                                        <li>聊天框 <span class="blue">蓝色</span> 昵称</li>
+                                        <li class="last">防普通禁言、踢出房间</li>
+                                    </ul>
+                                </li>
+        
+                                <li class="fl bgBigLi">
+                                    <div class="sprite_mall pic_shuoming_baiyin"></div>
+                                    <div class="guardType">
+                                        白银级
+                                        <p>LV5-Lv10</p>
+                                    </div>
+                                    <ul class="gd_detail">
+                                        <li class="firstDetail">
+                                            <span class="sprite_mall pic_guardlevel_baiyin"></span>
+                                            <span class="sprite_mall pic_shangcheng_baiyin"></span>
+                                            <span class="sprite_mall pic_jinchang_02"></span>
+                                        </li>
+                                        <li>聊天框 <span class="violet">紫色</span> 昵称</li>
+                                        <li class="last">防普通禁言、踢出房间</li>
+                                    </ul>
+                                </li>
+        
+                                <li class="fl bgBigLi">
+                                    <div class="sprite_mall pic_shuoming_huangjin"></div>
+                                    <div class="guardType">
+                                        黄金级
+                                        <p>LV10-LV15</p>
+                                    </div>
+                                    <ul class="gd_detail">
+                                        <li class="firstDetail">
+                                            <span class="sprite_mall pic_guardlevel_huangjin"></span>
+                                            <span class="sprite_mall pic_shangcheng_huangjin"></span>
+                                            <span class="sprite_mall pic_jinchang_03"></span>
+                                        </li>
+                                        <li>聊天框 <span class="orange">橙色</span> 昵称 </li>
+                                        <li class="last">防普通禁言、踢出房间</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="howUp">
+                    	<h4 class="sprite_mall pic_shangcheng_title">
+                        	<span>如何升级</span>
+                        </h4>
+                        <div class="upInfo sprite_mall pic_jinyanbiao"></div>
+                    </div>
+                    
+                    <div class="open">
+                    	<h4 class="sprite_mall pic_shangcheng_title">
+                        	<span>开通守护</span>
+                        </h4>
+                        <div class="openGuard sprite_mall pic_kaitongshouhu"></div>
+                    </div>
+						
+				</div>--> 
+                
+               <!--<div class="prop_content">
+                	<ul class="propList clearFix">
+                        <li class="propBox firBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                        
+                        <li class="propBox fl">
+                            <div class="boxTop">
+                                <div class="propGifImg"><img src="img/pic_liwu.png"> </div>
+                                <div class="gifCon">
+                                    <div class="gifTit">公爵礼包</div>
+                                    <div class="gifMid">公爵以上才可以购买</div>
+                                    <div class="gifPrice"><span>187956</span><a href="/pay.php"  class="click">购买</a></div>
+                                </div>
+                            </div>
+                            <div class="boxBot">
+                                <div class="bot_tit">公爵礼包</div>
+                                <div class="">1、公爵以上可用特殊礼物</div>
+                                <div class="">2、使用后可获得发言橙色炫光效果</div>
+                            </div>
+                        </li>
+                     
+        			</ul>
+                </div>  --> 
+                
+                <div class="carContent">
+                	<ul class="carList">
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li> 
+                        
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                         
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                        <li class="carBox fl">
+                            <div class="mall-car-top">知名跑车</div>
+                            <img class="carPic" src="img/pic_car_01.png"/>
+                            <p class="money">17989879</p>
+                            <div class="mall-car-but"><button><a href="pay.php" >购买</a></button></div>
+                            <div class="mall-car-p"><span>公爵以上才可以购买</span></div>
+                         </li>
+                     
+                    </ul>
+              
+                    <div class="car_tip clearFix">
+                        <h4>温馨提示：</h4>
+                        <p>购买座驾将享受与别人不同的进场方式，让你处处彰显尊贵</p>
+                        <p>同时购买坐骑将有机会获得限免道具，机会多多，赶快购买吧！</p>
+                        <a href="javascript:;" class="growLev fr">消费物品成长等级 >></a>
+                    </div>
+                    
+                </div>
+                
+			</section>
+		</div>
+
+		
+
+		<footer>
+		    <div class="wrapper">
+		        <div class="container">
+		            <p class="relatedLink">
+		                <a href="javascript:;">关于蝌蚪 </a>|
+		                <a href="javascript:;"> 服务协议 </a>|
+		                <a href="javascript:;"> 客服帮助 </a>|
+		                <a href="javascript:;"> 关于我们 </a>|
+		                <a href="javascript:;"> 版权声明 </a>
+		            </p>
+		            <p class="clearFix copyright">
+		                <span class="fl logo_footer"></span>
+		                <span class="fl copyrightTxt">-Copyright©2016 沪ICP备14054721号</span>
+		            </p>
+		            <p>
+		                <span>蝌蚪客服电话：021-63156389 | 商务合作邮箱：</span>
+		                <a class="officialMailbox" href="mailto:mt@mutiantech.com">mt@mutiantech.com</a>
+		            </p>
+		        </div>
+		    </div>
+		</footer>
+	</div>
+	
+	
+</body>
+</html>

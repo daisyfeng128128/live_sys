@@ -1,0 +1,223 @@
+    /*等级大图*/
+
+.sprite_l {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/liverlevel_L.png);}
+
+.pic_liverlevel_L_1 {width:64px; height:64px; background-position: -1919px -2px}
+.pic_liverlevel_L_10 {width:64px; height:64px; background-position: -1850px -2px}
+.pic_liverlevel_L_11 {width:64px; height:64px; background-position: -1784px -2px}
+.pic_liverlevel_L_12 {width:64px; height:64px; background-position: -1718px -2px}
+.pic_liverlevel_L_13 {width:64px; height:64px; background-position: -1652px -2px}
+.pic_liverlevel_L_14 {width:64px; height:64px; background-position: -1586px -2px}
+.pic_liverlevel_L_15 {width:64px; height:64px; background-position: -1520px -2px}
+.pic_liverlevel_L_16 {width:64px; height:64px; background-position: -1454px -2px}
+.pic_liverlevel_L_17 {width:64px; height:64px; background-position: -1388px -2px}
+.pic_liverlevel_L_18 {width:64px; height:64px; background-position: -1322px -2px}
+.pic_liverlevel_L_19 {width:64px; height:64px; background-position: -1256px -2px}
+.pic_liverlevel_L_2 {width:64px; height:64px; background-position: -1190px -2px}
+.pic_liverlevel_L_20 {width:64px; height:64px; background-position: -1124px -2px}
+.pic_liverlevel_L_21 {width:64px; height:64px; background-position: -1058px -2px}
+.pic_liverlevel_L_22 {width:64px; height:64px; background-position: -992px -2px}
+.pic_liverlevel_L_23 {width:64px; height:64px; background-position: -926px -2px}
+.pic_liverlevel_L_24 {width:64px; height:64px; background-position: -860px -2px}
+.pic_liverlevel_L_25 {width:64px; height:64px; background-position: -794px -2px}
+.pic_liverlevel_L_26 {width:64px; height:64px; background-position: -728px -2px}
+.pic_liverlevel_L_27 {width:64px; height:64px; background-position: -662px -2px}
+.pic_liverlevel_L_28 {width:64px; height:64px; background-position: -596px -2px}
+.pic_liverlevel_L_29 {width:64px; height:64px; background-position: -530px -2px}
+.pic_liverlevel_L_3 {width:64px; height:64px; background-position: -464px -2px}
+.pic_liverlevel_L_30 {width:64px; height:64px; background-position: -398px -2px}
+.pic_liverlevel_L_4 {width:64px; height:64px; background-position: -332px -2px}
+.pic_liverlevel_L_5 {width:64px; height:64px; background-position: -266px -2px}
+.pic_liverlevel_L_6 {width:64px; height:64px; background-position: -200px -2px}
+.pic_liverlevel_L_7 {width:64px; height:64px; background-position: -134px -2px}
+.pic_liverlevel_L_8 {width:64px; height:64px; background-position: -68px -2px}
+.pic_liverlevel_L_9 {width:64px; height:64px; background-position: -2px -2px}
+
+
+
+
+/*等级*/
+.spriteLev {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(/images/kedo/icons.png);}
+
+.activelevel-pic_activelevel_1 {width:24px; height:18px; background-position: -1536px -42px}
+.activelevel-pic_activelevel_10 {width:24px; height:18px; background-position: -1510px -42px}
+.activelevel-pic_activelevel_11 {width:24px; height:18px; background-position: -1484px -42px}
+.activelevel-pic_activelevel_12 {width:24px; height:18px; background-position: -1458px -42px}
+.activelevel-pic_activelevel_13 {width:24px; height:18px; background-position: -1432px -42px}
+.activelevel-pic_activelevel_14 {width:24px; height:18px; background-position: -1406px -42px}
+.activelevel-pic_activelevel_15 {width:24px; height:18px; background-position: -1380px -42px}
+.activelevel-pic_activelevel_16 {width:24px; height:18px; background-position: -1354px -42px}
+.activelevel-pic_activelevel_17 {width:24px; height:18px; background-position: -1328px -42px}
+.activelevel-pic_activelevel_18 {width:24px; height:18px; background-position: -1302px -42px}
+.activelevel-pic_activelevel_19 {width:24px; height:18px; background-position: -1276px -42px}
+.activelevel-pic_activelevel_2 {width:24px; height:18px; background-position: -1250px -42px}
+.activelevel-pic_activelevel_20 {width:24px; height:18px; background-position: -1224px -42px}
+.activelevel-pic_activelevel_21 {width:24px; height:18px; background-position: -1198px -42px}
+.activelevel-pic_activelevel_22 {width:24px; height:18px; background-position: -1172px -42px}
+.activelevel-pic_activelevel_23 {width:24px; height:18px; background-position: -1146px -42px}
+.activelevel-pic_activelevel_24 {width:24px; height:18px; background-position: -1120px -42px}
+.activelevel-pic_activelevel_25 {width:24px; height:18px; background-position: -1094px -42px}
+.activelevel-pic_activelevel_26 {width:24px; height:18px; background-position: -1068px -42px}
+.activelevel-pic_activelevel_27 {width:24px; height:18px; background-position: -1042px -42px}
+.activelevel-pic_activelevel_28 {width:24px; height:18px; background-position: -1016px -42px}
+.activelevel-pic_activelevel_29 {width:24px; height:18px; background-position: -990px -42px}
+.activelevel-pic_activelevel_3 {width:24px; height:18px; background-position: -964px -42px}
+.activelevel-pic_activelevel_30 {width:24px; height:18px; background-position: -938px -42px}
+.activelevel-pic_activelevel_4 {width:24px; height:18px; background-position: -912px -42px}
+.activelevel-pic_activelevel_5 {width:24px; height:18px; background-position: -886px -42px}
+.activelevel-pic_activelevel_6 {width:24px; height:18px; background-position: -860px -42px}
+.activelevel-pic_activelevel_7 {width:24px; height:18px; background-position: -834px -42px}
+.activelevel-pic_activelevel_8 {width:24px; height:18px; background-position: -808px -42px}
+.activelevel-pic_activelevel_9 {width:24px; height:18px; background-position: -782px -42px}
+.consumelevel-pic_consumelevel_1 {width:48px; height:18px; background-position: -702px -22px}
+.consumelevel-pic_consumelevel_10 {width:48px; height:18px; background-position: -652px -22px}
+.consumelevel-pic_consumelevel_11 {width:48px; height:18px; background-position: -602px -22px}
+.consumelevel-pic_consumelevel_12 {width:48px; height:18px; background-position: -552px -22px}
+.consumelevel-pic_consumelevel_13 {width:48px; height:18px; background-position: -502px -22px}
+.consumelevel-pic_consumelevel_14 {width:48px; height:18px; background-position: -452px -22px}
+.consumelevel-pic_consumelevel_15 {width:48px; height:18px; background-position: -402px -22px}
+.consumelevel-pic_consumelevel_16 {width:48px; height:18px; background-position: -352px -22px}
+.consumelevel-pic_consumelevel_17 {width:48px; height:18px; background-position: -302px -22px}
+.consumelevel-pic_consumelevel_18 {width:48px; height:18px; background-position: -252px -22px}
+.consumelevel-pic_consumelevel_19 {width:48px; height:18px; background-position: -202px -22px}
+.consumelevel-pic_consumelevel_2 {width:48px; height:18px; background-position: -152px -22px}
+.consumelevel-pic_consumelevel_20 {width:48px; height:18px; background-position: -102px -22px}
+.consumelevel-pic_consumelevel_21 {width:48px; height:18px; background-position: -52px -22px}
+.consumelevel-pic_consumelevel_22 {width:48px; height:18px; background-position: -2px -22px}
+.consumelevel-pic_consumelevel_23 {width:48px; height:18px; background-position: -1482px -2px}
+.consumelevel-pic_consumelevel_24 {width:48px; height:18px; background-position: -1432px -2px}
+.consumelevel-pic_consumelevel_25 {width:48px; height:18px; background-position: -1382px -2px}
+.consumelevel-pic_consumelevel_26 {width:48px; height:18px; background-position: -1332px -2px}
+.consumelevel-pic_consumelevel_27 {width:48px; height:18px; background-position: -1282px -2px}
+.consumelevel-pic_consumelevel_28 {width:48px; height:18px; background-position: -1232px -2px}
+.consumelevel-pic_consumelevel_29 {width:48px; height:18px; background-position: -1182px -2px}
+.consumelevel-pic_consumelevel_3 {width:48px; height:18px; background-position: -1132px -2px}
+.consumelevel-pic_consumelevel_30 {width:48px; height:18px; background-position: -1082px -2px}
+.consumelevel-pic_consumelevel_4 {width:48px; height:18px; background-position: -1032px -2px}
+.consumelevel-pic_consumelevel_5 {width:48px; height:18px; background-position: -982px -2px}
+.consumelevel-pic_consumelevel_6 {width:48px; height:18px; background-position: -932px -2px}
+.consumelevel-pic_consumelevel_7 {width:48px; height:18px; background-position: -882px -2px}
+.consumelevel-pic_consumelevel_8 {width:48px; height:18px; background-position: -832px -2px}
+.consumelevel-pic_consumelevel_9 {width:48px; height:18px; background-position: -782px -2px}
+.guanli-pic_guanli_1 {width:18px; height:18px; background-position: -1032px -22px}
+.guanli-pic_guanli_2 {width:18px; height:18px; background-position: -1012px -22px}
+.guardlevel-pic_guardlevel_S_1 {width:18px; height:18px; background-position: -992px -22px}
+.guardlevel-pic_guardlevel_S_10 {width:18px; height:18px; background-position: -972px -22px}
+.guardlevel-pic_guardlevel_S_11 {width:18px; height:18px; background-position: -952px -22px}
+.guardlevel-pic_guardlevel_S_12 {width:18px; height:18px; background-position: -932px -22px}
+.guardlevel-pic_guardlevel_S_13 {width:18px; height:18px; background-position: -912px -22px}
+.guardlevel-pic_guardlevel_S_14 {width:18px; height:18px; background-position: -892px -22px}
+.guardlevel-pic_guardlevel_S_15 {width:18px; height:18px; background-position: -872px -22px}
+.guardlevel-pic_guardlevel_S_2 {width:18px; height:18px; background-position: -852px -22px}
+.guardlevel-pic_guardlevel_S_3 {width:18px; height:18px; background-position: -832px -22px}
+.guardlevel-pic_guardlevel_S_4 {width:18px; height:18px; background-position: -812px -22px}
+.guardlevel-pic_guardlevel_S_5 {width:18px; height:18px; background-position: -792px -22px}
+.guardlevel-pic_guardlevel_S_6 {width:18px; height:18px; background-position: -772px -22px}
+.guardlevel-pic_guardlevel_S_7 {width:18px; height:18px; background-position: -752px -22px}
+.guardlevel-pic_guardlevel_S_8 {width:18px; height:18px; background-position: -1552px -2px}
+.guardlevel-pic_guardlevel_S_9 {width:18px; height:18px; background-position: -1532px -2px}
+.liverlevel-pic_liverlevel_1 {width:24px; height:18px; background-position: -756px -42px}
+.liverlevel-pic_liverlevel_10 {width:24px; height:18px; background-position: -730px -42px}
+.liverlevel-pic_liverlevel_11 {width:24px; height:18px; background-position: -704px -42px}
+.liverlevel-pic_liverlevel_12 {width:24px; height:18px; background-position: -678px -42px}
+.liverlevel-pic_liverlevel_13 {width:24px; height:18px; background-position: -652px -42px}
+.liverlevel-pic_liverlevel_14 {width:24px; height:18px; background-position: -626px -42px}
+.liverlevel-pic_liverlevel_15 {width:24px; height:18px; background-position: -600px -42px}
+.liverlevel-pic_liverlevel_16 {width:24px; height:18px; background-position: -574px -42px}
+.liverlevel-pic_liverlevel_17 {width:24px; height:18px; background-position: -548px -42px}
+.liverlevel-pic_liverlevel_18 {width:24px; height:18px; background-position: -522px -42px}
+.liverlevel-pic_liverlevel_19 {width:24px; height:18px; background-position: -496px -42px}
+.liverlevel-pic_liverlevel_2 {width:24px; height:18px; background-position: -470px -42px}
+.liverlevel-pic_liverlevel_20 {width:24px; height:18px; background-position: -444px -42px}
+.liverlevel-pic_liverlevel_21 {width:24px; height:18px; background-position: -418px -42px}
+.liverlevel-pic_liverlevel_22 {width:24px; height:18px; background-position: -392px -42px}
+.liverlevel-pic_liverlevel_23 {width:24px; height:18px; background-position: -366px -42px}
+.liverlevel-pic_liverlevel_24 {width:24px; height:18px; background-position: -340px -42px}
+.liverlevel-pic_liverlevel_25 {width:24px; height:18px; background-position: -314px -42px}
+.liverlevel-pic_liverlevel_26 {width:24px; height:18px; background-position: -288px -42px}
+.liverlevel-pic_liverlevel_27 {width:24px; height:18px; background-position: -262px -42px}
+.liverlevel-pic_liverlevel_28 {width:24px; height:18px; background-position: -236px -42px}
+.liverlevel-pic_liverlevel_29 {width:24px; height:18px; background-position: -210px -42px}
+.liverlevel-pic_liverlevel_3 {width:24px; height:18px; background-position: -184px -42px}
+.liverlevel-pic_liverlevel_30 {width:24px; height:18px; background-position: -158px -42px}
+.liverlevel-pic_liverlevel_4 {width:24px; height:18px; background-position: -132px -42px}
+.liverlevel-pic_liverlevel_5 {width:24px; height:18px; background-position: -106px -42px}
+.liverlevel-pic_liverlevel_6 {width:24px; height:18px; background-position: -80px -42px}
+.liverlevel-pic_liverlevel_7 {width:24px; height:18px; background-position: -54px -42px}
+.liverlevel-pic_liverlevel_8 {width:24px; height:18px; background-position: -28px -42px}
+.liverlevel-pic_liverlevel_9 {width:24px; height:18px; background-position: -2px -42px}
+.relationlevel-pic_relationlevel_1 {width:24px; height:18px; background-position: -1546px -22px}
+.relationlevel-pic_relationlevel_10 {width:24px; height:18px; background-position: -1520px -22px}
+.relationlevel-pic_relationlevel_11 {width:24px; height:18px; background-position: -1494px -22px}
+.relationlevel-pic_relationlevel_12 {width:24px; height:18px; background-position: -1468px -22px}
+.relationlevel-pic_relationlevel_13 {width:24px; height:18px; background-position: -1442px -22px}
+.relationlevel-pic_relationlevel_14 {width:24px; height:18px; background-position: -1416px -22px}
+.relationlevel-pic_relationlevel_15 {width:24px; height:18px; background-position: -1390px -22px}
+.relationlevel-pic_relationlevel_16 {width:24px; height:18px; background-position: -1364px -22px}
+.relationlevel-pic_relationlevel_17 {width:24px; height:18px; background-position: -1338px -22px}
+.relationlevel-pic_relationlevel_18 {width:24px; height:18px; background-position: -1312px -22px}
+.relationlevel-pic_relationlevel_19 {width:24px; height:18px; background-position: -1286px -22px}
+.relationlevel-pic_relationlevel_2 {width:24px; height:18px; background-position: -1260px -22px}
+.relationlevel-pic_relationlevel_20 {width:24px; height:18px; background-position: -1234px -22px}
+.relationlevel-pic_relationlevel_21 {width:24px; height:18px; background-position: -1208px -22px}
+.relationlevel-pic_relationlevel_22 {width:24px; height:18px; background-position: -1182px -22px}
+.relationlevel-pic_relationlevel_23 {width:24px; height:18px; background-position: -1156px -22px}
+.relationlevel-pic_relationlevel_24 {width:24px; height:18px; background-position: -1130px -22px}
+.relationlevel-pic_relationlevel_25 {width:24px; height:18px; background-position: -1104px -22px}
+.relationlevel-pic_relationlevel_26 {width:24px; height:18px; background-position: -1078px -22px}
+.relationlevel-pic_relationlevel_27 {width:24px; height:18px; background-position: -1052px -22px}
+.relationlevel-pic_relationlevel_28 {width:24px; height:18px; background-position: -756px -2px}
+.relationlevel-pic_relationlevel_29 {width:24px; height:18px; background-position: -730px -2px}
+.relationlevel-pic_relationlevel_3 {width:24px; height:18px; background-position: -704px -2px}
+.relationlevel-pic_relationlevel_30 {width:24px; height:18px; background-position: -678px -2px}
+.relationlevel-pic_relationlevel_31 {width:24px; height:18px; background-position: -652px -2px}
+.relationlevel-pic_relationlevel_32 {width:24px; height:18px; background-position: -626px -2px}
+.relationlevel-pic_relationlevel_33 {width:24px; height:18px; background-position: -600px -2px}
+.relationlevel-pic_relationlevel_34 {width:24px; height:18px; background-position: -574px -2px}
+.relationlevel-pic_relationlevel_35 {width:24px; height:18px; background-position: -548px -2px}
+.relationlevel-pic_relationlevel_36 {width:24px; height:18px; background-position: -522px -2px}
+.relationlevel-pic_relationlevel_37 {width:24px; height:18px; background-position: -496px -2px}
+.relationlevel-pic_relationlevel_38 {width:24px; height:18px; background-position: -470px -2px}
+.relationlevel-pic_relationlevel_39 {width:24px; height:18px; background-position: -444px -2px}
+.relationlevel-pic_relationlevel_4 {width:24px; height:18px; background-position: -418px -2px}
+.relationlevel-pic_relationlevel_40 {width:24px; height:18px; background-position: -392px -2px}
+.relationlevel-pic_relationlevel_41 {width:24px; height:18px; background-position: -366px -2px}
+.relationlevel-pic_relationlevel_42 {width:24px; height:18px; background-position: -340px -2px}
+.relationlevel-pic_relationlevel_43 {width:24px; height:18px; background-position: -314px -2px}
+.relationlevel-pic_relationlevel_44 {width:24px; height:18px; background-position: -288px -2px}
+.relationlevel-pic_relationlevel_45 {width:24px; height:18px; background-position: -262px -2px}
+.relationlevel-pic_relationlevel_46 {width:24px; height:18px; background-position: -236px -2px}
+.relationlevel-pic_relationlevel_47 {width:24px; height:18px; background-position: -210px -2px}
+.relationlevel-pic_relationlevel_48 {width:24px; height:18px; background-position: -184px -2px}
+.relationlevel-pic_relationlevel_49 {width:24px; height:18px; background-position: -158px -2px}
+.relationlevel-pic_relationlevel_5 {width:24px; height:18px; background-position: -132px -2px}
+.relationlevel-pic_relationlevel_50 {width:24px; height:18px; background-position: -106px -2px}
+.relationlevel-pic_relationlevel_6 {width:24px; height:18px; background-position: -80px -2px}
+.relationlevel-pic_relationlevel_7 {width:24px; height:18px; background-position: -54px -2px}
+.relationlevel-pic_relationlevel_8 {width:24px; height:18px; background-position: -28px -2px}
+.relationlevel-pic_relationlevel_9 {width:24px; height:18px; background-position: -2px -2px}
+
+/* 数字背景 */
+.sprite_top {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(/images/kedo/top.png);}
+
+.icon_shuzi_1 {width:16%; height:52px; background-position: -408px -2px}
+.icon_shuzi_2 {width:16%; height:52px; background-position: -350px -2px}
+.icon_shuzi_3 {width:16%; height:52px; background-position: -292px -2px}
+.icon_shuzi_4 {width:16%; height:52px; background-position: -234px -2px}
+.icon_shuzi_5 {width:16%; height:52px; background-position: -176px -2px}
+.icon_shuzi_6 {width:16%; height:52px; background-position: -118px -2px}
+.icon_shuzi_7 {width:16%; height:52px; background-position: -60px -2px}
+.icon_shuzi_8 {width:16%; height:52px; background-position: -2px -2px}
+
+
+
+/*首页合作*/
+.sprite_coop {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/cooperation.png);}
+
+.god {width:96px; height:68px; background-position: -2px -422px}
+.legend {width:96px; height:68px; background-position: -2px -352px}
+.luxing {width:96px; height:68px; background-position: -2px -282px}
+.origin {width:96px; height:68px; background-position: -2px -212px}
+.tudou {width:96px; height:68px; background-position: -2px -142px}
+.youku {width:96px; height:68px; background-position: -2px -72px}
+.zui {width:96px; height:68px; background-position: -2px -2px}

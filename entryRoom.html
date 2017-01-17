@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="room">
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/angular/angular.min.js"></script>
+<script>
+	var room=angular.module('room',[]);
+		room.controller('room',function($scope,$http){
+			$scope.roomN=[];
+			$http.get("/rest/site/roomAts.mt?roomNumber=1024&type=2&number=1",{
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+			}).success(function(json){
+				$scope.roomNs=json.data[0].roomNumber;
+				window.location.href=$scope.roomNs;
+			}).error(function(){
+				console.log('房间加载失败')
+			});
+		
+			
+		})
+		
+	
+</script>
+</head>
+
+<body ng-controller="room">
+</body>
+</html>

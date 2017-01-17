@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="jQuery Splitter, Splitter Widget, Splitter, jqxSplitter" />
+    <script src="/skin/desert/js/jquery.min.js"></script>
+    <script src="/js/sea-modules/radialIndicator-master/radialIndicator.min.js"></script>
+    <script type="text/javascript">
+    	$(function() {
+			var radialObj = radialIndicator("#indicatorContainer", {
+			    radius: 45,
+			    barWidth: 5,
+			    barColor: '#FF0000',
+			    minValue: 0,
+			    maxValue: 60,
+			    frameTime:5,
+			    fontWeight: 'normal',
+			    roundCorner: true
+			});
+			setInterval(function () {
+			    radialObj.value(new Date().getSeconds() + 1);
+			}, 1000);
+		}); 
+    </script>
+</head>
+<style>
+#indicatorContainerWrap{
+    position: relative;
+    display: inline-block;
+}
+ 
+.rad-cntnt{
+    position: absolute;
+    display: table;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size:20px;
+    line-height: 24px;
+}
+ 
+ 
+#prgFileSelector{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top:0;
+    left:0;
+    z-index: 10;
+}
+</style>
+<body class='default'>
+	<div id="indicatorContainerWrap">
+	    <div id="indicatorContainer"></div>
+	    <img src="picture/lab_exp.png"  id="prgLogo"/>
+	</div>
+</body>
+</html>

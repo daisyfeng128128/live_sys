@@ -1,0 +1,186 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+body{padding:1px;
+	background: #363d4f; 
+	background: -moz-linear-gradient(top, #363d4f 0%, #282d3a 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#363d4f), color-stop(100%,#282d3a)); 
+	background: -webkit-linear-gradient(top, #363d4f 0%,#282d3a 100%); 
+	background: -o-linear-gradient(top, #363d4f 0%,#282d3a 100%); 
+	background: -ms-linear-gradient(top, #363d4f 0%,#282d3a 100%); 
+	background: linear-gradient(to bottom, #363d4f 0%,#282d3a 100%); 
+	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#363d4f', endColorstr='#282d3a',GradientType=0 ); 
+}
+:root {filter:none;} 
+.fl{ float:left; }
+.fr{ float:right;}
+.clearFix:after{ content:''; display:block; clear:both; }
+.liveBg .pic_1,.liveBg .pic_2,.liveBg .pic_3,.liveBg .pic_4,.liveBg .pic_5,.liveBg .pic_6,.liveBg .pic_7,.liveBg .pic_8{
+	position: absolute;
+	width: 320px;
+}
+.liveBg{
+	position: absolute;
+    width: 1900px;
+    left: 50%;
+    margin-left: -950px;
+
+}
+.liveBg .pic_1{
+	height: 241px;
+	background: url(/public/Glive/images/pic_1.png) no-repeat;
+	left: 238px;
+	top: 62px;
+	
+}
+.liveBg .pic_2{
+	height: 245px;
+	background: url(/public/Glive/images/pic_2.png) no-repeat;
+	left: 238px;
+	top: 326px;
+}
+.liveBg .pic_3{
+	height: 180px;
+	background: url(/public/Glive/images/pic_3.png) no-repeat;
+	left: 238px;
+	top: 594px;
+}
+.liveBg .pic_4{
+	width: 329px;
+	height: 274px;
+	background: url(/public/Glive/images/pic_4.png) no-repeat;
+	left: 1340px;
+	top: 60px;
+}
+.liveBg .pic_5{
+	width: 328px; 
+	height: 379px;
+	background: url(/public/Glive/images/pic_5.png) no-repeat;
+	left: 1340px;
+	top: 354px;
+}
+.liveBg .pic_6{
+	width: 696px;
+	height: 464px;
+	background: url(/public/Glive/images/pic_6.png) no-repeat;
+	left: 608px;
+	top: 77px;
+}
+.liveBg .pic_7{
+	width: 538px;
+	height: 238px;
+	background: url(/public/Glive/images/pic_7.png) no-repeat;
+	left:692px;
+	top: 586px;
+}
+.liveBg .pic_8{
+	width: 1600px;
+	height: 192px;
+	background: url(/public/Glive/images/pic_8.png) no-repeat;
+	left: 164px;
+	top: 784px;
+}
+
+#player{
+	position: absolute;
+	width: 640px;
+	height: 360px;
+    z-index: 11;
+}
+
+.live-info{position: absolute !important; top: 446px;margin: 0 !important; left: 640px; clear:both; }
+.live-info .self-photo, .live-info .self-name, .live-info .self-level{float: left !important;}
+.followout, .followme{width:64px !important; }
+
+/*未开播*/
+.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: absolute; left: 638px; top: 77px;}
+.no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
+.no-live-next{margin: auto;  text-align: center;  margin-top: 40px;  color: #999; height: 30px;  width: 300px;  line-height: 30px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -40px;display: none}
+.no-live-next .no-live-week{color: #999999}
+.no-live-next .no-live-time{color: #c28332}
+.no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
+
+.no-live{ font-size:12px; color: #fefefe}
+.no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
+.no-live ul li{float: left;margin:0 12px }
+.no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
+.noanchor-kuang{width:100px;  height: 150px;position: relative;overflow: hidden}
+.noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
+.noanchor-kuang img{ position: absolute;height: 146px; width: 96px; z-index: 8; margin: 2px;  border-radius: 5px;}
+.noanchor-info{ line-height: 18px;  margin-top: 3px;margin-left: -2px;}
+.noanchor-info .noanchor-level{float: left}
+.noanchor-name {float: left;    float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;}
+.noanchor-num{float: left;margin-left: 10px;}
+.bk-color{border: 2px solid #ccc;  border-radius: 10px;}
+
+#pl{width:640px;height: 360px;}
+
+
+/*public*/
+cite, i {
+    font-style: normal;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+*,*:before,*:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+img {
+    border: none;
+}
+.clear{clear: both}
+ul li{ list-style: none}
+
+.fl{float:left; }
+.fr{float:right; }
+.clearFix:after{ content:''; display:block; clear:both; }
+a{text-decoration:none; }
+
+
+/*中部*/
+.video-area{    width: 640px;  margin: 77px auto;  left: 0;  right: 0;  position: absolute;}
+.live-info{position: relative;margin: 0 auto;  margin-top: 8px;width: 640px;}
+.flash-area{width: 985px;height: 550px; margin: 0 auto ;}
+.live-info .self-photo,.live-info .self-name,.live-info .self-level{display: inline-block;height: 60px;overflow: hidden; margin-top: 14px;}
+.live-info .self-care{display: inline-block;overflow: hidden; margin-top: 12px;}
+.self-photo{width:60px; }.self-photo img,.nl-login img{ display: block;  width: 60px;  height: 60px;  -webkit-border-radius: 50%; -moz-border-radius: 50%;  -o-border-radius: 50%;  border-radius: 50%;}
+.self-name{width: 160px;color: #fff; margin-left: 10px;}
+.self-name .s-name{display: block;font-size: 16px;height: 22px;width: 160px;}
+.self-name .s-else{margin-top: 12px;}
+.anchor-info-names{width:116px; display: inline-block; height: 22px;overflow: hidden}
+.self-name .s-else span,.level-margin-area span{font-size: 12px;color: #F3E6D5;display: inline-block;margin-right: 15px;padding-left: 20px;}
+.self-name .s-else .s-position{background: url("/skin/desert/images/dizhi.png")left no-repeat;}
+.self-name .s-else .s-people{background: url("/skin/desert/images/zaixian.png")left no-repeat;  padding-left: 15px;}
+.l-fire{background: url("/skin/desert/images/huo.png")left no-repeat;}
+.l-xin{background: url("/skin/desert/images/guanzhu111.png")left no-repeat;}
+.self-level {width: 190px;padding-top: 5px;}
+.self-level .level-bar-area{position: relative}
+.self-level .level-bar-area .lvout{width: 150px;height:9px;overflow:hidden;border: 2px solid #FFffff;background:#44585F}
+.lvinner{max-width:100%;height: 5px;background: #F8B800}
+.lhaicha{color: #FFffff;font-size: 12px;line-height: 22px;height: 22px;}
+.self-care{color: #FFffff;position: absolute;right: 10px;top: 20px;cursor: pointer;}
+#addFav2{cursor: pointer}
+.followout,.followme{  height: 22px;line-height: 22px;padding: 0 8px;font-size: 12px}
+
+.anchor-level {margin-left: 5px;}
+.anchor-level-next{ position: absolute; right: 0;  top: -5px;}
+
+
+
+/*其他*/
+#presSwf,#flyMsgBox,#showCar{position:absolute;top:0;left:50%;z-index:0;margin-left:-470px;width:940px;height:500px;pointer-events:none;}
+#giftShapeSwf,#showGiftSwf,#EffectPlayerSwf{position:absolute;width:100%;height: 100%;z-index: 1009;pointer-events: none}
+#CustomGiftSwf,#LevelUpPlayerSwf{position:absolute;width:640px;height:360px; left: 0;top: 77px;  right: 0;  margin: 0 auto;z-index:888;pointer-events:none;}
+#MultyGiftNoticeSwf{position:absolute;width:640px;height:460px; left: 0; right: 0;  margin: 0 auto;z-index:999;pointer-events:none;}

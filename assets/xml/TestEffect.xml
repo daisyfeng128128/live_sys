@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f46ab88e41d0f51be86856d3cdf88a07:32b7a6941a6226e8c568003c4858e296:ff1c3b8fca605c0aeaf4aa9bbda0fcc6$ -->
+<TextureAtlas imagePath="TestEffect.png">
+    <SubTexture name="aeEffect0001" x="2" y="488" width="160" height="160"/>
+    <SubTexture name="aeEffect0002" x="326" y="326" width="160" height="160"/>
+    <SubTexture name="aeEffect0003" x="164" y="326" width="160" height="160"/>
+    <SubTexture name="aeEffect0004" x="2" y="326" width="160" height="160"/>
+    <SubTexture name="aeEffect0005" x="326" y="164" width="160" height="160"/>
+    <SubTexture name="aeEffect0006" x="164" y="164" width="160" height="160"/>
+    <SubTexture name="aeEffect0007" x="2" y="164" width="160" height="160"/>
+    <SubTexture name="aeEffect0008" x="326" y="2" width="160" height="160"/>
+    <SubTexture name="aeEffect0009" x="164" y="2" width="160" height="160"/>
+    <SubTexture name="aeEffect0010" x="2" y="2" width="160" height="160"/>
+</TextureAtlas>

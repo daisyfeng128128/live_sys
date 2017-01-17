@@ -1,0 +1,37 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:f1971a8b02287145d18465df036fd410:5768cfccbf468fca6fbf9ecbe75e9d8c:ae912e3617c77eceb49f71100465576c$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite_char {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/charge.png);}
+
+.bank_01 {width:114px; height:36px; background-position: -814px -78px}
+.bank_02 {width:114px; height:36px; background-position: -814px -40px}
+.bank_03 {width:114px; height:36px; background-position: -698px -78px}
+.bank_04 {width:114px; height:36px; background-position: -880px -2px}
+.bank_05 {width:114px; height:36px; background-position: -764px -2px}
+.bank_06 {width:114px; height:36px; background-position: -698px -40px}
+.bank_07 {width:114px; height:36px; background-position: -582px -78px}
+.bank_08 {width:114px; height:36px; background-position: -648px -2px}
+.bank_09 {width:114px; height:36px; background-position: -582px -40px}
+.bank_10 {width:114px; height:36px; background-position: -466px -78px}
+.bank_11 {width:114px; height:36px; background-position: -532px -2px}
+.bank_12 {width:114px; height:36px; background-position: -466px -40px}
+.bank_13 {width:114px; height:36px; background-position: -350px -78px}
+.bank_14 {width:114px; height:36px; background-position: -416px -2px}
+.bank_15 {width:114px; height:36px; background-position: -350px -40px}
+.bank_16 {width:114px; height:36px; background-position: -234px -78px}
+.bank_17 {width:114px; height:36px; background-position: -300px -2px}
+.bank_18 {width:114px; height:36px; background-position: -234px -40px}
+.bank_19 {width:114px; height:36px; background-position: -184px -2px}
+.bank_20 {width:114px; height:36px; background-position: -118px -73px}
+.bank_21 {width:114px; height:36px; background-position: -2px -73px}
+.icon_hot {width:26px; height:14px; background-position: -184px -40px;margin-top: 8px;margin-right: 6px; }
+.mianzhi_border_hover {width:180px; height:69px; background-position: -2px -2px; z-index:9; }

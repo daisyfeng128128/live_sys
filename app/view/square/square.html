@@ -1,0 +1,180 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="squareApp" class="ng-app:squareApp" ng-app="squareApp">
+<head>
+    <meta charset="utf-8">
+    <title>广场-蝌蚪直播</title>
+    <meta property="qc:admins" content="105415766763547646" />
+    <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+    
+    <link href="<{$cdn}>/public/square/css/style.css?vsn=<{$vsn}>" rel="stylesheet">
+    <link href="<{$cdn}>/public/square/css/anchorLevel.css?vsn=<{$vsn}>" rel="stylesheet">
+
+</head>
+<body style="padding-top:100px;">
+
+<{include file="../public/header.html"}>
+
+    
+    <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->    
+    <script src="<{$cdn}>/public/index/js/json2.js"></script>
+    <script src="<{$cdn}>/public/min/html5shiv.min.js"></script>
+    <script src="<{$cdn}>/public/min/respond.min.js"></script>
+    
+    <script src="<{$cdn}>/public/min/angular-1.2.min.js" type="text/javascript" ></script>
+    <script src="<{$cdn}>/public/square/js/square.js" type="text/javascript" ></script>
+    
+    <script src="<{$cdn}>/public/min/jquery.lazyload.min.js"></script>
+
+    <div class="hotCon square container" ng-controller="square">
+        <div class="squareTit text-center clearfix">
+            <div class="gameHd pull-left active"></div>
+            <div class="showHd pull-left"></div>
+        </div>
+        <div class="row squareCon"> 
+            <div class="squareDe gameAnch" style="display:block; ">
+                <div class="secTit text-center clearfix color99">
+                    <span class="allG colorPin"><a href="javascript:;">全部</a></span>
+                    <span class="tits" ng-repeat="sort in sorts" ng-class="sort==curSort ?'colorPin':''" ng-click="getSort(sort)"><a href="javascript:;" ng-bind="sort"></a></span>
+                </div>
+                
+                <div class="rankReco">
+                	<div class="page-header">
+                    <h4><span class="glyphicon glyphicon-fire bgPin colorff"></span> 排行推荐</h4>
+                </div>
+                	<div class="row">
+                    	<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="rankGame in rankGames">                    
+                    <a href="{{rankGame.roomNumber}}" class="thumbnail bord1d">            
+                        <div class="recommImg">                        
+                            <img class="lazy" ng-src="{{rankGame.image}}&w=220&h=127"> 
+                            <span ng-if="rankGame.online==1" class="glyphicon glyphicon-stats"></span>                       
+                            <div class="thumb-bar"></div>                        
+                            <div class="shadow"></div>                        
+                            <div class="playBtn"></div>                    
+                        </div>                    
+                        <div class="recommB clearfix">  
+                            <img class="pull-left recommBL img-circle lazy" ng-src="{{rankGame.imagePrivate}}"/>                         
+                            <div class="recommBR pull-right">
+                                <div class="clearfix">                            
+                                    <span class="color33 pull-left ellipsis" ng-bind="rankGame.nickName|decode"></span>
+                                    <div class="color99 pull-right" ng-if="rankGame.numbers>0">                                
+                                        <span class="glyphicon glyphicon-eye-open"></span>            
+                                        <span ng-bind="rankGame.numbers"></span>                            
+                                    </div>                        
+                            </div>                        
+                                <p class="color99 ellipsis f12" ng-bind="rankGame.title"></p>
+                            </div>
+                                                
+                        </div>
+                    </a>                    
+                </div>
+                    </div>
+                	
+                </div>
+                
+                <div class="entertain">
+                    <div class="page-header ">
+                        <h4 id="sortTit">
+                            <span class="glyphicon glyphicon-fire bgPin colorff"></span>
+                            全部游戏</h4>
+                    </div>
+    
+                    <div class="allGaD row"  id="allGaD">
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameAnch in gameAnchs">                    
+                            <a href="{{gameAnch.roomNumber}}" class="thumbnail bord1d">            
+                                <div class="recommImg">                        
+                                    <img class="lazy" ng-src="{{gameAnch.image}}&w=220&h=127"> 
+                                    <span ng-if="gameAnch.online==1" class="glyphicon glyphicon-stats"></span>                        
+                                    <div class="thumb-bar"></div>                        
+                                    <div class="shadow"></div>                        
+                                    <div class="playBtn"></div>                    
+                                </div>                  
+                                <div class="recommB clearfix">  
+                                    <img class="pull-left recommBL img-circle" ng-src="{{gameAnch.imagePrivate}}"/>                         
+                                    <div class="recommBR pull-right">
+                                        <div class="clearfix">                            
+                                            <span class="color33 pull-left ellipsis" ng-bind="gameAnch.nickName|decode"></span>
+                                            <div class="color99 pull-right" ng-if="rankGame.numbers>0">                                
+                                                <span class="glyphicon glyphicon-eye-open"></span>            
+                                                <span ng-bind="gameAnch.numbers"></span>                            
+                                            </div>                        
+                                    </div>                        
+                                        <p class="color99 ellipsis f12" ng-bind="gameAnch.title"></p>
+                                    </div>
+                                                        
+                                </div>
+                            </a>                    
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="gameItems">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="gameItem in gameItems">                    
+                        <a href="{{gameItem.roomNumber}}" class="thumbnail bord1d">            
+                            <div class="recommImg">                        
+                                <img class="lazy" ng-src="{{gameItem.image}}&w=220&h=127"> 
+                                <span ng-if="gameItem.online==1" class="glyphicon glyphicon-stats"></span>                           
+                                <div class="thumb-bar"></div>                        
+                                <div class="shadow"></div>                        
+                                <div class="playBtn"></div>                    
+                            </div>                  
+                            <div class="recommB clearfix">  
+                                <img class="pull-left recommBL img-circle" ng-src="{{gameItem.imagePrivate}}"/>                         
+                                <div class="recommBR pull-right">
+                                    <div class="clearfix">                            
+                                        <span class="color33 pull-left ellipsis" ng-bind="gameItem.nickName|decode"></span>
+                                        <div class="color99 pull-right" ng-if="rankGame.numbers>0">                                
+                                            <span class="glyphicon glyphicon-eye-open"></span>            
+                                            <span ng-bind="gameItem.numbers"></span>                            
+                                        </div>                        
+                                </div>                        
+                                    <p class="color99 ellipsis f12" ng-bind="gameItem.title"></p>
+                                </div>
+                                                    
+                            </div>
+                        </a>                    
+                    </div>
+                </div>
+                
+            </div>  
+            
+            <div class="squareDe">
+                <div class="secTit text-center clearfix color99">
+                    <span>全部</span>
+                    <span class="colorPin">最新入驻</span>
+                    <span>户外</span>
+                    <span>音乐</span>
+                    <span>蠢萌</span>
+                    <span>搞怪</span>
+                    <span>段子</span>
+                </div>
+                <div class="col-pc-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="squAnch in squAnchs">
+                    <a href="{{squAnch.roomNumber}}" class="hotItem thumbnail bord1d" >
+                      <img ng-src="{{squAnch.image}}&w=97&h=127" />
+                      <div class="{{squAnch.levelImg}}"></div>
+                      <span ng-if="squAnch.online==1" class="glyphicon glyphicon-stats"></span>
+                      <div class="hotB">
+                        <span class="colorPin f14" ng-bind="squAnch.nickName|decode"></span>  
+                        <p class="f12 color99" ng-if="squAnch.onlineTime>0">
+                            <span ng-bind="squAnch.onlineTime|time"></span>
+                            <span>分钟之前</span>
+                        </p>
+                        <p class="f12" ng-if="squAnch.onlineTime==0">
+                            <span>未开播</span>
+                        </p>
+                     </div>
+                     <div class="shadow"></div>
+                     <div class="playBtn"></div>
+                  </a>
+            
+            </div>
+            </div>    
+        </div>
+        
+    </div>
+
+<{include file="../public/footer.html"}>
+
+ 
+
+</body>
+</html>

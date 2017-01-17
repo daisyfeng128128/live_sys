@@ -1,0 +1,37 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:733a4dc47782450d67cc89b522491c27:752bf636a9386050c834973ab4bdcd1e:544a0ad0c0ce86401eaec6a40aedb1cd$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite_mall {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/mallBg.png);}
+
+.cion_jinchang {width:20px; height:20px; background-position: -1706px -2px}
+.icon_huizhang {width:18px; height:20px; background-position: -1011px -406px}
+.icon_messages {width:16px; height:20px; background-position: -989px -428px}
+.icon_tichu {width:20px; height:20px; background-position: -989px -406px}
+.icon_zuoyi {width:21px; height:18px; background-position: -1687px -346px}
+.pic_car_01 {width:103px; height:35px; background-position: -1561px -366px}
+.pic_guardlevel_baiyin {width:144px; height:18px; background-position: -1412px -385px}
+.pic_guardlevel_huangjin {width:144px; height:17px; background-position: -1412px -405px}
+.pic_guardlevel_qingtong {width:147px; height:17px; background-position: -1412px -366px}
+.pic_jinchang_01 {width:69px; height:72px; background-position: -1635px -2px}
+.pic_jinchang_02 {width:65px; height:72px; background-position: -1635px -76px}
+.pic_jinchang_03 {width:58px; height:70px; background-position: -1687px -212px}
+.pic_jinyanbiao {width:814px; height:210px; background-position: -819px -2px}
+.pic_kaitongshouhu {width:815px; height:447px; background-position: -2px -2px}
+.pic_liwu {width:71px; height:67px; background-position: -1666px -366px}
+.pic_shangcheng_baiyin {width:168px; height:42px; background-position: -1242px -366px}
+.pic_shangcheng_huangjin {width:168px; height:42px; background-position: -1072px -366px}
+.pic_shangcheng_qingtong {width:168px; height:42px; background-position: -819px -406px}
+.pic_shangcheng_title {width:251px; height:38px; background-position: -819px -366px}
+.pic_shouhu_banner {width:866px; height:150px; background-position: -819px -214px}
+.pic_shuoming_baiyin {width:56px; height:60px; background-position: -1687px -284px}
+.pic_shuoming_huangjin {width:56px; height:60px; background-position: -1693px -150px}
+.pic_shuoming_qingtong {width:56px; height:60px; background-position: -1635px -150px}

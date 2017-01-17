@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/check_num.js"></script>
+</head>
+
+<body>
+<div class="head-outer btline">
+    <div class="header wrapper clearFix">
+        <a class="hd_bg fl" href="/"></a>
+        <p class="text fl">一群制造欢乐的豆豆</p>
+        <ul class="nav fl">
+            <li class="fl {if $current_page=='index'}cu{/if}"><a href="/">首页</a></li>
+            <li class="fl {if $current_page=='square'}cu{/if}"><a href="/square.php">广场</a> </li>
+            <li class="fl {if $current_page=='active'}cu{/if}"><a href="/square.php">活动</a> </li>
+            <li class="fl {if $current_page=='mall'}cu{/if}"><a href="/mall.php">商城</a> </li>
+            <li class="fl {if $current_page=='order'}cu{/if}"><a href="/orders.php">排行榜</a> </li>
+
+        </ul>
+        <div class="input fl">
+            <input type="text" placeholder="输入房间号/频道号/ID" />
+            <span class="search"></span>
+        </div>
+        <div class="user clearFix">
+            <div class="fl">
+                <a class="username fl" href="centeros.php">袅袅娜娜</a>
+                <a class="user_msg fl" href="javascript:;"></a>
+            </div>
+            <a class="email fl" href="javascript:;"></a>
+        </div>
+    </div>
+</div>
+
+<form action="finance.html">
+	<div class="details">
+	<div class="wrapper">
+    	<div class="progress clearFix">
+            <span class="fl pro" style="background:#ffb900; color:#fff; ">基本资料</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro">财务信息</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro">认证照片</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro">提交审核</span>
+        </div>
+    	<div class="data_content ">
+            <p class="apply">入驻申请</p>
+            <div class="basic">
+                <h3>基本资料(<i>1</i>/3)</h3>
+                <div class="input name">
+                    <label class="lable">姓名</label>
+                    <input class="toLeft" type="text"/>
+                </div>
+                <div class="sex">
+                    <label class="lable">性别</label>
+                    <input class="toLeft" type="radio" name="sex" checked/>男
+                    <input type="radio" name="sex"/>女
+                </div>
+                <div class="input tel">
+                    <label class="lable">手机号</label>
+                    <input class="phone_num toLeft" type="text"/>
+                    <span class="info_num">请输入您的手机号</span>
+                    <span class="ok">√</span>
+                    <span class="err">请再核实您的号码</span>
+                </div>
+                <div class="input qq">
+                    <label class="lable">QQ</label>
+                    <input class="qq_num toLeft" type="text"/>
+                    <span class="ok">√</span>
+                    <span class="err">请再核实您的QQ号码</span>
+                </div>
+                <div class="input video">
+                    <label class="lable">个人视频</label>
+                    <input class="toLeft" type="text"/>
+                    
+                </div>
+                <p class="check">
+                	<input type="checkbox">蝌蚪平台博客合作协议
+                </p>
+                <div class="data_next">
+                	<input type="submit" value="下一步"/>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</div>
+</form>
+
+<div class="footer">
+    <div class="container">
+        <p class="copyright"><span></span>青蛙直播-Copyright©2016 沪ICP备14054721号 关于我们版权声明</p>
+        <p>青蛙用户服务协议|青蛙客服电话：021-63156389|商务合作邮箱：mt@mutiantech.com</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div id="footer">
+	<p><a target="_blank" href="/news/5.html">关于我们</a> | <a target="_blank" href="/news/4.html">服务条款</a> | <a target="_blank" href="/news/6.html">联系我们</a>  | <a target="_blank" href="/html/feedback.html">意见建议</a> | <a href="/html/help.html" target="_blank">帮助中心</a>{{if $tongji}} | {$tongji}{{/if}}</p>
+	<div class="clear"></div>
+	<p>Copyright (C) 2001-2014 {$site_name} All Rights Reserved </p>
+	{{if $site_info_beian}}<p>{$site_info_beian}</p>{{/if}}
+	<p>客服热线：{$site_info_phone}&nbsp;&nbsp;技术支持QQ：{$site_info_jishu_qq}</p>
+</div>
+<script>
+var qzo_top=150;
+var qzo_height=1750;
+if(typeof fusion2 !== "undefined"){
+	fusion2.interface.updateClientRect(function(args){
+		if(top != self){
+			qzo_top=parseInt(args.top+150);
+			qzo_height=1750;
+		}
+	});
+	fusion2.canvas.setHeight({
+		height : ($("body").height()+100)
+	});
+}
+</script>

@@ -1,0 +1,20 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:fe8d9fbf40f195cfe5cdfe876dbfceb4:d13c7055b511769eb4149195d3e520af:735d3e92aa8a5af3f173707ec14ea226$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite_big_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/big_box.png);}
+
+.biankuang-black {width:306px; height:446px; background-position: -1542px -2px}
+.biankuang-blue {width:306px; height:446px; background-position: -1234px -2px}
+.biankuang-orange {width:306px; height:446px; background-position: -926px -2px}
+.biankuang-size {width:306px; height:446px; background-position: -618px -2px}
+.biankuang-white {width:306px; height:446px; background-position: -310px -2px}
+.biankuang-yellow {width:306px; height:446px; background-position: -2px -2px}

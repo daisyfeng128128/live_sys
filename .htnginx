@@ -1,0 +1,9 @@
+if ($request_filename) {
+	rewrite ^/([0-9]+).html /live.php?roomnumber=$1 last;
+	rewrite ^/([0-9]+)$ /live.php?roomnumber=$1 last;
+	rewrite ^/logout.html$ /login.php?action=logout last;
+	rewrite ^/opensns/qq/reg(.*)$ /app/view/login/qq/index.php?action=reg&$args last;
+	rewrite ^/(\w+)$ /kedo.php?c=$1 last;
+	rewrite ^/(\w+)\/(\w+)$ /kedo.php?c=$1&m=$2 last;
+}
+

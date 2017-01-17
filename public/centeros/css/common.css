@@ -1,0 +1,170 @@
+body{
+    font-family:"Microsoft YaHei";
+    background-color:#f1f1f1;
+    color: #333;
+}
+a{
+    color: #333; 
+}
+a:hover{
+    text-decoration: none;
+}
+.fl{ float:left; }
+.fr{ float:right;}
+.clearFix:after{ content:''; display:block; clear:both; }
+.color33{
+    color: #333;
+}
+.color99{
+    color: #999;
+}
+.colorff{
+    color: #fff; 
+}
+.colorPin{
+    color:#e34052;
+}
+.colorBlue{
+    color:#3e63d8;
+}
+.f12{
+    font-size:12px;
+}
+.f14{
+    font-size:14px;
+}
+.f16{
+    font-size:16px;
+}
+li{
+    list-style: none;
+}
+.ellipsis{
+    width: 99%;
+    overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: #e34052;
+    border-bottom-width: 2px;
+    font-size: 18px;
+}
+@media (min-width: 1450px) {
+    .container {
+        width: 1440px;
+    }
+
+    /* 大分块 */
+    @media (min-width: 1450px) {
+        .container {
+            width: 1440px;
+        }
+
+        .mainLeft {
+            width: 79%;
+        }
+
+        .mainRight {
+            width: 20%;
+        }
+    }
+
+    .mainRight .thumbnail {
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -o-border-radius: 8px;
+    }
+
+    .logName {
+        width: 96px;
+    }
+
+    .thumbnail {
+        padding: 0;
+        border-radius: 12px;
+        border: none;
+    }
+
+    .mainRight .thumbnail {
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -o-border-radius: 8px;
+    }
+
+    /*登录注册*/
+    @media (min-width: 768px) {
+        .navbar-right {
+            float: right !important;
+            margin-right: 34px;
+        }
+    }
+
+    /*商标*/
+    .logo_head {
+        background: url(/public/centeros/images/logo_head.png) no-repeat;
+        width: 120px;
+        height: 45px;
+        margin-right: 25px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    /* 登录注册隐藏 */
+    @media (min-width: 768px) {
+        /* .navbar-right {
+            display: none;
+        } */
+
+    }
+    @media (max-width: 767px) {
+        .thumbnail {
+            padding: 0;
+        }
+    }
+    /*导航*/
+    .hdNavL {
+        margin-left: 26px;
+    }
+
+    .hdNavL > li {
+        margin-right: 16px;
+    }
+
+    .hdNavL > li > a {
+        padding: 10px 10px;
+        margin-top: 7px;
+    }
+
+    .navbar-default .navbar-nav > .active > a {
+        color: #fff;
+        background-color: #3e63d8;
+    }
+
+    .hdNavR > li > a {
+        padding: 17px 6px;
+        font-size: 16px;
+    }
+
+    @media (max-width: 767px) {
+        .navbar-default .hdNavL li.active {
+            height: 20%;
+        }
+    }
+    .searchN {
+        border-radius: 20px;
+        -webkit--border-radius: 20px;
+        -o-border-radius: 20px;
+    }
+
+    .searchBtn {
+        color: #e34052;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -o-border-radius: 20px;
+        border-left: none;
+    }
+}
+
+.officialMailbox{
+    color: #337ab7;
+}

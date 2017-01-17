@@ -1,0 +1,320 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>蝌蚪直播-互联网最好玩的娱乐直播生活秀平台</title>
+    <link rel="stylesheet" href="{$cdn_domain}/skin/qzone/style/common.css">
+    <link rel="stylesheet" href="{$cdn_domain}/skin/qzone/style/main.css">
+    <link href="{$cdn_domain}/static_data/images_css/icons.css" rel="stylesheet">
+
+    <script src="{$cdn_domain}/skin/qzone/js/jquery-1.12.4.min.js"></script>
+    <script src="{$cdn_domain}/skin/qzone/js/move.js"></script>
+    <script src="{$cdn_domain}/skin/qzone/js/popplayer.js"></script>
+    <script src="/js/jquery.lazyload.min.js"></script>
+    <script>
+        var currentUserId="{$user.userId}";
+        $(function () {
+            $("img.lazy").lazyload({ effect: "fadeIn" });
+        });
+    </script>
+</head>
+
+<body>
+<div class="box">
+<div class="header clearFix">
+    <div class="nav fl">
+        <span class="logo"><img src="/img/qzone_head_logo.png" alt="蝌蚪直播"></span>
+        <a class="home" href="/" target="_blank">首页</a>
+        <a class="squ" href="/square.php" target="_blank">广场</a>
+        <!--<a class="mall" href="http://www.kedo.tv/mall.php" target="_blank">商城</a>-->
+        <a class="ranking" href="/orders.php" target="_blank">排行榜</a>
+        <a href="/help.php" target="_blank">帮助</a>
+    </div>
+
+    <div class="fl seaching">
+        <input class="seach" type="text" placeholder="ID/主播昵称" name="">
+        <span class="searchBtn"></span>
+    </div>
+
+    <div class="fr hdInfo">
+        <a href="/centeros.php?ptype=info" target="_blank" class="name">
+            {$user.nickname|truncate:14}
+
+        </a>
+
+        <a href="/centeros.php" target="_blank" class="personalCenter">个人中心
+            <span class="pcBg"></span>
+        </a>
+
+    </div>
+
+    <div class="modify" id="modify">
+        <p class="modInfo">修改资料</p>
+        <input type="text" id="name"/>
+        <input type="button" id="modBtn" value="确定"/>
+    </div> 
+</div>
+
+<div class="cont clearFix">
+<div class="l fl">
+<div id="carousel">
+    <div id="play">
+        <p id="pr"></p>
+        <p id="ne"></p>
+        <ul>
+
+            {foreach from=$banners item=show key=key}
+                {if $show.url !=""}
+                <li><a href="{$show.url}" target="_blank"><img src="{$images_domain}/{$show.imageSha1}"  alt="{$show.name}" /></a></li>
+                {else}
+                <li><img src="{$images_domain}/{$show.imageSha1}"  alt="{$show.name}" /></li>
+                {/if}
+            {/foreach}
+        </ul>
+    </div>
+    <ol id="ol" class="clearFix">
+        {foreach from=$banners item=show key=key}
+        {if $key ==1}
+        <li class="active"></li>
+        {else}
+        <li></li>
+        {/if}
+        {/foreach}
+    </ol>
+</div>
+
+
+<div class="remen">
+    <div class="tit">
+        <h4 class="fl bigTit">热门</h4>
+        <a href="javascript:;"  class="fl smallTit active">智能</a>
+        <a href="javascript:;"  class="fl smallTit">推荐</a>
+    </div>
+    <ul class="remen_content">
+        {foreach from=$hotAnchorList item=show key=key}
+        {if $key==1}{break}{/if}
+            <li class="fir fl">
+                <a href="/{$show.roomNumber}"  target="_blank" >
+                    <img  class="lazy" data-original="{$show.image}" alt="{$show.nickName}">
+                    {if $show.online}<span class="living"></span>{/if}
+                    <div class="bigShadow"></div>
+                    <div class="shadowTxt">
+                        <div class="hd clearFix">
+                            <p class="name fl">{$show.nickName|truncate:10}</p>
+
+                        </div>
+                        <div class="info clearFix">
+                            <span class="fl numBg"></span>
+                            <span class="num fl">{$show.numbers}</span>
+                            <span class="siteBg fl"></span>
+                            <span class="site fl">{$show.city}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {/foreach}
+
+        {foreach from=$hotAnchorList item=show key=key}
+        {if $key==0}{continue}{/if}
+        <li class="fl">
+            <a href="/{$show.roomNumber}"  target="_blank" >
+                <img class="lazy" data-original="{$show.image}" alt="{$show.nickName}">
+                {if $show.online}<span class="living"></span>{/if}
+                <div class="smallShadow"></div>
+                <div class="shadTxt">
+                    <div class="hd clearFix">
+                        <p class="name fl">{$show.nickName|truncate:12}</p>
+                    </div>
+                    <div class="info clearFix">
+                        <span class="fl numBg"></span>
+                        <span class="num fl">{$show.numbers}</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        {/foreach}
+
+    </ul>
+</div>
+
+    <div style="clear: both"></div>
+<div class="xin">
+<div class="tit">
+    <h4 class="fl bigTit">最新</h4>
+    <a href="javascript:;" class="fl smallTit active">智能</a>
+    <a href="javascript:;" class="fl smallTit">推荐</a>
+</div>
+    <div style="clear: both"></div>
+<ul class="xin_content">
+
+    {foreach from=$newAnchorList item=show key=key}
+
+    <li class="fl">
+        <a href="/{$show.roomNumber}"  target="_blank" >
+            <img class="lazy" data-original="{$show.image}" alt="{$show.nickName}">
+            {if $show.online}<span class="living"></span>{/if}
+            <div class="smallShadow"></div>
+            <div class="shadTxt">
+                <div class="hd clearFix">
+                    <p class="name fl">{$show.nickName|truncate:12}</p>
+                </div>
+                <div class="info clearFix">
+                    <span class="fl numBg"></span>
+                    <span class="num fl">{$show.numbers}</span>
+                </div>
+            </div>
+        </a>
+    </li>
+    {/foreach}
+
+</ul>
+</div>
+
+    <div style="clear: both"></div>
+</div>
+
+<div class="r fr">
+<div class="logi">
+    <div class="logi_tit clearfix">
+        <a href="/centeros.php?ptype=mportrait" target="_blank"> <img src="{$images_domain}/{$user.avatar}"  class="fl"/></a>
+        <div class="logiInfo fl">
+            <p class="name">{$user.nickname|truncate:7}
+                <a class="writeName" href="/centeros.php?ptype=info" target="_blank"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="degree">
+        <span class="already" style="width:{$user.nextSpender}%"></span>
+
+        <span class="lable sprite consumelevel-pic_consumelevel_{$user.spender+1}"></span>
+    </div>
+    <p class="toNext">升级下一级</span>
+
+    <div class="clearFix chargeBtn">
+        <span class="last fl">剩余 ：<i>{$user.coins|truncate:6} 个</i></span>
+        <span class="bg fl"></span>
+
+    </div>
+
+    {if $user.roomNumber} <div class="start">
+        <a href="/{$user.roomNumber}" target="_blank" class="startBtn">开播</a>
+    </div>
+    {/if}
+</div>
+
+<div class="focus">
+    <h4>我的关注</h4>
+    <div class="la">
+        <span class="xia_hover xii spp"></span>
+        <span class="shang_hover shh spp"></span>
+    </div>
+    <div style="clear: both"></div>
+    <div class="list_care">
+        <ul class="focusList">
+            <li class="clearFix">
+                <img class="fl" src="img/photo_title.jpg">
+                <span class="fl deg"></span>
+                <a href="javascript:;" class="fl entry">
+                    <p class="name">呆萌冰冰</p>
+                    <p class="state">未开播</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    <div class="recruitItem">
+        <a href="/recruitItem.php" target="_blank"><img src="/skin/qzone/img/pic_qzone_zhung.jpg" alt="入驻蝌蚪" title="入驻蝌蚪"/></a>
+    </div>
+<div class="anch">
+    <div class="tit clearFix">
+        <h4 class="rank_tit fl">主播排行榜</h4>
+        <div class="type fl">
+            <a href="javascript:;" class="fl">周</a>
+            <a href="javascript:;" class=" fl">月</a>
+            <a href="javascript:;" class="active fl">年</a>
+        </div>
+    </div>
+
+    <ul class="anchList">
+
+
+
+        {foreach from=$rank_super_star item=show name=foo}
+        {if $smarty.foreach.foo.index <6}
+
+
+            <li class="clearFix">
+                <a href="javascript:;" >
+                    <img class="fl" src="{$cdn_domain}/apis/avatar.php?uid={$show.userid}" alt="{$show.nickname}"/>
+                   <!-- <span class="fl deg diamond fl sprite liverlevel-pic_liverlevel_{$show.starlevel}"></span>-->
+                    <div class="fl entry">
+                        <p class="name">{$show.nickname}</p>
+                        <p class="state"> </p>
+                    </div>
+                </a>
+            </li>
+
+        {/if}
+        {/foreach}
+
+    </ul>
+</div>
+<div class="richers">
+    <div class="tit clearFix">
+        <h4 class="rich_tit fl">土豪排行榜</h4>
+        <div class="type fl">
+            <a href="javascript:;" class="fl">周</a>
+            <a href="javascript:;" class=" fl">月</a>
+            <a href="javascript:;" class="active fl">年</a>
+        </div>
+    </div>
+
+    <ul class="richList">
+
+        {foreach from=$rank_super_rich item=show name=foo}
+        {if $smarty.foreach.foo.index <8}
+
+        <li class="clearFix">
+            <a href="javascript:;">
+                <img class="fl" src="{$cdn_domain}/apis/avatar.php?uid={$show.userid}">
+                <span class="diamond fl sprite liverlevel-pic_liverlevel_{$show.starlevel}"></span>
+                <div class="fl entry">
+                    <p class="name">{$show.nickname}</p>
+                </div>
+            </a>
+        </li>
+        {/if}
+        {/foreach}
+
+    </ul>
+</div>
+</div>
+</div>
+
+<div class="footer">
+    <div class="wrapper">
+        <div class="container">
+            <p class="relatedLink">
+
+                <a href="/serveiceArgument.php" target="_blank"> 服务协议 </a>|
+                <a href="/help.php" target="_blank"> 客服帮助 </a>
+            </p>
+            <p class="clearFix copyright">
+                <span class="fl logo_footer"></span>
+                <span class="fl copyrightTxt">-Copyright©2016 沪ICP备14054721号</span>
+            </p>
+            <p style="line-height: 22px;">
+                声明：蝌蚪直播应用由游影文化传媒 提供。若您在使用过程中遇到问题，可以直接联系客服QQ：2494966008  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2494966008&site=qq&menu=yes"><img border="0" src="http://pub.idqqimg.com/qconn/site/images/intro/wpa_style_51.gif" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
+            </p>
+            <p>
+                <span>蝌蚪客服电话：021-63156389 | 商务合作邮箱：</span>
+                <a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

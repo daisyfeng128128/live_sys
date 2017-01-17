@@ -1,0 +1,44 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:220ae4c34a627179ca79db6e3b982c71:919677446ef0ffa0cb8a9f9fa71c773c:5dd4f095b0943763b2f26794ce8eb3ab$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite_s {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/level_s.png);}
+
+.pic_liverlevel_S_01 {width:84px; height:84px; background-position: -1206px -88px}
+.pic_liverlevel_S_02 {width:84px; height:84px; background-position: -1206px -2px}
+.pic_liverlevel_S_03 {width:84px; height:84px; background-position: -1120px -88px}
+.pic_liverlevel_S_04 {width:84px; height:84px; background-position: -1120px -2px}
+.pic_liverlevel_S_05 {width:84px; height:84px; background-position: -1034px -88px}
+.pic_liverlevel_S_06 {width:84px; height:84px; background-position: -1034px -2px}
+.pic_liverlevel_S_07 {width:84px; height:84px; background-position: -948px -88px}
+.pic_liverlevel_S_08 {width:84px; height:84px; background-position: -948px -2px}
+.pic_liverlevel_S_09 {width:84px; height:84px; background-position: -862px -88px}
+.pic_liverlevel_S_10 {width:84px; height:84px; background-position: -862px -2px}
+.pic_liverlevel_S_11 {width:84px; height:84px; background-position: -776px -88px}
+.pic_liverlevel_S_12 {width:84px; height:84px; background-position: -776px -2px}
+.pic_liverlevel_S_13 {width:84px; height:84px; background-position: -690px -88px}
+.pic_liverlevel_S_14 {width:84px; height:84px; background-position: -690px -2px}
+.pic_liverlevel_S_15 {width:84px; height:84px; background-position: -604px -88px}
+.pic_liverlevel_S_16 {width:84px; height:84px; background-position: -604px -2px}
+.pic_liverlevel_S_17 {width:84px; height:84px; background-position: -518px -88px}
+.pic_liverlevel_S_18 {width:84px; height:84px; background-position: -518px -2px}
+.pic_liverlevel_S_19 {width:57px; height:46px; background-position: -2px -90px}
+.pic_liverlevel_S_20 {width:84px; height:84px; background-position: -432px -88px}
+.pic_liverlevel_S_21 {width:84px; height:84px; background-position: -432px -2px}
+.pic_liverlevel_S_22 {width:84px; height:84px; background-position: -346px -88px}
+.pic_liverlevel_S_23 {width:84px; height:84px; background-position: -346px -2px}
+.pic_liverlevel_S_24 {width:84px; height:84px; background-position: -260px -88px}
+.pic_liverlevel_S_25 {width:84px; height:84px; background-position: -260px -2px}
+.pic_liverlevel_S_26 {width:84px; height:84px; background-position: -174px -88px}
+.pic_liverlevel_S_27 {width:84px; height:84px; background-position: -174px -2px}
+.pic_liverlevel_S_28 {width:84px; height:84px; background-position: -88px -88px}
+.pic_liverlevel_S_29 {width:84px; height:86px; background-position: -2px -2px}
+.pic_liverlevel_S_30 {width:84px; height:84px; background-position: -88px -2px}

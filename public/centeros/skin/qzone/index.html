@@ -1,0 +1,967 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>qq空间</title>
+<link rel="stylesheet" href="style/common.css">
+<link rel="stylesheet" href="style/main.css">
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/move.js"></script>
+
+<script src="js/popplayer.js"></script>
+</head>
+
+<body>
+	<div class="box">
+		<header class="clearFix">
+			<nav class="fl">
+				<span class="logo">logo</span>
+				<a class="home" href="javascript:;">首页</a>
+				<a class="squ" href="javascript:;">广场</a>
+				<a class="mall" href="javascript:;">商城</a>
+				<a class="ranking" href="javascript:;">排行榜</a>
+				<a href="javascript:;">帮助</a>
+
+			</nav>	
+
+			<div class="fl seaching">
+				<input class="seach" type="text" placeholder="ID/主播昵称" name="">
+				<span class="searchBtn"></span>
+			</div>	
+
+			<div class="fr hdInfo">
+				<a href="javascript:;" class="name">
+                	aaaa
+                    <span class="writeBg" id="writeBg"></span>
+                </a>
+				<a href="javascript:;" class="charge">充值
+                	<span class="chargeBg"></span>
+                </a>
+				<a href="javascript:;" class="personalCenter">个人中心
+                	<span class="pcBg"></span>
+                </a>
+				<a href="javascript:;" >退出</a>
+
+			</div>
+            
+            <div class="modify" id="modify">
+                <p class="modInfo">修改资料</p>
+                <input type="text" id="name"/>
+                <input type="button" id="modBtn" value="确定"/>
+            </div>
+            
+            <div class="qkCharge">
+            	<div class="hd">
+                	<h4>快速充值<span>充值越多奖励越丰厚</span></h4>
+                	<a href="javascript:;" class="close" id="close"></a>
+                </div>
+                <ul class="info">
+                	<li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">1000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>10</i> 元 <strong>（100Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">5000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>50</i> 元 <strong>（500Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">20000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>200</i> 元 <strong>（2000Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">50000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>500</i> 元 <strong>（5000Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" name="amount"/>
+                        <span class="icon fl">
+                        	<span class="iconTxt fl">
+                            	<span class="fr">100000 <strong>蝌蚪币</strong> </span>
+                            </span>
+                        	<span class="iconBg fr"></span>
+                        </span>
+                        <span class="price fl">价格：<i>1000</i> 元 <strong>（10000Q点）</strong></span>
+                    </li>
+                    <li class="clearFix">
+                    	<input class="fl radio" type="radio" checked="checked" style="background:#3a60df" name="amount" />
+                        <span class="others">其他金额
+                        	<input class="num" value="232" type="text" /> 元
+                        </span>
+                        
+                        <span class="get">将获得
+                        	<i>232000</i>
+                        	<strong>蝌蚪币</strong>
+                        </span>
+                    </li>
+                    <div class="ckCharge">立即充值</div>
+                </ul>
+                
+            </div>
+		</header>
+
+		<div class="cont clearFix">
+			<div class="l fl">
+				<div id="carousel">
+                    <div id="play">
+                        <p id="pr"></p>
+                        <p id="ne"></p>
+                        <ul>
+                        	<li>
+                            	<a href="javascript:;" target="_blank">
+                                	<img src="img/81081b4fa929525634c90419b9152308.png"  alt="{$show.name}" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ol id="ol" class="clearFix">
+                        <li class="active"></li>
+                        <li></li>
+                    </ol>
+                </div>
+                
+
+				<section class="remen">
+					<div class="tit">
+						<h4 class="fl bigTit">热门</h4>
+						<a href="javascript:;"  class="fl smallTit active">智能</a>
+						<a href="javascript:;"  class="fl smallTit">推荐</a>
+					</div>
+					<ul class="remen_content clearFix">
+						<li class="fir fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl.png">
+                                <span class="living"></span>
+                                <div class="bigShadow"></div>
+                                <div class="shadowTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好突然</p>
+                                        <span class="degree fl"></span>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                        <span class="siteBg fl"></span>
+                                        <span class="site fl">上海</span>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                        </li>
+						<li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class="living"></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class="living"></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class="living"></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                       
+						
+					</ul>
+				</section>
+
+				<section class="xin">
+					<div class="tit">
+						<h4 class="fl bigTit">最新</h4>
+						<a href="javascript:;" class="fl smallTit active">智能</a>
+						<a href="javascript:;" class="fl smallTit">推荐</a>
+					</div>
+
+					<ul class="xin_content clearFix">
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class="living"></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="fl">
+                        	<a href="javascript:;">
+                            	<img src="img/pic_girl_02.png">
+                                <span class=""></span>
+                                <div class="smallShadow"></div>
+                                <div class="shadTxt">
+                                    <div class="hd clearFix">
+                                        <p class="name fl">夏天来的好</p>
+                                    </div>
+                                    <div class="info clearFix">
+                                        <span class="fl numBg"></span>
+                                        <span class="num fl">98899</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                       
+					</ul>
+				</section>
+
+				<section class="partner">
+					<div class="tit">
+						<h4 class="fl bigTit">合作伙伴</h4>
+					</div>
+                    <ul class="parts clearFix">
+							<li class="fl">
+								<a href="javascript:;">
+									<img src="img/pic_lvxing.jpg">
+								</a>
+							</li>
+							<li class="fl">
+								<a href="javascript:;">
+									<img src="img/pic_nanshengnvsheng.jpg">
+								</a>
+							</li>
+							<li class="fl">
+								<a href="javascript:;">
+									<img src="img/pic_chuanqi.jpg">
+								</a>
+							</li>
+							<li class="fl">
+								<a href="javascript:;">
+									<img src="img/pic_yinyue.jpg">
+								</a>
+							</li>
+							<li class="fl">
+								<a href="javascript:;">
+									<img src="img/pic_zuiyinyue.jpg">
+								</a>
+							</li>
+							<li class="fl">
+								<a href="javascript:;">
+									<img src="img/pic_tudouyinyue.jpg">
+								</a>
+							</li>
+							<li class="fl">
+								<a href="javascript:;">
+									<img src="img/pic_yuanchuanjingxuan.jpg">
+								</a>
+							</li>
+						</ul>
+				</section>
+			</div>
+
+			<div class="r fr">
+				<section class="logi">
+					<div class="logi_tit clearfix">
+						<img class="fl" src="img/photo_title.jpg">
+						<div class="logiInfo fl">
+							<p class="name">aaaa
+                            	<span class="writeName"></span>
+                            </p>
+							<p class="exper">998/887</p>
+						</div>
+					</div>
+
+					<div class="degree">
+						<span class="already"></span>
+						<span class="tip">53/2454</span>
+						<span class="lable">骑士</span>
+					</div>
+					<p class="toNext">升级下一级</span>
+
+					<div class="clearFix chargeBtn">
+						<span class="last fl">剩余 ：<i>33 个</i></span>
+						<span class="bg fl"></span>
+						<a href="javascript:;" class="btn fl">充值</a>
+					</div>
+
+					<div class="start">
+						<p>其他特权</p>
+						<a href="javascript:;" class="startBtn">马上开通</a>
+					</div>
+				</section>
+
+				<section class="focus">
+					<h4>我的关注</h4>
+					<ul class="focusList">
+						<li class="clearFix">
+							<img class="fl" src="img/photo_title.jpg">
+							<span class="fl deg"></span>
+							<a href="javascript:;" class="fl entry">
+								<p class="name">呆萌冰冰</p>
+								<p class="state">未开播</p>
+							</a>
+						</li>
+						<li class="clearFix">
+							<img class="fl" src="img/photo_title.jpg">
+							<span class="fl deg"></span>
+							<a href="javascript:;" class="fl entry">
+								<p class="name">呆萌冰冰</p>
+								<p class="state">未开播</p>
+							</a>
+						</li>
+						<li class="clearFix">
+							<img class="fl" src="img/photo_title.jpg">
+							<span class="fl deg"></span>
+							<a href="javascript:;" class="fl entry">
+								<p class="name">呆萌冰冰</p>
+								<p class="state">未开播</p>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section class="anch">
+					<div class="tit clearFix">
+		                <h4 class="rank_tit fl">主播排行榜</h4>
+		                <div class="type fl">
+		                    <a href="javascript:;" class="fl">周</a>
+		                    <a href="javascript:;" class=" fl">月</a>
+		                    <a href="javascript:;" class="active fl">年</a>
+		                </div>
+		            </div>
+
+		            <ul class="anchList">
+						<li class="clearFix anchFirst">
+							<a href="javascript:;">
+                            	<span class="crown"></span>
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						
+					</ul>
+				</section>
+				<section class="richers">
+					<div class="tit clearFix">
+		                <h4 class="rich_tit fl">土豪排行榜</h4>
+		                <div class="type fl">
+		                    <a href="javascript:;" class="fl">周</a>
+		                    <a href="javascript:;" class=" fl">月</a>
+		                    <a href="javascript:;" class="active fl">年</a>
+		                </div>
+		            </div>
+
+		            <ul class="richList">
+						<li class="clearFix richFirst">
+							<a href="javascript:;">
+                            	<span class="crown"></span>
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						<li class="clearFix">
+							<a href="javascript:;">
+								<img class="fl" src="img/photo_title.jpg">
+								<span class="fl deg"></span>
+								<div class="fl entry">
+									<p class="name">呆萌冰冰</p>
+									<p class="state">未开播</p>
+								</div>
+							</a>
+						</li>
+						
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<footer>
+		    <div class="wrapper">
+		        <div class="container">
+		            <p class="relatedLink">
+		                <a href="javascript:;">关于蝌蚪 </a>|
+		                <a href="javascript:;"> 服务协议 </a>|
+		                <a href="javascript:;"> 客服帮助 </a>|
+		                <a href="javascript:;"> 关于我们 </a>|
+		                <a href="javascript:;"> 版权声明 </a>
+		            </p>
+		            <p class="clearFix copyright">
+		                <span class="fl logo_footer"></span>
+		                <span class="fl copyrightTxt">-Copyright©2016 沪ICP备14054721号</span>
+		            </p>
+		            <p>
+		                <span>蝌蚪客服电话：021-63156389 | 商务合作邮箱：</span>
+		                <a class="officialMailbox" href="mailto:mt@mutiantech.com">mt@mutiantech.com</a>
+		            </p>
+		        </div>
+		    </div>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>美女主播、视频交友、美女视频、在线K歌</title>
+<meta name="description" content="这里是是超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+<style type="text/css">
+    i{font-style: normal}
+    .kickout{ width:388px; height: 215px;position: absolute;z-index: 1000;margin:auto;top:0;left:0;right:0;bottom: 0;color: #fefefe;border-radius: 3px;}
+    .kickout .kick-he{width:388px;height: 40px;background-color: #505050;line-height: 40px;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+    .kickout .kick-he .kick-m{margin-left: 15px;  font-size: 16px;}
+    .kickout .kick-he .kick-n{margin-left: 8px;  font-size: 12px;color: #ADADAD}
+    .kickout .kick-x{position:absolute;right:15px;top:12px;width:14px;height: 14px;background:url("/img/gaunbi.png") no-repeat;}
+    .kickout .kick-x:hover{background:url("/img/gaunbi_hover.png") no-repeat;cursor: pointer}
+    .kickout .kick-con{background: #fff;width: 100%;height: 100%;border-bottom-left-radius: 5px;border-bottom-right-radius:5px; }
+    .kick-l,.kick-r{float: left;margin-top: 40px;}
+    .kick-l{width:160px;  text-align: center;}
+    .kick-r{color: #2E2E2E;font-size: 12px;}
+    .kick-r a{color:#4B4CE5}
+    .kick-r .toindex{color:#FFffff;height: 22px;  line-height: 22px; padding: 0 8px;background-color:#f77599;font-size: 12px;    display: inline-block;border-radius: 3px; text-decoration: inherit;margin:10px auto;}
+</style>
+    <script type="">
+        window.onload=function(){
+            var m=3;
+            var c=document.getElementById("test1").getElementsByTagName("i")[0];
+            function dao(){
+                m --;
+                c.innerHTML=m;
+                if(m == 0){
+                    clearInterval(tt);
+                    window.location.href="/";
+                }
+            }
+            var tt=setInterval(dao,1000);
+        }
+    </script>
+</head>
+
+<body>
+<div class="kickout">
+    <div class="kick-he">
+        <span class="kick-m">系统消息</span>
+        <span class="kick-n"  id="test1">剩余<i>3</i>自动跳转</span>
+        <div class="kick-x"></div>
+    </div>
+    <div class="kick-con">
+        <div class="kick-l"><img src="./rank_files/kickimg-2.png" alt="###"/></div>
+        <div class="kick-r">
+            <div>对不起您已经被管理员请出房间</div>
+            <a href="" class="button button-rounded toindex">返回首页</a>
+            <div>如果浏览器没有跳转,请 <a href="/">点击这里</a></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!--main-->
+<div class="inmiddle">
+   
+<{include file="center-info.html"}>
+<{include file="menu_left.html"}>
+    <div class="center-right">
+        <div class="mindex-title">我的首页</div>
+        <div class="mindex-level-area">
+            <div class="titleee"><span class="lev-inf">等级信息</span><span class="blank-btline"></span></div>
+            <div class="info-middle active-level">
+                <div class="c-mylevel">活跃等级</div>
+                <div class="c-level-bar">
+                    <div class="center-level activelevel sprite activelevel-pic_activelevel_<{$active}>"></div>
+                    <div class="c-all-bars">
+                        <div class="c-i-bar" style="width:<{$nextActive}>%"></div>
+                    </div>
+                    <div  class="center-level  activelevel sprite activelevel-pic_activelevel_<{$active+1}>"></div>
+                </div>
+                <div class="c-level-message" style="margin-left:30px; ">还差<{$activeDiffer}>经验升级 </div>
+            </div>
+
+            <div class="info-middle  mindex-level">
+                <div class="c-mylevel">我的爵位</div>
+                <div class="c-level-bar">
+                    <div class="center-level sprite consumelevel-pic_consumelevel_<{$spender}>"></div>
+                    <div class="c-all-bars">
+                        <div class="c-i-bar" style="width:<{$nextSpender}>%"></div>
+                    </div>
+                    <div class="center-level sprite consumelevel-pic_consumelevel_<{$spender+1}>"></div>
+                </div>
+                <div class="c-level-message">消费<{$differ}>蚪币升级</div>
+            </div>
+        </div>
+
+        <div class="mindex-else-title"> 我守护的</div>
+        <div class="mycare-list">
+            <{if $guardianship['resultMessage'] neq "error"}>
+                    <{foreach $guardianship as $k=>$v}>
+                    <div class="mycare-box">
+                        <div class="mycare-box-left">
+                            <div class="careImg"><a href="/{$v['roomNumber']}"><img src="<{$v['himage']}>"/></a></div>
+                        </div>
+                        <div class="mycare-box-right">
+                            <div class="mybr1"><span class="mbysp1"><a href="/{$v['roomNumber']}"><{$v['name']|urldecode}></a></span> <span class="mbysp2">守护中..</span></div>
+                            <div class="mybr2"><{$v['followeds']}> 粉丝</div>
+                            <div class="mybr3">守护等级：<span class="color33"><{$v['grds']}></span></div>
+                            <div class="mybr4">剩余天数：<span class="colorcc"> <{$v['days']}></span>天</div>
+                            <a class="mindex-recharge-button" href="/pay">充值</a>
+                        </div>
+                    </div>
+            
+            <{/foreach}>
+            <{/if}>
+        </div>
+        <div class="mindex-else-title"> 我的进场特效</div>
+            <div class="mcar-list">
+    <{foreach $arrs as $key=>$arr}>
+                <{if $arr['id']}>
+                    <div class="mcar-box" idd="<{$arr['id']}>" >
+                    <{else}>
+                    <div class="mcar-box">
+                    <{/if}>
+                        <div class="mcar-left">
+                            <div class=""><img src="<{$smarty.const._IMAGES_DOMAIN_}>/<{$arr['giftimage']}><{$arr['tss']}>"></div>
+                        </div>
+                        <div class="mcar-right">
+                            <div class="mcar-right-1 clearFix"><span class="car-name"> <{$arr['giftname']}></span><span class="xufei">续费</span></div>
+                            <div class="mcar-right-2 clearFix">剩余天数：<span><{$arr['day']}>天</span></div>
+                            <{if $arr['id']}><div class="mcar-right-3 learFix" idd="<{$arr['id']}>" ><{$arr['use']}>
+                                <{else}>
+                                <div class="mcar-right-3 learFix" ><{$arr['use']}>
+                                <{/if}>
+                            </div>
+                        </div>
+                    </div>
+               
+    <{/foreach}>
+            </div>
+        <div class="clear"></div>
+        </div>
+
+    </div>
+</div>
+    <!--main-->
+    <{include file=$footer}>
+
+
+<script>
+    seajs.use("ajax/usecar");
+</script>
+    </body>
+    </html>

@@ -1,0 +1,20 @@
+<gift_shape>
+	<shape giftname="giftShape_10" url="/static_data/giftShape/giftShape2d/note.xml" type="2d" isBig="0"/>
+	<shape giftname="giftShape_66" url="/static_data/giftShape/giftShape2d/666.xml" type="2d" isBig="0"/>
+	<shape giftname="giftShape_99" url="/static_data/giftShape/giftShape2d/star.xml" type="2d" isBig="0"/>
+	<shape giftname="giftShape_188" url="/static_data/giftShape/giftShape2d/crown.xml" type="2d" isBig="0"/>
+	<shape giftname="giftShape_520" url="/static_data/giftShape/giftShape2d/heart_fly.xml" type="2d" isBig="1"/>
+	<shape giftname="giftShape_1314" url="/static_data/giftShape/giftShape2d/heart_double.xml" type="2d" isBig="1"/>
+	<shape giftname="giftShape_10_3d" url="/static_data/giftShape/giftShape3d/note_3d.xml" type="3d" isBig="1"/>
+	<shape giftname="giftShape_66_3d" url="/static_data/giftShape/giftShape3d/666_3d.xml" type="3d" isBig="1"/>
+	<shape giftname="giftShape_99_3d" url="/static_data/giftShape/giftShape3d/star_3d.xml" type="3d" isBig="1"/>
+	<shape giftname="giftShape_188_3d" url="/static_data/giftShape/giftShape3d/crown_3d.xml" type="3d" isBig="1"/>
+	<shape giftname="giftShape_520_3d" url="/static_data/giftShape/giftShape3d/heart_fly_3d.xml" type="3d" isBig="1"/>
+	<shape giftname="giftShape_1314_3d" url="/static_data/giftShape/giftShape3d/heart_double_3d.xml" type="3d" isBig="1"/>
+	<shape giftname="giftShape_10_puzzle" url="" type="puzzle" isBig="1"/>
+	<shape giftname="giftShape_66_puzzle" url="" type="puzzle" isBig="1"/>
+	<shape giftname="giftShape_99_puzzle" url="" type="puzzle" isBig="1"/>
+	<shape giftname="giftShape_188_puzzle" url="" type="puzzle" isBig="1"/>
+	<shape giftname="giftShape_520_puzzle" url="" type="puzzle" isBig="1"/>
+	<shape giftname="giftShape_1314_puzzle" url="" type="puzzle" isBig="1"/>
+</gift_shape>

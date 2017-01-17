@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>点歌 {$site_name} 触屏版</title>
+<link rel="stylesheet" href="css/bootstrap.min.css?20141127b">
+<link rel="stylesheet" href="css/font-awesome.min.css?20141127b">
+<link rel="stylesheet" href="css/ectouch.css?20141127b">
+<link rel="stylesheet" href="css/user.css?20141127b">
+<link rel="stylesheet" href="css/photoswipe.css?20141127b">
+<link rel="stylesheet" href="/css/level.css?20141127b">
+<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css?20141127b">
+<script src="js/jquerymobile/jquery.min.js?20141127b"></script>
+<script src="js/jquerymobile/jquery.mobile-1.4.5.min.js?20141127b"></script>
+<script src="js/ucenter.js?20141127b"></script>
+<script src="js/StageWebViewBridge.php?20141127b"></script>
+<style>
+a.paylink {
+  background: #e3b612;
+  color: #fff;
+  padding: 5px 10px;
+}
+.bottom-nav {
+  background: none repeat scroll 0 0 #ecf0f1;
+  color: #333333;
+  font-size: 1em;
+  line-height: 2em;
+  padding: 20px;
+}
+ol.song{
+color:#333333;
+}
+ol.song li {
+  border-bottom: 1px solid #bfbfbf;
+  clear: both;
+  padding: 1em;
+}
+ol.song li i {
+  font-style: normal;
+  padding-right: 1em;
+}
+ol.song li i span{
+	color:#333333;
+}
+ol.song li .songname{}
+ol.song li .songadd {
+  border-left: 1px solid #e4e4e4;
+  color: #e3b612;
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+</style>
+<script>
+var cdn_domain="{$cdn_domain}";
+var money_name="{$money_name}";
+var money_name2="{$money_name2}";
+var site_skin="{$site_skin}";
+var IS_SINGLE_MONEY="{$IS_SINGLE_MONEY}";
+var currentUserNumber="{$user.usernumber}";
+var thisPage="ucenter";
+var RMB_XNB={$RMB_XNB};
+</script>
+</head>
+<body class="ucenter">
+<div class="con" data-role="page" id="ss">
+<section class="container-fluid user-nav">
+  <ul class="row ect-row-nav text-center buy_vip_tab">
+    <li class="col-sm-6 col-xs-6 on" rel="song1"><p class="text-center">主播预设点歌单</p></li>
+    <li class="col-sm-6 col-xs-6" rel="song2"><p class="text-center">查看已点歌区</p></li>
+  </ul>
+</section>
+<section class="user-tab ect-margin-tb ect-margin-bottom0" style="margin-top:0;">
+  <div class="tab-content" id="content_buy_vip">
+    <div class="active ect-pro-list buy_vip" id="song1"> 
+<ol class="song">
+{{foreach from=$songlist item=item}}
+<li class="top9"><i><span>{$item.i}</span></i><span class="songname">{$item.songname}</span><span class="songadd" onclick="StageWebViewBridge.call('fnCalledFromJS', null, 'song{$item.songid}');">点歌</span></li>
+{{/foreach}}
+</ol>
+    </div>
+    <div class="active ect-pro-list buy_vip" id="song2" style="display:none"> 
+<ol class="song">
+{{foreach from=$songrequest item=item}}
+<li class="top9"><i><span>{$item.i}</span></i><span class="songname">{$item.songname}</span></li>
+{{/foreach}}
+</ol>
+    </div>
+  </div>
+</section>
+<section class="container-fluid bottom-nav">
+财富余额:{$user.balance}{$money_name}<br/>
+  点歌每次消耗{$song_price}{$money_name}
+</section>
+</div>
+</body>
+</html>

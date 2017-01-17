@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+        <script type="text/javascript" src="http://apollox.im/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript">
+            var totalCount_pub = 0;
+            var totalCount_pri = 0;
+			var maxLength_pub = 30;
+			var maxLength_pri = 10;
+            var panel_pub;
+            var panel_pri;
+            function showuser(){
+                $("#list").show();
+                $("#chat").hide();
+            }
+            function showchat(type){
+                $("#list").hide();
+                $("#chat").show();
+				if(type=="pub"){
+					$("#panel_pub").show();
+					$("#panel_pri").hide();
+				}
+				else{
+					$("#panel_pub").show();
+					$("#panel_pri").hide();
+				}
+            }
+            function appendItem(htm,w)
+            {
+            	if(w==1){
+            		panel=panel_pri;
+            	}
+            	else{
+            		panel=panel_pub;
+            	}
+                var nextItem = $("<div class=\"wrap\">" + htm + "</div>");
+                panel.append(nextItem);
+                
+                //var nextItem = $($('.wrap').get($('.wrap').length - 1));
+                nextItem.find('.person').click(function(){
+                                               var id = $(this).attr('userid');
+                                               var name = $(this).text();
+                                               var url="Chat_appendItem:" + id + ":" + name;
+                                               document.location = url;
+                                               });
+
+                //nextItem.fadeIn(1000);
+                //nextItem.css('display':'block', 'opacity':1);
+      
+                if(w==1){
+                	if (totalCount_pri > maxLength_pri)
+                	{
+                    	$(panel.children().get(0)).remove();
+                    	//$($('.wrap').get(0)).remove();
+                	}
+                	else
+                	{
+                    	totalCount_pri++;
+                	}
+                }
+                else{
+                	if (totalCount_pub > maxLength_pub)
+                	{
+                    	$(panel.children().get(0)).remove();
+                    	//$($('.wrap').get(0)).remove();
+                	}
+                	else
+                	{
+                    	totalCount_pub++;
+                	}
+                }
+                var div = panel.get(0);
+                div.scrollTop = div.scrollHeight;
+            }
+			
+			function appendNotice(htm,w)
+            {
+            	var panel;
+            	if(w==1){
+            		panel=panel_pri;
+            	}
+            	else{
+            		panel=panel_pub;
+            	}
+                var nextItem = $("<div class=\"wrap\">" + htm + "</div>");
+                panel.append(nextItem);
+                
+                //var nextItem = $($('.wrap').get($('.wrap').length - 1));
+                nextItem.find('.notice').click(function(){
+                                               var code = $(this).attr('android_notice_code');
+                                               var url="Chat_appendNotice:" + code;
+                                               document.location = url;
+                                               });
+
+                //nextItem.fadeIn(1000);
+                //nextItem.css('display', 'block');
+                
+                if(w==1){
+                	if (totalCount_pri > maxLength_pri)
+                	{
+                    	$(panel.children().get(0)).remove();
+                    	//$($('.wrap').get(0)).remove();
+                	}
+                	else
+                	{
+                    	totalCount_pri++;
+                	}
+                }
+                else{
+                	if (totalCount_pub > maxLength_pub)
+                	{
+                    	$(panel.children().get(0)).remove();
+                    	//$($('.wrap').get(0)).remove();
+                	}
+                	else
+                	{
+                    	totalCount_pub++;
+                	}
+                }
+                var div = panel.get(0);
+                div.scrollTop = div.scrollHeight;
+            }
+            
+            function setBackground(colorStr)
+            {
+                $('body').css("background",colorStr);
+            }
+            
+			function setItemMaxLength(l,w)
+			{
+				if(w==1){
+					maxLength_pri = l;
+				}
+				else{
+					maxLength_pub = l;
+				}
+			}
+            
+            function clear(w)
+            {
+                if(w==1){
+                	panel_pri.empty();
+                	totalCount_pri = 0;
+                }
+                else{
+                	panel_pub.empty();
+                	totalCount_pub = 0;
+                }
+            }
+            function setHeight(priheight,pubheight){
+            	panel_pub.css('height',pubheight+"px");
+            	panel_pri.css('height',priheight+"px");
+                var div = panel_pri.get(0);
+                div.scrollTop = div.scrollHeight;
+                var div = panel_pub.get(0);
+                div.scrollTop = div.scrollHeight;
+            }
+            $(function() {
+                panel_pub = $('#panel_pub');
+                panel_pri = $('#panel_pri');
+                var div = panel_pri.get(0);
+                div.scrollTop = div.scrollHeight;
+                var div = panel_pub.get(0);
+                div.scrollTop = div.scrollHeight;
+            });
+            function addPeople(userid,nickname,gender,xz){
+                var isexist=false;
+                $(".listli").each(function(){
+                                  if($(this).attr("id")=="p"+userid){
+                                  isexist=true;
+                                  }
+                });
+                if(isexist){
+                    return 'no';
+                }
+                var newitem=$("<li class='listli' id='p"+userid+"'><img class='avatar' src='http://www.5iu.org/my/apis/avatar.php?userid="+userid+"' /><div class='pinfo'><div class='nickname'>"+nickname+"</div><div class=\"line2\"><div class='gendericon"+gender+"'></div>"+xz+"</div></div><div class='clear'></div><div class=\"opt\"><div class='btn btnprofile' uid='"+userid+"'><img src='fj-icon-1-n.png' width='30'><br />TA的档案</div><div class='btn  btngiftto'  uid='"+userid+"'  nickname='"+nickname+"'><img src='fj-icon-2-n.png' width='30'><br />送TA礼物</div><div class='btn btnchatto'  uid='"+userid+"'  nickname='"+nickname+"'><img src='fj-icon-3-n.png' width='30'><br />与TA聊天</div><div class='btn btnjubao' uid='"+userid+"'><img src='fj-icon-4-n.png' width='30'><br />举报TA</div></li>");
+                $("#listul").append(newitem);
+                newitem.click(function(){
+                              if($(this).attr('class')=='listli'){
+                              $(this).attr('class','listliopen');
+                              $( this ).animate({
+                                                   height: "117",
+                                                   }, 200, function() {
+                                                   
+                                                   });
+                              }
+                              else{
+                              $( this ).animate({
+                                                height: "56",
+                                                }, 200, function() {
+                                                $(this).attr('class','listli');
+                                                });
+                              }
+                              
+                              });
+                newitem.find(".btnprofile").click(function(){
+                                                  var code = $(this).attr('uid');
+                                                  var url="Chat_profile:" + code;
+                                                  document.location = url;
+                                                  });
+                newitem.find(".btngiftto").click(function(){
+                                                 var code = $(this).attr('uid');
+                                                 var nick = $(this).attr('nickname');
+                                                 var url="Chat_giftto:" + code+":"+nick;
+                                                 document.location = url;
+                                                 });
+                newitem.find(".btnchatto").click(function(){
+                                                 var code = $(this).attr('uid');
+                                                 var nick = $(this).attr('nickname');
+                                                 var url="Chat_chatto:" + code+":"+nick;
+                                                 document.location = url;
+                                                 });
+                newitem.find(".btnjubao").click(function(){
+                                                 var code = $(this).attr('uid');
+                                                 var url="Chat_jb:" + code;
+                                                 document.location = url;
+                                                 });
+                return 'yes';
+            }
+            function delPeople(userid){
+                $("#listul li").each(function(){
+                                      if($(this).attr("id")=="p"+userid){
+                                            $(this).remove();
+                                      }
+                });
+            }
+            </script>
+        <style type="text/css">
+            body{
+                padding:0;
+                margin:0;
+            }
+            .clear{
+                clear:both;
+            }
+            *{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+            ul{
+                list-style:none;
+                padding:0;
+                margin:0;
+            }
+            .avatar{
+                float:left;
+                width:40px;
+                height:40px;
+                border-radius:4px;
+                margin-left:8px;
+                margin-top:8px;
+            }
+            .pinfo{
+                width:250px;
+                float:right;
+            }
+            .nickname{
+                font-size:14px;
+                font-weight:bold;
+                line-height:28px;
+            }
+            .line2{
+                line-height:28px;
+                color:#aaaaaa;
+            }
+            .gendericon1{
+                float:left;
+                margin-top:5px;
+                display:inline-block;
+                width:15px;
+                height:17px;
+                background-image:url('femaleicon@2x.png');
+                background-repeat:no-repeat;
+                background-size:100% 100%
+            }
+            .gendericon0{
+                float:left;
+                margin-top:5px;
+                display:inline-block;
+                width:15px;
+                height:17px;
+                background-image:url('maleicon@2x.png');
+                background-repeat:no-repeat;
+                background-size:100% 100%
+            }
+            .listli{
+                background-image:url('peopleitembg.png');
+                background-repeat:no-repeat;
+                height:56px;
+                background-size:100% 100%;
+                overflow:hidden;
+            }
+            .listliopen{
+                background-image:url('peopleitembgopen.png');
+                background-repeat:no-repeat;
+                height:56px;
+                background-size:100% 100%;
+                overflow:hidden;
+            }
+            .gift{
+                width:20px;
+                height:20px;
+            }
+            body{
+                font-size:13px
+            }
+            .wrap
+            {
+                display:block;
+            }
+            .person
+            {
+                text-decoration:none;
+                background:auto;
+				color:#FF6BB0;
+            }
+           	.notice
+           	{
+           	    text-decoration:none;
+                background:auto;
+                color:#4496FC;
+				TEXT-DECORATION:underline
+           	}
+           	.notice:hover
+           	{
+                background:#BCA8B1;
+                color:#838383;
+           	}
+            .information
+            {
+                color:#FF6BB0;
+            }
+            #panel_pub{
+            	overflow-y:scroll;
+            	overflow-x:hidden;
+            }
+            #panel_pri{
+				display:none;
+            	overflow-y:scroll;
+            	overflow-x:hidden;
+            }
+            .btn{text-align:center;color:#555555;display:inline-block;margin-left:20px;margin-top:10px};
+            </style>
+        <title>web view</title>
+    </head>
+    <body style="background-color: transparent">
+        <div id="chat">
+            <div id="panel_pub"></div>
+            <div id="panel_pri"></div>
+        </div>
+        <div id="list" style="display:none">
+            <ul id="listul"></ul>
+        </div>
+    </body>
+</html>
+

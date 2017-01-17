@@ -1,0 +1,655 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta name="robots" content="all" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta name="description" content="{$site_name}专注于在线美女视频秀与美女视频交友演绎，无需客户端即可支持美女视频聊天室与多人同城聊天室。众多美女主播邀您共同体验在线视频交友！" />
+<meta name="keywords" content="视频交友,视频聊天,视频聊天室,美女视频,同城聊天室,视频秀,美女视频秀" />
+<title>{$site_name}_视频交友_视频聊天室_美女视频秀</title>
+		<meta content="ie-comp" name="renderer">
+<link href="{$cdn_domain}/skin/qq/index.css?24510" type="text/css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="/static/css/user/userGuide.css"> -->
+<script type="text/javascript" src="{$cdn_domain}/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{$cdn_domain}/skin/qq/kg.js"></script>
+<script>
+$(function(){
+	
+	//鼠标移动到主播上
+	var tmp = $("ul.live_ul li");
+	tmp.mouseover(function() {
+        $(this).addClass("hover").css("z-index","90");
+    }).mouseout(function() {
+    	tmp.removeClass("hover").css("z-index","80");
+    });
+	
+	//右侧榜单点击
+	$(".starList h3 span").live("click", function(){
+		var idx = $(this).parent().find("span").index(this);
+		$(this).parent().find("span").removeClass("current");
+		$(this).addClass("current");
+		$(this).parent().parent().next().find(">div").css("display","block").filter(":not(:eq(" + idx + "))").css("display","none")
+	});
+	//图片滚动
+	try{
+		new Focus("focus","a","ctr","span",{
+			effect:"scroll",scrollDir:"Left",event:"mouseover",scrollMode:2
+		});
+	} catch(e){
+	}
+	//照片墙
+	
+	$.getJSON(picwallurl, 
+        function(json) {
+            if (json.status == 1) {
+                picWallData = json.data;
+				picWall.init('#pic_wall');
+            }
+        })
+})
+//picWall
+var picWallData;
+var picwallurl = "/skin/api.php?type=wall";
+var picWall = {
+    lock: false,
+    timeout: null,
+    hoverEvent: function() {
+        var _this = this;
+        this.$box.find('li').not('.refresh').mouseover(function(e) {
+            clearInterval(_this.timeout);
+            _this.$pop.html($(this).find('.detail').html())
+        }).mouseout(function() {
+            _this.$pop.stop().animate({
+                opacity: 0
+            },
+            100, 
+            function() {
+                $(this).hide()
+            })
+        }).mousemove(function(e) {
+            _this.popShow(e, this)
+        })
+    },
+    popShow: function(e, o) {
+        var posY = e.pageY - this.$box.offset().top;
+        var posX = e.pageX - this.$box.offset().left;
+        this.$pop.css({
+            left: posX + 10,
+            top: posY + 10,
+            display: 'block'
+        }).stop().animate({
+            opacity: 1
+        },
+        100)
+    },
+    init: function(id) {
+        this.$box = $(id);
+        this.$pop = $('#picWall_pop');
+        this.hoverEvent();
+        this.update(picWallData, true)
+    },
+    autoPlay: function() {
+        var _this = this;
+        _this.timeout = setInterval(function() {
+            _this.ajaxUpdate()
+        },
+        60000)
+    },
+    ajaxUpdate: function() {
+        if (this.lock === true) return false;
+        this.lock = true;
+        var _this = this;
+        this.$box.find('.refresh').addClass('loading');
+        $.getJSON(picwallurl, 
+        function(json) {
+            if (json.status == 1) {
+                _this.update(json.data)
+            }
+        })
+    },
+    update: function(data, noEfect) {
+        var _this = this;
+        _this.$box.find('li').not('.refresh').each(function(i) {
+            if (i == 1 || i == 20) {
+                i = i == 1 ? 20: 1
+            }
+            if (i == 0 || i == 1) {
+                var w = 157
+            } else {
+                var w = 78
+            }
+            var actionItem = $(this).find('.mask');
+            data[i] && actionItem.append('<div class="item">' + _this.itemHTML(data[i], w) + '</div>'); ! noEfect && setTimeout(function() {
+                _this.changeItem(actionItem, w)
+            },
+            Math.floor(Math.random() * 900))
+        });
+        setTimeout(function() {
+            _this.$box.find('.refresh').removeClass('loading');
+            _this.lock = false
+        },
+        1300)
+    },
+    changeItem: function(actionItem, w) {
+        actionItem.stop().animate({
+            'top': -w
+        },
+        300, 
+        function() {
+            actionItem.find('.item').eq(0).remove();
+            actionItem.css('top', 0)
+        })
+    },
+    itemHTML: function(data, w) {
+	//width="' + w + '" 
+	//width="157" 
+        var str = '<img height="' + w + '" src="{$cdn_domain}' + decodeURIComponent(data.showcover) + '"/><div class="detail">	<img height="157" src="{$cdn_domain}' + decodeURIComponent(data.showcover) + '" />	<p class="name">		<em class="zlevel zlv'+data.starlevel+'"></em>		<a href="javascript:void(0)" target="_blank">' + data.nickname + '</a>	</p>' + (data.status == 1 ? '<span class="live">直播</span>': '') + '</div><a href="/' + data.id + '.html" target="_blank">' + (data.status == 1 ? '<span class="bg bg2"></span>': '<span class="bg"></span>') + '</a>';
+        return str
+    }
+}
+</script>
+
+<script type="text/javascript" src="{$cdn_domain}/js/login.js"></script>
+
+<link rel="stylesheet" href="{$cdn_domain}/css/level.css?20140402" type="text/css" media="screen" />
+
+</head>
+<body>
+{include file="header.html"} 
+<!-- 修改昵称弹窗 -->
+<div class="mav_cur_btom"></div>
+<div style="height:246px;" class="cols_bg"><div class="cont"><div class="l"></div><div class="r"></div></div></div>
+<div class="content">
+    <div class="frame clearfix">
+        		<!--左侧区域-->
+         <div class="leftbar">
+        				<div class="banner">
+<div id="focus">
+{{foreach from=$pic_banner item=item}}
+{if $item.url}
+	<a target="_blank" href="{$item.url}" class="imgbox">
+{{else}}
+	<a href="javascript:;" class="imgbox" style="cursor:auto">
+{{/if}}
+	<img width="560" height="230" alt="{$item.title}" src="{$item.picSrc}">
+	<p>{$item.title}</p>
+	<span class="shadow"></span>
+</a>
+{{/foreach}}
+</div>
+					<div id="ctr">
+{{foreach from=$pic_banner item=item}}
+<span><em></em></span> 
+{{/foreach}}
+											</div>
+				</div>
+        <div class="online"> 
+        <span>在线人数</span>
+        <p id="online_num">{$totalnum}</p>
+    </div>
+    <div class="stageList">
+        <div class="stage">
+            <div title="星光偶像" class="title up"><span class="idol"></span>星光偶像</div>
+            <div class="detail">
+                <ul id="tab_idol">
+  <li><a href="?l=4" title="">超级偶像</a><span>{$l1num}人</span></li>
+<li><a href="?l=3" title="">巨星闪耀</a><span>{$l2num}人</span></li>
+<li><a href="?l=2" title="">明星殿堂</a><span>{$l3num}人</span></li>
+<li><a href="?l=1" title="">闪亮新星</a><span>{$l4num}人</span></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div class="belove stageList">
+        <div class="stage">
+            <div title="非常综艺" class="title up"><span class="idol"></span>非常综艺</div>
+            <div class="detail">
+                <ul id="tab_belove">
+{{foreach from=$showercate item=item name=list}}
+			<li><a href="?c={$item.id}" title="">{$item.catename}</a><span></span></li>
+{{/foreach}}
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+<div id="impression" class="impression">
+        <div class="stage">
+            <div title="新人报道" class="title up"><span class="idol"></span>新人报道</div>
+            <div class="detail">
+                <ul id="">
+{{if $newshower}}
+{{foreach from=$newshower item=item name=list}}
+			<li><a href="/{$item.usernumber}.html" target="_blank" title="{$item.nickname}">{$item.nickname}</a><span>{$item.num}人</span></li>
+{{/foreach}}
+{{else}}
+<li><a href="#" title="">暂无新人</a><span>0人</span></li>
+{{/if}}
+                	                </ul>
+            </div>
+        </div>
+    </div>
+    	    <div id="game" class="game">
+    	    	        <div class="stage clearfix">
+{if $site_ishave_game}
+            <div title="幸运转盘" class="title up"><span class="idol"></span><a target="_blank" href="/car.php">幸运转盘</a></div>
+{/if}
+        </div>
+            	    </div>
+		<div class="announcement">
+		<h3><span>公告</span></h3>
+		<ul>
+{{foreach from=$news_list item=item name=list}}
+			<li><a target="blank" class="default_family" href="/readnews.php?id={$item.id}">{$item.title}</a></li>
+{{/foreach}}
+		</ul>
+	</div>
+	<div class="helpcenter">
+		<h3><span>帮助中心</span></h3>
+		<ul>
+			<li><a title="" href="/html/help.html#6">签约主播有什么要求与好处？</a></li>
+			<li><a title="" href="/html/help.html#9">什么是掌声？如何获得？</a></li>
+			<li><a title="" href="/html/help.html#10">主播直播时上不了首页？</a></li>
+		</ul>
+	</div>
+</div>
+                <!--照片墙-->
+        <div id="pic_wall" class="cols">
+	<ul class="pic-left">
+    	<li class="big"><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+    </ul>
+    <ul class="pic-center">
+    	<li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+    </ul>
+    <ul class="pic-right">
+    	<li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li class="refresh loading">
+        	<a href="javascript:;" onclick="picWall.ajaxUpdate();" title="刷新照片墙"></a>
+        </li>
+        <li class="big"><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+        <li><div class="mask"></div></li>
+    </ul>
+    <!--鼠标事件的弹窗-->
+    <div id="picWall_pop"></div>
+</div>        
+        <div id="centerLiveList" class="center">
+			            <div class="zhibowutai">
+								<div id="recommendRoom" class="houseList">
+					<h3>
+						<span>推荐主播</span>
+					</h3>
+<ul class="clearfix live_ul">
+{foreach from=$recommend_top4 item=show}
+<li rid="{$show.roomnumber}">
+{if $show.endtime==""}<div class="tip-text">直播</div>{/if}
+            <div class="left-icon"></div>
+            <div class="i-box"><img width="125" height="94" src="{$cdn_domain}/static_data/showcover/thumb200x150_{$show.showcover}"></div>
+    <div class="info clearfix">
+        <span class="name">{$show.nickname}</span>
+    </div>
+    <p>观众：{$show.viewernum}</p>
+    <div class="detail">
+        <div class="i-box2"><img width="172" height="130" src="{$cdn_domain}/static_data/showcover/thumb200x150_{$show.showcover}"></div>
+        <div class="info">
+            <span class=""><em class="zlevel zlv{$show.starlevel}"></em></span>
+            <span class="name">
+                <a title="{$show.nickname}" href="/{$show.roomnumber}.html" target="_blank">{$show.nickname}</a>
+            </span>
+        </div>
+        <p>观众：{$show.viewernum}</p>
+                <p>开播：{if $show.endtime==""}{$show.playedtime}{else}没有直播{/if}</p>
+        <div class="play">
+            <a href="/{$show.roomnumber}.html" target="_blank"><em></em></a>
+        </div>
+                <div class="shadow"></div>
+    </div>
+    <span class="songName"></span>
+</li>
+{/foreach}
+</ul>
+</div>
+                  <div class="roomLine"></div>
+				  								<div id="liveRoom" class="houseList"><!--模板用的渲染box-->
+					<h3>
+						<span>人气主播</span>
+					</h3>
+					<div class="region-select"></div>
+					<div class="clearboth"></div>
+<ul class="clearfix live_ul">
+{foreach from=$recommend_shows item=show}
+<li rid="{$show.roomnumber}">
+{if $show.endtime==""}<div class="tip-text">直播</div>{/if}
+            <div class="left-icon"></div>
+            <div class="i-box"><img width="125" height="94" src="{$cdn_domain}/static_data/showcover/thumb200x150_{$show.showcover}"></div>
+    <div class="info clearfix">
+        <span class="name">{$show.nickname}</span>
+    </div>
+    <p>观众：{$show.viewernum}</p>
+    <div class="detail">
+        <div class="i-box2"><img width="172" height="130" src="{$cdn_domain}/static_data/showcover/thumb200x150_{$show.showcover}"></div>
+        <div class="info">
+			<span class=""><em class="zlevel zlv{$show.starlevel}"></em></span>
+            <span class="name">
+                <a title="{$show.nickname}" href="/{$show.roomnumber}.html" target="_blank">{$show.nickname}</a>
+            </span>
+        </div>
+        <p>观众：{$show.viewernum}</p>
+                <p>开播：{if $show.endtime==""}{$show.playedtime}{else}没有直播{/if}</p>
+        <div class="play">
+            <a href="/{$show.roomnumber}.html" target="_blank"><em></em></a>
+        </div>
+                <div class="shadow"></div>
+    </div>
+    <span class="songName"></span>
+</li>
+{/foreach}
+</ul>
+                    <div id="houseList_loading"></div>
+				  </div>
+				                                      <div id="mHouse" class="houseList"><!--ajax用的渲染box-->
+                  	<h3></h3>
+                    <ul class="clearfix"></ul>
+                  </div>
+			  </div>
+        </div>
+        <!--右侧区域-->
+        <div class="rightbar">
+    <div class="leftLine"></div>
+    <div class="searchBox">
+    	<input type="text" id="kw" placeholder="输入房间号" x-webkit-speech="">
+        <a href="javascript:head_search_box();"></a>
+    </div>
+<script>
+/*
+$(function(){
+	$("#kw")
+	.val("请输入房间号")
+	.blur(function () {
+		if ($(this).val() == "")
+			$(this).val("请输入房间号");
+	})
+	.focus(function () {
+		if ($(this).val() == "请输入房间号")
+			$(this).val("");
+	});
+});*/
+function head_search_box(){
+	var kw = $("#kw").val();
+	if(isNaN(kw)){
+		alert("请输入正确的房间号!");
+		return;
+	}
+	window.open("/"+kw+".html");
+}
+</script>
+    <div class="loginbox" id="login_box">
+{if !$user}
+	        <div id="beloginBox">
+            <div class="links">
+                <a class="reg quick_signup" hidefocus="true" href="javascript:login.reg()">用户注册</a>
+				<a class="login quick_login" hidefocus="true" href="javascript:login.show()">用户登录</a>
+            </div>
+        </div>
+{else}
+        <div id="afloginBox" style="display: block;">
+            <div class="basicInfo">
+                <a title="{$user.nickname}" href="/ucenter.php"><img width="60" height="60" alt="" src="{$cdn_domain}/apis/avatar.php?uid={$user.userid}"></a>
+                <div class="name">
+                    <span><a title="{$user.nickname}" href="/ucenter.php">{$user.nickname}</a></span>
+                    <b><a target="_blank" href="/ucenter.php">[个人档案]</a></b>
+                </div>
+            </div>
+            <div class="expandInfo">
+                 <ul>
+                     <li>
+                         <span>主播：</span>
+                         <div class="level">
+                             <i class="from"><em class="zlevel zlv{$user.starlevel}"></em></i>
+                             <i nextlevelvalue="{$user.starshenji}" levelvalue="{$user.starlevel}" curvalue="0.00" class="process" title="离升级还差{$user.starshenji}"><b id="star_process" style="width: {$user.starshenjiB}%;"></b></i>
+                             <i class="to"></i>
+                         </div>
+                     </li>
+                     <li>
+                         <span>财富：</span>
+                         <div class="level">
+                             <i class="from"><em class="level lv{$user.richlevel}"></em></i>
+                             <i nextlevelvalue="{$user.richshenji}" levelvalue="{$user.richlevel}" curvalue="0.00" class="process" title="离升级还差{$user.richshenji}"><b id="user_process" style="width: {$user.richshenjiB}%;"></b></i>
+                             <i class="to"></i>
+                         </div>
+                     </li>
+                     <li>
+                         <span>{$money_name}：</span>
+                         <label id="user_coin_info">{$user.balance}</label><a target="_blank" class="recharge" href="/ucenter.php?ptype=pay">充值</a>
+                     </li>
+					 {if $IS_SINGLE_MONEY!=1}
+                     <li>
+                         <span>{$money_name2}：</span>
+                         <label>{$user.point}</label><a class="exchange" href="/ucenter.php?ptype=exchange">兑换{$money_name2}</a>
+                     </li>
+					 {/if}
+                 </ul>   
+            </div>
+        </div>
+{/if}
+</div>
+
+	<div class="starList clearfix">
+        <div class="fl">
+            <h3 class="star">
+				<div class="text" title="根据主播在线时间排行">时长榜</div>
+                <div class="tabs" id="listTab"><span class="current">日</span>|<span>周<em></em></span>|<span>月</span></div>
+			</h3>
+            <div id="listContent">
+                <div style="display: block;">
+<dl class="listdetail">
+{foreach from=$time_star_dayList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>    
+{/foreach}
+</dl>
+
+                </div>
+                                <div style="display: none;">
+                    <dl class="listdetail">
+{foreach from=$time_star_weekList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>    
+{/foreach}
+</dl>
+                </div>
+                                                <div style="display: none;">
+                    <dl class="listdetail">
+{foreach from=$time_star_monthList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>    
+{/foreach}
+</dl>
+                </div>
+                            </div>
+        </div>
+    </div>
+	
+             
+    <div class="starList clearfix">
+        <div class="fl">
+            <h3 class="star">
+				<div class="text" title="根据主播获得的礼物进行排行">明星榜</div>
+                <div class="tabs" id="listTab"><span class="current">日</span>|<span>周<em></em></span>|<span>月</span></div>
+			</h3>
+            <div id="listContent">
+                <div style="display: block;">
+<dl class="listdetail">
+{foreach from=$rank_star_dayList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>    
+{/foreach}
+</dl>
+
+                </div>
+                                <div style="display: none;">
+                    <dl class="listdetail">
+{foreach from=$rank_star_weekList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>    
+{/foreach}
+</dl>
+                </div>
+                                                <div style="display: none;">
+                    <dl class="listdetail">
+{foreach from=$rank_star_monthList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>    
+{/foreach}
+</dl>
+                </div>
+                            </div>
+        </div>
+    </div>
+    
+    <div class="starList clearfix">
+        <div class="fl">
+            <h3 class="request">
+				<div class="text" title="根据主播收到的掌声数进行排行">人气榜</div>
+                <div class="tabs" id="listTab1"><span class="current">日</span>|<span>周<em></em></span>|<span>月</span></div>
+			</h3>
+            <div id="listContent1">
+                <div style="display: block;">
+                    <dl class="listdetail">
+{foreach from=$rank_hot_dayList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>  
+{/foreach}
+</dl>
+                </div>
+                                <div style="display: none;">
+                    <dl class="listdetail">
+{foreach from=$rank_hot_weekList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>  
+{/foreach}
+</dl>
+                </div>
+                                                <div style="display: none;">
+                    <dl class="listdetail">
+                                            <dd class="clearfix">
+{foreach from=$rank_hot_monthList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="/{$show.usernumber}.html" target="_blank">{$show.nickname}</a>房号：{$show.usernumber}</p>
+    	<div class="level"><em class="zlevel zlv{$show.starlevel}"></em></div>
+	</dd>  
+{/foreach}
+</dl>
+                </div>
+                            </div>
+        </div>
+    </div>
+    
+    <div class="starList clearfix">
+        <div class="fl">
+            <h3 class="rich">
+				<div class="text" title="根据用户消费额进行排行">富豪榜</div>
+                <div class="tabs" id="listTab2"><span class="current">日</span>|<span>周<em></em></span>|<span>月</span></div>
+			</h3>
+            <div id="listContent2">
+                <div style="display: block;">
+                    <dl class="listdetail">
+                                        <!--富豪榜模板-->
+                        <dd class="clearfix">
+{foreach from=$rank_rich_dayList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="javascript:;" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="javascript:;" target="_blank">{$show.nickname}</a>{$money_name}数 {$show.cmoney}</p>
+    	<div class="level"><em class="level lv{$show.richlevel}"></em></div>
+	</dd> 
+{/foreach}
+</dl>
+                </div>
+                                <div style="display: none;">
+<dl class="listdetail">
+{foreach from=$rank_rich_weekList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="javascript:;" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="javascript:;" target="_blank">{$show.nickname}</a>{$money_name}数 {$show.cmoney}</p>
+    	<div class="level"><em class="level lv{$show.richlevel}"></em></div>
+	</dd> 
+{/foreach}
+</dl>
+                </div>
+                                                <div style="display: none;">
+                    <dl class="listdetail">
+{foreach from=$rank_rich_monthList item=show}
+	<dd class="clearfix">
+{if $show.i==0}<span class="first"></span>{else}<span{if $show.i>2} class="sm"{/if}>{$show.i+1}</span>{/if}
+        <a title="{$show.nickname}" href="javascript:;" target="_blank"><img width="30" height="30" src="{$show.avatar_img}"></a>
+    <p><a title="{$show.nickname}" href="javascript:;" target="_blank">{$show.nickname}</a>{$money_name}数 {$show.cmoney}</p>
+    	<div class="level"><em class="level lv{$show.richlevel}"></em></div>
+	</dd> 
+{/foreach}
+</dl>
+                </div>
+                            </div>
+        </div>
+    </div>
+        <!--右侧banner-->
+        </div>        
+    </div>
+
+</div>
+{include file="footer.html"}
+
+</body></html>

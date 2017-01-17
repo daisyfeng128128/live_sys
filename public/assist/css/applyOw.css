@@ -1,0 +1,105 @@
+.owBg{
+	position: absolute;
+	left: 0;
+	top: 0; 
+	right: 0;
+	bottom: 0; 
+	background: url(../img/bg.png) no-repeat;
+}
+.owBg .jumbotron{
+	background: url(../img/banner.png) no-repeat;
+	padding-bottom: 39%;
+	background-size:88%; 
+	margin-top: 1.3%;
+}
+.applyBtn{
+	background-color: #e34052;
+    border: 1px solid #f40923;
+    color: #fff;
+    border-radius: 26px; 
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+    padding: 10px 44px;
+}
+.applyBtn:hover{
+	background-color:#e86473;
+	color: #fff; 
+}
+.cen{
+	margin-left: 3%; 
+	margin-top: 7%; 
+}
+.consultTit{
+	margin-top: 10%; 
+}
+.applyHm .opeQQ,.applyM .opeQQ{
+	background: url(../img/pic_qqtalk.png) no-repeat;
+	background-size: cover; 
+	text-indent: -99999em;
+	padding: 2px 48px;
+}
+
+
+/* 申请流程 */
+@media (min-width: 1450px){
+	.owCon {
+	    width: 1100px;
+	    margin: 0 auto;
+	}
+}
+
+.appDetail{
+	background-color: #fff; 
+	padding: 6%; 
+	border: 1px solid #ddd; 
+}
+.appDetail .tit{
+	margin-left: 3%; 
+}
+.callCustom{
+	margin-top: 1%; 
+	margin-bottom: 4%; 
+	margin-right: 3%; 
+}
+.lineL{
+	margin-right: 76px; 
+}
+.mainR{
+	margin-bottom: 14%; 
+	padding-left: 24%;
+}
+.mainR01{
+	background: url(../img/pic_shijianzhu_01.png) no-repeat;
+	background-size: contain;
+	padding-bottom: 3%;
+}
+.mainR02{
+	background: url(../img/pic_shijianzhu_02.png) no-repeat;
+	background-size: contain;
+	padding-bottom: 7%;
+}
+.mainR03{
+	background: url(../img/pic_shijianzhu_03.png) no-repeat;
+	padding-bottom: 12%;
+	padding-top: 6%;
+}
+.qqnum{
+	margin-left: 12%; 
+}
+
+@media (max-width: 768px){
+	.mainR{
+	    background-image: none;
+	}
+
+}
+.download,.opeQQB{
+	margin-left: 55%;
+
+}
+.download .btn, .opeQQB .opeQQ{
+	margin-bottom: 4%; 
+}
+.mainR .opeQQ{
+	padding: 14px 48px; 
+	margin-left: -26px;
+}

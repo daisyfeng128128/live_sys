@@ -1,0 +1,36 @@
+<html style="overflow: hidden;">
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		function onFrameLoad(){
+			changeBlank();
+			setResize();
+		}
+		function setResize(){
+			$(window).resize(function() { 
+				document.getElementById("kedo").width = document.documentElement.clientWidth;
+				document.getElementById("kedo").height = document.documentElement.clientHeight;
+			});
+			document.getElementById("kedo").width = document.documentElement.clientWidth;
+			document.getElementById("kedo").height = document.documentElement.clientHeight;
+		}
+		function changeBlank(){
+			var anchors = $("#kedo").contents().find("a");
+			var anchor;
+			var index;
+			for(index = 0; index < anchors.length; index ++){
+				anchor = anchors[index];
+				anchor.target="";
+			}
+        }
+	</script>
+	<style type="text/css">
+		#kedo{
+			padding:0px;
+		}
+		*{
+			margin:0;
+		}
+	</style>
+	<iframe name="kedo" id="kedo" src="http://www.kedo.tv" frameborder="no" border="0" marginwidth="0" marginheight="0" onload="onFrameLoad()">
+	</iframe>
+</html>

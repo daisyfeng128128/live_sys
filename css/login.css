@@ -1,0 +1,129 @@
+@charset "utf-8";
+/*定义基本的样式*/
+.fl { float:left;}
+.fr { float:right;}
+.fl18 { float:left; margin-left:18px;}
+.clear{clear:both;height:0;overflow:hidden;width:0}
+.ml10{margin-left:10px;}
+.ml20{margin-left:20px;}
+.mr10{margin-right:10px;}
+.mr20{margin-right:20px;}
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+
+.mb10{margin-bottom:10px;}
+.mb20{margin-bottom:20px;}
+
+.pr10{padding-right:10px;}
+.ht10{height:10px;}
+.ht20{height:20px;}
+
+.txc{text-align:center;}
+.txl{text-align:left;}
+.txr{text-align:right;}
+
+
+.bgmask {width: 100%; height: 100%;   top: 0; left: 0;  display: none;  position: fixed;  background-color: #000; opacity: 0.5;  filter: alpha(opacity=50); z-index: 9999;}
+.box_close {position:absolute;background-position:-72px -168px;left:482px;top:12px;display:inline-block;cursor:pointer;background:url(../images/closebox.png);width:16px;height:16px}
+.topb {display:inline-block; }
+.border_left, .orange .border_left{ float:left; width:5px; height:35px; }
+.border_center, .orange .border_center { float:left; position:relative; height:40px; line-height:40px; margin-left: 10px;}
+.border_right, .orange .border_right  { float:left; width:0px; height:35px; }
+.login .border_left{background-position:0 -105px;}
+.regbox .border_left{background-position:0 -210px;}
+.login .border_center{background-position:0 -140px;background-repeat:repeat-x;}
+.regbox .border_center{ background-position:0 -245px;background-repeat:repeat-x;}
+.login .border_right{ background-position:0 -175px;}
+.regbox .border_right{ background-position:0 -280px;}
+
+.topc {display:block; background:url("../img/topc.png") no-repeat; }
+.login-box-global-css{ width:510px;    display: none; background-color: #fff; border-radius: 5px;   position: fixed; top:200px;  left: 0; right: 0;  margin: auto;   overflow: hidden;  z-index: 99999;}
+.login-box-global-css css3-container{float:left;}
+.login-box-global-css .box_head {z-index:2;float:left;}
+.login-box-global-css .rlbox{float:left;}
+.login-box-global-css ul.loginswitch {width:448px; height:49px;background:#fff;  border-bottom:3px solid #ccc;background-position:0 -190px; float:left; overflow:hidden/9; _overflow:hidden;margin-left: 24px; }
+.login-box-global-css ul.loginswitch li{ display:inline-block;width:50px;height:49px;line-height:49px;text-align:center;font-size:17px;text-align: center; }
+.login-box-global-css ul.loginswitch  li.regsw{width:50px;   height:49px;color:#FE6600; border-bottom: 3px solid #3b62db;}
+.login-box-global-css .regbox{float:left;background:#fff;background-position:-764px 0; color:#333;  padding-bottom: 30px;}
+/*弹出的登录框内容*/
+#login { margin-right:4px;}
+#registerForm  .regmail, #registerForm  .regnic, #registerForm  .regpw, #registerForm  .regpw2, #registerForm  .regcode, #login_form2 .regmail, #login_form2 .regpw, #login_form2 .log_yzm{ height:50px; line-height:40px; clear:both; margin:0 10px 12px 10px; position: relative; }
+#login_form2,#registerForm{float:left;border-right:1px solid #ccc;margin-top: 30px; }
+.other_login{float: left}
+#registerForm  .reglabel,#login_form2 .loginlb { display:inline; float:left; width:80px; font-size:14px; text-align:right; color:#999;}
+#registerForm  .reglabel strong{ color:#fe7e00;}
+#registerForm .regdes,#login_form2 .regdes{ float:left; margin-top:6px; }
+#registerForm  p.agree_p, #login_form2  p.agree_p { height:20px; line-height:20px; margin:10px 0;margin-left:25px;}
+#registerForm  .agree  a, #login_form2  .agree  a{color:#979598; text-decoration:underline; margin-left:5px; }
+#registerForm  .icon_checked, #registerForm .icon_unchecked, #login_form2  .icon_checked, #login_form2 .icon_unchecked { margin:2px 0; padding:0 5px 0 0; width:16px; height:16px; }
+#registerForm  .icon_checked, #login_form2  .icon_checked{ background:url("../img/checked.png") no-repeat; }
+#registerForm  .icon_unchecked, #login_form2 .icon_unchecked{ background:url("../img/unchecked.png") no-repeat; }
+#regsub, #loginsub{margin-left:22px;width: 277px;height:41px;line-height:41px;color:#FFF;font-size:16px;margin-top:5px;border:0;background-color:#f77599;cursor:pointer;display: block;}
+#registerForm  .error, #login_form2 .error {color:red;  margin-left:20px; position: absolute; bottom: -22px; height: 32px; line-height: 20px; }
+#registerForm  div.oktip {display:none;float:left;width:24px;height:35px;line-height:35px;margin:0!important;background:url("../img/ok.png") no-repeat 0 50%;}
+.getNickName {display:inline-block;position:absolute;width:25px;background:url("../img/refresh.png") no-repeat scroll 0 3px transparent;height:29px;left:290px;margin:2px;z-index:3;}
+#ddlf{display:none;}
+.line_dashed { width:454px; border-bottom:1px dashed #eee; height:0; }
+.regbot { float:left; position:relative;width:521px; height:8px;_height:5px;background:url("../img/topa.png") no-repeat; background-position:0 -242px; }
+
+#mailBox {text-align:left;background:#fff;border:1px solid #ddd;padding:3px 5px 5px;position:absolute;z-index:20009;display:none;-webkit-box-shadow:0px 2px 7px rgba(0, 0, 0, 0.35);-moz-box-shadow:0px 2px 7px rgba(0, 0, 0, 0.35);}
+#mailBox p {width:100%;margin:0;padding:0;height:20px;line-height:20px;clear:both;font-size:12px;color:#ccc;cursor:default;}
+#mailBox ul { margin:0;padding:0;}
+#mailBox li {font-size:12px;height:22px;line-height:22px;color:#939393;list-style:none;cursor:pointer;overflow:hidden;}
+#mailBox .cmail{color:#000;background:#e8f4fc;}
+
+#validateCode {cursor:pointer;float:left;display:inline-block;margin: 0 15px 0 8px;width:85px;height:32px;}
+.regcode img {vertical-align:middle;}
+.regdes{cursor: pointer}
+.login_layout { position:absolute; z-index:999; right:0px; top:22px; width:265px; }
+.login_layout .bg_middle .bg_middle_content { border-bottom:1px dashed #eee; height:155px; }
+.bg_middle_content .login_tip { position:absolute; top:112px;_top:105px; left:18px; display:none; color:red; z-index:2;}
+.border_center img { display:inline; float:left; margin:10px 2px 3px 0;}
+.border_center input {display:inline; float:left; margin:0px 0 3px 0; outline:none; border:0; padding-left:7px; height:36px; line-height:36px;font-size: 15px; color:#999;}
+.border_center .input210 { background:#FFF;line-height: 36px; width: 272px;height:36px;border: 1px solid #ccc;font-size: 15px;border-radius: 2px;}
+.border_center .input210:focus{border:1px solid #3b62db;  }
+.border_center .input190 {width:195px;background:none;}
+.border_center .input100 {width:130px;  border: 1px solid #ccc;border-radius: 2px}
+.border_center .checkCode{display:none; position: absolute; bottom: -29px; margin-left: 10px; color: red; }
+.email_input, .password_input { margin:10px 0 5px 0;}
+
+.forget {/* text-align:right;*/}
+.forget a { color:#ff843f; font-size:12px; text-decoration:underline; padding-right:5px;}
+.remember { position:relative; height:25px; line-height:25px; margin:10px 0; padding:1px 0;}
+.remember .icon_check, .remember .icon_checked, .remember .icon_unchecked { margin:4px 0; padding:0 5px 0 0; width:16px; height:16px; }
+.remember .icon_checked { background:url("../img/checked.png") no-repeat; }
+.remember .icon_unchecked { background:url("../img/unchecked.png") no-repeat; }
+.remember span { color:#999; }
+.remember button {margin-right:5px;}
+/*.other_login { padding:1px 0; margin:15px 0; overflow:hidden; color:#333;}
+.other_login .other_logo img{ padding:0 5px; vertical-align:middle;}*/
+.other_login_area{float: left;margin-top: 30px;  }
+.other_login_area .other_log_title{color: #C5C5C5;font-size: 16px;}
+.other_log_qq{cursor: pointer;margin-bottom: 15px;margin-left:8px;}
+.other_log_sina{margin-left:8px;cursor: pointer;}
+.other_log_qq a{ background: url("/img/pic_qq_login.png") no-repeat;padding-left: 24px;}
+.other_log_qq a:hover{ background: url("/img/pic_qq_login_hover.png") no-repeat;}
+.other_log_sina a{ background: url("/img/pic_weixin_login.png") no-repeat;padding-left: 24px;}
+.other_log_sina a:hover{ background: url("/img/pic_weixin_login_hover.png") no-repeat;}
+.other_login_area span{display: block;width: 156px; height: 32px;text-align: center; line-height: 32px;color: #fff; border-radius: 5px;}
+.other_login_area span a{display: inline-block;width: 156px; height: 32px;}
+.yzmimg{cursor:pointer;display:inline-block;float:left;height:35px;width:85px;vertical-align:middle;margin:0px 15px 0 8px;}
+
+
+#footer { color:#7f7f7f; padding:10px 0 18px 0; font-size:12px; border-top:1px solid #ccc; text-align:center; background:#f7f7f7;clear:both;}
+#footer ul { width:546px; margin:0 auto; position:relative;}
+#footer li { display:inline; float:left; padding-right:10px; height:30px; line-height:30px; vertical-align:middle; }
+#footer li a ,#footer p a { color:#5d5d5d; font-size:14px;}
+#footer p { height:20px; line-height:20px;}
+.login-box-global-css ul.loginswitch  li a{color:#666;}
+
+
+.user{margin-top:30px; float: right;width: 160px;height: 30px; position:relative; }
+.user .hd_hov{position:absolute; right:40px; }
+.user .userout{margin-left: 10px;color: #666; font-size:14px; }
+.user .username{width:71px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#4c4c4c; font-size:14px; }
+.user .expand{background:url(../static_data/images_css/icon_geren_xiala.png); width:12px; height:7px; margin-top:6px; }
+.user .expand_hov{background:url(../static_data/images_css/icon_geren_shangla_hover.png); width:12px; height:7px; margin-top:6px; }
+
+.user .email{background:url(../static_data/images_css/icon_messages.png); width:18px; height:18px; right:8px; position:absolute; }
+

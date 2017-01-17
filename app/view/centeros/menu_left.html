@@ -1,0 +1,132 @@
+<style type="text/css">
+    .noticedot{
+        display:block;
+        background:#f00;
+        border-radius:50%;
+        width:8px;
+        height:8px;
+        top:12px;
+        right:0px;
+        position:absolute;
+    }
+</style>
+<div class="clearFix">
+<div class="center-left">
+
+    <div class="pi">
+		<{if $current_page == "index"}>
+		<div class="cl-div  cl-focus">
+            <a href="/centeros"><div class="cl-index cl-title color33">我的首页</div></a>
+        </div>
+		<{else}>
+		<div class="cl-div ">
+            <a href="/centeros"><div class="cl-index cl-title color33">我的首页</div></a>
+        </div>
+		<{/if}>        
+    </div>
+    <div class="pi">
+	<{if $current_page == "recharge" or $current_page == "record" or $current_page == "receive"}>
+        <div class="cl-div  hasnenu cl-focus" >
+            <div class="cl-trade cl-title color33">交易中心</div>
+            <div class="arrow-down"></div>
+        </div>
+		<{else}>
+		<div class="cl-div  hasnenu" >
+            <div class="cl-trade cl-title color33">交易中心</div>
+            <div class="arrow-down"></div>
+        </div>
+		<{/if}>
+        <div class="cl-set-info" style="display: none;">
+            <ul>
+			<{if $current_page == "recharge"}>
+                <li class="li-hover" ><a class="color33" href="/centeros/recharge">充值记录</a></li>
+				<{else}>
+				<li><a class="color33" href="/centeros/recharge">充值记录</a></li>
+				<{/if}>
+				<{if $current_page == "record"}>
+                <li class="li-hover"><a class="color33" href="/centeros/record">交易记录</a></li>
+				<{else}>
+				<li><a class="color33" href="/centeros/record">交易记录</a></li>
+				<{/if}>
+				<{if $current_page == "receive"}>
+                <li  class="li-hover"><a class="color33" href="/centeros/receive">收到礼物</a></li>
+				<{else}>
+				<li><a class="color33" href="/centeros/receive">收到礼物</a></li>
+				<{/if}>
+            </ul>
+        </div>
+    </div>
+    <div class="pi">
+	<{if $current_page == "care"}>
+        <div class="cl-div  cl-focus" >
+            <a href="/centeros/history"><div class="cl-care cl-title color33">我的关注</div></a>
+        </div>
+		<{else}>
+		<div class="cl-div">
+            <a href="/centeros/history"><div class="cl-care cl-title color33">我的关注</div></a>
+        </div>
+		<{/if}>
+    </div>
+    <div class="pi">
+	<{if $current_page == "notice"}>
+        <div class="cl-div cl-focus">
+            <a href="/centeros/notice"><div class="cl-notice cl-title color33">消息中心
+			<{if $stateNum gt 0}>
+			<i class='noticedot'></i>
+			<{/if}>
+			</div></a>
+        </div>
+		<{else}>
+		<div class="cl-div">
+            <a href="/centeros/notice"><div class="cl-notice cl-title color33">消息中心
+			<{if $stateNum gt 0}>
+			<i class='noticedot'></i>
+			<{/if}>
+			</div></a>
+        </div>
+		<{/if}>
+    </div>
+   <!-- <div class="pi">
+        <div class="cl-div <?php /*if($current_page=="treasure"){ echo "cl-focus";}*/?>">
+            <a href="/centeros.php?ptype=treasure"><div class="cl-treasure cl-title">我的财富</div></a>
+        </div>
+    </div>-->
+
+    <div  class="pi">
+	<{if $current_page == "mportrait" or $current_page == "info" or $current_page == "mpass" or $current_page == "mphone"}>
+        <div class="cl-div hasnenu cl-focus">
+		<{else}><div class="cl-div hasnenu">
+		<{/if}>
+            <div class="cl-setting cl-title color33">我的设置</div>
+			<{if $current_page neq "history"}>
+            <div class="arrow-down"></div>
+			<{else}><div class="arrow-up"></div>
+			<{/if}>
+        </div>
+		<{if $current_page neq "history"}>
+        <div class="cl-set-info hiddens" >
+		<{else}>
+		<div class="cl-set-info" >
+		<{/if}>
+            <ul>
+			<{if $current_page == "info"}>
+                <li class="li-hover" >
+				<{else}><li>
+				<{/if}><a class="color33" href="/centeros/info">基本资料</a></li>
+				<{if $current_page == "mportrait"}>
+                <li class="li-hover">
+				<{else}><li>
+				<{/if}><a class="color33" href="/centeros/mportrait">修改头像</a></li>
+				<{if $current_page == "mpass"}>
+                <li class="li-hover">
+				<{else}><li>
+				<{/if}><a class="color33" href="/centeros/mpass">修改密码</a></li>
+				<{if $current_page == "mphone"}>
+                <li class="li-hover">
+				<{else}><li>
+				<{/if}><a class="color33" href="/centeros/mphone">绑定手机</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

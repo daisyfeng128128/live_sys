@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>桌面通知</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            document.getElementById('notifyButton').onclick = function () {
+                if (window.Notification){
+                    if(Notification.Permission==='granted'){
+                        var notification = new Notification('Hello Notification',{body:"I hope that all the browser will support this\                   function!"});
+                    }else {
+                        document.getElementById('requestButton').onclick = function (){
+                            Notification.requestPermission();
+                        };
+                    };
+                }else alert('你的浏览器不支持此特性，请下载谷歌浏览器试用该功能');
+            };
+        }
+    </script>
+</head>
+<body>
+<a href="#" id="notifyButton">ccccc</a>
+<div id="requestButton">sssssss</div>
+
+</body>
+</html>

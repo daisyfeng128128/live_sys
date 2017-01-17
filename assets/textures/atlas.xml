@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2809183308df665e9db0daa399d76ee0:af4ff53e2e6d5b0265f420db9e01c0ac:cde709370900f12288f3449eded86f07$ -->
+<TextureAtlas imagePath="atlas.png">
+    <SubTexture name="bg" x="2" y="2" width="1920" height="1080"/>
+    <SubTexture name="matches" x="2" y="1084" width="131" height="52"/>
+    <SubTexture name="texture" x="1924" y="2" width="30" height="30" frameX="0" frameY="0" frameWidth="32" frameHeight="32"/>
+</TextureAtlas>

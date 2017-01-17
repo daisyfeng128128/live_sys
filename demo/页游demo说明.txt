@@ -1,0 +1,17 @@
+demo访问网址：
+http://minigame.qq.com/plat/social_hall/app_frame/?appid=1105428760
+
+1.appid： 1105428760
+
+2.游戏CancasUrl地址：
+http://minigame.qq.com/plat/social_hall/app_frame/demo/app_demo_for_web.html
+
+3.游戏web前端代码：
+app_demo_for_h5.html
+
+4.游戏后台代码：
+buy_goods_web.php   游戏后台发起下订单请求
+delivery_web.php    游戏后台回调发货逻辑
+confirm_delivery_web.php  游戏后台确认发货逻辑（在回调发货成功后调用）
+
+    

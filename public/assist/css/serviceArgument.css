@@ -1,0 +1,8 @@
+.recru_content .recruitItem {
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%; 
+    border: 2px solid #ededed;
+    color: #a0a0a0;
+    font-size: 12px;
+}

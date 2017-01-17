@@ -1,0 +1,1465 @@
+ <!DOCTYPE html>
+<html lang="zh-CN" ng-app="homeApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>蝌蚪直播-最好玩的直播平台</title>
+    <link href="/css/kedo/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/kedo/style_new.css" rel="stylesheet">
+    <link href="/css/kedo/anchorLevel.css?vsn={$vsn}" rel="stylesheet">
+    <!-- 2 jQuery库 同时加载该库必须在加载bootstrap.min.js之前 -->
+    <script src="/js/jquery-1.12.2.min.js"></script>
+    <script src="/js/jquery.lazyload.min.js"></script>
+    <script src="/js/angular/angular.min.js"></script>
+    <script>
+        var cdn_domain="{$cdn_domain}";
+        var img_domain="{$images_domain}";
+        var inf_domain="{$inf_domain}";
+        var site_skin="{$site_skin}";
+        var currentUserId="{$user.userId}";
+        var sid="{$sid}";
+        var ip="{$ip}";
+        var ohref = "{$coreweb}?userId={$user.userId}&token={$gf_token}";
+    </script>
+</head>
+<body style="padding-top:60px;" ng-controller="homeCon">
+<!--导航-->
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo_head" href="#"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav hdNavL">
+                <li class="{if $current_page=='index'}active{/if}"><a href="#">首页</a></li>
+                <li class="{if $current_page=='square'}active{/if}"><a href="/square.php">广场</a> </li>
+                <li class="{if $current_page=='mall'}active{/if}"><a href="/mall.php">商城</a> </li>
+                <li class="{if $current_page=='order'}active{/if}"><a href="/orders.php">排行榜</a> </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <!--<div class="form-group">
+                   <input type="text" class="form-control" placeholder="搜索">
+                   <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+                </div>-->
+                <div class="input-group search">
+                    <input type="text" class="form-control searchN" placeholder="输入房间号/频道号/ID">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default searchBtn" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+                </div>
+
+            </form>
+            {if !$user}
+            <ul class="nav navbar-nav navbar-right  hidden-sm hdNavR reg_log">
+                <li><a href="javascript:;" class="log">登录</a></li>
+                <li class="hidden-xs"><a href="javascript:;">|</a></li>
+                <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href=""></a></li>
+                <li class=""><a href="javascript:;" class="reg">注册<span class="sr-only">(current)</span></a></li>
+            </ul>
+            {else}
+            <ul class="nav navbar-nav navbar-right hidden-sm hdNavR">
+                <li><a href="/centeros.php">{$user.nickname}</a></li>
+                <li><a class= "header-notice hidden-xs"></a></li>
+                <li class="hidden-xs"><a href="">|</a></li>
+                <li class="hidden-lg hidden-md hidden-sm show-xs line"><a href="javascript:;"></a></li>
+                <li class=""><a href="/login.php?action=logout&amp;type=html">退出<span class="sr-only">(current)</span></a></li>
+            </ul>
+
+            {/if}
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+
+<!--主体-->
+<div class="container main">
+<div class="row">
+<div class="col-lg-9 col-sm-9 col-xs-12 mainLeft" role="main">
+    <!--<div id="carousel-example-captions" class="carousel slide" data-ride="carousel" style="margin-bottom:30px;">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+        </div>
+        <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+            <span class="icon-prev glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+            <span class="icon-next glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <div class="thumb-bar"></div>
+    </div>-->
+    <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img alt="1170x298" ng-src="http://images.181show.com/07a7d26bae7633deb77573a1ff6ad60b?w=1128&amp;h298"/>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+            <span class="icon-prev glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+            <span class="icon-next glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <div class="thumb-bar"></div>
+    </div>
+
+    <!--游戏-->
+    <!--阴阳师-->
+    <div class="recomm">
+        <div class="page-header clearfix hpGameTit">
+            <!--左标题-->
+            <h4 class="pull-left">
+                <span class="glyphicon icon-yin"></span>
+                <span class="color99">阴阳师</span>
+            </h4>
+            <h4 class="pull-right recommR">
+                <a href="javascript:;"><small class="color33">更多</small></a>
+            </h4>
+
+        </div>
+        <div id="gameAnchors" class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            
+            
+        </div>
+        
+       
+    </div>
+    
+    <!--王者荣耀-->
+    <div class="recomm">
+        <div class="page-header clearfix hpGameTit">
+            <!--左标题-->
+            <h4 class="pull-left">
+                <span class="glyphicon icon-king"></span>
+                <span class="color99">王者荣耀</span>
+            </h4>
+            <h4 class="pull-right recommR">
+                <a href="javascript:;"><small class="color33">更多</small></a>
+            </h4>
+
+        </div>
+        <div id="gameAnchors" class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            
+        </div>
+        
+       
+    </div>
+    
+    <!--梦幻诛仙-->
+    <div class="recomm">
+        <div class="page-header clearfix hpGameTit">
+            <!--左标题-->
+            <h4 class="pull-left">
+                <span class="glyphicon icon-fantasy"></span>
+                <span class="color99">梦幻诛仙</span>
+            </h4>
+            <h4 class="pull-right recommR">
+                <a href="javascript:;"><small class="color33">更多</small></a>
+            </h4>
+
+        </div>
+        <div id="gameAnchors" class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+
+
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 gameItem">
+                <a href="1076" target="_blank" class="bgff block"> <span
+                    class="glyphicon glyphicon-stats"></span>
+                    <div class="recommImg thumbnail">
+                        <img class="lazy"
+                            src="http://static.kedo.tv/55f4c9e9b6b0ed952173cea699372ad2?p=0&amp;w=262&amp;h=150"
+                            alt="魔女猫柚`">
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="recommB clearfix">
+                        <img class="recomBL pull-left img-circle" src="http://images.181show.com/abad4ddb157de5060398e98bfc6d45bd?p=0&amp;w=40&amp;h=40"/>
+                        <div class="recomBR pull-right">
+                            <div class="clearfix">
+                                <span class="pull-left nameElli ellipsis color1f">魔女猫柚`</span>
+                                <div class="color99 pull-right f12">
+                                    <span class="glyphicon glyphicon-eye-open"></span> <span>340</span>
+                                </div>
+                            </div>
+                            <p class="color99 ellipsis f12">人鬼交织的阴阳两界中，探寻自身记忆的故事</p>
+                        </div>
+                    </div></a>
+            </div>
+            
+        </div>
+        
+       
+    </div>
+    
+    
+    
+    <!--娱乐直播-->
+    <div class="hotCon" id="hotList">
+        <div class="page-header clearfix hpGameTit">
+            <!--左标题-->
+            <h4 class="pull-left">
+                <span class="glyphicon icon-yin"></span>
+                <span class="color99">娱乐直播</span>
+            </h4>
+            <h4 class="pull-right recommR">
+                <a href="javascript:;"><small class="color33">更多</small></a>
+            </h4>
+
+        </div>
+
+        <div class="row hotLiCon">
+            <div class="col-pc-f col-md-4 col-sm-4 col-xs-6">
+                <a href="1020" target="_blank" class="thumbnail firHot"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/f1c187e1829b7e8a7d502eb3d2f76128?p=0&amp;w=266&amp;h=278"
+                        alt="滋滋+ぃ"> 
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                        <div class="playBtn"></div>
+                    </div>
+                    <div class="firB bgff">
+                        <p class="colorPin f16">滋滋+ぃ</p>
+                        <div class="clearfix f12">
+                            <span class="glyphicon glyphicon-user"></span> <span>121分钟前开播</span>
+                        </div>
+                    </div>
+                 </a>
+                    
+            </div>
+          
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-pc-i col-md-3 col-sm-3 col-xs-6">
+                <a href="1084" target="_blank" class="hotItem thumbnail bgdd padd1"> 
+                    <div class="hotT">
+                        <img class="lazy" src="http://static.kedo.tv/0ddd2b5387b3dc09368e5ad49ad23795?p=0&amp;w=120&amp;h=130"
+                        alt="夏依蝉">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <div class="shadow"></div>
+                            <div class="playBtn">
+                        </div>
+                    </div>
+                    <div class="hotB bgff">
+                        <div class="colorf1 f12 ellipsis">夏依蝉</div>
+                        <div class="f12 color99">
+                            <span>127分钟前开播</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+                    
+              
+        </div>
+
+    </div>
+    
+    <!--游戏专区-->
+    <div class="GamesCon" id="GamesList">
+        <div class="page-header clearfix hpGameTit">
+            <!--左标题-->
+            <h4 class="pull-left">
+                <span class="glyphicon icon-yin"></span>
+                <span class="color99">游戏专区</span>
+            </h4>
+            <h4 class="pull-right recommR">
+                <a href="javascript:;"><small class="color33">更多</small></a>
+            </h4>
+
+        </div>
+        <div class="row gameCon padd1">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <img src="images/kedo/gameI.jpg"/>
+                <div class="color99 f18 text-center gameN">英雄联盟</div>
+            </div>
+            
+            
+            
+        </div>
+        
+
+    </div>
+    
+
+</div>
+<div class="col-lg-3 col-sm-3 hidden-xs pull-right mainRight" role="complementary">
+    <!--登录注册-->
+    <div class="thumbnail regLog text-center">
+        {if !$user}
+
+        <div class="caption beforLog">
+            <p class="row">
+                <button type="button" id="btn_login" class="btn_login loginBtn btn btn-warning login_im" data-loading-text="Loading..." autocomplete="off" >立即登录</button>
+            </p>
+            <p class="row">
+                <a type="button" href="javascript:;" class="btn_login regBtn btn btn-default register" data-loading-text="Loading..." autocomplete="off">一键注册</a>
+            </p>
+            <p class="text-center color99 f12 pasTip">忘记密码 点击 <b><a href="javascript:;" class="colorBlue">这里找回</a></b></p>
+            <hr/>
+            <p class="text-center quickLog">快捷登录</p>
+            <p class="row">
+                <button type="button" onclick="javascript:login.qqlogin()" class="btn_login btn btn-info qqLog" data-loading-text="Loading..." autocomplete="off">QQ账号登录</button>
+            </p>
+            <p class="row">
+                <button type="button" onclick="javascript:login.wxlogin()" class="btn_login btn btn-success weChatLog" data-loading-text="Loading..." autocomplete="off">微信账号登录</button>
+            </p>
+        </div>
+
+        {else}
+        <div class="caption AfterLog">
+            <div class="row">
+                <div class="pull-left imgR img-circle colorPin">
+                   <a href="/centeros.php"> <img class="img-circle lazy"  src="{$images_domain}/{$user.avatar}" style="width: 52px;height: 52px;" alt="{$user.nickname}" /></a>
+                </div>
+                <div class="pull-left">
+                    <div class="name">{$user.nickname}</div>
+                    <div class="money">
+                        <span class="glyphicon glyphicon-bold img-circle"></span>
+                        <span class="moneyNum">{$user.coins}</span>
+                    </div>
+
+                    <a class="charge btn btn-warning" href="/pay.php">充值</a>
+                </div>
+            </div>
+
+            <!--<div class="progress row">
+                <div class="progress-bar bgPin" role="progressbar" aria-valuenow="60"
+                     aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                    <span class="sr-only">40% 完成</span>
+                </div>
+            </div>-->
+            <div class="progress progress-striped">
+                <div class="progress-bar progress-bar-danger" role="progressbar"
+                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: {$user.nextSpender}%;">
+                    <span class="sr-only">{$user.nextSpender}% 完成（危险）</span>
+                </div>
+            </div>
+            <div>还差{$user.differ}经验值升级到下一级</div>
+
+
+            <p class="row showOw clearfix">
+                {if $user.roomNumber}
+                <a title="我要开播" class="btn btn-md btn-default colorBlue pull-left show" href="/{$user.roomNumber}">开播</a>
+                {/if}
+                {if $user.socType==1}
+                <a  target="_blank" href="{$coreweb}?userId={$user.userId}&token={$gf_token}" class="oww btn btn-md btn-default colorBlue pull-right">OW</a>
+                {/if}
+            </p>
+
+
+            <!--<div class="clearfix">
+                <span class="pull-left">获得成就</span>
+            </div>
+            <hr/>
+            <div class="clearfix achieve">
+                <span class="achieve1 pull-left"></span>
+                <span class="achieve2 pull-left"></span>
+                <span class="achieve3 pull-left"></span>
+                <span class="achieve4 pull-left"></span>
+                <a href="" class="pull-right">更多</a>
+            </div>
+-->
+        </div>
+        {/if}
+    </div>
+
+    <!--我的关注-->
+    <div class="thumbnail follow text-left">
+        <div class="caption">
+            <div class="row foTit">
+                <h4 class="pull-left titH">我的关注</h4>
+                <div class="pull-right titD">
+                    <a href="javascript:;" class="glyphicon shh glyphicon-menu-up-hover"></a>
+                    <a href="javascript:;" class="glyphicon xii glyphicon-menu-down-hover"></a><!---->
+                </div>
+            </div>
+            <div class="followList">
+                <div class="boxx">
+                    <div class="row foLi">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--申请入驻-->
+    <a href="javascript:;" class="thumbnail apply">
+        <img class="lazy" src="images/kedo/banner_zhaoping.png"/>
+    </a>
+
+    <!--主播排行榜-->
+    <div class="thumbnail text-left rank">
+        <div class="caption">
+            <div class="row foTit">
+                <h4 class="pull-left titH hidden-sm">主播排行榜</h4>
+                <h4 class="pull-left titH visible-sm-block">主播榜</h4>
+                <div class="pull-right captitle titD">
+                    <a href="javascript:;" class="colorPin active">周</a>
+                    <a href="javascript:;" class="colorPin">月</a>
+                    <a href="javascript:;" class="colorPin">年</a>
+                </div>
+            </div>
+
+            <div class="cons">
+                <div class="row foLi"   id="dayList">
+
+                </div>
+                <div class="row foLi"   id="weekList" style="display: none">
+
+                </div>
+                <div class="row foLi"   id="monthList" style="display: none">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--土豪榜-->
+    <div class="thumbnail rich text-left">
+        <div class="caption">
+            <div class="row foTit">
+                <h4 class="pull-left titH">土豪榜</h4>
+                <div class="pull-right captitle titD">
+                    <a href="javascript:;" class="colorPin active">周</a>
+                    <a href="javascript:;" class="colorPin">月</a>
+                    <a href="javascript:;" class="colorPin">年</a>
+                </div>
+            </div>
+            <div class="cons">
+                <div class="row foLi" id="th_week">
+
+                </div>
+                <div class="row foLi"  id="th_month"  style="display: none">
+
+                </div>
+                <div class="row foLi"  id="th_year" style="display: none">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <!--粉丝活跃榜-->
+    <div class="fans thumbnail text-left">
+        <div class="caption">
+            <div class="row foTit">
+                <h4 class="pull-left titH hidden-sm">粉丝活跃榜</h4>
+                <h4 class="pull-left titH visible-sm-block">粉丝榜</h4>
+                <div class="pull-right titD captitle">
+                    <a href="javascript:;" class="colorPin active">周</a>
+                    <a href="javascript:;" class="colorPin">月</a>
+                    <a href="javascript:;" class="colorPin">年</a>
+                </div>
+            </div>
+
+            <div class="cons">
+                <div class="row foLi" id="hy_week">
+
+                </div>
+                <div class="row foLi"  id="hy_month"  style="display: none">
+
+                </div>
+                <div class="row foLi"  id="hy_year" style="display: none">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!--底部-->
+<div class="bs-docs-footer navbar-inverse" role="contentinfo">
+    <div class="container">
+        <p>
+            <a href="javascript:;" class="firBL">关于蝌蚪 </a>|
+            <a href="/serviceArgument.php" class="firBL" target="_blank">服务协议 </a>|
+            <a href="/help.php" class="firBL" target="_blank">客服帮助 </a>|
+            <a href="javascript:;" class="firBL">关于我们 </a>|
+            <a href="javascript:;" class="firBL">版权声明</a>
+        </p>
+        <p>
+            <img class="lazy" src="images/kedo/logo_foot.png"/>
+            <span> -Copyright©2016 沪ICP备14054721号</span>
+        </p>
+        <p>蝌蚪客服电话：021-63156393 | 商务合作邮箱：
+            <a class="officialMailbox" href="mailto:mt@mutiantech.com">kd@kedo.tv</a>
+        </p>
+    </div>
+</div>
+
+<!-- 3 加载bootstrap的核心ＪＳ库 -->
+<script src="/js/bootstrap/bootstrap.min.js"></script>
+<script src="/js/bootstrap/boot.js"></script>
+<script src="/js/json2.js"></script>
+<!--<script src="/js/index_desert.js?vsn={$vsn}"></script>-->
+<script src="/js/angular/index.js?vsn={$vsn}"></script>
+<script src="/js/login.js?vsn={$vsn}"></script>
+
+<script src="/js/bootstrap/html5shiv.min.js"></script>
+<script src="/js/bootstrap/respond.min.js"></script>
+{literal}
+<script>
+
+    var url = "/rest/checkToken/checkOW.mt";
+    var data ={
+        sessionId:sid,
+        userId:currentUserId,
+        ip:ip
+    }
+    $(".oww").click(function(){
+        var _this =$(this);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            dataType: "json",
+            timeout: 120000,
+            success: function (data, textStatus, jqXHR) {
+               // window.open(ohref,"ccc");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(params.url+" error code:"+textStatus);
+            }
+        });
+    })
+
+
+</script>
+{/literal}
+</body>
+</html>

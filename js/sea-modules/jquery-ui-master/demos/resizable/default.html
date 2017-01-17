@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jqeruy UI 拖拽练习--默认配置</title>
+<script type="text/javascript" src="/skin/desert/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/sea-modules/jquery-ui-master/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/sea-modules/jquery-ui-master/external/splitter.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
+<script type="text/javascript">
+	$(function() {
+		$("#draggable").draggable();
+		$("#draggable").resizable();
+		$("#draggable").splitter();
+	});
+</script>
+<style type="text/css">
+#draggable {
+	height: 200px;
+	width: 500px;
+	border: 5px solid #aaa;
+}
+#draggable div {
+	overflow: auto;
+}
+.vsplitbar {
+	width: 5px;
+	background: #aaa;
+}
+</style>
+</head>
+<body>
+	<div id="draggable" class="ui-widget-content">
+		<div class="tops">top</div>
+		<div class="buts">but</div>
+	</div>
+</body>
+</html>

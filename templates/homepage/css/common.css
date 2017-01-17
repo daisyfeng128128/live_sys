@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,dt,span,a,b,em,i,strong.img{ padding:0; margin:0;}
+li{ list-style:none;}
+a{ text-decoration:none;}
+textarea{ resize:none; }
+input,select,textarea{ outline:none; }
+img,input,select,textarea{ vertical-align:top; }
+.clearFix:after{ content:''; display:block; clear:both; }
+body{font-size:12px;font-family:微软雅黑;}
+a{color:#727272;}
+.wrapper{ width:1440px; margin:0 auto; overflow:hidden; }
+.l{width:1128px; }
+.r{width:278px; }
+.fl{ float:left;}
+.fr{ float:right;}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="room">
+<head>
+<meta charset="utf-8">
+<title>蝌蚪直播</title>
+<script src="<{$cdn}>/js/angular/angular.min.js"></script>
+<script>
+	var room=angular.module('room',[]);
+		room.controller('room',function($scope,$http){
+			$scope.roomN=[];
+			$http.get("/rest/site/roomAts.mt?roomNumber=1024&type=2&number=1",{
+				params:{adus:"<{$adus}>",adgId:"<{$adgId}>"}
+			}).success(function(json){
+				$scope.roomNs=json.data[0].roomNumber;
+				window.location.href=$scope.roomNs;
+			}).error(function(){
+				window.location.href='/10001';
+			});
+		
+			
+		})
+		
+</script>
+</head>
+<body ng-controller="room">
+
+</body>
+</html>

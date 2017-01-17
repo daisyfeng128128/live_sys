@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+<title>个人中心</title>
+<style>
+	
+        html, body {
+            background-repeat: no-repeat;
+            background-position: center top;
+            width: 100%;
+            height:100%;
+            min-width:1200px;
+            position: relative;
+            font-family: "寰蒋闆呴粦","瀹嬩綋","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size:14px;
+            color: #666666;
+            background: #F3F3F3;
+        }
+        i{font-style:normal;}
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        *,*:before,*:after {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        li{ list-style:none}
+        img {
+            border: none;
+            float: left;
+        }	* 
+    .inmiddle{margin:auto;width: 1280px;position: relative;}
+    .center-info{width:1278px;height: 140px;border:1px #ccc solid;background: #fff; position: relative;margin-bottom: 10px;}
+    .center-info .info-left{margin:30px 0 0 25px;}
+    .c-photo,.c-myname,.info-left,.info-middle,.c-right{float:left;}
+    .c-photo{margin-right: 20px;}
+    .c-photo img{width:83px;height: 83px;-webkit-border-radius: 50%; -moz-border-radius: 50%;-o-border-radius: 50%;  border-radius: 50%;}
+    .c-myname >div{heigt:30px;margin-bottom: 20px}
+    .c-myname >div >input{width:195px;height: 30px;border: 1px solid #2ABCE3;}
+ 	.small-button{width: 66px;  height: 30px; margin-right: 15px;  border: none;  border-radius: 3px; cursor: pointer;}
+    .c-myname #sure{background: #2ABCE3;color:#fff;}
+    .c-myname #cancel{background:#C9C9C9;color:#404040}
+    .info-middle .c-mylevel,.c-right .c-myfund{font-size: 14px;font-weight: 700;margin-bottom: 20px;}
+    .info-middle .c-level-message{font-size: 12px; color: #999}
+    .info-middle .c-level-bar{position: relative;height: 20px;}
+    .info-middle .c-level-bar .c-all-bars{    display: block; height: 10px;width: 300px;  border-radius:10px; background-color: #C3C1C2;}
+    .info-middle .c-level-bar .c-i-bar{display: block;height: 10px; border-radius:10px;  background-color: #F03F39;}
+    .info-middle .c-level-bar i{position: absolute;right: 10px;width:24px;height: 17px; top: -5px;}
+    .info-middle{width: 342px;position: absolute; left: 470px;top: 45px;}
+     .c-right{    position: absolute; left: 900px; top: 45px;}
+    .c-right .c-funds .c-funds-db, .c-right .c-funds .c-funds-jb{float:left;font-size: 12px;color: #434343;margin-right: 40px;height: 20px; padding-right: 22px;padding-top: 8px;}
+    .c-right .c-funds .c-funds-jb{ background: url("./images/jb.png") right center no-repeat;}
+    .c-right .c-funds .c-funds-db{ background: url("./images/kb.png") right center no-repeat;}
+    .c-right .c-funds .c-funds-cz{width:42px;height: 17px;color: #fff;background: #F03F39;font-size: 12px;float: left; padding-top: 4px; text-align: center; margin-top: 3px; border-radius: 2px;cursor: pointer;}
+    .center-left{width:270px;border: 1px #E3E3E3 solid;    position: absolute;}
+    .center-left .cl-div{width:270px;height: 60px;position: relative;background: #fff;color: #3F3F3F;font-size: 14px;border-bottom:1px #ccc solid;cursor: pointer}
+    .center-left .cl-focus{background:#2ABCE3;width:270px;height: 60px;position: relative;color: #fff;font-size: 14px;border-bottom:1px #ccc solid;}
+     .cl-title{position: absolute;left: 40px;top:20px;width:100px;padding-left: 30px;height: 30px;line-height: 30px;}
+     .cl-index .cl-title{background: url("./images/home.png") no-repeat left center;}
+     .cl-trade .cl-title{background: url("./images/shape.png") no-repeat left center;}
+     .cl-notice .cl-title{background: url("./images/tishi-hover.png") no-repeat left center;}
+     .cl-notice2 .cl-title{background: url("./images/tishi.png") no-repeat left center;}
+    .cl-care .cl-title{background: url("./images/guanzhu.png") no-repeat left center;}
+
+    .cl-setting .cl-title{background: url("./images/guanzhu-hover.png") no-repeat left center;}
+    .cl-set-info{background:#C9C9C9;width: 270px;height:140px;padding-bottom: 10px;}
+    .cl-set-info ul{left:28px;position: absolute;  width: 176px;  font-size: 14px;}
+    .cl-set-info ul li{list-style: none;height: 30px;line-height:30px;border-bottom: 1px #BABABA solid;color:#616161; }
+    .cl-set-info ul li:hover{cursor:pointer; color:#1B76BD}
+    .center-right{width:990px;height: auto;border: 1px #E3E3E3 solid;right: 0;position: absolute;background: #fff;min-height: 600px;}
+    .center-right .cr-title{padding: 27px 0 15px 40px; color:#5F5D68; font-size: 22px;border-bottom:1px solid #D5D5D5;}
+    #info-table{width:680px; border: none;color: #5F5D68;}
+    #info-table tr{height: 40px;line-height: 40px;}
+    #info-table td{width: 170px;height: 30px;}
+     .n-type{text-align: right;font-size: 14px;color: #646464}
+    #info-table select{width:167px;height: 30px;line-height: 30px;color:#5F5D68;  cursor: pointer;}
+    #info-table #submits{background: #2ABCE3; color: #fff;width: 66px; height: 30px;  margin-right: 15px;border: none;border-radius: 3px;  cursor: pointer;}
+	/*关注**/
+	.cr-care{position:relative;width:100%}
+	.cr-care-main{margin-left:20px;margin-top:40px;  } 
+	.cr-care-main .care-li{float:left;width:303px; height:132px;margin-right: 17px;border:#ccc solid 1px;margin-bottom:20px;}
+	.cr-care .care-img,.cr-care .care-info{float:left;margin-left: 20px;}
+	.cr-care .care-li .care-img img{width: 83px;  height: 83px; margin-top:23px;-webkit-border-radius: 50%; -moz-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
+	.care-info{margin-left:10px;font-size:12px;}
+	.care-li .care-title{margin-top:22px;color:#333}
+	.care-li .care-title span{display:inline-block;margin-right:20px;}
+	.care-li .care-fans-num{margin-top:8px;color:#999}	 
+	.care-li .care-current-title{margin-top:20px;color:#f03f38}
+	.care-li .care-current-time{margin-top:8px;color:#3e3e3e;background:url(images/position.png) left center no-repeat;padding-left:15px;}	
+	.care-li .care-next-title{margin-top:20px;color:#333}	
+	.care-li .care-next-time{margin-top:8px;color:#999}	
+	/*绑定手机**/
+	.bind-phone-area table{margin-left:60px;margin-top:30px;font-size:14px;}
+	.bind-phone-area table tr{height:30px;line-height:40px;}
+	.bind-phone-area table .bind-text{ color:#2ABCE3;letter-spacing: 2px;font-size:12px;}
+	 .bind-phone-aright{text-align:right}
+	.bind-phone-area #code,.bind-phone-area #phone{height:30px;line-height:30apx;font-size:14px;border:1px solid #2ABCE3}	
+	.bind-phone-area #code{width:160px;}
+	.bind-phone-area #phone{width:200px;}	
+	.bind-phone-area .send{color:#1B76BD;display:inline-block;font-size:12px;cursor:pointer}
+	.bind-phone-area .resend-ms{display:none}
+	#bindPhone{width: 115px; height: 30px;  margin-right: 15px;  border: none;border-radius: 3px;cursor: pointer;    background: #2ABCE3;color: #fff;}
+	.bind-phone-why{width:965px;padding:30px;margin:105px auto;border-top:1px solid #ccc;}
+	.bind-phone-why p,.bind-phone-why a{ color:#333;line-height:30px; height:30px;letter-spacing: 1px;}
+        
+ 	 /*修改密码**/
+    .midfy-passwd-area table{margin-left:60px;margin-top:30px;font-size:14px;}
+    .midfy-passwd-area table tr{height:30px;line-height:40px;}
+    .input-pass{height:30px;width:200px;line-height:30apx;font-size:14px;border:1px solid #2ABCE3}
+    .midfy-passwd-area #save{background: #2ABCE3;color:#fff;margin-right:60px;}
+    .midfy-passwd-area #cancel{background:#C9C9C9;color:#404040}
+    .else-pass-title{padding: 127px 0 15px 40px; color:#5F5D68; font-size: 22px;}
+    .midify-else{margin:30px auto;width:750px;height:110px;}
+    .modify-by-{width:320px;height:110px;border-radius:5px;border:1px solid #ccc;background:#F4F4F4;float:left;}
+     .mod-bleft{width:140px;text-align:center;height: 100%;float: left;}
+    .mod-bleft img{margin: 30px 0 0 40px;}
+    .mod-bright>div{margin-top: 30px;}
+    .mod-bright button{margin-top: 10px;    background: #2ABCE3; color: #fff; margin-right: 60px;width:  99px;height: 30px;  border: none;  border-radius: 3px;  cursor: pointer;}
+    /*弹框手机密码**/
+    .zhezhao{display:none;width: 100%; height: 100%; top: 0;   left: 0;   position: fixed; background-color: #000; opacity: 0.4;  filter: alpha(opacity = 40);  z-index: 4999;}
+    .win-phone{width: 640px; height:340px;background-color: #fff; border: 1px solid #7b7b7b;   border-radius: 5px;  position: fixed; top: 0;  bottom: 0;  left: 0; right: 0;   margin: auto;  overflow: auto; z-index: 5000;   color: #9e9e9e; max-height: 630px;}
+    .find-bump-title{width:100%;height:74px; border-bottom: 1px solid #D1D1D1; color:#666;line-height: 73px;font-size:25px; text-align: center;background: #F3F3F3;position: relative;}
+    .find-bump-oxx{position: absolute;right: 20px;top:25px;width: 17px;height: 17px;background: url("images/guanbi-hover.png") no-repeat;
+        cursor: pointer;}
+    .find-main1 .divv{margin-top:40px;color:#666}
+    .find-main1 .divvv{margin-top:20px;color:#666}
+    .fin-pro{margin-left: 99px;  text-align: right; width: 120px; height: 30px;   display: inline-block;}
+    .divv2{display: inline-block;margin-left: 17px;}
+    .divvv #y-code{width:180px;height: 32px;line-height: 32px;font-size: 14px;margin-right: 10px; border: 1px solid #D4D4D4}
+    .divvv .fmbResend{width:78px;height: 30px;display: inline-block;background:#C4C4C4;color: #6E6E6E;line-height: 30px;text-align: center;font-size: 12px;display:none;}
+    .divvv .fin-mb-send{color: #fff;width:80px;background: #FBC450}
+    .divvvv{text-align: center; margin-top:30px;}
+    .divvvv #next-step,.find-main2 #nnext-step{background: #2ABCE3;color: #fff; width: 100px;}
+
+    .find-main2{margin-left:100px;margin-top: 50px;}
+    .find-main2 table tr{  height: 40px;}
+    .input-pass2{ }
+    .next-bt-area{text-align: center}
+    .input-pass2 #fin-new-pass,.input-pass2 #fin-renew-pass{width:200px;height: 30px;line-height: 30px;}
+    .setting-gous{margin-left:130px;margin-top:50px;height: 60px;padding-left: 80px;background: url("images/mpass-email.png") no-repeat left center;line-height: 30px}
+     .fin-endding1{font-size: 16px;color: #000000;text-align: left}
+    .fin-endding2{font-size: 15px;color: #666;text-align: left}
+    .setting-gous2{margin-top: 20px;color: #666;padding-left: 210px;text-align: left}
+    .setting-gous2 a{color:#1E6FA6}
+</style>
+    <script src="http://dev.181show.com/skin/2339/js/jquery.js"></script>
+
+    <script>
+        $(function () {
+            $(".pi .cl-div").on({
+                click:function(){
+                    var self=$(this);
+                    self.siblings(".cl-set-info").delay(400).show();
+                    self.addClass("cl-focus");
+                    self.parents(".pi").siblings().each(function(){
+                        $(this).children().eq(0).removeClass("cl-focus").addClass("cl-div");
+                        $(this).children().eq(1).hide();
+                    });
+                }
+            })
+            function closeWindow(fun){
+                $(".zhezhao").hide();
+                $("."+fun).hide();
+                $("."+fun).parent().hide();
+            }
+            function showWindow(fun){
+                $(".zhezhao").show();
+                $("."+fun).show();
+                $("."+fun).parent().show();
+            }
+            $(".find-bump-oxx").click(function () {
+                closeWindow("phone-find-passwd1");
+            });
+            $(".ck-pass-phone").click(function(){
+                showWindow("phone-find-passwd1");
+            })
+
+                function jump(count,cls) {
+                    window.setTimeout(function(){
+                        count--;
+                        if(count > 0) {
+                            $("."+cls+" i").html(count);
+                            jump(count);
+                        } else {
+                            //location.href="/";
+                        }
+                    }, 1000);
+                }
+
+            $(".fin-mb-send").click(function(){
+                $(this).hide();
+                $(".fmbResend").show();
+                jump(60,"fmbResend");
+            })
+            $("#next-step").click(function () {
+                closeWindow("phone-find-passwd1");
+                showWindow("repass-next");
+            });
+
+
+        })
+    </script>
+</head>
+<body style="background: #F4F4F4;height: 100%">
+<div class="inmiddle">
+<div class="center-info">
+    <div class="info-left">
+        <div class="c-photo">
+            <img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9" alt="我的头像" />
+        </div>
+        <div class="c-myname">
+            <div><input type="input" value="花开花落"  /></div>
+            <button id="sure" class="small-button">确定</button>
+            <button id="cancel"  class="small-button">取消</button>
+        </div>
+    </div>
+    <div class="info-middle">
+        <div class="c-mylevel">我的爵位</div>
+        <div class="c-level-bar">
+            <div class="c-all-bars">
+                <div class="c-i-bar" style="width:50%"></div>
+            </div>
+            <i style="background: url(./images/dengji.png)"></i>
+        </div>
+        <div class="c-level-message">消费2000金币升级王爵 </div>
+    </div>
+    <div class="c-right">
+        <div class="c-myfund">我的资产</div>
+        <div class="c-funds">
+            <div class="c-funds-jb">金币：99546456 </div>
+            <div class="c-funds-db">逗币：99546456 </div>
+            <div class="c-funds-cz">充值</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="center-left">
+    <div class="pi">
+        <div class="cl-index cl-div">
+            <div class="cl-title">我的首页</div>
+        </div>
+        <div class="cl-set-info" style="display: none">
+            <ul>
+                <li>基本资料</li>
+                <li>修改头像</li>
+                <li>修改密码</li>
+                <li>绑定手机</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pi">
+        <div class="cl-trade cl-div">
+            <div class="cl-title">交易中心</div>
+        </div>
+        <div class="cl-set-info" style="display: none">
+            <ul>
+                <li>基本资料</li>
+                <li>修改头像</li>
+                <li>修改密码</li>
+                <li>绑定手机</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pi">
+        <div class="cl-notice cl-div">
+            <div class="cl-title">我的关注</div>
+        </div>
+        <div class="cl-set-info" style="display: none">
+            <ul>
+                <li>基本资料</li>
+                <li>修改头像</li>
+                <li>修改密码</li>
+                <li>绑定手机</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pi">
+        <div class="cl-care cl-div">
+            <div class="cl-title">我的关注</div>
+        </div>
+        <div class="cl-set-info" style="display: none">
+            <ul>
+                <li>基本资料</li>
+                <li>修改头像</li>
+                <li>修改密码</li>
+                <li>绑定手机</li>
+            </ul>
+        </div>
+    </div>
+    <div  class="pi">
+        <div class="cl-setting cl-div cl-focus">
+            <div class="cl-title">我的设置</div>
+        </div>
+        <div class="cl-set-info">
+            <ul>
+                <li>基本资料</li>
+                <li>修改头像</li>
+                <li>修改密码</li>
+                <li>绑定手机</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="center-right">
+    <div class="cr-basics" style="display: none">
+    	<div class="cr-title">基本资料</div>
+        <table id="info-table">
+           <tr  class="cr-hline">
+               <td class="n-type">昵称：</td> <td class="" colspan="3"><input type="text" name="nickname" id="nickname" /></td>
+            </tr>
+            <tr class="cr-hline">
+                <td  class="n-type"> <span>性别：</span></td> <td colspan="3"><input type="radio" name="sex" id="sex" value="1">男 <input type="radio" name="sex" value="2" />女</td>
+            </tr>
+            <tr class="cr-hline">
+                <td class="n-type">所在地：</td>
+                <td><select><option>上海</option><option>北京</option></select></td>
+                <td><select><option>浦东新区</option><option>黄浦区</option></select></td>
+                <td> <input type="radio" name="issecret" id="" value="1">保密 <input type="radio" name="issecret" value="2" />公开</td>
+            </tr>
+            <tr class="cr-hline">
+                <td class="n-type">生日：</td>
+                <td><select><option>年</option><option>2018</option></select></td>
+                <td><select><option>月</option><option>1</option></select></td>
+                <td><select><option>日</option><option>31</option></select></td>
+            </tr>
+            <tr class="cr-hline">
+                <td  class="n-type"> <td colspan="3"><button id="submits">保存</button></td>
+            </tr>
+        </table>
+
+    </div>
+	
+	<div class="cr-care" style="display: none">
+		<div class="cr-title">我的关注</div>
+    	<div class="cr-care-main"> 
+  			<div class="care-li">
+	  			<a href="#" target="_blank">
+					<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+					<div class="care-info">
+						<div class="care-title">
+							<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+						</div>
+						<div class="care-fans-num">222粉丝</div>
+						<div class="care-next-title">下次开播时间</div>
+						<div class="care-next-time">12月10日  13:00</div>
+					</div>  
+				</a>	
+			</div> 
+			<div class="care-li">
+			<a href="#" target="_blank">
+				<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+				<div class="care-info">
+					<div class="care-title">
+						<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+					</div>
+					<div class="care-fans-num">222粉丝</div>
+					<div class="care-current-title">直播中</div>
+					<div class="care-current-time">12月10日  13:00</div>
+				</div>  
+			</a>
+			</div>
+			<div class="care-li">
+			<a href="#" target="_blank">
+				<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+				<div class="care-info">
+					<div class="care-title">
+						<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+					</div>
+					<div class="care-fans-num">222粉丝</div>
+					<div class="care-current-title">直播中</div>
+					<div class="care-current-time">12月10日  13:00</div>
+				</div>  
+			</a>
+			</div>
+  			<div class="care-li">
+	  			<a href="#" target="_blank">
+					<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+					<div class="care-info">
+						<div class="care-title">
+							<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+						</div>
+						<div class="care-fans-num">222粉丝</div>
+						<div class="care-next-title">下次开播时间</div>
+						<div class="care-next-time">12月10日  13:00</div>
+					</div>  
+				</a>	
+			</div>
+			<div class="care-li">
+			<a href="#" target="_blank">
+				<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+				<div class="care-info">
+					<div class="care-title">
+						<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+					</div>
+					<div class="care-fans-num">222粉丝</div>
+					<div class="care-current-title">直播中</div>
+					<div class="care-current-time">12月10日  13:00</div>
+				</div>  
+			</a>
+			</div>
+  			<div class="care-li">
+	  			<a href="#" target="_blank">
+					<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+					<div class="care-info">
+						<div class="care-title">
+							<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+						</div>
+						<div class="care-fans-num">222粉丝</div>
+						<div class="care-next-title">下次开播时间</div>
+						<div class="care-next-time">12月10日  13:00</div>
+					</div>  
+				</a>	
+			</div>
+			<div class="care-li">
+			<a href="#" target="_blank">
+				<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+				<div class="care-info">
+					<div class="care-title">
+						<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+					</div>
+					<div class="care-fans-num">222粉丝</div>
+					<div class="care-current-title">直播中</div>
+					<div class="care-current-time">12月10日  13:00</div>
+				</div>  
+			</a>
+			</div>
+  			<div class="care-li">
+	  			<a href="#" target="_blank">
+					<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+					<div class="care-info">
+						<div class="care-title">
+							<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+						</div>
+						<div class="care-fans-num">222粉丝</div>
+						<div class="care-next-title">下次开播时间</div>
+						<div class="care-next-time">12月10日  13:00</div>
+					</div>  
+				</a>	
+			</div>
+			<div class="care-li">
+			<a href="#" target="_blank">
+				<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+				<div class="care-info">
+					<div class="care-title">
+						<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+					</div>
+					<div class="care-fans-num">222粉丝</div>
+					<div class="care-current-title">直播中</div>
+					<div class="care-current-time">12月10日  13:00</div>
+				</div>  
+			</a>
+			</div>
+  			<div class="care-li">
+	  			<a href="#" target="_blank">
+					<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+					<div class="care-info">
+						<div class="care-title">
+							<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+						</div>
+						<div class="care-fans-num">222粉丝</div>
+						<div class="care-next-title">下次开播时间</div>
+						<div class="care-next-time">12月10日  13:00</div>
+					</div>  
+				</a>	
+			</div>
+			<div class="care-li">
+			<a href="#" target="_blank">
+				<div class="care-img"><img src="http://r4.ykimg.com/05100000566A96CF67BC3D026E00F9D9"></div>
+				<div class="care-info">
+					<div class="care-title">
+						<span care="care-an-level">lv12</span><span calss="care-an-name">愤怒的龙木耳</span>
+					</div>
+					<div class="care-fans-num">222粉丝</div>
+					<div class="care-current-title">直播中</div>
+					<div class="care-current-time">12月10日  13:00</div>
+				</div>  
+			</a>
+			</div>
+	</div>
+    
+</div>
+	<div class="cr-bind-phone" style="display: none">
+		<div class="cr-title">绑定手机</div>
+		<div class="cr-phone-main">
+			<div class="bind-phone-area">
+				<table>
+					<tr >
+						<td></td><td class="bind-text">为了你的账号安全,请尽快绑定手机</td>
+					</tr>
+					<tr>
+						<td class="bind-phone-aright">手机号码:</td><td><input  type="text" max_length=11 id="phone"/></td>
+					</tr>
+					<tr>
+						<td  class="bind-phone-aright">验证码:</td><td><input  type="text" id="code"/> <span class="send">发送验证码</span><span class="resend-ms">35</span></td>
+					</tr>
+					<tr>
+						<td></td><td><button id="bindPhone">绑定手机</button></td>
+					</tr>
+				</table>
+			</div>
+			<div class="bind-phone-why">
+				<p><a href="#">我为什么要绑定手机号码</a></p>
+				<p><a href="#">绑定失败???</a></p> 
+			</div>
+		</div>
+	</div>
+	<div class="cr-mid-passwd"style="display: none">
+		<div class="cr-title">修改密码</div>
+		<div class="midfy-passwd-area">
+				<table> 
+					<tr>
+						<td class="bind-phone-aright">原密码： </td><td><input class="input-pass"  type="password" id="old-pass"/></td>
+					</tr> 
+					<tr>
+						<td class="bind-phone-aright">新密码： </td><td><input  class="input-pass"   type="password" id="new-pass"/></td>
+					</tr>
+					<tr>
+						<td class="bind-phone-aright">确认密码： </td><td><input  class="input-pass"   type="password" id="re-pass"/></td>
+					</tr>
+					<tr>
+						<td></td><td><button id="save"  class="small-button">保存</button> <button id="cancel"  class="small-button">取消</button></td>
+					</tr>
+				</table>
+			</div>
+			<div class="midfy-passwd-area-else">
+				<div class="else-pass-title">其他方式修改</div>
+				<div class="midify-else">
+					<div class="modify-by-">
+                        <div class="mod-bleft"> <img src="images/mpass-phone.png" /> </div>
+						<div class="mod-bright">
+							<div>通过手机修改</div>
+							<button class="ck-pass-phone">点击修改</button>
+						</div>
+					</div>
+					<div class="modify-by-" style="float:right;">
+                        <div class="mod-bleft"> <img src="images/mpass-email.png" style="margin-top:40px"/> </div>
+						<div class="mod-bright">
+							<div>通过手机修改</div>
+							<button class="ck-pass-phone">点击修改</button>
+						</div>
+					</div> 
+				</div>
+			</div>
+	</div>
+    <div class="cr_portrait">
+        <div class="cr-title">修改头像</div>
+        <div class="modify-protrait">
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="win-phone" style="display: none">
+        <div class="phone-find-passwd1" style="display: none">
+            <div class="find-bump-title">手机找到回密码 <div class="find-bump-oxx"></div></div>
+            <div class="find-main1">
+                <div class="divv"><span class="fin-pro">手机号:</span> <span class="fin-current-phone divv2">18745465467</span><span class="fin-mb">更换手机</span></div>
+                <div  class="divvv"><span class="fin-pro">验证码号:</span> <input type="text" value=""  class="divv2" maxlength="11" id="y-code"><button class="fin-mb-send small-button">发送验证码</button> <span class="fmbResend">重新发送  <i>39s</i></span></div>
+                <div  class="divvvv"><button id="next-step" class="small-button">下一步</button></div>
+            </div>
+        </div>
+
+        <div class="repass-next" style="display: none">
+            <div class="find-bump-title">手机找到回密码 <div class="find-bump-oxx"></div></div>
+            <div class="find-main2">
+                <table >
+                    <tr>
+                        <td class="n-type">新密码：</td><td class="input-pass2"><input type="password" id="fin-new-pass"/></td><td colspan="2">34e2</td>
+                    </tr>
+                    <tr>
+                        <td class="n-type">确认密码：</td><td class="input-pass2"><input type="password" id="fin-renew-pass"/></td>
+                    </tr>
+                    <tr ><td></td><td class="next-bt-area"><button class="small-button" id="nnext-step">下一步</button></td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="repass-end" style="text-align: center">
+            <div class="find-bump-title">手机找到回密码 <div class="find-bump-oxx"></div></div>
+            <div class="">
+                    <div class="setting-gous">
+                        <div class="fin-endding1">你的新登录设置成功!</div>
+                        <div class="fin-endding2">今后将使用新密码登录蝌蚪账户,请牢记!</div>
+                    </div>
+                    <div class="setting-gous2">您可能需要:<a href="#">重新登录</a></div>
+            </div>
+        </div>
+</div>
+<div class="zhezhao"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

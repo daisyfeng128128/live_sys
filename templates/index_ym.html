@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>蝌蚪鱼</title>
+    <link href="/skin/ym/css/css.css" rel="stylesheet" type="text/css" />
+    <script src="http://www.17aibo.com/Public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{$cdn_domain}/js/login.js?20150908"></script>
+    <script type="text/javascript" src="{$cdn_domain}/skin/ym/js/common.js?20150908"></script>
+
+    <script>
+
+        function head_search_box(){
+            var kw = $("#kw").val();
+            if(isNaN(kw)){
+                window.location.href=("/?v="+kw);
+            }else{
+                window.open("/"+kw+".html");
+            }
+        }
+        var cdn_domain="";
+        var money_name="金币";
+        var money_name2="积分";
+        var site_skin="nowfc";
+        var IS_SINGLE_MONEY="";
+        var IS_QQ="";
+        var currentUserNumber="22225";
+        var site_info_qq="451488";
+        var site_live_skin="2339";
+        function initLoginInfoHead(obj){
+             window.location.reload();
+        }
+    </script>
+    <script>
+        $(function(){
+            function parseHtml(data){
+                $data=JSON.parse(data);
+                var html="";
+                $.each($data,function (index,val){
+                    if(index == 0){
+                        html +=  '<div class="s5big"> <div class="s5bigimg"><img src="{$cdn_domain}/static_data/showcover/thumb190x148_'+$data[index].showcover +'" alt="#"></div>  <div class="big-title"><img src="/skin/ym/images/crown2.png">'+$data[index].nickname +'<span>'+$data[index].province +'</span></div>  <div class="big-else"><span class="speople"> '+$data[index].viewernum +' 人</span> <span class="stime">95分钟前开播</span></div>  </div>';
+                    }else{
+                        html += '<div class="s5small">  <div class="s5simg"><a href="/ '+$data[index].roomnumber +'"><img src="{$cdn_domain}/static_data/showcover/thumb190x148_'+$data[index].showcover +'"></a></div> <div class="s5small-else"><span class="s5name">'+$data[index].nickname + '</span> <span class="speople"> '+$data[index].viewernum +' 人</span></div> </div>';
+                    }
+                });
+                return html;
+            }
+            var Live= {
+                ChatReLogin:function(){
+                    self.location.reload();
+                }
+            };
+            $(".title-list li").on({
+                mouseover:function(){
+                    var i=$(this).attr('date-type');
+                    $.ajax({
+                        type: "POST",
+                        async: false,
+                        url: "/ajax/index.ajax.php?c="+i,
+                        data: "n=1",
+                        cache: false
+                    }).done(function(data){
+                        $(".s5main").html(parseHtml(data));
+                    })
+                }});
+        })
+    </script>
+</head>
+<body>
+
+{include file="header.html"}
+<div class="index-main">
+    <div class="index-left">
+        <div class="seaction1">
+            <div class="seleft">
+                {foreach from=$recommend_top4 item=show key=key}
+                {if $show.i==1}{break}{/if}
+                    <div class="bigImg">
+                        <a href="/{$show.roomnumber}.html"><img src="{$cdn_domain}/static_data/showcover/thumb391x328_{$show.showcover}" alert="大图"/></a>
+                    </div>
+                {/foreach}
+                <div class="seloop">
+                    <div class="banner">
+
+                        {{foreach from=$pic_banner2 item=item}}
+                        {if $item.url}
+                            <div class="flip-img">
+                                <a href="{$item.url}" target="_blank">
+                                    <img src="{$item.picSrc}" alt="123">
+                                </a>
+                            </div>
+                        {{else}}
+                            <div class="flip-img">
+                                <a href="javascript:;" target="_blank">
+                                    <img src="{$item.picSrc}" alt="123">
+                                </a>
+                            </div>
+                        {{/if}}
+                        {{/foreach}}
+                   </div>
+                    <div class="opt"><span class="uper"></span><span class="downer"></span></div>
+                </div>
+            </div>
+            <div class="seright">
+                <ul>
+                    {foreach from=$recommend_top4 item=show key=key}
+                    {if $show.i==0}{continue}{/if}
+                        <li><a href="/{$show.roomnumber}.html" target="_blank"><img src="{$cdn_domain}/static_data/showcover/thumb391x328_{$show.showcover}"/></a></li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+
+        <div class="section2" style="height:30px;">
+            <!--{{foreach from=$pic_banner item=item key=key}}
+            {if $key==1}{break}{/if}
+            {if $item.url}
+            <a title="{$item.title}" href="{$item.url}"><img src="{$item.picSrc}"/></a>
+            {{else}}
+            <a title="{$item.title}" href="javascript:;"><img src="{$item.picSrc}"/></a>
+            {{/if}}
+            {{/foreach}}-->
+        </div>
+
+        <div class="section3" >
+            <div class="s3title"><span>XX剧场</span>　/　<span class="grey">XX剧场</span>　/　<span>达人自制</span> <a class="s3more" href="#">更多</a></div>
+            <div class="clear"></div>
+            <div class="s3main">
+                <div class="s3img">
+                    <img src="{$cdn_domain}/skin/ym/images/93112.png" alt="#" />
+                    <span>后海八点半</span>
+                    <p>后海酒吧LIVESHOW !Height 起来! Q群 </p>
+                </div>
+                <div class="s3img">
+                    <img src="{$cdn_domain}/skin/ym/images/93112.png" alt="#" />
+                    <span>后海八点半</span>
+                    <p>后海酒吧LIVESHOW !Height 起来! Q群 </p>
+                </div>
+                <div class="s3img">
+                    <img src="{$cdn_domain}/skin/ym/images/93112.png" alt="#" />
+                    <span>后海八点半</span>
+                    <p>后海酒吧LIVESHOW !Height 起来! Q群 </p>
+                </div>
+                <div class="s3img" style="margin-right: 0px">
+                    <img src="{$cdn_domain}/skin/ym/images/93112.png" alt="#" />
+                    <span>后海八点半</span>
+                    <p>后海酒吧LIVESHOW !Height 起来! Q群 </p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <!--<<div class="s3poster" > img src="{$cdn_domain}/skin/ym/images/35037.png"/></div>-->
+        </div>
+
+        <div class="section4">
+            <div><h5>最新入驻</h5> <a class="s3more" href="#">更多</a></div>
+            <div class="clear"></div>
+            <div class="s4img">
+
+                {foreach from=$shows_new item=show key=key}
+                {if $show.i==1}{break}{/if}
+                    <div class="s4bigImg"> <a href="/{$show.roomnumber}.html"><img src="{$cdn_domain}/static_data/showcover/thumb391x328_{$show.showcover}" alt="{$show.nickname}"/></a></div>
+                {/foreach}
+                <div class="s4imglist">
+                    {foreach from=$shows_new item=show key=key}
+                    {if $show.i==0}{continue}{/if}
+                    {if $show.i==13}{break}{/if}
+
+                    <a href="/{$show.roomnumber}.html" {if ($show.i)%6 ==0} style="margin-right: 0px"{/if} ><img src="{$cdn_domain}/static_data/showcover/thumb391x328_{$show.showcover}" /></a>
+
+                    {/foreach}
+
+                </div>
+            </div>
+        </div>
+        <div class="section5">
+            <div class="s5title"><h5>主播</h5>
+                <ul class="title-list">
+                    {foreach from=$showercate item=show}
+                    {if $show.i==6}{break}{/if}
+                        <li class="show" date-type="{$show.id}"> {$show.catename} </li>
+                    {/foreach}
+
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="s5main">
+
+                {foreach from=$recommend_shows item=show key=key}
+                {if $show.i==1}{break}{/if}
+                <div class="s5big">
+                    <div class="s5bigimg"><a href="/{$show.roomnumber}.html"><img src="{$cdn_domain}/skin/ym/images/42509.png" alt="#"/></a></div>
+                    <div class="big-title"><img src="{$cdn_domain}/skin/ym/images/crown2.png"/> {$show.nickname} <span>{$show.province}</span></div>
+                    <div class="big-else"><span class="speople">{$show.viewernum}人</span> <span  class="stime">95分钟前开播</span></div>
+                </div>
+
+                {/foreach}
+                <div class="s4imglist">
+                    {foreach from=$recommend_shows item=show key=key}
+                    {if $show.i==0}{continue}{/if}
+                    {if $show.i==31}{break}{/if}
+                    <div {if $show.i <14}{if $show.i%6==0}style="margin-right: 0px"{/if}{else}{if ($show.i-12)%8==0}style="margin-right: 0px"{/if}{/if} class="s5small">
+                        <div class="s5simg"><a href="/{$show.roomnumber}.html"><img src="{$cdn_domain}/static_data/showcover/thumb391x328_{$show.showcover}"/></a></div>
+                        <div class="s5small-else"><span class="s5name">{$show.nickname}</span> <span class="speople">{$show.viewernum}人</span></div>
+                    </div>
+                    {/foreach}  
+				</div>
+			</div>
+			
+        </div>
+        <div class="clear"></div>
+        <div class="section6">
+            <h5>合作栏目</h5>
+            <div class="s6list">
+               <ul>
+                   <li><a href="#"><img src="{$cdn_domain}/skin/ym/images/200823.png" /></a></li>
+                   <li><a href="#"><img src="{$cdn_domain}/skin/ym/images/200823.png" /></a></li>
+                   <li><a href="#"><img src="{$cdn_domain}/skin/ym/images/200823.png" /></a></li>
+                   <li><a href="#"><img src="{$cdn_domain}/skin/ym/images/200823.png" /></a></li>
+                   <li><a href="#"><img src="{$cdn_domain}/skin/ym/images/200823.png" /></a></li>
+                   <li><a href="#"><img src="{$cdn_domain}/skin/ym/images/200823.png" /></a></li>
+                   <li><a href="#"><img src="{$cdn_domain}/skin/ym/images/200823.png" /></a></li>
+               </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="index-right">
+{if !$user}
+        <div class="logins">
+            <div class="showlogin log">立即登录</div>
+            <div class="showlbt">
+                <div class="qqlogin log"><span>登录</span></div>
+                <div class="sinalogin"><span>登录</span></div>
+             </div>
+            <div class="clear"></div>
+            <div class="no-account">还没有蝌蚪账号 <a href="#" class="reg">请注册</a></div>
+        </div>
+{else}
+        <div class="haslogin">
+            <div class="myphoto"><img src="{$cdn_domain}/apis/avatar.php?uid={$user.userid}"  alt="{$user.nickname}" /></div>
+            <div class="myinfo">
+                <div class="myname"><span>{$user.nickname}</span> <span class="edit-myname"></span></div>
+                <div class="mylevel"></div>
+                <div class="mychaju">距离下一集还差3654逗币</div>
+            </div>
+            <div class="clear"></div>
+            <div class="myaccount">账户 ：<i>0</i> 逗币 <span class="myyou">12.12日充值获取909折优惠</span></div>
+            <div class="mychongzhi"><a href="/ucenter.php?ptype=pay#tab=0">充值</a></div>
+        </div>
+{/if}
+
+
+        <div class="dangqi">
+            <h5>节目档期</h5>
+<!--                <div class="d1">
+                    <span>微电影《大话西游》</span> <span class="guanzhu">+ 关注</span>
+                </div>
+                <div class="d1-main">
+                    <p class="dspan"><span class="stoday">今天</span>  <span class="stime">19:00</span></p>  <a href="#" class="dimg"><img src="{$cdn_domain}/skin/ym/images/2947.png" /></a>
+                </div>
+            <div class="clear"></div>-->
+            <ul class="list-Schedule">
+                <li class="hasimg">
+                     <div class="yixianshi" style="display: none"><span class="sctime">今天19:00</span> <span class="sctitle">三国杀游戏版</span> <span class="scright"></span></div>
+                     <div class="weixianshi" >
+                        <div class="d1">
+                            <span>微电影《大话西游》</span> <span class="guanzhu">+ 关注</span>
+                        </div>
+                        <div class="d1-main">
+                            <p class="dspan"><span class="stoday">今天</span>  <span class="stime">19:00</span></p>  <a href="#" class="dimg"><img src="{$cdn_domain}/skin/ym/images/2947.png" /></a>
+                        </div>
+                    </div>
+                </li>
+                <li  class="noimg">
+                    <div class="yixianshi" ><span class="sctime">今天19:00</span> <span class="sctitle">三国杀PC版</span> <span class="scright"></span></div>
+                    <div class="weixianshi"style="display: none" >
+                        <div class="d1">
+                            <span>微电影《大话西游》</span> <span class="guanzhu">+ 关注</span>
+                        </div>
+                        <div class="d1-main">
+                            <p class="dspan"><span class="stoday">今天</span>  <span class="stime">19:00</span></p>  <a href="#" class="dimg"><img src="{$cdn_domain}/skin/ym/images/2947.png" /></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="noimg">
+                    <div class="yixianshi" ><span class="sctime">今天19:00</span> <span class="sctitle">三国杀手机版</span> <span class="scright"></span></div>
+                    <div class="weixianshi"style="display: none" >
+                        <div class="d1">
+                            <span>微电影《大话西游》</span> <span class="guanzhu">+ 关注</span>
+                        </div>
+                        <div class="d1-main">
+                            <p class="dspan"><span class="stoday">今天</span>  <span class="stime">19:00</span></p>  <a href="#" class="dimg"><img src="{$cdn_domain}/skin/ym/images/2947.png" /></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="noimg">
+                    <div class="yixianshi" ><span class="sctime">今天19:00</span> <span class="sctitle">三国杀AV版</span> <span class="scright"></span></div>
+                    <div class="weixianshi"style="display: none" >
+                        <div class="d1">
+                            <span>微电影《大话西游》</span> <span class="guanzhu">+ 关注</span>
+                        </div>
+                        <div class="d1-main">
+                            <p class="dspan"><span class="stoday">今天</span>  <span class="stime">19:00</span></p>  <a href="#" class="dimg"><img src="{$cdn_domain}/skin/ym/images/2947.png" /></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="mxb">
+               <div class="mxtitle">
+                   <div class="mxname">明星榜</div>
+                   <div class="mxselect"><a href="#">日 /</a><a href="#">周 /</a><a href="#">月 /</a><a href="#" class="active">超级</a></div>
+               </div>
+        </div>
+        <div class="lll">
+        <ul class="mxlist" style="display: none">
+
+            {foreach from=$rank_star_weekList item=show}
+            <li>
+                <span class="mxlevel"><img src="{$cdn_domain}/skin/ym/images/crown3.png"/></span>
+                <a href="/{$show.usernumber}.html" target="_blank">
+                    <span class="mxphoto"><img src="{$cdn_domain}/apis/avatar.php?uid={$show.userid}"/> </span>
+                    <span class="mxname">{$show.nickname}</span>
+                </a>
+                <span class="mxpeople">{$show.cmoney}</span>
+            </li>
+            {/foreach}
+
+        </ul>
+        <ul class="mxlist" style="display: none">
+
+            {foreach from=$rank_star_dayList item=show}
+            <li>
+                <span class="mxlevel"><img src="{$cdn_domain}/skin/ym/images/crown3.png"/></span>
+                <a href="/{$show.usernumber}.html" target="_blank">
+                    <span class="mxphoto"><img src="{$cdn_domain}/apis/avatar.php?uid={$show.userid}"/> </span>
+                    <span class="mxname">{$show.nickname}</span>
+                </a>
+                <span class="mxpeople">{$show.cmoney}</span>
+            </li>
+            {/foreach}
+
+        </ul>
+            <ul class="mxlist" style="display: none">
+
+                {foreach from=$rank_star_monthList item=show}
+                <li>
+                    <span class="mxlevel"><img src="{$cdn_domain}/skin/ym/images/crown3.png"/></span>
+                    <a href="/{$show.usernumber}.html" target="_blank">
+                        <span class="mxphoto"><img src="{$cdn_domain}/apis/avatar.php?uid={$show.userid}"/> </span>
+                        <span class="mxname">{$show.nickname}</span>
+                    </a>
+                    <span class="mxpeople">{$show.cmoney}</span>
+                </li>
+                {/foreach}
+
+            </ul>
+            <ul class="mxlist">
+                {foreach from=$rank_super_star item=show}
+                <li>
+                    <span class="mxlevel"><img src="{$cdn_domain}/skin/ym/images/crown3.png"/></span>
+                    <a href="/{$show.usernumber}.html" target="_blank">
+                        <span class="mxphoto"><img src="{$cdn_domain}/apis/avatar.php?uid={$show.userid}"/> </span>
+                        <span class="mxname">{$show.nickname}</span>
+                    </a>
+                    <span class="mxpeople">{$show.cmoney}</span>
+                </li>
+                {/foreach}
+
+            </ul>
+        </div>
+    </div>
+        </div>
+        <div class="clear"></div>
+{include file="footer.html"}
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>充值中心-蝌蚪直播</title>
+    <link rel="stylesheet" href="css/charge.css"/>
+    <link href="static_data/images_css/anchor-level.css" rel="stylesheet">
+    <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+    <link data-fixed="true" href="/templates/square.css" rel="stylesheet">
+    <script src="{$cdn_domain}/skin/desert/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{$cdn_domain}/js/login.js?20150908"></script>
+
+    {if $pf=="qqgame" or $pf =="QQGame"}
+    <script src="/js/pay_QQCloud.js"></script>
+    {else}
+    <script src="/js/charge.js"></script>
+    {/if}
+
+</head>
+<body style="padding-top:60px; ">
+{include file="header.html"}
+<div class="recharge">
+    <div class="wrapper">
+        <div class="char_tit">
+            <div class="clearfix">
+                <span class="glyphicon icon-hot pull-left"></span>
+                <h3 class="pull-left charK">充值K豆</h3>
+            </div>
+            <div class="clearfix">
+            <p class="pull-left"><span>用户昵称：</span><i>{$user['nickname']}</i></p>
+            <span class="rest pull-right">
+                <i>账户余额 <strong>{$user['coins']}</strong> K豆</i>
+            </span>
+            </div>
+        </div>
+        <div class="char_details">
+            <div class="fl">
+                <div class="amount clearFix">
+                    <h3 class="fl">充值金额:</h3>
+                    <ul class="fl amoLi">
+                        <li class="fl clickBg">
+                            <span val="1000">1000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="5000">5000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="10000">10000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="20000">20000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="30000">30000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="50000">50000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="80000">80000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="100000">100000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="200000">200000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="300000">300000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="500000">500000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="800000">800000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="1000000">1000000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span val="2000000">2000000K豆</span>
+                        </li>
+                        <li class="fl">
+                            <span  val="3000000">3000000K豆</span>
+                        </li>
+                    </ul>
+                </div>
+                {if $pf=="qqgame" or $pf =="QQGame"}
+                <div class="qqgameWay" data-type="QQGame">
+
+                    <form name="QQCloud" id="QQCloud" action="/rest/www/cloud.jsp" method="post"  >
+                        <div style="margin: 5px;">
+                            <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>K豆)</p>
+                        </div>
+                        <input type="hidden" name="WIDtotal_fee" id="WIDtotal_fee">
+                        <input type="hidden" name="WIDtotal_Id" id="WIDtotal_Id">
+                        <input type="hidden" id="openid" name="openid" value="{$openid}"/>
+                        <input type="hidden" id="openkey" name="openkey" value="{$openkey}"/>
+                        <input type="hidden" id="pf" name="pf" value="{$pf}"/>
+                        <input type="hidden" id="pfkey" name="pfkey" value="{$pfkey}"/>
+                        <input class="imChar" type="button" value="立即充值"/>
+                    </form>
+                </div>
+                <div class="paybox" style="display:none;width: 500px;height: 360px;position: fixed;margin: 200px auto;left: 0;right: 0;top: 0;bottom: 0"></div>
+                {else}
+                <div class="charWay">
+                    <div class="wayLi clearFix">
+                        <h3 class="fl">支付方式{$pf}:</h3>
+                        <div class="fl wayBank">
+                            <ul class="clearFix ways">
+                                <li class="fl sprite_pay bank_17 cli"  ptype="ZFB"></li>
+                                <li class="fl sprite_pay bank_18"  ptype="WXP"></li>
+                                <li class="fl sprite_pay bank_20" ptype="CFT"></li>
+                                <li class="fl sprite_pay bank_19" ptype="ZXZF"></li>
+                            </ul>
+
+                            <ul class="banks clearFix">
+                                <li class="sprite_pay bank_101 " btype="101"></li>
+                                <li class="sprite_pay bank_201 " btype="201"></li>
+                                <li class="sprite_pay bank_301 " btype="301"></li>
+                                <li class="sprite_pay bank_401 " btype="401"></li>
+                                <li class="sprite_pay bank_501 " btype="501"></li>
+                                <li class="sprite_pay bank_601 " btype="601"></li>
+                                <li class="sprite_pay bank_701 " btype="701"></li>
+                                <li class="sprite_pay bank_801 " btype="801"></li>
+                                <li class="sprite_pay bank_13  " btype="13"></li>
+                                <li class="sprite_pay bank_1101" btype="1101"></li>
+                                <li class="sprite_pay bank_1201" btype="1201"></li>
+                                <li class="sprite_pay bank_1901" btype="1901"></li>
+                                <li class="sprite_pay bank_1902" btype="1902"></li>
+                                <li class="sprite_pay bank_1903" btype="1903"></li>
+                                <li class="sprite_pay bank_1904" btype="1904"></li>
+                                <li class="sprite_pay bank_1905" btype="1905"></li>
+                                <li class="sprite_pay bank_1906" btype="1906"></li>
+                                <li class="sprite_pay bank_1907" btype="1907"></li>
+                                <li class="sprite_pay bank_1908" btype="1908"></li>
+                                <li class="sprite_pay bank_1909" btype="1909"></li>
+                                <li class="sprite_pay bank_1910" btype="1910"></li>
+                            </ul>
+                            <form name="alpay" id="alpay" action="/rest/www/alipay.jsp" method="post"   target="_blank">
+                                <input type="hidden" name="WIDtotal_fee" id="WIDtotal_fee"/>
+                                <input type="hidden" name="WIDtotal_Id" id="WIDtotal_Id"/>
+                                <input type="hidden" name="WIDbank_type" id="WIDbank_type"/>
+                                <p>实付金额：<i id="P_RMB">10</i>元(<span id="P_DB">1000</span>K豆)</p>
+                                <input class="imChar" type="button" value="立即充值"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+               {/if}
+
+
+            </div>
+            <div class="fr char_explain">
+                <h3 class="expl">充值说明</h3>
+                <div class="exp">
+                    <p>1元=100K豆</p>
+                    <p>K豆是您在本平台消费的虚拟货币，您可以通过充值获得，也可手动添加充值金额。</p>
+                </div>
+                <h3 class="act">您可到直播间进行：</h3>
+                <ul>
+                    <li class="clearFix">
+                        <span class="fl"></span>
+                        <p class="fl">送礼物</p>
+                    </li>
+                    <li class="clearFix">
+                        <span class="fl"></span>
+                        <p class="fl">点歌</p>
+                    </li>
+                    <li class="clearFix">
+                        <span class="fl"></span>
+                        <p class="fl">与明星进行互动</p>
+                    </li>
+                    <li class="clearFix">
+                        <span class="fl"></span>
+                        <p class="fl">消费</p>
+                    </li>
+                    <li class="clearFix">
+                        <span class="fl"></span>
+                        <p class="fl">可以帮自己升级</p>
+                    </li>
+
+                </ul>
+                <div class="customService">
+                    <h3>在线客服：</h3>
+                    <div class="custom_bg"></div>
+                    <div class="qq_chat"></div>
+                    <p>在线时间每天10:00~19:00，其它时间请留言</p>
+                </div>
+                <h3>投诉电话</h3>
+                <div class="teNum clearFix">
+                    <span class="tel_bg fl"></span>
+                    <p class="fl">021-897834889</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="mks"></div>
+<div class="wxximage">
+    <div class="wximage">
+        <div class="x"></div>
+        <div class="ifo clearFix">充值提示</div>
+        <div class="mn-box"></div>
+        <div class="mn-info">
+            <div>请打开微信-扫描上方二维码完成支付</div>
+            <div class="kca">￥<span id="mys"></span>元</div>
+        </div>
+
+    </div>
+</div>
+{include file="footer.html"}
+
+</body>
+</html>

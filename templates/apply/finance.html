@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<link data-fixed="true" href="/templates/index.css" rel="stylesheet">
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/check_num.js"></script>
+</head>
+
+<body>
+<div class="head-outer btline">
+    <div class="header wrapper clearFix">
+        <a class="hd_bg fl" href="/"></a>
+        <p class="text fl">一群制造欢乐的豆豆</p>
+        <ul class="nav fl">
+            <li class="fl {if $current_page=='index'}cu{/if}"><a href="/">首页</a></li>
+            <li class="fl {if $current_page=='square'}cu{/if}"><a href="/square.php">广场</a> </li>
+            <li class="fl {if $current_page=='active'}cu{/if}"><a href="/square.php">活动</a> </li>
+            <li class="fl {if $current_page=='mall'}cu{/if}"><a href="/mall.php">商城</a> </li>
+            <li class="fl {if $current_page=='order'}cu{/if}"><a href="/orders.php">排行榜</a> </li>
+
+        </ul>
+        <div class="input fl">
+            <input type="text" placeholder="输入房间号/频道号/ID" />
+            <span class="search"></span>
+        </div>
+        <div class="user clearFix">
+            <div class="fl">
+                <a class="username fl" href="centeros.php">袅袅娜娜</a>
+                <a class="user_msg fl" href="javascript:;"></a>
+            </div>
+            <a class="email fl" href="javascript:;"></a>
+        </div>
+    </div>
+</div>
+
+<form action="photo.html">
+	<div class="details">
+	<div class="wrapper">
+    	<div class="progress clearFix">
+            <span class="fl pro">基本资料</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro" style="background:#ffb900; color:#fff; ">财务信息</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro">认证照片</span>
+            <span class="fl arrow"></span>
+            <span class="fl pro">提交审核</span>
+        </div>
+    	<div class="data_content ">
+            <p class="apply">入驻申请</p>
+            <div class="basic">
+                <h3>财务信息息(<i>2</i>/3)</h3>
+                <div class="account_place">
+                	<tr class="cr-hline">
+                        <td class="n-type">开户地</td>
+                        <td> <select name="province" id="province"></select></td>
+                        <td><select name="city"  id="city"></select></td>
+                    </tr>
+                </div>
+                
+                <script language="javascript" src="js/area.js"></script>
+                <script language="javascript" src="/skin/ym/js/birthday.js"></script>
+                
+                <script>new PCAS("province","city","","");</script>
+                
+                <div class="bank">
+                    <label>开户银行</label>
+       				<select class="space">
+                    	<option>中国工商银行</option>
+                        <option>中国农业银行</option>
+                        <option>中国建设银行</option>
+                        <option>中国银行</option>
+                        <option>招商银行</option>
+                        <option>交通银行</option>
+                        <option>中信银行</option>
+                        <option>兴业银行</option>
+                        <option>上海浦东发展银行</option>
+                    </select>          
+       
+                </div>
+                <div class="num">
+                    <label class="lable">银行卡卡号</label>
+                    <input class="space" type="text"/>
+                </div>
+                <div class="id_num">
+                    <label class="lable">身份证号码</label>
+                    <input class="space idCard" type="text"/>
+                    <span class="info_num">请输入您的身份证号</span>
+                    <span class="ok">√</span>
+                    <span class="err">请再核实您的号码</span>
+                </div>
+                <div class="positive clearFix">
+                    <label class="lable fl">身份证正面</label>
+                    <input class="space fl" type="text"/>
+                    <div class="id_file fl">
+                    	选择文件
+                    	<input type="file"/>
+                    </div>
+                    <p class="tip">支持JPG,PNG图片大小建议不要超过2M</p>
+                </div>
+                
+                
+                <div class="opposite clearFix">
+                    <label class="lable fl">身份证反面</label>
+                    <input class="space fl" type="text"/>
+                    <div class="id_file fl">
+                    	选择文件
+                    	<input type="file"/>
+                    </div>
+                    <p class="tip">支持JPG,PNG图片大小建议不要超过2M</p>
+                </div>
+                
+                
+                <div class="prev_next">
+                	<input type="submit" nclick="history.back()" value="上一步"/>
+                	<input class="next" type="submit" value="下一步"/>
+                </div>
+       		</div>
+                              
+                
+            
+         
+        </div>
+    </div>
+
+</div>
+</form>
+
+<div class="footer">
+    <div class="container">
+        <p class="copyright"><span></span>青蛙直播-Copyright©2016 沪ICP备14054721号 关于我们版权声明</p>
+        <p>青蛙用户服务协议|青蛙客服电话：021-63156389|商务合作邮箱：mt@mutiantech.com</p>
+    </div>
+</div>
+</body>
+</html>

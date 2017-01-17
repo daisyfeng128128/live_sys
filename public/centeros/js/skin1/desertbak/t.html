@@ -1,0 +1,61 @@
+
+<!DOCTYPE html> 
+<html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>简单拖曵原理实例</title> 
+<style type="text/css"> 
+#drag{width:400px;height:300px;background:url(http://upload.yxgz.cn/uploadfile/2009/0513/20090513052611873.jpg);cursor:move;position:absolute;top:100px;left:100px;border:solid 1px #ccc;} 
+h2{color:#fff;background: none repeat scroll 0 0 rgba(16, 90, 31, 0.7);color:#FFFFFF;height:40px;line-height:40px;margin:0;} 
+</style> 
+<script src="http://17aibo.com/Public/js/jquery.min.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+$(function($) {
+  $.fn.dragDiv = function(divWrap) {
+    return this.each(function() {
+      var $divMove = $(this);//鼠标可拖拽区域
+      var $divWrap = divWrap ? $divMove.parents(divWrap) : $divMove;//整个移动区域
+      var mX = 0, mY = 0;//定义鼠标X轴Y轴
+      var dX = 0, dY = 0;//定义div左、上位置
+      var isDown = false;//mousedown标记
+      if(document.attachEvent) {//ie的事件监听，拖拽div时禁止选中内容，firefox与chrome已在css中设置过-moz-user-select: none; -webkit-user-select: none;
+        $divMove[0].attachEvent('onselectstart', function() {
+          return false;
+        });
+      }
+      $divMove.mousedown(function(event) {
+        var event = event || window.event;
+        mX = event.clientX;
+        mY = event.clientY;
+        dX = $divWrap.offset().left;
+        dY = $divWrap.offset().top;
+        isDown = true;//鼠标拖拽启动
+      });
+      $(document).mousemove(function(event) {
+        var event = event || window.event;
+        var x = event.clientX;//鼠标滑动时的X轴
+        var y = event.clientY;//鼠标滑动时的Y轴
+        if(isDown) {
+          $divWrap.css({"left": x - mX + dX, "top": y - mY + dY});//div动态位置赋值
+        }
+      });
+      $divMove.mouseup(function() {
+        isDown = false;//鼠标拖拽结束
+      });
+    });
+  };
+});
+//
+$(document).ready(function() {
+  $("#move1").dragDiv();//拖拽整个div
+  $("#move2").dragDiv(".divWrap");//拖拽div头部
+});
+</script> 
+</head> 
+
+<body> 
+<div class="divWrap" id="move1" style="width: 200px; height: 200px; background: Green; border: 1px solid red; position: absolute; top: 100px; left: 100px; cursor: move; -moz-user-select: none; -webkit-user-select: none;"></div>
+<div class="divWrap" style="width: 200px; height: 200px; background: brown; border: 1px solid red; position: absolute; top: 300px; left: 100px;">
+  <h3 id="move2" style="height: 45px; line-height: 45px; font-size: 18px; background: red; margin: 0; cursor: move; -moz-user-select: none; -webkit-user-select: none;">Title--Move</h3>
+</div>
+</body> 
+</html> 

@@ -1,0 +1,29 @@
+#RewriteCond %{HTTP_HOST} !^www\.(.*)
+#rewrite (.*) http://www.%{HTTP_HOST}/$1 [R=301,L]
+#rewrite ^/([0-9]+).html /live.php?roomnumber=$1 last;
+#rewrite ^/([0-9]+)$ /live.php?roomnumber=$1 last;
+#rewrite ^/news/([0-9]+).html$ /readnews.php?id=$1 last;
+#rewrite ^/clanlist.html$ /clanlist.php last;
+#rewrite ^/clanlist-1.html$ /clanlist.php?order=1 last;
+#rewrite ^/clanlist-0.html$ /clanlist.php?order=0 last;
+#rewrite ^/order.html$ /order.php last;
+#rewrite ^/clan([0-9]+).html$ /clandetail.php?clanid=$1 last;
+#rewrite ^/logout.html$ /login.php?action=logout last;
+#rewrite ^/list-([0-9]+).html$ /list.php?cateid=$1 last; 
+#rewrite ^/mall$ /mall.php last; 
+#rewrite ^/help$ /help.php last; 
+#rewrite ^/orders$ /orders.php last; 
+#rewrite ^/square$ /square.php last; 
+#rewrite ^/center$ /centeros.php last; 
+
+
+<IfModule mod_rewrite.c> 
+	RewriteEngine on 
+	RewriteRule ^([0-9]+)$ live.php?roomnumber=$1 
+	RewriteRule ^(\w+)$ kedo.php?c=$1 [L,QSA]
+	RewriteRule ^(\w+)\/(\w+)$ kedo.php?c=$1&m=$2 [L,QSA]
+	
+  # rewrite ^/(\w+)$ /kedo.php?c=$1 last;
+  #	rewrite ^/(\w+)\(/(\w+))*$ /kedo.php?c=$1&m=$2 last;
+</IfModule> 
+		

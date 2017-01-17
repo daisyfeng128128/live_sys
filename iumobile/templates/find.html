@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>排行榜 {$site_name} 触屏版</title>
+<link rel="stylesheet" href="css/bootstrap.min.css?20151020a">
+<link rel="stylesheet" href="css/font-awesome.min.css?20151020a">
+<link rel="stylesheet" href="css/ectouch.css?20151020a">
+<link rel="stylesheet" href="css/user.css?20151020a">
+<link rel="stylesheet" href="css/photoswipe.css?20151020a">
+<link rel="stylesheet" href="/css/level.css?20151020a">
+<link rel="stylesheet" href="/css/gift.css?20151020a">
+<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.5.min.css?20151020a">
+<script src="js/jquerymobile/jquery.min.js?20151020a"></script>
+<script src="js/jquerymobile/jquery.mobile-1.4.5.min.js?20151020a"></script>
+<script src="js/find.js?20151020a"></script>
+<script src="js/StageWebViewBridge.php?20151020a"></script>
+<script>
+var cdn_domain="{$cdn_domain}";
+var money_name="{$money_name}";
+var money_name2="{$money_name2}";
+var site_skin="{$site_skin}";
+var IS_SINGLE_MONEY="{$IS_SINGLE_MONEY}";
+var currentUserNumber="{$user.usernumber}";
+var thisPage="top";
+var clanid="0";
+$(function(){
+	var  hashs = window.location.toString().split('#');
+	if(hashs[1]=="clan"){
+		thisPage = "clan";top_clan()
+	}else if(hashs[1]=="clandetail"){
+		thisPage = "clandetail";top_clandetail('{$id}');
+	}
+});
+</script>
+</head>
+<body class="ucenter">
+<div class="con" data-role="page" id="ss">
+<section class="top-tab ect-margin-tb ect-margin-bottom0 ucenter_nav" style="margin-top:0;">
+  <div class="tab-content">
+    <div class="active ect-pro-list">
+            <a class="nav_a" href="#clan" onClick="top_clan()" data-transition="slide"><p class="ect-margin-tb ect-padding-tb"><img src="images/ico_clan.png" width="28" height="28"/>家族</p></a>
+			<hr/>
+			<a class="nav_a" href="javascript:window.location.href='zhuanpan.php#zp';"><p class="ect-margin-tb ect-padding-tb"><img src="images/ico_gift.png" width="28" height="28"/>首充抽奖</p></a>
+            
+    </div>
+  </div>
+</section>
+</div>
+<div class="con" data-role="page" id="clan">
+<section class="top-tab ect-margin-tb ect-margin-bottom0 top_content" style="margin-top:0;"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list tab_list"> 
+		<ul id="datalist_clan_clan" class="clan_data" class="tab"><li class='text-center'>数据正在加载中...</li></ul>
+    </div>
+  </div>
+</section>
+</div>
+<div class="con" data-role="page" id="clandetail">
+<section class="top-tab ect-margin-tb ect-margin-bottom0 top_content" style="margin-top:0;"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list tab_list">
+		<div id="datalist_clan_clandetail_info">
+<table><tr><td valign="top" rowspan="4" colspan="1"><img src="/apis/avatar.php?uid={$user.userid}&_t={$time}">
+</td><td valign="top"><em class="clanmedal famhuizhj"></em>
+</td></tr><tr><td valign="top"><span class="nickname">族长:</span>
+</td></tr><tr><td valign="top"><span class="craate">创建于:</span>
+</td></tr><tr><td valign="top"><div class="inclan"><a href='javascript:applyjoin()' class="tbbuybtn_red buybtn ui-link">加入</a></div>
+</td></tr></table>
+<p class="announce"></p>
+		</div>
+    </div>
+  </div>
+</section>
+<section class="container-fluid top-nav" style="position: relative;">
+  <ul class="row ect-row-nav text-center buy_vip_tab tab_nav">
+    <li class="col-sm-6 col-xs-6 on" rel="datalist_clan_clandetail_member"><p class="text-center">成员(<span class="user_num">0</span>)</p></li>
+    <li class="col-sm-6 col-xs-6" rel="datalist_clan_clandetail_show"><p class="text-center">主播(<span class="show_num">0</span>)</p></li>
+  </ul>
+</section>
+<section class="top-tab ect-margin-tb ect-margin-bottom0 top_content2" style="margin-top:0"> 
+  <div class="tab-content">
+    <div class="ect-pro-list pinglun-list tab_list clandetail_data">
+		<div id="datalist_clan_clandetail_member" class="tab top_content">
+		<ul class="title"><li>族长</li></ul>
+		<ul id="datalist_clan_clandetail_member_zz"><li class='text-center'>数据正在加载中...</li></ul>
+		<ul class="title"><li>副族长</li></ul>
+		<ul id="datalist_clan_clandetail_member_fzz"><li class='text-center'>数据正在加载中...</li></ul>
+		<ul class="title"><li>成员</li></ul>
+		<ul id="datalist_clan_clandetail_member_cy"><li class='text-center'>数据正在加载中...</li></ul>
+		</div>
+		<ul id="datalist_clan_clandetail_show" style="display:none;" class="tab clan_show"><li class='text-center'>数据正在加载中...</li></ul>
+		<div style="clear:both"></div>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="jQuery Splitter, Splitter Widget, Splitter, jqxSplitter" />
+    <title id='Description'>This demonstration shows a complex layout implementation that
+        shows nesting multiple splitters.</title>
+    <script type="text/javascript" src="/skin/desert/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/sea-modules/jquery-ui-master/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/js/sea-modules/jquery-ui-master/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/js/sea-modules/jquery-ui-master/jquery-splitter.base.css" type="text/css" />
+    <script type="text/javascript" src="/js/sea-modules/jquery-ui-master/external/splitter/jqxcore.js"></script>
+    <script type="text/javascript" src="/js/sea-modules/jquery-ui-master/external/splitter/jqxsplitter.js"></script>
+    <script type="text/javascript">
+    	 $(function() {
+			$("#draggable").jqxSplitter({orientation: 'horizontal', panels: [{ size: 307, collapsible: false }]});
+            $("#draggable").draggable();
+			$("#draggable").resizable();
+		}); 
+    </script>
+</head>
+<style type="text/css">
+#draggable {
+	height: 464px;
+	width: 317px;
+	border: 5px solid #aaa;
+}
+#draggable div {
+	overflow: auto;
+}
+.vsplitbar {
+	width: 5px;
+	background: #aaa;
+}
+</style>
+<body class='default'>
+	<div id="draggable" class="ui-widget-content">
+		<div>top</div>
+		<div>but</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>烟花易冷</title> 
+
+    <script src="js/jquery.min.js"></script> 
+<style>
+body {
+  background-color: #ccc;
+  overflow: hidden;
+  margin: 0;
+}
+canvas {
+  background-color: #ccc;
+  backgroundAlpha :0;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button").click(function(){
+    $.getScript("./js/ne.js");
+  });
+});
+</script>
+</head>
+<body>
+
+<button>使用 Ajax 来获得并运行一个 JavaScript 文件</button>
+
+</body>
+</html>

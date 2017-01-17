@@ -1,0 +1,238 @@
+.bg1,.bg2{ background: url('../images/scBg_01.jpg'); background-position: center top;  background-repeat: no-repeat;  }
+/*未开播*/
+.no-live{width: 640px;height: 360px;overflow:hidden;background: url("/skin/comic/images/pic_zhibojian_moren.jpg");position: relative;}
+.no-live-text{margin: auto; text-align: center; margin-top: 42px; color: #ddb180; }
+.no-live-next{margin: auto;  text-align: center;  margin-top: 40px;  color: #999; height: 30px;  width: 300px;  line-height: 30px;  background-color: #424242;  border-radius: 5px;  font-size: 12px;margin-bottom: -40px;display: none}
+.no-live-next .no-live-week{color: #999999}
+.no-live-next .no-live-time{color: #c28332}
+.no-live ul{margin: 0 auto;margin-top:50px;width: 380px;height: 190px;}
+
+.no-live{ font-size:12px; color: #fefefe}
+.no-live .text{margin-top: 30px;text-align: center;margin: 0 auto }
+.no-live ul li{float: left;margin:0 12px }
+.no-live ul li a{z-index: 15;position: absolute;  height:150px;width: 102px;}
+.noanchor-kuang{width:100px;  height: 150px;position: relative;overflow: hidden}
+.noanchor-kuang .nocnchor-k{width: 100px;height: 150px;position: absolute;z-index: 11}
+.noanchor-kuang img{ position: absolute;height: 146px; width: 96px; z-index: 8; margin: 2px;  border-radius: 5px;}
+.noanchor-info{ line-height: 18px;  margin-top: 3px;margin-left: -2px;}
+.noanchor-info .noanchor-level{float: left}
+.noanchor-name {float: left;    float: left;  white-space: nowrap;  width: 72px;  text-overflow: ellipsis;  overflow: hidden;}
+.noanchor-num{float: left;margin-left: 10px;}
+.bk-color{border: 2px solid #ccc;  border-radius: 10px;}
+
+.video-area{width:640px;margin: 77px auto;left: 0; right: 0;position: absolute}
+
+/*新礼物*/
+.newGifts{ width: 600px; height: 92px;  position: absolute; - margin-left:-300px; left: 50%;  bottom:28%;}
+
+
+#player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
+    width:640px;
+    height:360px;
+}
+
+@media only screen and (min-width:1920px) and (min-height:806px){
+    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
+    .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
+    #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
+        width:640px;
+        height:360px;
+    }
+    .video-area{margin:77px auto;}
+    .live-info{
+        margin-top:8px;
+    }
+
+    .rank-area{
+        top:340px;
+    }
+    .newGifts{
+        left:644px;
+    }
+
+    .guard-area,.rank-area,.gift-record{
+        left:78px;
+    }
+
+}
+
+
+@media only screen and (min-width:1950px){
+    body,html{
+        /*width:1920px;
+        height:1080px;  */
+    }
+    .switch-area,.newGifts{position: absolute}
+}
+@media only screen and (min-width:2048px){
+    .chat-area{left: 1700px;}
+}
+@media only screen and (min-width:2880px){
+    .chat-area{left: 2315px;}    .newGifts{left: 1072px;}
+}
+@media only screen and (min-width:3048px){
+    .chat-area{left: 3200px;} .newGifts{left: 1550px;}
+}
+@media only screen and (min-width:4096px){
+    .chat-area{left: 4338px;}    .newGifts{left: 3534px; bottom:3000px;}
+    .guard-area,.rank-area,.gift-record,.visitant-record{left:3000px; }
+}
+@media only screen and (max-width:1919px){
+    .bg2{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
+    .bg1{background:url(../images/scBg_01.jpg) no-repeat center top; background-color:black;  }
+    #player,.no-live,#CustomGiftSwf,#LevelUpPlayerSwf{
+        width:640px;
+        height:360px;
+        /*margin:77px auto;*/
+    }
+    .live-info{
+        margin-top:8px;
+    }
+    .newGifts{
+        left:30%;
+    }
+
+    .guard-area,.rank-area,.gift-record{
+        width:260px;
+        height:200px;
+        left:78px;
+        overflow:hidden;
+    }
+
+    .rank-area{
+        top:268px;
+    }
+
+    .visitant-record{
+        top:60px;
+        right: 20px;
+    }
+
+}
+
+
+@media only screen and (max-width:1448px){
+    .bg2{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
+    .bg1{background:url(../images/scBg_1444_812.jpg) no-repeat center top; background-color:black;  }
+    .no-live{
+        width:483px;
+        height:272px;
+        margin:58px auto;
+        margin-top:-19px;
+        margin-left:79px;
+        background: url("/skin/comic/images/pic_zhibojian_moren_484.jpg");
+    }
+    .no-live-text{margin-top:30px;}
+    .no-live ul{margin-top:25px;}
+    #player{
+        width:483px;
+        height:272px;
+        margin:58px auto;
+        margin-top:-19px;
+        margin-left:39px;
+
+    }
+
+    #CustomGiftSwf,#LevelUpPlayerSwf{
+        width:483px;
+        height:272px;
+        margin:58px auto;
+        margin-top:-19px;
+        margin-left:458px;
+
+    }
+
+    .live-info {
+        position: relative;
+        width: 483px;
+        margin-top: -62px;
+        margin-left: 80px;
+    }
+    .flash-area{
+        height:312px;
+        height:312px !important;
+    }
+
+    .newGifts{
+        left:390px;
+        bottom:36%;
+    }
+
+}
+
+@media only screen and (max-width:1284px){
+
+    .bg2{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
+    .bg1{background:url(../images/scBg_1284_722.jpg) no-repeat center top; background-color:black; }
+    .no-live{
+        /*width:428px;*/
+        width:429px;
+        height:242px;
+        margin:51px auto;
+        margin-top:-26px;
+        margin-left:107px;
+        background: url("/skin/comic/images/pic_zhibojian_moren_430.jpg");
+    }
+
+    .no-live-text{margin-top:26px;}
+    .no-live ul{margin-top:8px;}
+    #player{
+        width:429px;
+        height:242px;
+        margin:51px auto;
+        margin-top:-26px;
+        margin-left:53px;
+
+    }
+
+    #CustomGiftSwf,#LevelUpPlayerSwf{
+        width:429px;
+        height:242px;
+        margin:51px auto;
+        margin-top:-26px;
+        margin-left:485px;
+
+    }
+
+    .live-info {
+        position: relative;
+        width: 429px;
+        margin-top: -62px;
+        margin-left: 92px;
+    }
+
+    .flash-area{
+        height:268px;
+        height:268px !important;
+    }
+
+    .self-care{
+        right:-10px;
+    }
+
+    .newGifts{
+        left:396px;
+    }
+    /*.myDiv2, .gift-record, .guard-area {
+        width: 260px;
+        left: 170px;
+    }*/
+
+    .myDiv2, .gift-record, .guard-area ,.visitant-record{
+        width: 220px;
+        height:198px;
+    }
+    .guard-area{
+        top:40px;
+    }
+
+    .myDiv2{
+        top:258px;
+    }
+    .gift-record{
+        top:476px;
+    }
+	.visitant-record{top:60px;}
+}
+
+.flash-area{width:640px;height:360px}

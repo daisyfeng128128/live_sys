@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="/css/memberQ2v1.4.css" type="text/css" media="screen"/>
+<div class="mb_ucentr">
+	<h2>个人中心</h2>
+	<div><img width="160" height="1" src="img/icon_line.png"></div>
+	<ul class="mb_menu" id="mbmenu">
+		<li class="no_submenu">
+			<div <?php if($current_page=='person') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php">我的档案</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='mymailbox') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=mymailbox">我的信箱</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='myprops') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=myprops">我的道具</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='car') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=car">我的座驾</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='clan') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=clan">我的家族</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='live') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=live">我的直播</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='history') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=history">我的关注</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='number') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=number">我的靓号</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='bill') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=bill">我的账单</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+
+		<li class="no_submenu">
+			<div>
+				<a class="pl45" href="ucenter.php?ptype=pay">充值中心</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<li class="no_submenu">
+			<div <?php if($current_page=='exchange') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=exchange">积分兑换</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+		<?php if($isagent){?>
+		<li class="no_submenu">
+			<div <?php if($current_page=='agent') echo 'class="hightlight"' ?>>
+				<a class="pl45" href="ucenter.php?ptype=agent">代理帐单</a>
+				<img width="24" height="24" src="img/icon_right.png">
+			</div>
+		</li>
+			<?php if($agentinfo["istrade"]=="0"){?>
+			<!--li class="no_submenu">
+				<div <?php if($current_page=='agentpay') echo 'class="hightlight"' ?>>
+					<a class="pl45" href="ucenter.php?ptype=agentpay">代理充值</a>
+					<img width="24" height="24" src="img/icon_right.png">
+				</div>
+			</li-->
+			<?php }?>
+		<?php }?>
+	</ul>
+</div>

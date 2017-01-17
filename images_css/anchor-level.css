@@ -1,0 +1,123 @@
+ /*主播等级*/
+.anchor-level {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(anchor-level.png);width:32px; height:20px;vertical-align: text-top;     margin-left: 5px;}
+.anchor-level-next{ position: absolute; right: 0;  top: -5px;}
+
+.pic_liverlevel_1 {background-position: -1px -1px}
+.pic_liverlevel_2 {background-position: -35px -1px}
+.pic_liverlevel_3 {background-position: -69px -1px}
+.pic_liverlevel_4 {background-position: -103px -1px}
+.pic_liverlevel_5 {background-position: -137px -1px}
+.pic_liverlevel_6 {background-position: -171px -1px}
+.pic_liverlevel_7 {background-position: -205px -1px}
+.pic_liverlevel_8 {background-position: -239px -1px}
+.pic_liverlevel_9 {background-position: -273px -1px}
+.pic_liverlevel_10 {background-position: -307px -1px}
+.pic_liverlevel_11 {background-position: -341px -1px}
+.pic_liverlevel_12 {background-position: -375px -1px}
+.pic_liverlevel_13 {background-position: -409px -1px}
+.pic_liverlevel_14 {background-position: -443px -1px}
+.pic_liverlevel_15 {background-position: -477px -1px}
+.pic_liverlevel_16 {background-position: -511px -1px}
+.pic_liverlevel_17 {background-position: -545px -1px}
+.pic_liverlevel_18 {background-position: -579px -1px}
+.pic_liverlevel_19 {background-position: -613px -1px}
+.pic_liverlevel_20 {background-position: -647px -1px}
+.pic_liverlevel_21 {background-position: -681px -1px}
+.pic_liverlevel_22 {background-position: -715px -1px}
+.pic_liverlevel_23 {background-position: -749px -1px}
+.pic_liverlevel_24 {background-position: -783px -1px}
+.pic_liverlevel_25 {background-position: -817px -1px}
+.pic_liverlevel_26 {background-position: -851px -1px}
+.pic_liverlevel_27 {background-position: -885px -1px}
+.pic_liverlevel_28 {background-position: -919px -1px}
+.pic_liverlevel_29 {background-position: -953px -1px}
+.pic_liverlevel_30 {background-position: -987px -1px}
+
+/*活跃等级*/
+
+.activelevel {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(pic_activelevel.png);}
+
+.pic_activelevel_1 {width:32px; height:17px; background-position: -75px -46px}
+.pic_activelevel_2 {width:32px; height:17px; background-position: -109px -46px}
+.pic_activelevel_3 {width:32px; height:17px; background-position: -291px -1px}
+.pic_activelevel_4 {width:32px; height:17px; background-position: -325px -1px}
+.pic_activelevel_5 {width:32px; height:17px; background-position: -327px -20px}
+.pic_activelevel_6 {width:29px; height:21px; background-position: -250px -41px}
+.pic_activelevel_7 {width:29px; height:20px; background-position: -345px -39px}
+.pic_activelevel_10 {width:31px; height:20px; background-position: -217px -42px}
+.pic_activelevel_11 {width:33px; height:22px; background-position: -75px -1px}
+.pic_activelevel_12 {width:35px; height:22px; background-position: -1px -1px}
+.pic_activelevel_13 {width:35px; height:22px; background-position: -1px -25px}
+.pic_activelevel_14 {width:35px; height:22px; background-position: -38px -1px}
+.pic_activelevel_15 {width:35px; height:22px; background-position: -38px -25px}
+.pic_activelevel_16 {width:31px; height:18px; background-position: -258px -1px}
+.pic_activelevel_17 {width:31px; height:19px; background-position: -294px -20px}
+.pic_activelevel_18 {width:31px; height:18px; background-position: -261px -21px}
+.pic_activelevel_19 {width:31px; height:19px; background-position: -312px -41px}
+.pic_activelevel_20 {width:34px; height:19px; background-position: -185px -1px}
+.pic_activelevel_21 {width:33px; height:18px; background-position: -226px -21px}
+.pic_activelevel_22 {width:36px; height:19px; background-position: -75px -25px}
+.pic_activelevel_23 {width:36px; height:19px; background-position: -110px -1px}
+.pic_activelevel_24 {width:36px; height:19px; background-position: -113px -22px}
+.pic_activelevel_25 {width:36px; height:18px; background-position: -151px -22px}
+.pic_activelevel_26 {width:35px; height:19px; background-position: -148px -1px}
+.pic_activelevel_27 {width:35px; height:19px; background-position: -143px -43px}
+.pic_activelevel_28 {width:35px; height:18px; background-position: -180px -42px}
+.pic_activelevel_29 {width:35px; height:18px; background-position: -189px -22px}
+.pic_activelevel_30 {width:35px; height:18px; background-position: -221px -1px}
+.pic_activelevel_8 {width:29px; height:20px; background-position: -361px -1px}
+.pic_activelevel_9 {width:29px; height:21px; background-position: -281px -41px}
+
+/*守护等级*/
+.guardlevel{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(pic_guardLevel_l.png);}
+ .pic_guardlevel_S_1 {width:17px; height:20px; background-position: -333px -1px}
+ .pic_guardlevel_S_10 {width:24px; height:22px; background-position: -113px -1px}
+ .pic_guardlevel_S_11 {width:24px; height:22px; background-position: -139px -1px}
+ .pic_guardlevel_S_12 {width:26px; height:22px; background-position: -1px -1px}
+ .pic_guardlevel_S_13 {width:26px; height:22px; background-position: -29px -1px}
+ .pic_guardlevel_S_14 {width:26px; height:22px; background-position: -57px -1px}
+ .pic_guardlevel_S_15 {width:26px; height:22px; background-position: -85px -1px}
+ .pic_guardlevel_S_2 {width:19px; height:20px; background-position: -249px -1px}
+ .pic_guardlevel_S_3 {width:19px; height:20px; background-position: -270px -1px}
+ .pic_guardlevel_S_4 {width:19px; height:20px; background-position: -291px -1px}
+ .pic_guardlevel_S_5 {width:19px; height:20px; background-position: -312px -1px}
+ .pic_guardlevel_S_6 {width:19px; height:22px; background-position: -165px -1px}
+ .pic_guardlevel_S_7 {width:19px; height:22px; background-position: -186px -1px}
+ .pic_guardlevel_S_8 {width:19px; height:22px; background-position: -207px -1px}
+ .pic_guardlevel_S_9 {width:19px; height:22px; background-position: -228px -1px}
+
+
+ /*爵位等级等级*/
+
+ .userlevel {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(userlevel.png);}
+
+ .pic_consumelevel_1 {width:52px; height:20px; background-position: -1px -1px}
+ .pic_consumelevel_2 {width:52px; height:20px; background-position: -55px -1px}
+ .pic_consumelevel_3 {width:52px; height:20px; background-position: -109px -1px}
+ .pic_consumelevel_4 {width:52px; height:20px; background-position: -163px -1px}
+ .pic_consumelevel_5{width:52px; height:20px; background-position: -217px -1px}
+ .pic_consumelevel_6 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_7 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_8 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_9 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_10 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_11 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_12 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_13 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_14 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_15 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_16 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_17 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_18 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_19 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_20 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_21 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_22 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_23 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_24 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_25 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_26 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_27 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_28 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_29 {width:52px; height:20px; background-position: -271px -1px}
+ .pic_consumelevel_30 {width:52px; height:20px; background-position: -271px -1px}

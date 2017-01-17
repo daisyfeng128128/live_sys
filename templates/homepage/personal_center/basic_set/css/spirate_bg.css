@@ -1,0 +1,20 @@
+.sprite_bg {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/spirate_bg.png);}
+
+.icon_Settings {width:20px; height:20px; background-position: -222px -2px}
+.icon_Settings_hover {width:20px; height:20px; background-position: -200px -2px}
+.icon_caifu {width:22px; height:22px; background-position: -76px -2px}
+.icon_caifu_hover {width:22px; height:22px; background-position: -52px -2px}
+.icon_guanzhu {width:22px; height:20px; background-position: -176px -2px}
+.icon_guanzhu_hover {width:22px; height:20px; background-position: -152px -2px}
+.icon_home {width:23px; height:22px; background-position: -27px -2px}
+.icon_home_hover {width:23px; height:22px; background-position: -2px -2px}
+.icon_messages {width:23px; height:17px; background-position: -301px -2px}
+.icon_messages_hover {width:23px; height:17px; background-position: -276px -2px}
+.icon_messages_tishi {width:24px; height:20px; background-position: -126px -2px}
+.icon_messages_tishi_hover {width:24px; height:20px; background-position: -100px -2px}
+.icon_shangla{width:11px; height:7px; background-position: -339px -11px}
+.icon_shangla_hover {width:11px; height:7px; background-position: -326px -11px}
+.icon_shape {width:14px; height:20px; background-position: -260px -2px}
+.icon_shape_hover {width:14px; height:20px; background-position: -244px -2px}
+.icon_xiala {width:11px; height:7px; background-position: -339px -2px; }
+.icon_xiala_hover {width:11px; height:7px; background-position: -326px -2px; }

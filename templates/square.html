@@ -1,0 +1,345 @@
+<!doctype html>
+<html ng-app="squareApp">
+<head>
+    <meta charset="utf-8">
+    <link href="static_data/images_css/anchor-level.css" rel="stylesheet">
+    <title>广场-蝌蚪直播</title>
+    <meta property="qc:admins" content="105415766763547646" />
+    <meta name="description" content="超人气视频直播互动娱乐社区，在这里你可以展示自己的才艺，也可以跟众多优秀的美女主播在线互动聊天、视频交友" />
+    <!--<link data-fixed="true" href="/templates/square.css" rel="stylesheet">-->
+    <link href="/css/kedo/style.css?vsn=97434bf729b6b384a330cafc771f278c" rel="stylesheet">
+    <link href="{$cdn_domain}/static_data/images_css/icons.css?{$vsn}" rel="stylesheet">
+    <script src="{$cdn_domain}/skin/desert/js/move.js?{$vsn}"></script>
+    <script src="{$cdn_domain}/skin/desert/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{$cdn_domain}/js/login.js??{$vsn}"></script>
+    <script type="text/javascript" src="/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angular/square.js"></script>
+</head>
+<body style="padding-top:60px;" ng-controller="square">
+{include file="header.html"}
+<!--<div class="main-square">
+    <div class="square-top">
+        <span class="cur-suqare-title">全部</span>
+    </div>
+    <div class="square-order">
+        <span class="square-order-title">显示排序: </span>
+        <span class="square-order-li square-order-choose">智能排序</span>
+    </div>
+    <ul class="squ_li clearFix">
+
+        {foreach from=$sqAnchorList item=show key=key}
+            {if $key==1}{break}{/if}
+            <li class="fl squ_first">
+                <a href="/{$show.roomNumber}.html">
+                    <em class="sprite_big_box biankuang-{toColor level=$show.totalpoint}"></em>
+                    <img src="{$show.image}" alt="{$show.nickName|urldecode}">
+                    <span class="sprite_l pic_liverlevel_L_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>
+                    <i>当前人数：{$show.numbers}</i>
+                    <div>
+                        <p>{$show.nickName|urldecode}</p>
+                        <p>{toTime st=$show.onlineTime}分钟前开播</p>
+                        <b class="b1"></b>
+                        <b class="b2">{$show.city}</b>
+                    </div>
+                </a>
+            </li>
+        {/foreach}
+
+
+        {foreach from=$sqAnchorList item=show key=key}
+            {if $key==0}{continue}{/if}  
+            <li class="fl ">
+                <a href="/{$show.roomNumber}.html">
+                <em class="sprite_small_box biankuang_{toColor level=$show.totalpoint}_little "></em>
+                <img src="{$show.image}"  alt="{$show.nickName|urldecode}">
+                <span class="sprite_s pic_liverlevel_S_{if !$show.totalpoint}1{else}{$show.totalpoint}{/if}"></span>
+                <i>当前人数：{$show.numbers}</i>
+                <div>
+                    <p>{$show.nickName|urldecode}</p>
+                    <p>{toTime st=$show.onlineTime}分钟前开播</p>
+                </div>
+                </a>
+            </li>
+        {/foreach}
+    </ul>
+</div>-->
+	<div class="hotCon container">
+        <div class="page-header clearfix clearFix outer">
+            <h4 class="pull-left fl">
+                <span class="glyphicon glyphicon-hot">HOT</span>
+                <span>热门主播</span>
+                
+            </h4>
+            <h4 class="pull-right fr hotR">
+              <a href="javascript:;"><small>更多</small></a>
+            </h4>
+        </div>
+        <div class="row">
+          	<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4" ng-repeat="i in squAnchs">
+                    <a href="" class="hotItem thumbnail" >
+                      <img src="{{i.image}}" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <!--<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                    <a href="https://www.baidu.com" class="hotItem thumbnail" id="a">
+                      <img src="http://images.181show.com/073e55d6633232c088827fed4030209d?p=0&w=110&h=165" alt=""/>
+                      <span class="glyphicon glyphicon-stats"></span>
+                      <div class="hotT thumbnail">
+                        <div class=""></div>
+                        <p class="text-center">人数：<span>268</span></p>
+                        
+                      </div>
+                    <div class="hotB">
+                        <span class="colorPin f14 f14">小蜜桃sasa</span>  
+                        <p class="f12">
+                            <!-- <span class="glyphicon glyphicon-user"></span> -->
+                            <span>30</span>
+                            <span>分钟之前</span>
+                        </p>
+                    </div>
+                    <div class="playBtn"></div>
+                  </a>
+                
+                    </div>-->
+  
+          
+        
+                    
+          
+          
+          
+        </div>
+        
+    </div>
+
+{include file="footer.html"}
+
+
+</body>
+</html>

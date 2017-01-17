@@ -1,0 +1,20 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:8dc2e8de933623abd814faa3f8423bcb:070e6345672f308313ee74491e40403d:6c2591c2e35d06381f7bd7a29a4a3903$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite_small_box {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/small_box.png);}
+
+.biankuang_black_little {width:145px; height:214px; background-position: -742px -2px}
+.biankuang_blue-little {width:145px; height:214px; background-position: -594px -2px}
+.biankuang_orange_little {width:145px; height:214px; background-position: -446px -2px}
+.biankuang_size_little {width:145px; height:214px; background-position: -298px -2px}
+.biankuang_white_little {width:145px; height:214px; background-position: -150px -2px}
+.biankuang_yellow_little {width:145px; height:214px; background-position: -2px -2px}

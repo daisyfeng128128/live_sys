@@ -1,0 +1,97 @@
+<script>
+var cdn_domain="{$cdn_domain}";
+var money_name="{$money_name}";
+var money_name2="{$money_name2}";
+var site_skin="{$site_skin}";
+var IS_SINGLE_MONEY="{$IS_SINGLE_MONEY}";
+var IS_QQ="{$IS_QQ}";
+var currentUserNumber="{$user.usernumber}";
+var site_info_qq="{$site_info_qq}";
+var site_live_skin="{$site_live_skin}";
+$(function(){
+	$("a[href^='/ucenter.php?ptype=pay']").fancybox({
+		'width'				: 430,
+        'autoScale'     	: false,
+        'transitionIn'		: 'none',
+		'transitionOut'		: 'none',
+		'type'				: 'iframe',
+		'helpers' : {
+        'overlay' :null
+        }
+	});
+	//$("a").attr("target","_self");
+});
+function initLoginInfoHead(obj){
+	if(IS_SINGLE_MONEY==1){
+		var pointtmp = '';
+	}else{
+		var pointtmp = '<label>'+obj.point+'</label><a class="exchange" href="/ucenter.php?ptype=exchange">兑换'+money_name2+'</a>';
+	}
+	//首页登录后的区块
+	var loginhtml='<div id="afloginBox" style="display: block;">\
+		<div class="basicInfo">\
+			<a title="'+obj.nickname+'" href="/ucenter.php"><img width="60" height="60" alt="" src="/apis/avatar.php?uid='+obj.userid+'"></a>\
+			<div class="name">\
+				<span><a title="'+obj.nickname+'" href="/ucenter.php">'+obj.nickname+'</a></span>\
+				<b><a href="/ucenter.php">[个人档案]</a></b>\
+			</div>\
+		</div>\
+		<div class="expandInfo">\
+			 <ul>\
+				 <li>\
+					 <span>主播：</span>\
+					 <div class="level">\
+						 <i class="from"><em class="zlevel zlv'+obj.starlevel+'"></em></i>\
+						 <i nextlevelvalue="'+obj.starshenji+'" levelvalue="'+obj.starlevel+'" curvalue="0.00" class="process" title="离升级还差'+obj.nextstar+'"><b id="star_process" style="width: '+obj.starshenjiB+'%;"></b></i>\
+						 <i class="to"></i>\
+					 </div>\
+				 </li>\
+				 <li>\
+					 <span>财富：</span>\
+					 <div class="level">\
+						 <i class="from"><em class="level lv'+obj.richlevel+'"></em></i>\
+						 <i nextlevelvalue="'+obj.richshenji+'" levelvalue="'+obj.richlevel+'" curvalue="0.00" class="process" title="离升级还差'+obj.richshenji+'"><b id="user_process" style="width: '+obj.richshenjiB+'%;"></b></i>\
+						 <i class="to"></i>\
+					 </div>\
+				 </li>\
+				 <li>\
+					 <span>'+money_name+'：</span>\
+					 <label id="user_coin_info">'+obj.balance+'</label><a class="recharge" href="/ucenter.php?ptype=pay">充值</a>\
+				 </li>\
+				 <li>\
+					 <span>'+money_name2+'：</span>\
+					 '+pointtmp+'\
+				 </li>\
+			 </ul>   \
+		</div>\
+	</div>';
+	$("#login_box").html(loginhtml);
+}
+</script>
+<script src="http://fusion.qq.com/fusion_loader?appid={$appid}&platform=qzone"></script>
+<script src="/js/fancybox/jquery.fancybox.js?v=custom2.1.4"></script>
+<link rel="stylesheet" type="text/css" href="/css/ext/jquery.fancybox.css?v=custom2.1.4" media="screen" />
+<link href="/skin/qq/head.css?24510" type="text/css" rel="stylesheet">
+<div class="b_header">
+    <div class="frame">
+        <div class="logo">
+            <div class="title"><a title="{$site_name}" href="/"><img src="/img/logo.png" /></a></div>
+        </div>
+        <div class="b_nav">
+            <ul class="clearfix">
+        <li class="{if $current_page=='index'}current{/if}"><a href="/">首页</a></li>
+        <li class="{if $current_page=='order'}current{/if}"><a href="/order.html">排行</a></li>
+        <li class="{if $current_page=='market'}current{/if}"><a href="/market.php">商城</a></li>
+		<li class="{if $current_page=='pay'}current{/if}"><a href="/ucenter.php?ptype=pay" onclick="return islogin()" class="">充值</a></li>
+        <li class="{if $current_page=='clan'}current{/if}"><a href="/clanlist.php">家族</a></li>
+        <!--li class="{if $current_page=='first_order'}current{/if}"><a href="/first_order.php">充值送礼</a></li-->
+{if $site_ishave_game}
+        <li><a target="_blank" href="/car.php">车行</a></li>
+{/if}
+            </ul>
+            <div class="sing">
+			<a title="我要签约" class="sign" onclick="return islogin();" href="/html/signing.html">签约</a>
+			<a title="我要开播" href="/go.php?action=toshow" onclick="return islogin();" class="live" target="_blank">开播</a></div>
+			        </div>
+    </div>
+</div>
